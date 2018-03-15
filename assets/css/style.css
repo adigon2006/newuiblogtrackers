@@ -2,6 +2,11 @@
 {
 min-height: 30px;
 }
+.navbar .navbar-brand
+{
+padding-top: 0;
+padding-bottom: 0;
+}
 .bg-primary
 {
 background: #434c5e !important;
