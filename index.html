@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Blogtrackers</title>
   <!-- start of bootsrap -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css"/>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -25,12 +26,32 @@
       </ul>
     </div>
   </nav>
-<div class="container-fluid">
+<div class="container">
 <div class="row">
-<div class="col-md-6">
-<div>breadcrumbs</div>
-<div>Traking: All Blogs</div>
+<div class="col-md-6 paddi">
+<nav class="breadcrumb">
+  <a class="breadcrumb-item text-primary" href="#">MY TRACKER</a>
+  <a class="breadcrumb-item text-primary" href="#">Second Tracker</a>
+  <a class="breadcrumb-item active text-primary" href="#">Blogger Info</a>
+  </nav>
+<div>Tracking: <button class="btn btn-primary stylebutton1">All Blogs</button></div>
 </div>
+
+<div class="col-md-6 text-right">
+<div>Time Frame 02/21/18 - 02/28/18</div>
+<div>Day Week Month Year Custom</div>
+</div>
+</div>
+
+<div class="row p40 border-top-bottom mt20 mb20">
+  <div class="col-md-2">
+<small class="text-primary">Selected Blogger</small>
+<h2>AdNovum </h2>
+</div>
+  <div class="col-md-10">
+  <small class="text-primary">Find Blogger</small>
+  <input class="form-control" placeholder="Search" />
+  </div>
 </div>
 </div>
 <footer>
