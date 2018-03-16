@@ -96,6 +96,10 @@ margin-top:40px;
 {
 margin-top:50px;
 }
+.mt60
+{
+margin-top:60px;
+}
 .mt100
 {
 margin-top:100px;
@@ -252,6 +256,30 @@ border:2px solid #cccccc;
 border-radius:15px;
 }
 /*  default style for input box */
+body {
+ scrollbar-face-color: #000000;
+ scrollbar-shadow-color: #2D2C4D;
+ scrollbar-highlight-color:#7D7E94;
+ scrollbar-3dlight-color: #7D7E94;
+ scrollbar-darkshadow-color: #2D2C4D;
+ scrollbar-track-color: #7D7E94;
+ scrollbar-arrow-color: #C1C1D1;
+}
+
+::-webkit-scrollbar {
+   width: 4px;
+}
+::-webkit-scrollbar-track {
+   background-color:#cccccc ;
+   border-left: 1px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+   background-color:#434c5e;
+ border-radius:50px;
+}
+::-webkit-scrollbar-thumb:hover {
+ background-color: #434c5e;
+}
 
 /* card layout defined */
 .card-style{
@@ -269,6 +297,11 @@ font-weight: 700;
 cursor: pointer;
 }
 
+footer p{
+color: #ffffff;
+
+}
+/*  start of daterangepicker */
 .daterangepicker {
   position: absolute;
   left: 0;
