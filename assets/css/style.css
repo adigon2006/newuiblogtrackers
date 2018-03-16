@@ -5,6 +5,26 @@ body{
 
   background-color: #fafafa  ;
 }
+label.btn input
+{
+visibility: hidden;
+display: none;
+}
+.styleheading
+{
+border-bottom:3px solid #17394C;
+}
+.circle {
+	border-radius: 50%;
+  border-color: #17394C;
+	width: 9px;
+	height: 9px;
+  position:absolute;
+  right:10px;
+  bottom:5px;
+  background: #17394C;
+	/* width and height can be anything, as long as they're equal */
+}
 .navbar
 {
 min-height: 30px;
