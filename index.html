@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
   <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.css" />
   <link rel="stylesheet" href="assets/fonts/iconic/css/open-iconic.css" />
+ <link rel="stylesheet" href="assets/vendors/bootstrap-daterangepicker/daterangepicker.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <!--end of bootsrap -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -39,8 +40,8 @@
 <div>Tracking: <button class="btn btn-primary stylebutton1">All Blogs</button></div>
 </div>
 
-<div class="col-md-6 text-right">
-<div>Time Frame 02/21/18 - 02/28/18</div>
+<div class="col-md-6 text-right mt10">
+<div class="text-primary demo"><h6 id="reportrange">Date: <span>02/21/18 - 02/28/18</span></h6></div>
 <div>Day Week Month Year Custom</div>
 </div>
 </div>
@@ -48,7 +49,7 @@
 <div class="row p40 border-top-bottom mt20 mb20">
   <div class="col-md-2">
 <small class="text-primary">Selected Blogger</small>
-<h2>AdNovum </h2>
+<h2 class="text-primary">AdNovum </h2>
 </div>
   <div class="col-md-4 col-offset-6">
   <small class="text-primary">Find Blogger</small>
@@ -113,41 +114,171 @@
   <div class="card card-style mt20 pt50 pb50">
     <div class="card-body  p20 pt5 pb5">
       <div class="row ">
-      <div class="col-md-4 "><h5 class="p20">Most Popular Day</h5></div>
-        <div class="col-md-4"><h5 class="p20">Most Popular Month</h5></div>
-          <div class="col-md-4"><h5 class="p20">Overall Sentiment</h5></div>
+      <div class="col-md-4 "><h5 class="p20 text-primary">Most Popular Day</h5></div>
+        <div class="col-md-4"><h5 class="p20 text-primary">Most Popular Month</h5></div>
+          <div class="col-md-4"><h5 class="p20 text-primary">Overall Sentiment</h5></div>
         </div>
         </div>
   </div>
 </div>
 
-<div class="col-md-6 mt20 mb40">
-  <div class="card card-style mt20">
-    <div class="card-body  p30 pt5 pb5">
-      <div style="min-height: 420px;">
 
-      </div>
+</div>
+<div class="row mb40">
+  <div class="col-md-6 mt20 ">
+    <div class="card card-style mt20">
+      <div class="card-body  p30 pt5 pb5">
+        <div style="min-height: 420px;">
+
         </div>
+          </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mt20">
+    <div class="card card-style mt20">
+      <div class="card-body  p30 pt5 pb5">
+        <div style="min-height: 420px;">
+
+        </div>
+          </div>
+    </div>
   </div>
 </div>
-
-<div class="col-md-6 mt20 mb40">
-  <div class="card card-style mt20">
-    <div class="card-body  p30 pt5 pb5">
-      <div style="min-height: 420px;">
-
-      </div>
-        </div>
-  </div>
-</div>
-</div>
-
 </div>
 <footer>
 dsadasd
 </footer>
+ <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.js">
+</script>
+<script src="assets/vendors/bootstrap-daterangepicker/moment.js"></script>
+<script src="assets/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script>
+$(document).ready(function() {
+  $(document)
+  						.ready(
+  								function() {
+  	var cb = function(start, end, label) {
+          //console.log(start.toISOString(), end.toISOString(), label);
+          $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+          $('#reportrange input').val(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY')).trigger('change');
+        };
 
+        var optionSet1 =
+      	      {   startDate: moment().subtract('days', 29),
+      	          endDate: moment(),
+      	          minDate: '01/01/1947',
+      	          maxDate: moment(),
+      			  showDropdowns: true,
+      	          showWeekNumbers: true,
+      	          timePicker : false,
+  				  timePickerIncrement : 1,
+  				  timePicker12Hour : true,
+  				  dateLimit: { days: 50000 },
+         	          ranges: {
+
+         	        	'This Year' : [
+  						moment()
+  								.startOf('year'),
+  						moment() ],
+  				'Last Year' : [
+  						moment()
+  								.subtract(1,'year').startOf('year'),
+  						moment().subtract(1,'year').endOf('year') ]
+      	          },
+      	          opens: 'left',
+      	          applyClass: 'btn-small bg-slate-600 btn-block',
+      	          cancelClass: 'btn-small btn-default btn-block',
+      	          format: 'MM/DD/YYYY',
+      			  locale: {
+      	          applyLabel: 'Submit',
+      	          //cancelLabel: 'Clear',
+      	          fromLabel: 'From',
+      	          toLabel: 'To',
+      	          customRangeLabel: 'Custom',
+      	          daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+      	          monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+      	          firstDay: 1
+      	        }
+
+      	      };
+
+
+  	// if('${datepicked}' == '')
+  	// {
+    //   $('#reportrange span').html(moment().subtract('days', 500).format('MMMM D') + ' - ' + moment().format('MMMM D'));
+    //   $('#reportrange').daterangepicker(optionSet1, cb);
+  	// }
+    //
+  	// else{
+  		// $('#reportrange span').html('${datepicked}');
+      $('#reportrange span').html(moment().subtract('days', 500).format('MMMM D YYYY') + ' - ' + moment().format('D MMMM YYYY'))
+  		$('#reportrange').daterangepicker(optionSet1, cb);
+  		$('#reportrange')
+  		.on(
+  				'show.daterangepicker',
+  				function() {
+  				/* 	console
+  							.log("show event fired"); */
+  				});
+  $('#reportrange')
+  		.on(
+  				'hide.daterangepicker',
+  				function() {
+  					/* console
+  							.log("hide event fired"); */
+  				});
+  $('#reportrange')
+  		.on(
+  				'apply.daterangepicker',
+  				function(ev, picker) {
+  					/* console
+  							.log("apply event fired, start/end dates are "
+  									+ picker.startDate
+  											.format('MMMM D, YYYY')
+  									+ " to "
+  									+ picker.endDate
+  											.format('MMMM D, YYYY')); */
+  				});
+  $('#reportrange')
+  		.on(
+  				'cancel.daterangepicker',
+  				function(ev, picker) {
+  					/* console
+  							.log("cancel event fired"); */
+  				});
+  $('#options1').click(
+  		function() {
+  			$('#reportrange').data(
+  					'daterangepicker')
+  					.setOptions(
+  							optionSet1,
+  							cb);
+  		});
+  $('#options2').click(
+  		function() {
+  			$('#reportrange').data(
+  					'daterangepicker')
+  					.setOptions(
+  							optionSet2,
+  							cb);
+  		});
+  $('#destroy').click(
+  		function() {
+  			$('#reportrange').data(
+  					'daterangepicker')
+  					.remove();
+  		});
+  		//}
+  								});
+                // set attribute for the form
+      //$('#trackerform').attr("action","ExportJSON");
+      //$('#dateform').attr("action","ExportJSON");
+
+
+  //$('#config-demo').daterangepicker(options, function(start, end, label) { console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')'); });
+});
 </script>
 </body>
 </html>
