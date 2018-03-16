@@ -288,11 +288,11 @@ border-radius:15px;
 -moz-box-shadow: -3px 3px 12px -2px rgba(0,0,0,0.75);
 box-shadow: -3px 3px 12px -2px rgba(0,0,0,0.75);
 }
-#reportrange
+#reportrange, #custom
 {
 font-weight: 700;
 }
-#reportrange:hover
+#reportrange:hover, #custom:hover
 {
 cursor: pointer;
 }

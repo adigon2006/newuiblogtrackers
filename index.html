@@ -42,7 +42,7 @@
 
 <div class="col-md-6 text-right mt10">
 <div class="text-primary demo"><h6 id="reportrange">Date: <span>02/21/18 - 02/28/18</span></h6></div>
-<div>Day Week Month Year Custom</div>
+<div>Day Week Month Year <b id="custom" class="text-primary">Custom</b></div>
 </div>
 </div>
 
@@ -124,7 +124,7 @@
 
 
 </div>
-<div class="row mb40">
+<div class="row row-eq-height mb40">
   <div class="col-md-6 mt20 ">
     <div class="card card-style mt20">
       <div class="card-body  p30 pt5 pb5">
@@ -220,7 +220,7 @@ $(document).ready(function() {
   	// else{
   		// $('#reportrange span').html('${datepicked}');
       $('#reportrange span').html(moment().subtract('days', 500).format('MMMM D YYYY') + ' - ' + moment().format('D MMMM YYYY'))
-  		$('#reportrange').daterangepicker(optionSet1, cb);
+  		$('#reportrange, #custom').daterangepicker(optionSet1, cb);
   		$('#reportrange')
   		.on(
   				'show.daterangepicker',
