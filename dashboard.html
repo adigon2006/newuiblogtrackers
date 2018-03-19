@@ -12,7 +12,12 @@
   <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.css" />
   <link rel="stylesheet" href="assets/fonts/iconic/css/open-iconic.css" />
  <link rel="stylesheet" href="assets/vendors/bootstrap-daterangepicker/daterangepicker.css" />
+ <link rel="stylesheet" href="assets/css/table.css" />
+ <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
+
+<link rel="stylesheet" href="assets/css/daterangepicker.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+
   <!--end of bootsrap -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -146,9 +151,127 @@
 <div class="row mb40">
   <div class="col-md-12 mt10 ">
     <div class="card mt20">
-      <div class="card-body  p30 pt5 pb5">
-        <div style="min-height: 420px;">
+      <div class="card-body  p0 pt40 pb40">
+        <div style="min-height: 450px;">
+    <div class=" p10 pb5 pt0" role="group">
+    Export Options
+  </div>
+          <table id="example" class="display nowrap" style="width:100%">
+                  <thead>
+                      <tr>
+                          <th>Blog</th>
+                          <th>Posts</th>
+                          <th>Subscribers</th>
+                          <th>Frequency</th>
+                          <th>Sentiments</th>
+                          <th>Language</th>
+                          <th>Location</th>
 
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Blog</td>
+                          <td>Posts</td>
+                          <td>Subscribers</td>
+                          <td>Frequency</td>
+                          <td>Sentiments</td>
+                          <td>Language</td>
+                          <td>Location</td>
+
+                      </tr>
+                      <tr>
+                          <td>Blog</td>
+                          <td>Posts</td>
+                          <td>Subscribers</td>
+                          <td>Frequency</td>
+                          <td>Sentiments</td>
+                          <td>Language</td>
+                          <td>Location</td>
+
+                      </tr>
+                      <tr>
+                          <td>Blog</td>
+                          <td>Posts</td>
+                          <td>Subscribers</td>
+                          <td>Frequency</td>
+                          <td>Sentiments</td>
+                          <td>Language</td>
+                          <td>Location</td>
+
+                      </tr>
+                      <tr>
+                          <td>Blog</td>
+                          <td>Posts</td>
+                          <td>Subscribers</td>
+                          <td>Frequency</td>
+                          <td>Sentiments</td>
+                          <td>Language</td>
+                          <td>Location</td>
+
+                      </tr>
+                      <tr>
+                          <td>Blog</td>
+                          <td>Posts</td>
+                          <td>Subscribers</td>
+                          <td>Frequency</td>
+                          <td>Sentiments</td>
+                          <td>Language</td>
+                          <td>Location</td>
+
+                      </tr>
+                      <tr>
+                          <td>Blog</td>
+                          <td>Posts</td>
+                          <td>Subscribers</td>
+                          <td>Frequency</td>
+                          <td>Sentiments</td>
+                          <td>Language</td>
+                          <td>Location</td>
+
+                      </tr>
+                      <tr>
+                          <td>Blog</td>
+                          <td>Posts</td>
+                          <td>Subscribers</td>
+                          <td>Frequency</td>
+                          <td>Sentiments</td>
+                          <td>Language</td>
+                          <td>Location</td>
+
+                      </tr>
+                      <tr>
+                          <td>Blog</td>
+                          <td>Posts</td>
+                          <td>Subscribers</td>
+                          <td>Frequency</td>
+                          <td>Sentiments</td>
+                          <td>Language</td>
+                          <td>Location</td>
+
+                      </tr>
+                      <tr>
+                          <td>Blog</td>
+                          <td>Posts</td>
+                          <td>Subscribers</td>
+                          <td>Frequency</td>
+                          <td>Sentiments</td>
+                          <td>Language</td>
+                          <td>Location</td>
+
+                      </tr>
+                      <tr>
+                          <td>Blog</td>
+                          <td>Posts</td>
+                          <td>Subscribers</td>
+                          <td>Frequency</td>
+                          <td>Sentiments</td>
+                          <td>Language</td>
+                          <td>Location</td>
+
+                      </tr>
+                  </tbody>
+              </table>
         </div>
           </div>
     </div>
@@ -176,6 +299,29 @@
 
 <script src="assets/vendors/bootstrap-daterangepicker/moment.js"></script>
 <script src="assets/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- Start for tables  -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "scrollY": 430,
+        "scrollX": true,
+         "pagingType": "simple",
+         dom: 'Bfrtip',
+      buttons:{
+        buttons: [
+            { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'}
+        ]
+      }
+    } );
+} );
+</script>
+<!--end for table  -->
 <script>
 $(document).ready(function() {
   $(document)
