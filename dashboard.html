@@ -13,14 +13,14 @@
   <link rel="stylesheet" href="assets/fonts/iconic/css/open-iconic.css" />
  <link rel="stylesheet" href="assets/vendors/bootstrap-daterangepicker/daterangepicker.css" />
  <link rel="stylesheet" href="assets/css/table.css" />
- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
-
+ <link rel="stylesheet" href="assets/vendors/DataTables/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" />
 <link rel="stylesheet" href="assets/css/daterangepicker.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <!--end of bootsrap -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="assets/js/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </head>
 <body style="background-color:#ffffff;">
 
@@ -153,10 +153,10 @@
     <div class="card mt20">
       <div class="card-body  p0 pt40 pb40">
         <div style="min-height: 450px;">
-    <div class=" p10 pb5 pt0" role="group">
+    <div class="p15 pb5 pt0" role="group">
     Export Options
   </div>
-          <table id="example" class="display nowrap" style="width:100%">
+          <table id="DataTables_Table_0_wrapper" class="display nowrap" style="width:100%">
                   <thead>
                       <tr>
                           <th>Blog</th>
@@ -293,29 +293,36 @@
   </footer>
 
 
- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+ <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.js">
 </script>
 
 <script src="assets/vendors/bootstrap-daterangepicker/moment.js"></script>
 <script src="assets/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- Start for tables  -->
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="assets/vendors/DataTables/dataTables.min.js"></script>
+<script type="text/javascript" src="assets/vendors/DataTables/dataTables.bootstrap4.min.js"></script>
+<script src="assets/vendors/DataTables/buttons-1.5.1/js/buttons.flash.min.js"></script>
+<script src="assets/vendors/DataTables/Buttons-1.5.1/js/dataTables.buttons.min.js"></script>
+<script src="assets/vendors/DataTables/pdfmake-0.1.32/pdfmake.min.js"></script>
+<script src="assets/vendors/DataTables/pdfmake-0.1.32/vfs_fonts.js"></script>
+<script src="assets/vendors/DataTables/buttons-1.5.1/js/buttons.html5.min.js"></script>
+<script src="assets/vendors/DataTables/buttons-1.5.1/js/buttons.print.min.js"></script>
+
 <script>
 $(document).ready(function() {
-    $('#example').DataTable( {
+    $('#DataTables_Table_0_wrapper').DataTable( {
         "scrollY": 430,
         "scrollX": true,
          "pagingType": "simple",
          dom: 'Bfrtip',
       buttons:{
         buttons: [
-            { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'}
+            { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
+            {extend:'csv',className: 'btn-primary stylebutton1'},
+            {extend:'excel',className: 'btn-primary stylebutton1'},
+            {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy to Clipboard'},
+            {extend:'print',className: 'btn-primary stylebutton1'},
         ]
       }
     } );
@@ -334,7 +341,7 @@ $(document).ready(function() {
         };
 
         var optionSet1 =
-      	      {   startDate: moment().subtract('days', 29),
+      	      {   startDate: moment().subtract(29, 'days'),
       	          endDate: moment(),
       	          minDate: '01/01/1947',
       	          maxDate: moment(),
@@ -381,7 +388,7 @@ $(document).ready(function() {
     //
   	// else{
   		// $('#reportrange span').html('${datepicked}');
-      $('#reportrange span').html(moment().subtract('days', 500).format('MMMM D YYYY') + ' - ' + moment().format('D MMMM YYYY'))
+      $('#reportrange span').html(moment().subtract( 500, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'))
   		$('#reportrange, #custom').daterangepicker(optionSet1, cb);
   		$('#reportrange')
   		.on(
