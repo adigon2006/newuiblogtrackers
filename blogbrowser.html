@@ -16,330 +16,192 @@
  <link rel="stylesheet" href="assets/vendors/DataTables/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet" href="assets/vendors/DataTables/Buttons-1.5.1/css/buttons.dataTables.min.css" />
 <link rel="stylesheet" href="assets/css/daterangepicker.css" />
+
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <!--end of bootsrap -->
-  <script src="assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="assets/js/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/js/popper.min.js" ></script>
 </head>
 <body style="background-color:#ffffff;">
 
-  <nav class="navbar navbar-inverse bg-primary">
-    <div class="container-fluid">
-      <ul class="nav main-menu">
-        <li><a href="#"><i class="icon-user-plus"></i>Home</a></li>
-        <li><a href="#"><i class="icon-cog5"></i> Trackers</a></li>
-        <li><a href="#"><i class="icon-help"></i> Favourites</a></li>
+<nav class="navbar navbar-inverse bg-primary">
+  <div class="container-fluid">
+    <ul class="nav main-menu">
+      <li><a href="#"><i class="icon-user-plus"></i>Home</a></li>
+      <li><a href="#"><i class="icon-cog5"></i> Trackers</a></li>
+      <li><a href="#"><i class="icon-help"></i> Favourites</a></li>
 
-      </ul>
-        <div class="navbar-header">
+    </ul>
+      <div class="navbar-header">
 
-          <a class="navbar-brand text-center" href="#">Logo</a>
-        </div>
-        <ul class="nav navbar-nav">
-   <li class="dropdown dropdown-user cursor-pointer">
-  <a class="dropdown-toggle" data-toggle="dropdown">
-  <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="border-white" />
-  <span>Hayder</span>
-  <ul class="dropdown-menu">
-  						<li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
-  						<li><a href="#"><i class="icon-cog5"></i> Features</a></li>
-  						<li><a href="#"><i class="icon-help"></i> Help</a></li>
-  						<li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
-  </ul>
-  </a>
-
-   </li>
-        </ul>
+        <a class="navbar-brand text-center" href="#">Logo</a>
       </div>
-    </nav>
-<div class="container">
-<div class="row">
-<div class="col-md-6 paddi">
-<nav class="breadcrumb">
-  <a class="breadcrumb-item text-primary" href="#">MY TRACKER</a>
-  <a class="breadcrumb-item text-primary" href="#">Second Tracker</a>
-  <a class="breadcrumb-item active text-primary" href="#">Blogger Info</a>
+      <ul class="nav navbar-nav">
+ <li class="dropdown dropdown-user cursor-pointer">
+<a class="dropdown-toggle" data-toggle="dropdown">
+<img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="border-white" />
+<span>Hayder</span>
+<ul class="dropdown-menu">
+						<li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
+						<li><a href="#"><i class="icon-cog5"></i> Features</a></li>
+						<li><a href="#"><i class="icon-help"></i> Help</a></li>
+						<li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+</ul>
+</a>
+
+ </li>
+      </ul>
+    </div>
   </nav>
-<div>Tracking: <button class="btn btn-primary stylebutton1">All Blogs</button></div>
+<div class="container">
+<div class="row mt20 mb0">
+<div class="offset-1 col-md-10 offset-1">
+<input type="search" class="form-control p30 pt10 pb10 icon-big border-none bottom-border text-center" placeholder="Search Posts" />
+</div>
 </div>
 
-<div class="col-md-6 text-right mt10">
-<div class="text-primary demo"><h6 id="reportrange">Date: <span>02/21/18 - 02/28/18</span></h6></div>
-<div>
-  <div class="btn-group mt5" data-toggle="buttons">
-  <label class="btn btn-primary btn-sm daterangebutton legitRipple"> <input type="radio" name="options" value="day" autocomplete="off" > Day
-  	</label>
-    <label class="btn btn-primary btn-sm "> <input type="radio" name="options" value="week" autocomplete="off" >Week
-  	</label>
-     <label class="btn btn-primary btn-sm "> <input type="radio" name="options" value="month" autocomplete="off" > Month
-  	</label>
-    <label class="btn btn-primary btn-sm text-center">Year <input type="radio" name="options" value="year" autocomplete="off" >
-  	</label>
-    <label class="btn btn-primary btn-sm " id="custom">Custom</label>
+<div class="row">
+<div class="col-md-12 top-border">
+<h6 class="float-left text-primary">430,002,402 posts in our knowlede database</h6>
+<h6 class="float-right text-primary">Recent <i class="fas fa-chevron-down"></i><h6/>
+</div>
+</div>
+
+<div class="card-columns pt10 pb10  mt10 mb10">
+<div class="card mb30" >
+<div class="text-center"><i class="fas text-medium pt40 fa-check light-text icon-big"></i></div>
+<h4 class="text-primary text-center pt40">Crooks and Liars</h4>
+<div class="text-center"><button class="btn btn-primary stylebutton3">TRACKING</button> <button class="btn btn-primary stylebutton2">Tracks | 100,000,315</button></div>
+  <div class="card-body">
+    <h3 class="card-title text-primary text-center pb20">Apple Employees forced to phone 911 for workers injured after walking into glass walls</h3>
+    <p class="card-text text-center author mb0 light-text">Richard Young</p>
+    <p class="card-text text-center postdate light-text">January 12, 2018 3:11pm</p>
+
   </div>
-
-  <!-- Day Week Month Year <b id="custom" class="text-primary">Custom</b> -->
-
-</div>
-</div>
+  <img class="card-img-top pt30 pb30" src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" alt="Card image cap">
+  <div class="text-center"><i class="fas fa-heart text-medium pb30  light-text icon-big"></i></div>
 </div>
 
-<div class="row p40 pt10 pb10 border-top-bottom mt20 mb20">
-  <div class="col-md-2">
-<small class="text-primary">Blogs</small>
-<h2 class="text-primary styleheading">200 <br/><small class="text-small text-success">12%</small><div class="circle"></div></h2>
-</div>
 
-<div class="col-md-2">
-<small class="text-primary">Bloggers</small>
-<h2 class="text-primary">58 <br/><small class="text-small text-success">12%</small></h2>
-</div>
 
-<div class="col-md-2">
-<small class="text-primary">Subscribers</small>
-<h2 class="text-primary">40,0000 <br/><small class="text-small text-danger">5%</small></h2>
-</div>
 
-<div class="col-md-2">
-<small class="text-primary">Posts</small>
-<h2 class="text-primary">16,0000 <br/><small class="text-small text-success">5%</small></h2>
-</div>
 
-<div class="col-md-2">
-<small class="text-primary">Frequency</small>
-<h2 class="text-primary">1.5 <br/><small class="text-small text-success">5%</small></h2>
-</div>
+  <div class="card mb30">
+  <div class="text-center"><i class="fas text-medium pt40 fa-check light-text icon-big"></i></div>
+  <h4 class="text-primary text-center pt40">Crooks and Liars</h4>
+  <div class="text-center"><button class="btn btn-primary stylebutton3">TRACKING</button> <button class="btn btn-primary stylebutton2">Tracks | 100,000,315</button></div>
+    <div class="card-body">
+      <h3 class="card-title text-primary text-center pb20">Apple Employees forced to phone 911 for workers injured after walking into glass walls</h3>
+      <p class="card-text text-center author mb0 light-text">Richard Young</p>
+      <p class="card-text text-center postdate light-text">January 12, 2018 3:11pm</p>
 
-<div class="col-md-2">
-<small class="text-primary">Overall Sentiments</small>
-<h2 class="text-primary">Positive <br/><small class="text-small text-success">5%</small></h2>
-</div>
-
-</div>
-
-<div class="row mb0">
-  <div class="col-md-6 mt20 ">
-    <div class="card mt20">
-      <div class="card-body  p30 pt5 pb5">
-        <div style="min-height: 420px;">
-
-        </div>
-          </div>
     </div>
+    <img class="card-img-top pt30 pb30" src="https://i.pinimg.com/originals/f6/6a/64/f66a6486a022f0531dcca06a32f4f9b4.jpg" alt="Card image cap">
+    <div class="text-center"><i class="fas fa-heart text-medium pb30  light-text icon-big"></i></div>
   </div>
 
-  <div class="col-md-6 mt20">
-    <div class="card mt20">
-      <div class="card-body  p30 pt5 pb5">
-        <div style="min-height: 420px;">
+  <div class="card mb30" >
+  <div class="text-center"><i class="fas text-medium pt40 fa-check light-text icon-big"></i></div>
+  <h4 class="text-primary text-center pt40">Crooks and Liars</h4>
+  <div class="text-center"><button class="btn btn-primary stylebutton3">TRACKING</button> <button class="btn btn-primary stylebutton2">Tracks | 100,000,315</button></div>
+    <div class="card-body">
+      <h3 class="card-title text-primary text-center pb20">Apple Employees forced to phone 911 for workers injured after walking into glass walls</h3>
+      <p class="card-text text-center author mb0 light-text">Richard Young</p>
+      <p class="card-text text-center postdate light-text">January 12, 2018 3:11pm</p>
 
-        </div>
-          </div>
     </div>
-  </div>
-</div>
-<!-- <form>
-<label><input type="radio" name="dataset" id="dataset" value="total" checked> Total</label>
-<label><input type="radio" name="dataset" id="dataset" value="option1"> Option 1</label>
-<label><input type="radio" name="dataset" id="dataset" value="option2"> Option 2</label>
-</form> -->
-<div class="row mb20 mt20 bottom-border">
-  <div class="col-md-3 pt10 pb0">
-  <h5 class="text-primary">Language Distribution </h5>
-  <div class="donut"></div>
+    <img class="card-img-top pt30 pb30" src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" alt="Card image cap">
+    <div class="text-center"><i class="fas fa-heart text-medium pb30  light-text icon-big"></i></div>
   </div>
 
-  <div class="col-md-3 pt10 pb0">
-  <h5 class="text-primary">Blog Distribution </h5>
-  <div class="donut"></div>
-  </div>
+  <div class="card mb30">
+  <div class="text-center"><i class="fas text-medium pt40 fa-check light-text icon-big"></i></div>
+  <h4 class="text-primary text-center pt40">Crooks and Liars</h4>
+  <div class="text-center"><button class="btn btn-primary stylebutton3">TRACKING</button> <button class="btn btn-primary stylebutton2">Tracks | 100,000,315</button></div>
+    <div class="card-body">
+      <h3 class="card-title text-primary text-center pb20">Apple Employees forced to phone 911 for workers injured after walking into glass walls</h3>
+      <p class="card-text text-center author mb0 light-text">Richard Young</p>
+      <p class="card-text text-center postdate light-text">January 12, 2018 3:11pm</p>
 
-  <div class="col-md-3 pt10 pb0">
-  <h5 class="text-primary">Blogger Distribution </h5>
-  <div class="donut"></div>
-  </div>
-
-  <div class="col-md-3 pt10 pb0">
-  <h5 class="text-primary">Post Distribution </h5>
-  <div class="donut"></div>
-  </div>
-
-</div>
-
-<div class="row mb40">
-  <div class="col-md-12 mt10 ">
-    <div class="card mt20">
-      <div class="card-body  p0 pt40 pb40">
-        <div style="min-height: 450px;">
-    <div class="p15 pb5 pt0" role="group">
-    Export Options
-  </div>
-          <table id="DataTables_Table_0_wrapper" class="display nowrap" style="width:100%">
-                  <thead>
-                      <tr>
-                          <th>Blog</th>
-                          <th>Posts</th>
-                          <th>Subscribers</th>
-                          <th>Frequency</th>
-                          <th>Sentiments</th>
-                          <th>Language</th>
-                          <th>Location</th>
-
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscribers</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                      <tr>
-                          <td>Blog</td>
-                          <td>Posts</td>
-                          <td>Subscriber</td>
-                          <td>Frequency</td>
-                          <td>Sentiments</td>
-                          <td>Language</td>
-                          <td>Location</td>
-
-                      </tr>
-                  </tbody>
-              </table>
-        </div>
-          </div>
     </div>
+    <img class="card-img-top pt30 pb30" src="https://www.npg.org.uk/assets/microsites/bp2017/images/exhibitors/500_2017_BP_Portrait_Award_work_0009.jpg" alt="Card image cap">
+    <div class="text-center"><i class="fas fa-heart text-medium pb30  light-text icon-big"></i></div>
   </div>
 
 
+  <div class="card mb30">
+  <div class="text-center"><i class="fas text-medium pt40 fa-check light-text icon-big"></i></div>
+  <h4 class="text-primary text-center pt40">Crooks and Liars</h4>
+  <div class="text-center"><button class="btn btn-primary stylebutton3">TRACKING</button> <button class="btn btn-primary stylebutton2">Tracks | 100,000,315</button></div>
+    <div class="card-body">
+      <h3 class="card-title text-primary text-center pb20">Apple Employees forced to phone 911 for workers injured after walking into glass walls</h3>
+      <p class="card-text text-center author mb0 light-text">Richard Young</p>
+      <p class="card-text text-center postdate light-text">January 12, 2018 3:11pm</p>
+
+    </div>
+    <img class="card-img-top pt30 pb30" src="https://orig00.deviantart.net/041e/f/2011/109/d/0/american_diner_2_by_oliveroettli-d3eey9i.jpg" alt="Card image cap">
+    <div class="text-center"><i class="fas fa-heart text-medium pb30  light-text icon-big"></i></div>
+  </div>
+
+
+  <div class="card mb30" >
+  <div class="text-center"><i class="fas text-medium pt40 fa-check light-text icon-big"></i></div>
+  <h4 class="text-primary text-center pt40">Crooks and Liars</h4>
+  <div class="text-center"><button class="btn btn-primary stylebutton3">TRACKING</button> <button class="btn btn-primary stylebutton2">Tracks | 100,000,315</button></div>
+    <div class="card-body">
+      <h3 class="card-title text-primary text-center pb20">Apple Employees forced to phone 911 for workers injured after walking into glass walls</h3>
+      <p class="card-text text-center author mb0 light-text">Richard Young</p>
+      <p class="card-text text-center postdate light-text">January 12, 2018 3:11pm</p>
+
+    </div>
+    <img class="card-img-top pt30 pb30" src="https://i.pinimg.com/originals/f6/6a/64/f66a6486a022f0531dcca06a32f4f9b4.jpg" alt="Card image cap">
+    <div class="text-center"><i class="fas fa-heart text-medium pb30  light-text icon-big"></i></div>
+  </div>
+
+  <div class="card mb30">
+  <div class="text-center"><i class="fas text-medium pt40 fa-check light-text icon-big"></i></div>
+  <h4 class="text-primary text-center pt40">Crooks and Liars</h4>
+  <div class="text-center"><button class="btn btn-primary stylebutton3">TRACKING</button> <button class="btn btn-primary stylebutton2">Tracks | 100,000,315</button></div>
+    <div class="card-body">
+      <h3 class="card-title text-primary text-center pb20">Apple Employees forced to phone 911 for workers injured after walking into glass walls</h3>
+      <p class="card-text text-center author mb0 light-text">Richard Young</p>
+      <p class="card-text text-center postdate light-text">January 12, 2018 3:11pm</p>
+
+    </div>
+    <img class="card-img-top pt30 pb30" src="http://4.bp.blogspot.com/-pSS3m9Y3WWM/T2ejQOItwFI/AAAAAAAAEOM/E8qq9Yuxx-w/s1600/1+Jacques+Louis+David_Self_Portrait+Jail.jpg" alt="Card image cap">
+    <div class="text-center"><i class="fas fa-heart text-medium pb30  light-text icon-big"></i></div>
+  </div>
+
+<div class="card mb30">
+<div class="text-center"><i class="fas text-medium pt40 fa-check light-text icon-big"></i></div>
+<h4 class="text-primary text-center pt40">Crooks and Liars</h4>
+<div class="text-center"><button class="btn btn-primary stylebutton3">TRACKING</button> <button class="btn btn-primary stylebutton2">Tracks | 100,000,315</button></div>
+  <div class="card-body">
+    <h3 class="card-title text-primary text-center pb20">Apple Employees forced to phone 911 for workers injured after walking into glass walls</h3>
+    <p class="card-text text-center author mb0 light-text">Richard Young</p>
+    <p class="card-text text-center postdate light-text">January 12, 2018 3:11pm</p>
+
+  </div>
+  <img class="card-img-top pt30 pb30" src="http://4.bp.blogspot.com/-pSS3m9Y3WWM/T2ejQOItwFI/AAAAAAAAEOM/E8qq9Yuxx-w/s1600/1+Jacques+Louis+David_Self_Portrait+Jail.jpg" alt="Card image cap">
+  <div class="text-center"><i class="fas fa-heart text-medium pb30  light-text icon-big"></i></div>
 </div>
 
 
-<!-- <div class="d-inline-flex p-2">I'm an inline flexbox container!</div> -->
-
-
-<!-- <div class="d-flex align-items-stretch">
-  <div class="col-md-4">Fle hfdsnfjdsfjdskfdnsjfjdskfnjsnd jfjsdfnkjsdnjfnjsdknf dsnfj kdsnf dsnfkjndsjfnjkdsnf jndskfn jdsfnjdsknfn dsnfsdjkfnsdjfsdjfnk jdsnjfn dsjfndsj nfjdsnfjndsjf kjdsnfjdskfndsjfksdfn jdsjfndsfjkdsnfjdsf nkndsjfdksnfjdsfnj dsjfndskjfnjdsfhjdbsfhd sbfhbdsh ffhbdsfh dsjfh sdbjbfdsh fbjhdsbh fbdsjfb hdsbfj dsbfx item 1</div>
-  <div class="col-md-4">Flexddsjbfjds fbdsjbjfk dsfjbdjskf item 2</div>
-  <div class="col-md-4">Flex item 3</div>
-</div> -->
 
 </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
 
 
 
