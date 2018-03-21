@@ -94,6 +94,8 @@ cursor: pointer;
 .dropdown-menu
 {
 position: absolute !important;
+right:0px;
+left:auto;
 }
 .main-menu li
 {
@@ -132,6 +134,10 @@ box-shadow: none;
 /* padding:0.1rem; */
 border: 2px solid #fff;
 border-radius: 50%;
+}
+.dropdown-menu a.dropdown-toggle
+{
+display: none;
 }
 .navbar-nav > .dropdown-user a span, .navbar-nav > .dropdown-user .dropdown-toggle::after
 {
@@ -181,7 +187,7 @@ font-weight: 700;
 }
 .icon-big
 {
-font-size: 32px;
+font-size: 26px;
 }
 .light-text
 {
