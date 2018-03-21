@@ -105,8 +105,8 @@ border-radius: 4px;
 {
 background-color: #45606f;
 }
-.main-menu li:first{
-margin-left: 0;
+.main-menu li:first-child{
+margin-left: 0px !important;
 }
 .main-menu li a{
 font-size: 16px;
