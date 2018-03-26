@@ -22,15 +22,16 @@
 <link rel="stylesheet" href="assets/vendors/DataTables/Buttons-1.5.1/css/buttons.dataTables.min.css" />
 <link rel="stylesheet" href="assets/css/daterangepicker.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
-
+<link rel="stylesheet" href="assets/css/bar.css" />
   <!--end of bootsrap -->
-  <script src="assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="assets/js/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
 </head>
 <body style="background-color:#ffffff;">
 
   <nav class="navbar navbar-inverse bg-primary">
     <div class="container-fluid">
+
       <ul class="nav main-menu">
         <li><a href="#"><i class="icon-user-plus"></i>Home</a></li>
         <li><a href="#"><i class="icon-cog5"></i> Trackers</a></li>
@@ -39,7 +40,11 @@
       </ul>
         <div class="navbar-header">
 
-          <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" width="25%" /></a>
+          <a class="navbar-brand text-center" href="#">
+
+            <img src="images/blogtrackers.png" width="22%" />
+
+          </a>
         </div>
         <ul class="nav navbar-nav">
    <li class="dropdown dropdown-user cursor-pointer">
@@ -137,7 +142,7 @@
   <div class="col-md-6 mt20">
     <div class="card mt20">
       <div class="card-body  p30 pt5 pb5">
-        <div style="min-height: 420px;">
+        <div class="bar" style="min-height: 420px;">
 
         </div>
           </div>
@@ -518,6 +523,156 @@ $(document).ready(function() {
 });
 </script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
+
+    d3.select("input[value=\"total\"]").property("checked", true);
+
+	datasetTotal = [
+        {label:"Monday", value:19},
+        {label:"Tuesday", value:5},
+        {label:"Wednesday", value:13},
+        {label:"Thursday", value:17},
+        {label:"Friday", value:19},
+        {label:"Saturday", value:27},
+        {label:"Sunday", value:30},
+    ];
+
+    // datasetOption1 = [
+    //     {label:"Monday", value:22},
+    //     {label:"Tuesday", value:33},
+    //     {label:"Wednesday", value:4},
+    //     {label:"Thursday", value:15},
+    //     {label:"Friday", value:36},
+    //     {label:"Saturday", value:0}
+    // ];
+    //
+    // datasetOption2 = [
+    //     {label:"Monday", value:10},
+    //     {label:"Tuesday", value:20},
+    //     {label:"Wednesday", value:30},
+    //     {label:"Thursday", value:5},
+    //     {label:"Friday", value:12},
+    //     {label:"Saturday", value:23}
+    // ];
+
+    // d3.selectAll("input").on("change", selectDataset);
+    //
+    // function selectDataset()
+    // {
+    //     var value = this.value;
+    //     if (value == "total")
+    //     {
+    //         change(datasetTotal);
+    //     }
+    //     else if (value == "option1")
+    //     {
+    //         change(datasetOption1);
+    //     }
+    //     else if (value == "option2")
+    //     {
+    //         change(datasetOption2);
+    //     }
+    // }
+
+    var margin = {
+    top: (parseInt(d3.select('.bar').style('height'), 10)/20),
+    right: (parseInt(d3.select('.bar').style('width'), 5)/20),
+    bottom: (parseInt(d3.select('.bar').style('height'), 5)/5),
+    left: (parseInt(d3.select('.bar').style('width'), 10)/25)},
+    width = parseInt(d3.select('.bar').style('width'), 10) - margin.left - margin.right,
+    height = parseInt(d3.select('.bar').style('height'), 10) - margin.top - margin.bottom;
+
+    var div = d3.select(".bar").append("div").attr("class", "toolTip");
+
+    var formatPercent = d3.format("");
+
+    var x = d3.scale.ordinal()
+            .rangeRoundBands([0, width], .7, 0.5);
+
+    var y = d3.scale.linear()
+            .range([height, 0]);
+
+    var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom");
+
+    var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left")
+            .tickFormat(formatPercent);
+
+    var svg = d3.select(".bar").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+    change(datasetTotal);
+
+    function change(dataset) {
+
+        x.domain(dataset.map(function(d) { return d.label; }));
+        y.domain([0, d3.max(dataset, function(d) { return d.value; })]);
+
+        svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis);
+
+        svg.select(".y.axis").remove();
+        svg.select(".x.axis").remove();
+
+        svg.append("g")
+                .attr("class", "y axis")
+                .call(yAxis)
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 6)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text("Distribution %");
+
+        var bar = svg.selectAll(".bar")
+                .data(dataset, function(d) { return d.label; });
+        // new data:
+        bar
+        .enter().append("rect")
+                .attr("class", "bar")
+                .attr("x", function(d) { return x(d.label); })
+                .attr("y", function(d) { return y(d.value); })
+                .attr("height", function(d) { return height - y(d.value); })
+                .attr("width", x.rangeBand());
+
+        bar
+        .on("mousemove", function(d){
+                  div.style("left", d3.event.pageX+10+"px");
+                    div.style("top", d3.event.pageY-25+"px");
+                    div.style("display", "inline-block");
+                    div.html((d.label)+"<br>"+(d.value)+"%");
+                });
+        bar
+        .on("mouseout", function(d){
+                    div.style("display", "none");
+                });
+
+        // removed data:
+        bar.exit().remove();
+        // updated data:
+        bar
+        .transition()
+                .duration(750)
+                .attr("y", function(d) { return y(d.value); })
+                .attr("height", function(d) { return height - y(d.value); });
+    };
+
+</script>
+
 <script>
 
 

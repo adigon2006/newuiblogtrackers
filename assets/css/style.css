@@ -14,7 +14,8 @@ display: none;
 {
 border-bottom:3px solid #17394C;
 }
-.circle {
+.circle
+{
 	border-radius: 50%;
   border-color: #17394C;
 	width: 9px;
@@ -96,6 +97,10 @@ cursor: pointer;
 position: absolute !important;
 right:0px;
 left:auto;
+}
+.navbar-brand
+{
+margin-right: 0px; 
 }
 .main-menu li
 {
