@@ -214,6 +214,19 @@ font-size: 26px;
 {
 color:#c1c1c1;
 }
+ul.profilemenu
+{
+padding:0;
+}
+ul.profilemenu li
+{
+border-bottom: 1px solid #cccccc;
+padding: 8px 0px 8px 8px;
+}
+ul.profilemenu li:last-child
+{
+border:none;
+}
 .stylebutton2
 {
 font-size: 0.7rem;
