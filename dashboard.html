@@ -74,25 +74,7 @@
 <div>Tracking: <button class="btn btn-primary stylebutton1">All Blogs</button></div>
 </div>
 
-<div class="col-md-6 text-right mt10">
-<div class="text-primary demo"><h6 id="reportrange">Date: <span>02/21/18 - 02/28/18</span></h6></div>
-<div>
-  <div class="btn-group mt5" data-toggle="buttons">
-  <label class="btn btn-primary btn-sm daterangebutton legitRipple"> <input type="radio" name="options" value="day" autocomplete="off" > Day
-  	</label>
-    <label class="btn btn-primary btn-sm "> <input type="radio" name="options" value="week" autocomplete="off" >Week
-  	</label>
-     <label class="btn btn-primary btn-sm "> <input type="radio" name="options" value="month" autocomplete="off" > Month
-  	</label>
-    <label class="btn btn-primary btn-sm text-center">Year <input type="radio" name="options" value="year" autocomplete="off" >
-  	</label>
-    <label class="btn btn-primary btn-sm " id="custom">Custom</label>
-  </div>
 
-  <!-- Day Week Month Year <b id="custom" class="text-primary">Custom</b> -->
-
-</div>
-</div>
 </div>
 
 <div class="row p40 pt10 pb10 border-top-bottom mt20 mb20">
@@ -142,7 +124,7 @@
   <div class="col-md-6 mt20">
     <div class="card mt20">
       <div class="card-body  p30 pt5 pb5">
-        <div class="bar" style="min-height: 420px;">
+        <div class="barchart" style="min-height: 420px;">
 
         </div>
           </div>
@@ -154,7 +136,7 @@
 <label><input type="radio" name="dataset" id="dataset" value="option1"> Option 1</label>
 <label><input type="radio" name="dataset" id="dataset" value="option2"> Option 2</label>
 </form> -->
-<div class="row mb20 mt20 bottom-border">
+<div class="row mb20 mt20 bottom-border hidden-md">
   <div class="col-md-3 pt10 pb0">
   <h5 class="text-primary">Language Distribution </h5>
   <div class="donut"></div>
@@ -364,8 +346,7 @@
 <script src="assets/bootstrap/js/bootstrap.js">
 </script>
 
-<script src="assets/vendors/bootstrap-daterangepicker/moment.js"></script>
-<script src="assets/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
 <!-- Start for tables  -->
 <script type="text/javascript" src="assets/vendors/DataTables/dataTables.min.js"></script>
 <script type="text/javascript" src="assets/vendors/DataTables/dataTables.bootstrap4.min.js"></script>
@@ -388,7 +369,7 @@ $(document).ready(function() {
             { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
             {extend:'csv',className: 'btn-primary stylebutton1'},
             {extend:'excel',className: 'btn-primary stylebutton1'},
-            {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy to Clipboard'},
+            {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy'},
             {extend:'print',className: 'btn-primary stylebutton1'},
         ]
       }
@@ -396,132 +377,7 @@ $(document).ready(function() {
 } );
 </script>
 <!--end for table  -->
-<script>
-$(document).ready(function() {
-  $(document)
-  						.ready(
-  								function() {
-  	var cb = function(start, end, label) {
-          //console.log(start.toISOString(), end.toISOString(), label);
-          $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-          $('#reportrange input').val(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY')).trigger('change');
-        };
 
-        var optionSet1 =
-      	      {   startDate: moment().subtract(29, 'days'),
-      	          endDate: moment(),
-      	          minDate: '01/01/1947',
-      	          maxDate: moment(),
-      			  showDropdowns: true,
-      	          showWeekNumbers: true,
-      	          timePicker : false,
-  				  timePickerIncrement : 1,
-  				  timePicker12Hour : true,
-  				  dateLimit: { days: 50000 },
-         	          ranges: {
-
-         	        	'This Year' : [
-  						moment()
-  								.startOf('year'),
-  						moment() ],
-  				'Last Year' : [
-  						moment()
-  								.subtract(1,'year').startOf('year'),
-  						moment().subtract(1,'year').endOf('year') ]
-      	          },
-      	          opens: 'left',
-      	          applyClass: 'btn-small bg-slate-600 btn-block',
-      	          cancelClass: 'btn-small btn-default btn-block',
-      	          format: 'MM/DD/YYYY',
-      			  locale: {
-      	          applyLabel: 'Submit',
-      	          //cancelLabel: 'Clear',
-      	          fromLabel: 'From',
-      	          toLabel: 'To',
-      	          customRangeLabel: 'Custom',
-      	          daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-      	          monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-      	          firstDay: 1
-      	        }
-
-      	      };
-
-
-  	// if('${datepicked}' == '')
-  	// {
-    //   $('#reportrange span').html(moment().subtract('days', 500).format('MMMM D') + ' - ' + moment().format('MMMM D'));
-    //   $('#reportrange').daterangepicker(optionSet1, cb);
-  	// }
-    //
-  	// else{
-  		// $('#reportrange span').html('${datepicked}');
-      $('#reportrange span').html(moment().subtract( 500, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'))
-  		$('#reportrange, #custom').daterangepicker(optionSet1, cb);
-  		$('#reportrange')
-  		.on(
-  				'show.daterangepicker',
-  				function() {
-  				/* 	console
-  							.log("show event fired"); */
-  				});
-  $('#reportrange')
-  		.on(
-  				'hide.daterangepicker',
-  				function() {
-  					/* console
-  							.log("hide event fired"); */
-  				});
-  $('#reportrange')
-  		.on(
-  				'apply.daterangepicker',
-  				function(ev, picker) {
-  					/* console
-  							.log("apply event fired, start/end dates are "
-  									+ picker.startDate
-  											.format('MMMM D, YYYY')
-  									+ " to "
-  									+ picker.endDate
-  											.format('MMMM D, YYYY')); */
-  				});
-  $('#reportrange')
-  		.on(
-  				'cancel.daterangepicker',
-  				function(ev, picker) {
-  					/* console
-  							.log("cancel event fired"); */
-  				});
-  $('#options1').click(
-  		function() {
-  			$('#reportrange').data(
-  					'daterangepicker')
-  					.setOptions(
-  							optionSet1,
-  							cb);
-  		});
-  $('#options2').click(
-  		function() {
-  			$('#reportrange').data(
-  					'daterangepicker')
-  					.setOptions(
-  							optionSet2,
-  							cb);
-  		});
-  $('#destroy').click(
-  		function() {
-  			$('#reportrange').data(
-  					'daterangepicker')
-  					.remove();
-  		});
-  		//}
-  								});
-                // set attribute for the form
-      //$('#trackerform').attr("action","ExportJSON");
-      //$('#dateform').attr("action","ExportJSON");
-
-
-  //$('#config-demo').daterangepicker(options, function(start, end, label) { console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')'); });
-});
-</script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 <script>
@@ -576,14 +432,14 @@ $(document).ready(function() {
     // }
 
     var margin = {
-    top: (parseInt(d3.select('.bar').style('height'), 10)/20),
-    right: (parseInt(d3.select('.bar').style('width'), 5)/20),
-    bottom: (parseInt(d3.select('.bar').style('height'), 5)/5),
-    left: (parseInt(d3.select('.bar').style('width'), 10)/25)},
-    width = parseInt(d3.select('.bar').style('width'), 10) - margin.left - margin.right,
-    height = parseInt(d3.select('.bar').style('height'), 10) - margin.top - margin.bottom;
+    top: (parseInt(d3.select('.barchart').style('height'), 10)/20),
+    right: (parseInt(d3.select('.barchart').style('width'), 5)/20),
+    bottom: (parseInt(d3.select('.barchart').style('height'), 5)/5),
+    left: (parseInt(d3.select('.barchart').style('width'), 10)/25)},
+    width = parseInt(d3.select('.barchart').style('width'), 10) - margin.left - margin.right,
+    height = parseInt(d3.select('.barchart').style('height'), 10) - margin.top - margin.bottom;
 
-    var div = d3.select(".bar").append("div").attr("class", "toolTip");
+    var divtoolTip = d3.select(".barchart").append("div").attr("class", "toolTip");
 
     var formatPercent = d3.format("");
 
@@ -602,7 +458,7 @@ $(document).ready(function() {
             .orient("left")
             .tickFormat(formatPercent);
 
-    var svg = d3.select(".bar").append("svg")
+    var svg = d3.select(".barchart").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
@@ -651,14 +507,16 @@ $(document).ready(function() {
 
         bar
         .on("mousemove", function(d){
-                  div.style("left", d3.event.pageX+10+"px");
-                    div.style("top", d3.event.pageY-25+"px");
-                    div.style("display", "inline-block");
-                    div.html((d.label)+"<br>"+(d.value)+"%");
+                  divtoolTip.style("left", d3.event.pageX-1080+"px");
+                    divtoolTip.style("top", d3.event.pageY-400+"px");
+                  //  div.style("position", "relative");
+                  //  divtoolTip.style("z-index",200);
+                    divtoolTip.style("display", "inline-block");
+                    divtoolTip.html((d.label)+"<br>"+(d.value)+"%");
                 });
         bar
         .on("mouseout", function(d){
-                    div.style("display", "none");
+                    divtoolTip.style("display", "none");
                 });
 
         // removed data:

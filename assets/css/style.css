@@ -4,6 +4,13 @@ html{
 body{
 
   background-color: #fafafa  ;
+
+}
+.mycard
+{
+background-color: #fff;
+background-clip: border-box;
+border: 1px solid rgba(0, 0, 0, 0.125);
 }
 label.btn input
 {
@@ -100,7 +107,7 @@ left:auto;
 }
 .navbar-brand
 {
-margin-right: 0px; 
+margin-right: 0px;
 }
 .main-menu li
 {
@@ -121,8 +128,17 @@ line-height: 16px;
 color: #ffffff;
 font-weight: bold;
 }
-a:hover{
+a:hover
+{
 text-decoration: none;
+color:blue;
+}
+.link{
+color:darkblue;
+}
+.opacity53
+{
+opacity: 0.53;
 }
 input[type="search"]:focus, input[type="search"]
 {
@@ -237,6 +253,22 @@ margin:40px;
 {
 margin:50px;
 }
+.m60
+{
+margin:60px;
+}
+.m70
+{
+margin:70px;
+}
+.m80
+{
+margin:80px;
+}
+.m90
+{
+margin:90px;
+}
 .m100
 {
 margin:100px;
@@ -279,6 +311,18 @@ margin-top:50px;
 {
 margin-top:60px;
 }
+.mt70
+{
+margin-top:70px;
+}
+.mt80
+{
+margin-top:80px;
+}
+.mt90
+{
+margin-top:90px;
+}
 .mt100
 {
 margin-top:100px;
@@ -312,6 +356,22 @@ margin-bottom:40px;
 .mb50
 {
 margin-bottom:50px;
+}
+.mb60
+{
+margin-bottom:60px;
+}
+.mb70
+{
+margin-bottom:70px;
+}
+.mb80
+{
+margin-bottom:80px;
+}
+.mb90
+{
+margin-bottom:90px;
 }
 .mb100
 {
@@ -352,6 +412,22 @@ padding:40px;
 {
 padding:50px;
 }
+.p60
+{
+padding:60px;
+}
+.p70
+{
+padding:70px;
+}
+.p80
+{
+padding:80px;
+}
+.p90
+{
+padding:90px;
+}
 .p100
 {
 padding:100px;
@@ -382,9 +458,25 @@ padding-top: 20px;
 {
 padding-top:40px;
 }
-.mp50
+.pt50
 {
 padding-top:50px;
+}
+.pt60
+{
+padding-top:60px;
+}
+.pt70
+{
+padding-top:70px;
+}
+.pt80
+{
+padding-top:80px;
+}
+.pt90
+{
+padding-top:90px;
 }
 .pt100
 {
@@ -419,6 +511,23 @@ padding-bottom:40px;
 .pb50
 {
 padding-bottom:50px;
+}
+
+.pb60
+{
+padding-bottom:60px;
+}
+.pb70
+{
+padding-bottom:70px;
+}
+.pb80
+{
+padding-bottom:80px;
+}
+.pb90
+{
+padding-bottom:90px;
 }
 .pb100
 {
@@ -489,4 +598,10 @@ cursor: pointer;
 footer p{
 color: #ffffff;
 
+}
+footer
+{
+position: fixed;
+bottom:0;
+width: 100%;
 }
