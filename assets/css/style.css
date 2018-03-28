@@ -192,6 +192,33 @@ margin-bottom: 0px;
 {
 font-weight: 700;
 }
+.btn-rounded
+{
+border-radius: 100px;
+padding: 8px 10px;
+}
+.fa,
+.fas,
+.far,
+.fal,
+.fab {
+    /* font-family: 'icomoon'; */
+    speak: none;
+    line-height: 1;
+    min-width: 1em;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+  .stickyoptions
+  {
+  width:50px;
+  line-height:50px;
+  position: absolute;
+  right:-100px;
+  }
 .stylebutton1
 {
 font-size: 0.7rem;
@@ -210,6 +237,10 @@ font-weight: 700;
 {
 font-size: 26px;
 }
+.icon-small
+{
+font-size: 20px;
+}
 .light-text
 {
 color:#c1c1c1;
@@ -222,6 +253,9 @@ ul.profilemenu li
 {
 border-bottom: 1px solid #cccccc;
 padding: 8px 0px 8px 8px;
+}
+ul.profilemenu li a{
+text-transform: capitalize;
 }
 ul.profilemenu li:last-child
 {
