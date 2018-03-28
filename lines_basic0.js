@@ -1,8 +1,8 @@
 /* ------------------------------------------------------------------------------
  *
- *  # D3.js - vertical bar chart
+ *  # D3.js - basic line chart
  *
- *  Demo d3.js vertical bar chart setup with .tsv data source
+ *  Demo d3.js line chart setup with tooltip and .tsv data source
  *
  *  Version: 1.0
  *  Latest update: August 1, 2015
@@ -12,10 +12,10 @@
 $(function () {
 
     // Initialize chart
-    barVertical('#d3-bar-vertical', 400);
+    lineBasic('#d3-line-basic', 400);
 
     // Chart setup
-    function barVertical(element, height) {
+    function lineBasic(element, height) {
 
 
         // Basic setup
@@ -23,9 +23,15 @@ $(function () {
 
         // Define main variables
         var d3Container = d3.select(element),
-            margin = {top: 5, right: 10, bottom: 20, left: 40},
+            margin = {top: 5, right: 20, bottom: 20, left: 40},
             width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
             height = height - margin.top - margin.bottom - 5;
+
+        // Format data
+        var parseDate = d3.time.format("%d-%b-%y").parse,
+            bisectDate = d3.bisector(function(d) { return d.date; }).left,
+            formatValue = d3.format(",.2f"),
+            formatCurrency = function(d) { return "$" + formatValue(d); }
 
 
 
@@ -33,15 +39,12 @@ $(function () {
         // ------------------------------
 
         // Horizontal
-        var x = d3.scale.ordinal()
-            .rangeRoundBands([0, width], .1, .5);
+        var x = d3.time.scale()
+            .range([0, width]);
 
         // Vertical
         var y = d3.scale.linear()
             .range([height, 0]);
-
-        // Color
-        var color = d3.scale.category20c();
 
 
 
@@ -51,13 +54,14 @@ $(function () {
         // Horizontal
         var xAxis = d3.svg.axis()
             .scale(x)
-            .orient("bottom");
+            .orient("bottom")
+            .ticks(6)
+            .tickFormat(d3.time.format("%b"));
 
         // Vertical
         var yAxis = d3.svg.axis()
             .scale(y)
-            .orient("left")
-            .ticks(10, "%");
+            .orient("left");
 
 
 
@@ -76,14 +80,31 @@ $(function () {
 
 
 
+        // Construct chart layout
+        // ------------------------------
+
+        // Line
+        var line = d3.svg.line()
+            .interpolate("basis")
+            .x(function(d) { return x(d.date); })
+            .y(function(d) { return y(d.close); });
+
+
+
         // Load data
         // ------------------------------
 
-        d3.json("bars_basic.tsv", function(error, data) {
+        d3.tsv("lines_basic.tsv", function(error, data) {
 
             // Pull out values
             data.forEach(function(d) {
-                d.frequency = +d.frequency;
+                d.date = parseDate(d.date);
+                d.close = +d.close;
+            });
+
+            // Sort data
+            data.sort(function(a, b) {
+                return a.date - b.date;
             });
 
 
@@ -91,15 +112,26 @@ $(function () {
             // ------------------------------
 
             // Horizontal
-            x.domain(data.map(function(d) { return d.letter; }));
+            x.domain(d3.extent(data, function(d) { return d.date; }));
 
             // Vertical
-            y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+            y.domain([0, d3.max(data, function(d) { return d.close; })]);
 
 
             //
             // Append chart elements
             //
+
+            // Add line
+            svg.append("path")
+                .datum(data)
+                    .attr("class", "d3-line d3-line-medium")
+                    .attr("d", line)
+                    .style("fill", "none")
+                    .style("stroke-width", 2)
+                    .style("stroke", "#4CAF50");
+
+
 
             // Append axes
             // ------------------------------
@@ -123,20 +155,51 @@ $(function () {
                 .style("text-anchor", "end")
                 .style("fill", "#999")
                 .style("font-size", 12)
-                .text("Frequency");
+                .text("Price ($)");
 
 
-            // Add bars
-            svg.selectAll(".d3-bar")
-                .data(data)
-                .enter()
-                .append("rect")
-                    .attr("class", "d3-bar")
-                    .attr("x", function(d) { return x(d.letter); })
-                    .attr("width", x.rangeBand())
-                    .attr("y", function(d) { return y(d.frequency); })
-                    .attr("height", function(d) { return height - y(d.frequency); })
-                    .style("fill", function(d) { return color(d.letter); });
+
+
+            // Append tooltip
+            // -------------------------
+
+            // Group elements
+            var focus = svg.append("g")
+                .attr("class", "d3-crosshair-pointer")
+                .style("display", "none");
+
+            // Pointer
+            focus.append("circle")
+                .attr("r", 3.5)
+                .style("fill", "#fff")
+                .style("stroke", "#4CAF50")
+                .style("stroke-width", 2);
+
+            // Text
+            focus.append("text")
+                .attr("dy", ".35em")
+                .style("fill", "#333")
+                .style("stroke", "none")
+
+            // Overlay
+            svg.append("rect")
+                .attr("class", "d3-crosshair-overlay")
+                .attr("width", width)
+                .attr("height", height)
+                .on("mouseover", function() { focus.style("display", null); })
+                .on("mouseout", function() { focus.style("display", "none"); })
+                .on("mousemove", mousemove);
+
+            // Display tooltip on mousemove
+            function mousemove() {
+                var x0 = x.invert(d3.mouse(this)[0]),
+                i = bisectDate(data, x0, 1),
+                d0 = data[i - 1],
+                d1 = data[i],
+                d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+                focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
+                focus.select("text").text(formatCurrency(d.close)).attr("dx", -26).attr("dy", 30);
+            }
         });
 
 
@@ -175,7 +238,7 @@ $(function () {
             // -------------------------
 
             // Horizontal range
-            x.rangeRoundBands([0, width], .1, .5);
+            x.range([0, width]);
 
             // Horizontal axis
             svg.selectAll('.d3-axis-horizontal').call(xAxis);
@@ -185,7 +248,10 @@ $(function () {
             // -------------------------
 
             // Line path
-            svg.selectAll('.d3-bar').attr("x", function(d) { return x(d.letter); }).attr("width", x.rangeBand());
+            svg.selectAll('.d3-line').attr("d", line);
+
+            // Crosshair
+            svg.selectAll('.d3-crosshair-overlay').attr("width", width);
         }
     }
 });
