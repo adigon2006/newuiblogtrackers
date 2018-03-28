@@ -37,6 +37,10 @@ border-bottom:3px solid #17394C;
 {
 font-size:20px;
 }
+.text-xsmall
+{
+font-size:16px;
+}
 .noborder
 {
 border:none;
@@ -99,6 +103,7 @@ border-radius: 50%;
 {
 cursor: pointer;
 }
+
 .dropdown-menu
 {
 position: absolute !important;
@@ -651,4 +656,56 @@ footer
 position: fixed;
 bottom:0;
 width: 100%;
+}
+.mobile-menu li a
+{
+  font-size: 16px;
+  line-height: 16px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.mobile-menu li
+{
+padding: 15px 10px;
+}
+.mobile-menu li:hover, .activemenu
+{
+background-color: #45606f;
+
+}
+
+/* start of line chart */
+.axis {
+	font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #D4D8DA;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: #1e505e;
+  stroke-width: 5px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: #F1F3F3;
+  stroke: #6F257F;
+  stroke-width: 5px;
+}
+
+.hover-line {
+  stroke: #6F257F;
+  stroke-width: 2px;
+  stroke-dasharray: 3,3;
 }

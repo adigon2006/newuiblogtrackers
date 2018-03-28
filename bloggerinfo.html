@@ -23,25 +23,29 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <!--end of bootsrap -->
-  <script src="assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="assets/js/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="assets/js/jquery-3.2.1.slim.min.js" ></script>
+<script src="assets/js/popper.min.js"></script>
 </head>
 <body>
 
   <nav class="navbar navbar-inverse bg-primary">
     <div class="container-fluid">
-      <ul class="nav main-menu">
+      <ul class="nav d-none d-lg-inline-flex d-xl-inline-flex  main-menu">
         <li><a href="#"><i class="icon-user-plus"></i>Home</a></li>
         <li><a href="#"><i class="icon-cog5"></i> Trackers</a></li>
         <li><a href="#"><i class="icon-help"></i> Favourites</a></li>
 
       </ul>
-        <div class="navbar-header">
-
-          <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" width="25%" /></a>
-        </div>
-        <ul class="nav navbar-nav">
-   <li class="dropdown dropdown-user cursor-pointer">
+<nav class="navbar navbar-dark bg-primary float-left d-md-block d-sm-block d-xs-block d-lg-none d-xl-none">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+</nav>
+<div class="navbar-header d-none d-lg-inline-flex d-xl-inline-flex ">
+<a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" width="25%" /></a>
+</div>
+  <ul class="nav navbar-nav">
+  <li class="dropdown dropdown-user cursor-pointer">
   <a class="dropdown-toggle" data-toggle="dropdown">
   <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="border-white" />
   <span>Hayder</span>
@@ -55,6 +59,20 @@
 
    </li>
         </ul>
+      <div class="col-md-12 bg-dark d-md-block d-sm-block d-xs-block d-lg-none d-xl-none p0 mt20">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <ul class="navbar-nav mr-auto mobile-menu">
+              <li class="nav-item active">
+                <a class="" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Trackers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Favourites</a>
+              </li>
+            </ul>
+    </div>
       </div>
     </nav>
 <div class="container">
@@ -96,7 +114,7 @@
 </div>
   <div class="col-md-10">
   <small class="text-primary">Find Blogger</small>
-  <input class="form-control inputboxstyle" placeholder="| Search" />
+  <input class="form-control inputboxstyle opacity53" placeholder="| Search" />
   </div>
 </div>
 
@@ -109,6 +127,7 @@
       <small class="text-success">+5% from last week</small>
         </div>
   </div>
+  <a href="">
   <div class="card card-style mt20">
     <div class="card-body  p30 pt5 pb5">
       <h6 class="card-title mb0">Top Keyword</h6>
@@ -116,6 +135,7 @@
       <small class="text-success">+5% from last week</small>
         </div>
   </div>
+</a>
   <div class="card card-style mt20">
     <div class="card-body  p30 pt5 pb5">
       <h6 class="card-title mb0">Posts</h6>
@@ -149,21 +169,23 @@
   <div class="card card-style mt20">
     <div class="card-body  p30 pt5 pb5">
       <div style="min-height: 420px;">
-
+<div><p class="text-primary mt10 float-right">Post Published by <b>Advonum</b></p></div>
+<!-- <svg class="linesvg" width="960" height="400"></svg> -->
+<!-- <div id="lineplot" style="min-height: 380px;"></div> -->
       </div>
         </div>
   </div>
 
-  <div class="card card-style mt20 pt50 pb0">
-    <div class="card-body  p20 pt0 pb0">
+  <div class="card card-style mt20 pt10 pb0">
+    <div class="card-body p20 pt0 pb0">
       <div class="row ">
-      <div class="col-md-4 "><h5 class="p20 pb0 text-primary">Most Popular Day</h5>
+      <div class="col-md-4 "><h5 class="p20 pt0 pb0 text-primary">Most Popular Day</h5>
 <div class="donut"></div>
       </div>
-        <div class="col-md-4"><h5 class="p20 pb0 text-primary">Most Popular Month</h5>
+        <div class="col-md-4"><h5 class="p20 pt0 pb0 text-primary">Most Popular Month</h5>
 <div class="donut"></div>
         </div>
-          <div class="col-md-4"><h5 class="p20 pb0 text-primary">Overall Sentiment</h5>
+          <div class="col-md-4"><h5 class="p20 pt0 pb0 text-primary">Overall Sentiment</h5>
 <div class="donut"></div>
           </div>
         </div>
@@ -173,7 +195,7 @@
 
 
 </div>
-<div class="row row-eq-height mb40">
+<div class="row mb80">
   <div class="col-md-6 mt20 ">
     <div class="card card-style mt20">
       <div class="card-body  p5 pt10 pb10">
@@ -764,5 +786,44 @@ function change(data) {
 };
 
 </script>
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+var trace1 = {
+  x: [1, 2, 3, 4],
+  y: [10, 15, 13, 17],
+  mode: 'markers',
+  name: 'Scatter'
+};
+
+var trace2 = {
+  x: [2, 3, 4, 5],
+  y: [16, 5, 11, 9],
+  mode: 'lines',
+  name: 'Lines'
+};
+
+var trace3 = {
+  x: [1, 2, 3, 4],
+  y: [12, 9, 15, 12],
+  mode: 'lines+markers',
+  name: 'Scatter and Lines'
+};
+
+var data = [trace1, trace2, trace3];
+
+var layout = {
+  title: 'Title of the Graph',
+  xaxis: {
+    title: 'x-axis title'
+  },
+  yaxis: {
+    title: 'y-axis title'
+  }
+};
+
+Plotly.newPlot('lineplot', data, layout);
+
+</script> -->
+
 </body>
 </html>

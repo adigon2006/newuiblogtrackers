@@ -31,36 +31,49 @@
 
   <nav class="navbar navbar-inverse bg-primary">
     <div class="container-fluid">
-
-      <ul class="nav main-menu">
+      <ul class="nav d-none d-lg-inline-flex d-xl-inline-flex  main-menu">
         <li><a href="#"><i class="icon-user-plus"></i>Home</a></li>
         <li><a href="#"><i class="icon-cog5"></i> Trackers</a></li>
         <li><a href="#"><i class="icon-help"></i> Favourites</a></li>
 
       </ul>
-        <div class="navbar-header">
-
-          <a class="navbar-brand text-center" href="#">
-
-            <img src="images/blogtrackers.png" width="22%" />
-
-          </a>
-        </div>
-        <ul class="nav navbar-nav">
-   <li class="dropdown dropdown-user cursor-pointer">
+  <nav class="navbar navbar-dark bg-primary float-left d-md-block d-sm-block d-xs-block d-lg-none d-xl-none">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  </nav>
+  <div class="navbar-header d-none d-lg-inline-flex d-xl-inline-flex ">
+  <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" width="25%" /></a>
+  </div>
+  <ul class="nav navbar-nav">
+  <li class="dropdown dropdown-user cursor-pointer">
   <a class="dropdown-toggle" data-toggle="dropdown">
   <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="border-white" />
   <span>Hayder</span>
   <ul class="profilemenu dropdown-menu dropdown-menu-left">
-  						<li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
-  						<li><a href="#"><i class="icon-cog5"></i> Features</a></li>
-  						<li><a href="#"><i class="icon-help"></i> Help</a></li>
-  						<li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+              <li><a href="#"> My profile</a></li>
+              <li><a href="#"> Features</a></li>
+              <li><a href="#"> Help</a></li>
+              <li><a href="#">Logout</a></li>
   </ul>
   </a>
 
    </li>
         </ul>
+      <div class="col-md-12 bg-dark d-md-block d-sm-block d-xs-block d-lg-none d-xl-none p0 mt20">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <ul class="navbar-nav mr-auto mobile-menu">
+              <li class="nav-item active">
+                <a class="" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Trackers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Favourites</a>
+              </li>
+            </ul>
+    </div>
       </div>
     </nav>
 <div class="container">
@@ -69,7 +82,7 @@
 <nav class="breadcrumb">
   <a class="breadcrumb-item text-primary" href="#">MY TRACKER</a>
   <a class="breadcrumb-item text-primary" href="#">Second Tracker</a>
-  <a class="breadcrumb-item active text-primary" href="#">Blogger Info</a>
+  <a class="breadcrumb-item active text-primary" href="#">Dashboard</a>
   </nav>
 <div>Tracking: <button class="btn btn-primary stylebutton1">All Blogs</button></div>
 </div>
@@ -124,7 +137,8 @@
   <div class="col-md-6 mt20">
     <div class="card mt20">
       <div class="card-body  p30 pt5 pb5">
-        <div class="barchart" style="min-height: 420px;">
+        <div><p class="text-primary mt10 float-right">Active <b>Blogs</b> During Past <b>Week</b></p></div>
+        <div class="barchart" style="min-height: 365px;">
 
         </div>
           </div>
@@ -434,7 +448,7 @@ $(document).ready(function() {
     var margin = {
     top: (parseInt(d3.select('.barchart').style('height'), 10)/20),
     right: (parseInt(d3.select('.barchart').style('width'), 5)/20),
-    bottom: (parseInt(d3.select('.barchart').style('height'), 5)/5),
+    bottom: (parseInt(d3.select('.barchart').style('height'), 10)/9),
     left: (parseInt(d3.select('.barchart').style('width'), 10)/25)},
     width = parseInt(d3.select('.barchart').style('width'), 10) - margin.left - margin.right,
     height = parseInt(d3.select('.barchart').style('height'), 10) - margin.top - margin.bottom;
@@ -492,7 +506,7 @@ $(document).ready(function() {
                 .attr("y", 6)
                 .attr("dy", ".71em")
                 .style("text-anchor", "end")
-                .text("Distribution %");
+                .text("Frequency");
 
         var bar = svg.selectAll(".bar")
                 .data(dataset, function(d) { return d.label; });
