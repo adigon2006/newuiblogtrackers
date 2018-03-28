@@ -127,7 +127,7 @@
   <div class="col-md-6 mt20 ">
     <div class="card mt20">
       <div class="card-body  p30 pt5 pb5">
-        <div style="min-height: 450px;">
+        <div style="min-height: 420px;">
 
         </div>
           </div>
@@ -138,9 +138,8 @@
     <div class="card mt20">
       <div class="card-body  p30 pt5 pb5">
         <div><p class="text-primary mt10 float-right">Active <b>Blogs</b> During Past <b>Week</b></p></div>
-        <div class="chart-container" >
-        <div class="chart" id="d3-bar-vertical">
-                      </div>
+        <div class="barchart" style="min-height: 365px;">
+
         </div>
           </div>
     </div>
@@ -174,7 +173,7 @@
 
 </div>
 
-<div class="row mb100">
+<div class="row mb40">
   <div class="col-md-12 mt10 ">
     <div class="card mt20">
       <div class="card-body  p0 pt40 pb40">
@@ -393,225 +392,159 @@ $(document).ready(function() {
 </script>
 <!--end for table  -->
 
-<!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
-<script type="text/javascript" src="assets/vendors/d3/d3.min.js"></script>
-<script type="text/javascript" src="assets/vendors/d3/d3_tooltip.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
 <script>
-$(function () {
 
-    // Initialize chart
-    barVertical('#d3-bar-vertical', 400);
+    d3.select("input[value=\"total\"]").property("checked", true);
 
-    // Chart setup
-    function barVertical(element, height) {
+	datasetTotal = [
+        {label:"Monday", value:19},
+        {label:"Tuesday", value:5},
+        {label:"Wednesday", value:13},
+        {label:"Thursday", value:17},
+        {label:"Friday", value:19},
+        {label:"Saturday", value:27},
+        {label:"Sunday", value:30},
+    ];
 
+    // datasetOption1 = [
+    //     {label:"Monday", value:22},
+    //     {label:"Tuesday", value:33},
+    //     {label:"Wednesday", value:4},
+    //     {label:"Thursday", value:15},
+    //     {label:"Friday", value:36},
+    //     {label:"Saturday", value:0}
+    // ];
+    //
+    // datasetOption2 = [
+    //     {label:"Monday", value:10},
+    //     {label:"Tuesday", value:20},
+    //     {label:"Wednesday", value:30},
+    //     {label:"Thursday", value:5},
+    //     {label:"Friday", value:12},
+    //     {label:"Saturday", value:23}
+    // ];
 
-        // Basic setup
-        // ------------------------------
+    // d3.selectAll("input").on("change", selectDataset);
+    //
+    // function selectDataset()
+    // {
+    //     var value = this.value;
+    //     if (value == "total")
+    //     {
+    //         change(datasetTotal);
+    //     }
+    //     else if (value == "option1")
+    //     {
+    //         change(datasetOption1);
+    //     }
+    //     else if (value == "option2")
+    //     {
+    //         change(datasetOption2);
+    //     }
+    // }
 
-        // Define main variables
-        var d3Container = d3.select(element),
-            margin = {top: 5, right: 10, bottom: 20, left: 20},
-            width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
-            height = height - margin.top - margin.bottom - 5;
+    var margin = {
+    top: (parseInt(d3.select('.barchart').style('height'), 10)/20),
+    right: (parseInt(d3.select('.barchart').style('width'), 5)/20),
+    bottom: (parseInt(d3.select('.barchart').style('height'), 10)/9),
+    left: (parseInt(d3.select('.barchart').style('width'), 10)/25)},
+    width = parseInt(d3.select('.barchart').style('width'), 10) - margin.left - margin.right,
+    height = parseInt(d3.select('.barchart').style('height'), 10) - margin.top - margin.bottom;
 
-           var formatPercent = d3.format("");
+    var divtoolTip = d3.select(".barchart").append("div").attr("class", "toolTip");
 
-        // Construct scales
-        // ------------------------------
+    var formatPercent = d3.format("");
 
-        // Horizontal
-        var x = d3.scale.ordinal()
-            .rangeRoundBands([0, width], .72, .5);
+    var x = d3.scale.ordinal()
+            .rangeRoundBands([0, width], .7, 0.5);
 
-        // Vertical
-        var y = d3.scale.linear()
+    var y = d3.scale.linear()
             .range([height, 0]);
 
-        // Color
-        var color = d3.scale.category20c();
-
-
-
-        // Create axes
-        // ------------------------------
-
-        // Horizontal
-        var xAxis = d3.svg.axis()
+    var xAxis = d3.svg.axis()
             .scale(x)
             .orient("bottom");
 
-        // Vertical
-        var yAxis = d3.svg.axis()
+    var yAxis = d3.svg.axis()
             .scale(y)
             .orient("left")
             .tickFormat(formatPercent);
 
-
-
-        // Create chart
-        // ------------------------------
-
-        // Add SVG element
-        var container = d3Container.append("svg");
-
-        // Add SVG group
-        var svg = container
+    var svg = d3.select(".barchart").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
-                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
 
-                // Create tooltip
-                    // ------------------------------
+    change(datasetTotal);
 
+    function change(dataset) {
 
+        x.domain(dataset.map(function(d) { return d.label; }));
+        y.domain([0, d3.max(dataset, function(d) { return d.value; })]);
 
-        // Load data
-        // ------------------------------
-
-
-
-        data = [
-              {letter:"Monday", frequency:50},
-              {letter:"Tuesday", frequency:5},
-              {letter:"Wednesday", frequency:13},
-              {letter:"Thursday", frequency:17},
-              {letter:"Friday", frequency:19},
-              {letter:"Saturday", frequency:27},
-              {letter:"Sunday", frequency:30},
-          ];
-
-
-          // Create tooltip
-          var tip = d3.tip()
-                 .attr('class', 'd3-tip')
-                 .offset([-10, 0])
-                 .html(function(d) {
-                     return d.frequency;
-                 });
-
-             // Initialize tooltip
-             svg.call(tip);
-
-
-            // Pull out values
-            data.forEach(function(d) {
-                d.frequency = +d.frequency;
-            });
-
-
-
-            // Set input domains
-            // ------------------------------
-
-            // Horizontal
-            x.domain(data.map(function(d) { return d.letter; }));
-
-            // Vertical
-            y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
-
-
-            //
-            // Append chart elements
-            //
-
-            // Append axes
-            // ------------------------------
-
-            // Horizontal
-            svg.append("g")
-                .attr("class", "d3-axis d3-axis-horizontal d3-axis-strong")
+        svg.append("g")
+                .attr("class", "x axis")
                 .attr("transform", "translate(0," + height + ")")
                 .call(xAxis);
 
-            // Vertical
-            var verticalAxis = svg.append("g")
-                .attr("class", "d3-axis d3-axis-vertical d3-axis-strong")
+        svg.select(".y.axis").remove();
+        svg.select(".x.axis").remove();
+
+        svg.append("g")
+                .attr("class", "y axis")
                 .call(yAxis)
-
-
-            // Add text label
-            verticalAxis.append("text")
+                .append("text")
                 .attr("transform", "rotate(-90)")
-                .attr("y", 10)
+                .attr("y", 6)
                 .attr("dy", ".71em")
                 .style("text-anchor", "end")
-                .style("fill", "#999")
-                .style("font-size", 12)
                 .text("Frequency");
 
+        var bar = svg.selectAll(".bar")
+                .data(dataset, function(d) { return d.label; });
+        // new data:
+        bar
+        .enter().append("rect")
+                .attr("class", "bar")
+                .attr("x", function(d) { return x(d.label); })
+                .attr("y", function(d) { return y(d.value); })
+                .attr("height", function(d) { return height - y(d.value); })
+                .attr("width", x.rangeBand());
 
-            // Add bars
-            svg.selectAll(".d3-bar")
-                .data(data)
-                .enter()
-                .append("rect")
-                    .attr("class", "d3-bar")
-                    .attr("x", function(d) { return x(d.letter); })
-                    .attr("width", x.rangeBand())
-                    .attr("y", function(d) { return y(d.frequency); })
-                    .attr("height", function(d) { return height - y(d.frequency); })
-                    .style("fill", function(d) { return "#58707E"; })
-                    .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
-                    .on('mouseout', tip.hide);
+        bar
+        .on("mousemove", function(d){
+                  divtoolTip.style("left", d3.event.pageX-1080+"px");
+                    divtoolTip.style("top", d3.event.pageY-400+"px");
+                  //  div.style("position", "relative");
+                  //  divtoolTip.style("z-index",200);
+                    divtoolTip.style("display", "inline-block");
+                    divtoolTip.html((d.label)+"<br>"+(d.value)+"%");
+                });
+        bar
+        .on("mouseout", function(d){
+                    divtoolTip.style("display", "none");
+                });
 
-
-
-
-        // Resize chart
-        // ------------------------------
-
-        // Call function on window resize
-        $(window).on('resize', resize);
-
-        // Call function on sidebar width change
-        $('.sidebar-control').on('click', resize);
-
-        // Resize function
-        //
-        // Since D3 doesn't support SVG resize by default,
-        // we need to manually specify parts of the graph that need to
-        // be updated on window resize
-        function resize() {
-
-            // Layout variables
-            width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
-
-
-            // Layout
-            // -------------------------
-
-            // Main svg width
-            container.attr("width", width + margin.left + margin.right);
-
-            // Width of appended group
-            svg.attr("width", width + margin.left + margin.right);
-
-
-            // Axes
-            // -------------------------
-
-            // Horizontal range
-            x.rangeRoundBands([0, width], .1, .5);
-
-            // Horizontal axis
-            svg.selectAll('.d3-axis-horizontal').call(xAxis);
-
-
-            // Chart elements
-            // -------------------------
-
-            // Line path
-            svg.selectAll('.d3-bar').attr("x", function(d) { return x(d.letter); }).attr("width", x.rangeBand());
-        }
-    }
-});
-
+        // removed data:
+        bar.exit().remove();
+        // updated data:
+        bar
+        .transition()
+                .duration(750)
+                .attr("y", function(d) { return y(d.value); })
+                .attr("height", function(d) { return height - y(d.value); });
+    };
 
 </script>
-<!-- start of donuts  -->
+
 <script>
 
 
