@@ -145,6 +145,7 @@ data = [
   }
 ];
 
+
 var line = d3.svg.line()
      //.attr("width", x.rangeBand())
     .x(function(d) { return x(d.date); })
@@ -219,8 +220,29 @@ var tip = d3.tip()
                     //.on("focus", tip.attr('class', 'tooltip-inner in').show)
                     ;
 
+                 svg.selectAll(".circle-point")
+                    .data(data)
+                    .enter()
+                    .append("circle")
+                    .attr("class","circle-point")
+                    .attr("r",5)
+                    .style("stroke", "#4CAF50")
+                    .style("fill","#4CAF50")
+                    .attr("cx",function(d) { return x(d.date); })
+                    .attr("cy", function(d){return y(d.close)})
+                    .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
+                    .on('focus', tip.attr('class', 'tooltip-inner in').show)
+                    //.attr("transform", "translate("+margin.left/1.8+",0)")
+                    //.on('mouseout', tip.hide)
+                    //.on('mouseover',circles.style("cursor","pointer"))
+                    .on('click',function(d){
+                      // perform a click function effect here if needed
+
+                      console.log(d.date);
+                    });
 
 
+                   svg.call(tip)
 
             // Append axes
             // ------------------------------
@@ -236,32 +258,9 @@ var tip = d3.tip()
                 .attr("class", "d3-axis d3-axis-vertical d3-axis-strong")
                 .call(yAxis);
 
-                var circles = svg.selectAll("circle").data(data);
-
-
-                circles.enter().append("circle")
-                .attr("r",5)
-                .style("stroke", "#4CAF50")
-                .style("fill","#4CAF50")
 
 
 
-                circles
-                .attr("cx",function(d) { return x(d.date); })
-                .attr("cy", function(d){return y(d.close)})
-                .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
-                //.attr("onclick", ""+test()+"")
-                //.attr("transform", "translate("+margin.left/1.8+",0)")
-                .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
-                //.on('mouseout', tip.hide)
-                //.on('mouseover',circles.style("cursor","pointer"))
-                .on('click',function(d){
-                  // perform a click function effect here if needed
-
-                  console.log(d.date);
-                });
-
-              svg.call(tip)
 
 function test()
 {
