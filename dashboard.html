@@ -489,7 +489,7 @@ $(function () {
                  .attr('class', 'd3-tip')
                  .offset([-10, 0])
                  .html(function(d) {
-                     return d.frequency;
+                     return d.letter+" ("+d.frequency+")";
                  });
 
              // Initialize tooltip

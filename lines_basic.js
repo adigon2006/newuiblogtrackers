@@ -23,7 +23,7 @@ $(function () {
 
         // Define main variables
         var d3Container = d3.select(element),
-            margin = {top: 5, right: 10, bottom: 20, left: 30},
+            margin = {top: 10, right: 10, bottom: 20, left: 30},
             width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
             height = height - margin.top - margin.bottom;
 
@@ -57,7 +57,7 @@ $(function () {
         var xAxis = d3.svg.axis()
             .scale(x)
             .orient("bottom")
-           .ticks(9)
+           //.ticks(9)
 
           // .tickFormat(formatPercent);
 
@@ -88,11 +88,6 @@ $(function () {
         // ------------------------------
 
         // Line
-        var line = d3.svg.line()
-             //.attr("width", x.rangeBand())
-            .x(function(d) { return x(d.date); })
-            .y(function(d) { return y(d.close); });
-
 
 
         // Load data
@@ -150,17 +145,29 @@ data = [
   }
 ];
 
+var line = d3.svg.line()
+     //.attr("width", x.rangeBand())
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.close); });
+
+
+
 // Create tooltip
 var tip = d3.tip()
        .attr('class', 'd3-tip')
        .offset([-10, 0])
        .html(function(d) {
-           return d.close;
-           console.log(d.close);
+       if(d === null)
+       {
+         return "No Information Available";
+       }
+       else if(d !== null) {
+        return d.date+" ("+d.close+")<br/> Click for more information";
+         }
        });
 
    // Initialize tooltip
-   svg.call(tip);
+   //svg.call(tip);
 
 
   // Pull out values
@@ -205,11 +212,13 @@ var tip = d3.tip()
                     //.style("fill", "rgba(0,0,0,0.54)")
                     .style("stroke-width", 2)
                     .style("stroke", "17394C")
-                    .style("margin-left","200px")
-                    .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
-                    .on('mouseout', tip.hide)
-                    .on("mousemove", tip.attr('class', 'tooltip-inner in').show)
+                    //.attr("transform", "translate("+margin.left/1.8+",0)")
+                    //.on('mouseover', tip.attr('class', 'tooltip-inner in').show)
+
+                    //.on('mouseout', tip.hide)
+                    //.on("focus", tip.attr('class', 'tooltip-inner in').show)
                     ;
+
 
 
 
@@ -227,6 +236,37 @@ var tip = d3.tip()
                 .attr("class", "d3-axis d3-axis-vertical d3-axis-strong")
                 .call(yAxis);
 
+                var circles = svg.selectAll("circle").data(data);
+
+
+                circles.enter().append("circle")
+                .attr("r",5)
+                .style("stroke", "#4CAF50")
+                .style("fill","#4CAF50")
+
+
+
+                circles
+                .attr("cx",function(d) { return x(d.date); })
+                .attr("cy", function(d){return y(d.close)})
+                .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
+                //.attr("onclick", ""+test()+"")
+                //.attr("transform", "translate("+margin.left/1.8+",0)")
+                .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
+                //.on('mouseout', tip.hide)
+                //.on('mouseover',circles.style("cursor","pointer"))
+                .on('click',function(d){
+                  // perform a click function effect here if needed
+
+                  console.log(d.date)
+                });
+
+              circles.call(tip)
+
+function test()
+{
+alert("kunle");
+}
             // Add text label
             verticalAxis.append("text")
                 .attr("transform", "rotate(-90)")
