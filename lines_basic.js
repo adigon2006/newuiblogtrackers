@@ -258,10 +258,10 @@ var tip = d3.tip()
                 .on('click',function(d){
                   // perform a click function effect here if needed
 
-                  console.log(d.date)
+                  console.log(d.date);
                 });
 
-              circles.call(tip)
+              svg.call(tip)
 
 function test()
 {
