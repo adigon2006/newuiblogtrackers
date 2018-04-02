@@ -411,7 +411,7 @@ $(function () {
 
         // Define main variables
         var d3Container = d3.select(element),
-            margin = {top: 5, right: 10, bottom: 20, left: 20},
+            margin = {top: 5, right: 10, bottom: 20, left: 40},
             width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
             height = height - margin.top - margin.bottom - 5;
 
@@ -445,7 +445,7 @@ $(function () {
         var yAxis = d3.svg.axis()
             .scale(y)
             .orient("left")
-            .tickFormat(formatPercent);
+            //.tickFormat(formatPercent);
 
 
 
@@ -480,7 +480,7 @@ $(function () {
               {letter:"Thursday", frequency:17},
               {letter:"Friday", frequency:19},
               {letter:"Saturday", frequency:27},
-              {letter:"Sunday", frequency:30},
+              {letter:"Sunday", frequency:3000},
           ];
 
 

@@ -705,7 +705,7 @@ background-color: #45606f;
 }
 .d3-axis .tick,
 .d3-axis .tick text {
-  font-size: 12px;
+  font-size: 11px;
   fill: #333333;
 }
 .d3-axis-solid path,
