@@ -280,10 +280,11 @@ var tip = d3.tip()
        else if(d !== null) {
         return d.date+" ("+d.close+")<br/> Click for more information";
          }
+       // return "here";
        });
 
    // Initialize tooltip
-   //svg.call(tip);
+   svg.call(tip);
 
 
   // Pull out values
@@ -328,37 +329,33 @@ var tip = d3.tip()
                     //.style("fill", "rgba(0,0,0,0.54)")
                     .style("stroke-width", 2)
                     .style("stroke", "17394C")
-                    //.attr("transform", "translate("+margin.left/1.8+",0)")
-                    //.on('mouseover', tip.attr('class', 'tooltip-inner in').show)
+                    .attr("transform", "translate("+margin.left/4.7+",0)")
 
-                    //.on('mouseout', tip.hide)
-                    //.on("focus", tip.attr('class', 'tooltip-inner in').show)
                     ;
 
-                 svg.selectAll(".circle-point")
-                    .data(data)
+// svg.call(tip);
+              circles = svg.selectAll(".circle-point")
+                        .data(data);
+
+
+                    circles
                     .enter()
                     .append("circle")
                     .attr("class","circle-point")
-                    .attr("r",5)
+                    .attr("r",3.4)
                     .style("stroke", "#4CAF50")
                     .style("fill","#4CAF50")
                     .attr("cx",function(d) { return x(d.date); })
                     .attr("cy", function(d){return y(d.close)})
-                    .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
-                    .on('focus', tip.attr('class', 'tooltip-inner in').show)
-                    .on("mousemove", mousemove)
-                    //.attr("transform", "translate("+margin.left/1.8+",0)")
-                    //.on('mouseout', tip.hide)
-                    //.on('mouseover',circles.style("cursor","pointer"))
-                    .on('click',function(d){
-                      // perform a click function effect here if needed
 
-                      console.log(d.date);
-                    });
+                    .attr("transform", "translate("+margin.left/4.7+",0)");
 
-
-                   svg.call(tip)
+// show data tip
+svg.selectAll(".circle-point").data(data)
+.on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+.on("mouseout",tip.hide)
+.on("click",function(d){console.log(d.date)});
+                   //svg.call(tip)
 
             // Append axes
             // ------------------------------
@@ -378,10 +375,6 @@ var tip = d3.tip()
 
 
 
-function test()
-{
-alert("kunle");
-}
             // Add text label
             verticalAxis.append("text")
                 .attr("transform", "rotate(-90)")
@@ -399,44 +392,44 @@ alert("kunle");
             // -------------------------
 
             // Group elements
-            var focus = svg.append("g")
-                .attr("class", "d3-crosshair-pointer")
-                .style("display", "none");
-
-            // Pointer
-            focus.append("circle")
-                .attr("r", 3.5)
-                .style("fill", "#fff")
-                .style("stroke", "#4CAF50")
-                .style("stroke-width", 2);
-
-            // Text
-            focus.append("text")
-                .attr("dy", ".35em")
-                .style("fill", "#333")
-                .style("stroke", "none")
-
-            // Overlay
-            svg.append("rect")
-                .attr("class", "d3-crosshair-overlay")
-                .attr("width", width)
-                .attr("height", height)
-
-                // .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
-                // .on('mouseout', tip.hide)
-                 .on("mousemove", mousemove)
-                ;
-
-            // Display tooltip on mousemove
-            function mousemove() {
-                // var x0 = x.invert(d3.mouse(this)[0]),
-                // i = bisectDate(data, x0, 1),
-                // d0 = data[i - 1],
-                // d1 = data[i],
-                d = data
-              //  focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
-                focus.select("text").text(data.close).attr("dx", -26).attr("dy", 30);
-            }
+            // var focus = svg.append("g")
+            //     .attr("class", "d3-crosshair-pointer")
+            //     .style("display", "none");
+            //
+            // // Pointer
+            // focus.append("circle")
+            //     .attr("r", 3.5)
+            //     .style("fill", "#fff")
+            //     .style("stroke", "#4CAF50")
+            //     .style("stroke-width", 2);
+            //
+            // // Text
+            // focus.append("text")
+            //     .attr("dy", ".35em")
+            //     .style("fill", "#333")
+            //     .style("stroke", "none")
+            //
+            // // Overlay
+            // svg.append("rect")
+            //     .attr("class", "d3-crosshair-overlay")
+            //     .attr("width", width)
+            //     .attr("height", height)
+            //
+            //     // .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
+            //     // .on('mouseout', tip.hide)
+            //      .on("mousemove", mousemove)
+            //     ;
+            //
+            // // Display tooltip on mousemove
+            // function mousemove() {
+            //     // var x0 = x.invert(d3.mouse(this)[0]),
+            //     // i = bisectDate(data, x0, 1),
+            //     // d0 = data[i - 1],
+            //     // d1 = data[i],
+            //     d = data
+            //   //  focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
+            //     focus.select("text").text(data.close).attr("dx", -26).attr("dy", 30);
+            // }
 
 
 
