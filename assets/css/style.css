@@ -224,6 +224,16 @@ padding: 8px 10px;
   position: absolute;
   right:-100px;
   }
+  .heading-element
+  {
+  min-height:60px;border:inherit; border-radius:inherit; border-bottom-left-radius:0px; border-bottom-right-radius:0px;
+  }
+  .analytics-title
+  {
+  width:70%;
+  min-height:66px;
+  font-size:21px;
+  }
 .stylebutton1
 {
 font-size: 0.7rem;
@@ -237,6 +247,21 @@ font-size: 0.7rem;
 border-radius: 10px;
 padding: 0.19rem 0.75rem;
 font-weight: 700;
+}
+.stylebutton4
+{
+  font-size: 0.7rem;
+  border-radius: 10px;
+  padding: 0.19rem 1.2rem;
+  font-weight: 700;
+}
+.linktextsize
+{
+font-size: 12px;
+}
+.linktextsize i
+{
+font-size: 11px;
 }
 .icon-big
 {
@@ -634,9 +659,29 @@ div.dataTables_wrapper {
 /* card layout defined */
 .card-style{
 border-radius:8px;
-/* -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.83);
+-webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.83);
 -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.83);
-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.83); */
+box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.83);
+}
+.big-btn
+{
+background-color: #ffffff;
+-webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.83);
+-moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.83);
+box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.83);
+padding:15px 15px;
+}
+.big-btn i
+{
+font-size: 35px;
+color: #fcab10 !important;
+}
+.analytics-button
+{
+position: absolute;
+right:25px;
+top:35px;
+display: inline-block;
 }
 #reportrange, #custom
 {
