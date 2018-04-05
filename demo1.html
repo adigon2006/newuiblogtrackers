@@ -121,7 +121,7 @@
 </script>
 
 <script type="text/javascript" src="assets/vendors/d3/d3.min.js"></script>
-<script type="text/javascript" src="assets/vendors/d3/d3_ToolTip2.js"></script>
+<script type="text/javascript" src="assets/vendors/d3/d3_tooltip.js"></script>
 <script>
 
 $(function () {
@@ -289,18 +289,18 @@ var tip = d3.tip()
 
 
   // Pull out values
-  data.forEach(function(d) {
-      d.frequency = +d.close;
-  });
+  // data.forEach(function(d) {
+  //     d.frequency = +d.close;
+  // });
 
 
             // Pull out values
-            data.forEach(function(d) {
-                // d.date = parseDate(d.date);
-                //d.date = +d.date;
-                //d.date = d.date;
-                d.close = +d.close;
-            });
+            // data.forEach(function(d) {
+            //     // d.date = parseDate(d.date);
+            //     //d.date = +d.date;
+            //     //d.date = d.date;
+            //     d.close = +d.close;
+            // });
 
             // Sort data
             // data.sort(function(a, b) {
@@ -314,6 +314,8 @@ var tip = d3.tip()
             // Horizontal
             x.domain(data.map(function(d) { return d.date; }));
 
+
+data.map(function(d){console.log(d.date)});
             // Vertical
              y.domain([0, d3.max(data, function(d) { return d.close; })]);
             // y.domain([0,4000])
