@@ -577,7 +577,7 @@
 
          // Define main variables
          var d3Container = d3.select(element),
-             margin = {top: 10, right: 10, bottom: 20, left: 30},
+             margin = {top: 10, right: 10, bottom: 20, left: 60},
              width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
              height = height - margin.top - margin.bottom;
 
@@ -669,6 +669,7 @@
 
 
  var line = d3.svg.line()
+ .interpolate("monotone")
       //.attr("width", x.rangeBand())
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.close); });
