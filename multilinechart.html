@@ -121,7 +121,7 @@
 </script>
 
 <script type="text/javascript" src="assets/vendors/d3/d3.min.js"></script>
-<script type="text/javascript" src="assets/vendors/d3/d3_ToolTip2.js"></script>
+<script type="text/javascript" src="assets/vendors/d3/d3_tooltip.js"></script>
 <script>
 
 $(function () {
@@ -213,61 +213,67 @@ $(function () {
 // [{"date":"Jan","close":1590},{"date":"Feb","close":3470},{"date":"Mar","close":1150},{"date": "Apr","close": 1780},{"date": "May","close": 2600},{"date": "Jun","close": 950},{"date": "Jul","close": 750},{"date": "Aug","close": 1100},{"date": "Sep","close": 2300},{"date": "Oct","close": 1120},{"date": "Nov","close": 1110},{"date": "Dec","close": 4500}]
 // ];
 
+data = [
+  [{"date":"2016","close":1300},{"date":"2017","close":1700},{"date":"2018","close":2100}],
+  [{"date":"2016","close":1500},{"date":"2017","close":1800}],
+  [{"date":"2014","close":500},{"date":"2015","close":900},{"date":"2016","close":1200}]
+];
+
 //console.log(data);
 // data = [];
 
-data = [
-[
-  {
-    "date": "Jan",
-    "close": 1000
-  },
-  {
-    "date": "Feb",
-    "close": 1800
-  },
-  {
-    "date": "Mar",
-    "close": 1600
-  },
-  {
-    "date": "Apr",
-    "close": 1400
-  },
-  {
-    "date": "May",
-    "close": 2500
-  },
-  {
-    "date": "Jun",
-    "close": 500
-  },
-  {
-    "date": "Jul",
-    "close": 100
-  },
-  {
-    "date": "Aug",
-    "close": 20
-  },
-  {
-    "date": "Sep",
-    "close": 2300
-  },
-  {
-    "date": "Oct",
-    "close": 1500
-  },
-  {
-    "date": "Nov",
-    "close": 1900
-  },
-  {
-    "date": "Dec",
-    "close": 4170
-  }
-]
-];
+// data = [
+// [
+//   {
+//     "date": "Jan",
+//     "close": 1000
+//   },
+//   {
+//     "date": "Feb",
+//     "close": 1800
+//   },
+//   {
+//     "date": "Mar",
+//     "close": 1600
+//   },
+//   {
+//     "date": "Apr",
+//     "close": 1400
+//   },
+//   {
+//     "date": "May",
+//     "close": 2500
+//   },
+//   {
+//     "date": "Jun",
+//     "close": 500
+//   },
+//   {
+//     "date": "Jul",
+//     "close": 100
+//   },
+//   {
+//     "date": "Aug",
+//     "close": 500
+//   },
+//   {
+//     "date": "Sep",
+//     "close": 2300
+//   },
+//   {
+//     "date": "Oct",
+//     "close": 1500
+//   },
+//   {
+//     "date": "Nov",
+//     "close": 1900
+//   },
+//   {
+//     "date": "Dec",
+//     "close": 4170
+//   }
+// ]
+// ];
 
 // console.log(data);
 var line = d3.svg.line()
@@ -379,51 +385,20 @@ var tip = d3.tip()
 // console.log(data.length);
 // y domain rewrite
 //
-// returnedvalue = data.forEach(function(d,i){
-// console.log(d[i].date)
-// var xvalues = [];
-//    d.map(function(f,i)
-//  {
-//    console.log(f)
-//  })
-//  console.log(xvalues)
-// // e.map(function(f){
-// // return f.date;
-// // console.log(f.date)
-// // })
-// });
 
 
-var returnedvalue = data.map(function(e){
-console.log(e)
-var myvalue = [];
-e.forEach(function(f,i){
-myvalue[i] = f.date
-})
-console.log(myvalue[5])
-return (myvalue)
-});
-
-console.log(returnedvalue)
-// data.map(function (d){
-//   console.log(d)
-// //   d.forEach(function(e){
-// // return e.date;
-// // console.log(e)
-// //   })
-// })
-
-var haha = returnedvalue.map(function(h){
-return h[0][2];
-});
 
 
-console.log(haha[0][6])
+
 ////console.log(data)
 if(data.length == 1)
 {
+  var returnedvalue = data[0].map(function(e){
+  return e.date
+  });
+
 // for single json data
-x.domain(haha);
+x.domain(returnedvalue);
 // rewrite x domain
 // y.domain([0, d3.max(data, function(d){return d.close;})]);
 // y.domain([0, d3.max(maxvalue)]);
@@ -435,6 +410,31 @@ y.domain([0,maxvalue2]);
 }
 else if(data.length > 1)
 {
+//console.log(data.length);
+//console.log(data);
+
+var returnedata = data.map(function(e){
+// console.log(k)
+var all = []
+e.forEach(function(f,i){
+all[i] = f.date;
+//console.log(all[i])
+})
+return all
+//console.log(all);
+});
+// console.log(returnedata);
+// combines all the array
+var newArr = returnedata.reduce((result,current) => {
+return result.concat(current);
+});
+
+//console.log(newArr);
+var set = new Set(newArr);
+var filteredArray = Array.from(set).sort();
+//console.log(filteredArray.sort());
+// console.log(returnedata);
+ x.domain(filteredArray);
 y.domain([0, d3.max(maxvalue)]);
 }
 
@@ -445,43 +445,120 @@ y.domain([0, d3.max(maxvalue)]);
             // Append chart elements
             //
 
-            // Add line
-          // var path = svg.selectAll('.d3-line')
-          //           .data(data)
-          //           .enter()
-          //           .append("path")
-          //           .attr("class", "d3-line d3-line-medium")
-          //           .attr("d", line)
-          //           .style("fill", "rgba(0,0,0,0.54)")
-          //           .style("stroke-width", 2)
-          //           .style("stroke", "17394C")
-          //            .attr("transform", "translate("+margin.left/4.7+",0)");
-                    // .datum(data)
+
 
 
 // svg.call(tip);
-              // circles = svg.selectAll(".circle-point")
-              //           .data(data);
-              //
-              //
-              //       circles
-              //       .enter()
-              //       .append("circle")
-              //       .attr("class","circle-point")
-              //       .attr("r",3.4)
-              //       .style("stroke", "#4CAF50")
-              //       .style("fill","#4CAF50")
-              //       .attr("cx",function(d) { return x(d.date); })
-              //       .attr("cy", function(d){return y(d.close)})
-              //
-              //       .attr("transform", "translate("+margin.left/4.7+",0)");
+             // data.map(function(d){})
+             if(data.length == 1)
+             {
+               // Add line
+             var path = svg.selectAll('.d3-line')
+                       .data(data)
+                       .enter()
+                       .append("path")
+                       .attr("class", "d3-line d3-line-medium")
+                       .attr("d", line)
+                       // .style("fill", "rgba(0,0,0,0.54)")
+                       .style("stroke-width", 2)
+                       .style("stroke", "17394C")
+                        .attr("transform", "translate("+margin.left/4.7+",0)");
+                       // .datum(data)
+
+              // add point
+               circles = svg.selectAll(".circle-point")
+                         .data(data[0])
+                         .enter();
+
+
+                     circles
+                     // .enter()
+                     .append("circle")
+                     .attr("class","circle-point")
+                     .attr("r",3.4)
+                     .style("stroke", "#4CAF50")
+                     .style("fill","#4CAF50")
+                     .attr("cx",function(d) { return x(d.date); })
+                     .attr("cy", function(d){return y(d.close)})
+
+                     .attr("transform", "translate("+margin.left/4.7+",0)");
+
+                     svg.selectAll(".circle-point").data(data[0])
+                     .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                     .on("mouseout",tip.hide)
+                     .on("click",function(d){console.log(d.date)});
+                                        svg.call(tip)
+             }
+             // handles multiple json parameter
+             else if(data.length > 1)
+             {
+               // add multiple line
+               var path = svg.selectAll('.d3-line')
+                         .data(data.map(function(m){return m}))
+                         .enter()
+                         .append("path")
+                         .attr("class", "d3-line d3-line-medium")
+                         .attr("d", line)
+                         // .style("fill", "rgba(0,0,0,0.54)")
+                         .style("stroke-width", 2)
+                         .style("stroke", "17394C")
+                          .attr("transform", "translate("+margin.left/4.7+",0)");
+
+
+              // add multiple circle points
+
+                  // data.forEach(function(e){
+                  // console.log(e)
+                  // })
+
+                  console.log(data);
+
+                     var mergedarray = [].concat(...data);
+
+                        circles = svg.selectAll(".circle-point")
+                            .data(mergedarray)
+                            .enter();
+
+                              circles
+                              // .enter()
+                              .append("circle")
+                              .attr("class","circle-point")
+                              .attr("r",3.4)
+                              .style("stroke", "#4CAF50")
+                              .style("fill","#4CAF50")
+                              .attr("cx",function(d) { return x(d.date)})
+                              .attr("cy", function(d){return y(d.close)})
+
+                              .attr("transform", "translate("+margin.left/4.7+",0)");
+                              svg.selectAll(".circle-point").data(mergedarray)
+                             .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                             .on("mouseout",tip.hide)
+                             .on("click",function(d){console.log(d.date)});
+                                                svg.call(tip)
+
+                      //console.log(newi);
+
+
+                            // svg.selectAll(".circle-point").data(newi)
+                            // .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                            // .on("mouseout",tip.hide)
+                            // .on("click",function(d){console.log(d.date)});
+                            //                    svg.call(tip)
+
+
+
+
+
+
+
+
+
+
+             }
+
 
 // show data tip
-// svg.selectAll(".circle-point").data(data)
-// .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
-// .on("mouseout",tip.hide)
-// .on("click",function(d){console.log(d.date)});
-                   //svg.call(tip)
+
 
             // Append axes
             // ------------------------------
