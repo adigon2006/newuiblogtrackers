@@ -254,6 +254,8 @@ font-weight: 700;
   border-radius: 10px;
   padding: 0.19rem 1.2rem;
   font-weight: 700;
+  background-color:#44AF69 !important;
+  border-color:#44AF69 !important;
 }
 .linktextsize
 {
@@ -681,6 +683,13 @@ color: #fcab10 !important;
 position: absolute;
 right:25px;
 top:35px;
+display: inline-block;
+}
+.analytics-button2
+{
+position: relative;
+/* right:25px;
+top:35px; */
 display: inline-block;
 }
 #reportrange, #custom
