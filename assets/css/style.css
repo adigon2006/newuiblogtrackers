@@ -6,6 +6,10 @@ body{
   background-color: #fafafa  ;
 
 }
+.hidden
+{
+display: none;
+}
 .mycard
 {
 background-color: #fff;
@@ -145,7 +149,23 @@ color:darkblue;
 {
 opacity: 0.53;
 }
-input[type="search"]:focus, input[type="search"]
+.nobordertopleft
+{
+  border-top-left-radius:0px !important;
+}
+.nobordertopright
+{
+border-top-right-radius:0px !important;
+}
+.noborderbottomright
+{
+  border-bottom-right-radius:0px !important;
+}
+.noborderbottomleft
+{
+  border-bottom-left-radius:0px !important;
+}
+.blogbrowsersearch:focus, .blogbrowsersearch
 {
 border: none;
 border-color:transparent;
