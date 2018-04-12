@@ -1260,7 +1260,9 @@
              g.append("path")
                  .attr("d", arc)
                  .style("stroke", "#fff")
-                 .style("fill", function(d) { return color(d.data.size); })
+                 .style("fill", function(d) { return color(d.data.size);
+
+                 })
                  .transition()
                      .ease("linear")
                      .duration(1800)
