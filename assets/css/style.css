@@ -16,6 +16,22 @@ background-color: #fff;
 background-clip: border-box;
 border: 1px solid rgba(0, 0, 0, 0.125);
 }
+.curved-form-login
+{
+border-radius: 40px !important;
+padding-left:25px !important;
+}
+.curved-form-login[placeholder]
+{
+color: #17394c;
+}
+.loginformbutton
+{
+background:#28a745;
+border: none;
+border-radius: 50px;
+padding: 8px 25px !important;
+}
 label.btn input
 {
 visibility: hidden;
@@ -245,6 +261,10 @@ font-weight: 700;
 {
 border-radius: 100px;
 padding: 8px 10px;
+}
+.borderradiusround
+{
+border-radius:10px;  
 }
 .fa,
 .fas,
