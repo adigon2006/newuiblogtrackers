@@ -81,7 +81,7 @@
 
 
 <!-- For large devices  -->
-<div class="row pt40 pb80 m20 mt0 mb30">
+<div class="row pt40 pb50 m20 mt0 mb30">
   <div class="col-md-12 bottom-border">
   <h5>Analytics Features</h5>
   <p class="float-left text-primary">Blogtrackers offers range of tools</p>
@@ -156,7 +156,7 @@
 <div class="col-md-12 p0 pt30">
 <div class="row m0 border-bottom">
 <div class="col-md-2 text-center">
-    <div class="analytics-button2"><button class="btn btn-rounded big-btn"><i class="fas fa-puzzle-piece icon-small text-primary"></i></button></div>
+    <div class="analytics-button2"><button class="btn btn-rounded big-btn"><i class="fas fa-adjust icon-small text-primary"></i></button></div>
 </div>
 <div class="col-md-10">
 <h6 class="text-primary">Sentiment Analysis</h6>
@@ -180,7 +180,7 @@
     <div class="analytics-button2"><button class="btn btn-rounded big-btn"><i class="fas fa-exchange-alt icon-small text-primary"></i></button></div>
 </div>
 <div class="col-md-10">
-<h6 class="text-primary">Sentiment Analysis</h6>
+<h6 class="text-primary">Influence</h6>
 <p>This feature helps identify the influence a blogger or blog post has on the blogosphere. Blogtrackers finds the posts that are authoritative by assigning a score calculated using the iFinder model. This feature lists top 5 influential bloggers and displays a trend line to show the variation in bloggers' influence.</p>
 <div class="collapse" id="toggle-5" >
 <ul>
@@ -362,7 +362,7 @@ It provides an overall trend of keywords of interest. It helps track changes in 
 
   <div class="card card-style mt20">
     <div class="heading-element bg-primary"></div>
-    <div class="analytics-button"><button class="btn btn-rounded big-btn"><i class="fas fa-puzzle-piece icon-small text-primary" style="font-size:35px;"></i></button></div>
+    <div class="analytics-button"><button class="btn btn-rounded big-btn"><i class="fas fa-adjust icon-small text-primary" style="font-size:35px;"></i></button></div>
     <div class="card-body  p30 pt10 pb5">
   <h4 class="text-primary analytics-title">Sentiment Analysis</h4>
 <div style="min-height: 170px;">
@@ -522,11 +522,11 @@ A blog network is a group of blogs that are owned by the same entity. A blog net
 
 
 
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="container-fluid bg-primary mt60">
 <p class="text-center text-medium pt10 pb10 mb0">Copyright &copy; Blogtrackers 2017 All Rights Reserved.</p>
 </div>
-  </footer>
+  </footer> -->
 
 
  <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
@@ -535,7 +535,7 @@ A blog network is a group of blogs that are owned by the same entity. A blog net
 <script>
 $(document).ready(function(){
 $('#gridtoggle').click(function(){
-$('.gridcontainer').css("display","inherit");
+$('.gridcontainer').css("display","inherit").animate(3000);
 $('.listcontainer').css("display","none");
 })
 

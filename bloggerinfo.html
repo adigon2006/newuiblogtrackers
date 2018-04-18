@@ -205,7 +205,7 @@
 
 
 </div>
-<div class="row mb80">
+<div class="row mb50">
   <div class="col-md-6 mt20 ">
     <div class="card card-style mt20">
       <div class="card-body  p5 pt10 pb10">
@@ -379,11 +379,11 @@
 </div>
 
 
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="container-fluid bg-primary mt60">
 <p class="text-center text-medium pt10 pb10 mb0">Copyright &copy; 2017 All Rights Reserved.</p>
 </div>
-  </footer>
+  </footer> -->
 
 
   <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
@@ -1113,7 +1113,7 @@
          // Load data
          // ------------------------------
 
-         data = [{"day":"Monday","size":200},{"day":"Tuesday","size":50},{"day":"Wednesday","size":80}];
+         data = [{"day":"Monday","size":200},{"day":"Tuesday","size":50},{"day":"Friday","size":80}];
          // d3.csv("pies_basic.csv", function(error, data) {
 
              // Pull out values
@@ -1125,6 +1125,13 @@
              //
              // Append chart elements
              //
+
+             // Add a label for the pie chart
+             svg.append("text")
+                 .attr("dy", ".35em")
+                 .style("text-anchor", "middle")
+                 .style("font-weight", 500)
+                 .text(function() { return d3.max(data, function(d) { return d.day; }); });
 
              // Bind data
              var g = svg.selectAll(".d3-arc")
@@ -1248,6 +1255,13 @@
              //
              // Append chart elements
              //
+
+             // Add a label for the pie chart
+             svg.append("text")
+                 .attr("dy", ".35em")
+                 .style("text-anchor", "middle")
+                 .style("font-weight", 500)
+                 .text(function() { return d3.max(data, function(d) { return d.sentiment; }); });
 
              // Bind data
              var g = svg.selectAll(".d3-arc")
@@ -1374,6 +1388,13 @@
              //
              // Append chart elements
              //
+
+             // Add a label for the pie chart
+             svg.append("text")
+                 .attr("dy", ".35em")
+                 .style("text-anchor", "middle")
+                 .style("font-weight", 500)
+                 .text(function() { return d3.max(data, function(d) { return d.month; }); });
 
              // Bind data
              var g = svg.selectAll(".d3-arc")

@@ -193,6 +193,30 @@ color:#ffffff;
 {
 border-top:2px solid #cccccc;
 }
+.stylesearch
+{
+border:2px solid #17394C;
+border-radius:15px;
+padding: 0.375rem 0.75rem !important;
+}
+.stylebuttonactive
+{
+border-radius:15px;
+color: #ffffff !important;
+}
+.stylebuttoninactive
+{
+  border:2px solid #17394C;
+  border-radius:15px;
+  padding: 0.375rem 0.75rem !important;
+}
+.scrolly{
+  overflow-y:scroll;
+}
+.bottom-border
+{
+border-bottom:2px solid #cccccc;
+}
 .border-none
 {
 border:none;
@@ -235,7 +259,7 @@ padding: 8px 10px;
     font-size: 16px;
     vertical-align: middle;
     position: relative;
-    top: -1px;
+    top: 0px;
   }
   .stickyoptions
   {
@@ -695,7 +719,7 @@ padding:15px 15px;
 }
 .big-btn i
 {
-font-size: 35px;
+font-size: 28px;
 color: #fcab10 !important;
 }
 .analytics-button
