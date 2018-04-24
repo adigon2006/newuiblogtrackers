@@ -6,6 +6,17 @@ body{
   background-color: #fafafa  ;
 
 }
+@media only screen (min-width:380px) {
+.loginformbutton
+{
+padding: 12px 8px !important;
+}
+.loginbox
+{
+ width:400px;
+}
+
+}
 .hidden
 {
 display: none;
@@ -20,7 +31,13 @@ border: 1px solid rgba(0, 0, 0, 0.125);
 {
 margin:7% auto;
 width:800px;
-position: relative;  
+position: relative;
+}
+.loginbox
+{
+margin:9% auto;
+ width:40%;
+ position: relative;
 }
 .curved-form-login
 {
