@@ -33,24 +33,31 @@
 
 
 
-    <div style="margin:9% auto; width:40%;position: relative;">
+    <div class="registerbox">
       <div class="row d-flex align-items-stretch">
       <div class="col-md-8 card m0 p0 borderradiusround nobordertopright noborderbottomright">
           <div class="card-body p40 pt40 pb5 borderradiusround nobordertopright noborderbottomright" style="background-color:#f4f5f6;">
-          <p class="text-primary mb30" style="font-size:26px;">Login or <b>Register</b></p>
+          <p class="text-primary text-center mb30" style="font-size:26px;">Welcome to Blogtrackers</p>
           <form>
       <div class="form-group">
 
-        <input type="email" class="form-control curved-form-login text-primary" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+        <input type="text" class="form-control curved-form-login text-primary"   placeholder="* Full Name">
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
       </div>
       <div class="form-group">
-        <input type="password" class="form-control curved-form-login text-primary" id="exampleInputPassword1" placeholder="Password">
+        <input type="email" class="form-control curved-form-login text-primary"  placeholder="* Email">
       </div>
 
-    <p><button type="submit" class="btn btn-primary loginformbutton" style="background:#28a745;">Login</button> &nbsp;&nbsp;or Login with &nbsp;&nbsp;<button class="btn btn-rounded big-btn2"><i class="fab fa-google icon-small text-primary"></i></button></p>
-        <p class="pt20 text-primary"><small >Forgot your <b>Password?</b></small></p>
-        <p class="pb20 text-primary">Dont have an account yet? <a href="register"><b>Register Now</b></a></small></p>
+      <div class="form-group">
+        <input type="password" class="form-control curved-form-login text-primary"  placeholder="* Password">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control curved-form-login text-primary"  placeholder="* Re-type Password">
+      </div>
+
+    <p class="text-center"><button type="submit" class="btn btn-primary loginformbutton" style="background:#28a745;">Register</button>&nbsp;&nbsp; or Register with &nbsp;&nbsp;<button class="btn btn-rounded big-btn2"><i class="fab fa-google icon-small text-primary"></i></button></p>
+        <!-- <p class="pt20 text-primary"><small >Forgot your <b>Password?</b></small></p> -->
+        <p class="pb20 text-primary text-center">Already have an account yet? <a href="login"><b>Login Now</b></a></small></p>
         </form>
 
       </div>
