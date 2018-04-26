@@ -4668,7 +4668,7 @@ tbody.collapse.show {
 }
 
 .card-columns .card {
-  margin-bottom: 0.75rem;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 576px) {
@@ -4676,9 +4676,9 @@ tbody.collapse.show {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
-    -webkit-column-gap: 1.25rem;
-    -moz-column-gap: 1.25rem;
-    column-gap: 1.25rem;
+    -webkit-column-gap: 2.5rem;
+    -moz-column-gap: 2.5rem;
+    column-gap: 2.5rem;
   }
   .card-columns .card {
     display: inline-block;
