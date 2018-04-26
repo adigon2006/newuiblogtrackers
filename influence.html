@@ -796,7 +796,7 @@
              //
 
 
-
+var color = d3.scale.category20();
 
  // svg.call(tip);
               // data.map(function(d){})
@@ -811,7 +811,7 @@
                         .attr("d", line)
                         // .style("fill", "rgba(0,0,0,0.54)")
                         .style("stroke-width", 2)
-                        .style("stroke", "17394C")
+                        .style("stroke", function(d) { return color(d.data.close);})
                          .attr("transform", "translate("+margin.left/4.7+",0)");
                         // .datum(data)
 
@@ -852,7 +852,7 @@
                           .attr("d", line)
                           // .style("fill", "rgba(0,0,0,0.54)")
                           .style("stroke-width", 2)
-                          .style("stroke", "17394C")
+                          .style("stroke", function(d) { return color(d.date);})
                           .attr("transform", "translate("+margin.left/4.7+",0)");
 
 
@@ -940,53 +940,6 @@
                  .style("fill", "#999")
                  .style("font-size", 12)
                  .text("Frequency");
-
-
-
-
-             // Append tooltip
-             // -------------------------
-
-             // Group elements
-             // var focus = svg.append("g")
-             //     .attr("class", "d3-crosshair-pointer")
-             //     .style("display", "none");
-             //
-             // // Pointer
-             // focus.append("circle")
-             //     .attr("r", 3.5)
-             //     .style("fill", "#fff")
-             //     .style("stroke", "#4CAF50")
-             //     .style("stroke-width", 2);
-             //
-             // // Text
-             // focus.append("text")
-             //     .attr("dy", ".35em")
-             //     .style("fill", "#333")
-             //     .style("stroke", "none")
-             //
-             // // Overlay
-             // svg.append("rect")
-             //     .attr("class", "d3-crosshair-overlay")
-             //     .attr("width", width)
-             //     .attr("height", height)
-             //
-             //     // .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
-             //     // .on('mouseout', tip.hide)
-             //      .on("mousemove", mousemove)
-             //     ;
-             //
-             // // Display tooltip on mousemove
-             // function mousemove() {
-             //     // var x0 = x.invert(d3.mouse(this)[0]),
-             //     // i = bisectDate(data, x0, 1),
-             //     // d0 = data[i - 1],
-             //     // d1 = data[i],
-             //     d = data
-             //   //  focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
-             //     focus.select("text").text(data.close).attr("dx", -26).attr("dy", 30);
-             // }
-
 
 
 
