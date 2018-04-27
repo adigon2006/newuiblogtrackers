@@ -87,7 +87,7 @@
 </div>
 
 <div class="col-md-6 text-right mt10">
-<div class="text-primary demo"><h6 id="reportrange">Date: <span>02/21/18 - 02/28/18</span></h6></div>
+<div class="text-primary demo"><h6 id="reportrange">Time Frame: <span>02/21/18 - 02/28/18</span></h6></div>
 <div>
   <div class="btn-group mt5" data-toggle="buttons">
   <label class="btn btn-primary btn-sm daterangebutton legitRipple"> <input type="radio" name="options" value="day" autocomplete="off" > Day
@@ -110,7 +110,7 @@
 <div class="row p40 border-top-bottom mt20 mb20">
   <div class="col-md-2">
 <small class="text-primary">Selected Blogger</small>
-<h2 class="text-primary styleheading">AdNovum <div class="circle"></div></h2>
+<h2 class="textblue styleheading">AdNovum <div class="circle"></div></h2>
 </div>
   <div class="col-md-10">
   <small class="text-primary">Find Blogger</small>
@@ -120,45 +120,45 @@
 
 <div class="row mt40">
 <div class="col-md-3">
-  <div class="card card-style mt20">
-    <div class="card-body  p30 pt5 pb5">
+  <div class="card card-style mt20 opacity53">
+    <div class="card-body  p30 pt10 pb10">
       <h6 class="card-title mb0">Maximum Influence</h6>
       <h2 class="mb0">649</h2>
-      <small class="text-success">+5% from last week</small>
+
         </div>
   </div>
   <a href="">
-  <div class="card card-style mt20">
-    <div class="card-body  p30 pt5 pb5">
+  <div class="card card-style mt20 opacity53 ">
+    <div class="card-body  p30 pt10 pb10">
       <h6 class="card-title mb0">Top Keyword</h6>
       <h2 class="mb0">Krymu</h2>
-      <small class="text-success">+5% from last week</small>
+
         </div>
   </div>
 </a>
-  <div class="card card-style mt20">
-    <div class="card-body  p30 pt5 pb5">
+  <div class="card card-style mt20 activebar" style="">
+    <div class="card-body  p30 pt10 pb10">
       <h6 class="card-title mb0">Posts</h6>
       <h2 class="mb0">70</h2>
-      <small class="text-success">+5% from last week</small>
+
         </div>
   </div>
-  <div class="card card-style mt20">
-    <div class="card-body  p30 pt5 pb5">
+  <div class="card card-style mt20 opacity53">
+    <div class="card-body  p30 pt10 pb10">
       <h6 class="card-title mb0">Frequency</h6>
       <h2 class="mb0">1.5</h2>
-      <small class="text-success">+5% from last week</small>
+
         </div>
   </div>
-  <div class="card card-style mt20">
-    <div class="card-body  p30 pt5 pb5">
+  <div class="card card-style mt20 opacity53">
+    <div class="card-body  p30 pt10 pb10">
       <h6 class="card-title mb0">Overall Sentiment</h6>
       <h2 class="mb0">Positive</h2>
-      <small class="text-success">+5% from last week</small>
+
         </div>
   </div>
-  <div class="card card-style mt20">
-    <div class="card-body  p30 pt5 pb5">
+  <div class="card card-style mt20 opacity53">
+    <div class="card-body  p30 pt10 pb10">
       <h6 class="card-title mb0">Main Blogsite</h6>
       <h2 class="mb0">Advonum</h2>
       <a href="http://google.com" class="link"><small class="link">Visit Site</small></a>
@@ -168,8 +168,8 @@
 <div class="col-md-9">
   <div class="card card-style mt20">
     <div class="card-body  p30 pt5 pb5">
-      <div style="min-height: 420px;">
-<div><p class="text-primary mt10 float-right">Post Published by <b>Advonum</b></p></div>
+      <div style="min-height: 365px;">
+<div><p class="text-primary mt10 float-right"><b class="textblue">Post</b> Published by <b class="textblue">Advonum</b></p></div>
 <!-- <svg class="linesvg" width="960" height="400"></svg> -->
 <!-- <div id="lineplot" style="min-height: 380px;"></div> -->
 
@@ -209,9 +209,10 @@
   <div class="col-md-6 mt20 ">
     <div class="card card-style mt20">
       <div class="card-body  p5 pt10 pb10">
+        <p class="p15 pb5 pt0 text-primary">List of URLs of <b class="textblue">AdNovum</b></p>
         <div style="min-height: 420px;">
           <div class="p15 pb5 pt0" role="group">
-          Export Options
+          Export
           </div>
                 <table id="DataTables_Table_0_wrapper" class="display nowrap" style="width:100%">
                         <thead>
@@ -294,9 +295,10 @@
   <div class="col-md-6 mt20">
     <div class="card card-style mt20">
       <div class="card-body  p5 pt10 pb10">
+        <p class="p15 pb5 pt0 text-primary">List of URLs of <b class="textblue">AdNovum</b></p>
         <div class="min-height-table"style="min-height: 420px;">
           <div class="p15 pb5 pt0" role="group">
-          Export Options
+          Export
           </div>
                 <table id="DataTables_Table_1_wrapper" class="display nowrap" style="width:100%">
                         <thead>
@@ -572,7 +574,7 @@
  $(function () {
 
      // Initialize chart
-     lineBasic('#d3-line-basic', 350);
+     lineBasic('#d3-line-basic', 300);
 
      // Chart setup
      function lineBasic(element, height) {
@@ -617,7 +619,7 @@
          var xAxis = d3.svg.axis()
              .scale(x)
              .orient("bottom")
-            .ticks(9)
+            .ticks(2)
 
            // .tickFormat(formatPercent);
 
@@ -861,7 +863,7 @@
                         .attr("d", line)
                         // .style("fill", "rgba(0,0,0,0.54)")
                         .style("stroke-width", 2)
-                        .style("stroke", "17394C")
+                        .style("stroke", "0080CC")
                          .attr("transform", "translate("+margin.left/4.7+",0)");
                         // .datum(data)
 
@@ -1000,7 +1002,7 @@
          // ------------------------------
 
          // Call function on window resize
-         $(window).on('resize', resize);
+          $(window).on('resize', resize);
 
          // Call function on sidebar width change
          $('.sidebar-control').on('click', resize);
@@ -1041,6 +1043,18 @@
 
              // Line path
              svg.selectAll('.d3-line').attr("d", line);
+
+             // if(data.length == 1)
+             // {
+             //   // add multiple line
+             //
+             //   var path = svg.selectAll('.d3-line')
+             //             .data(data)
+             //             .enter()
+             //             .append("path")
+             //             .attr("class", "d3-line d3-line-medium")
+             //             .attr("d", line)
+             //           }
 
              // Crosshair
              svg.selectAll('.d3-crosshair-overlay').attr("width", width);
