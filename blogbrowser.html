@@ -28,39 +28,56 @@
 <script src="assets/js/popper.min.js" ></script>
 </head>
 <body >
+<div class="modal-notifications">
+<div class="row">
+<div class="offset-6 col-lg-6 col-md-12 notificationpanel">
+  <div id="closeicon" class="cursor-pointer"><i class="fas fa-times-circle"></i></div>
+<div class="profilesection col-md-12 mt40">
+  <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="60" height="60" alt="" class="float-left" />
+  <div class="float-left" style="margin-left:20px;">
+    <h4 class="text-primary m0 bolder">Adigun Adekunle</h4>
+    <p class="text-primary">adigon2006@gmail.com</p>
+  </div>
 
+</div>
+<div id="othersection" class="col-md-12 mt100" style="clear:both">
+<a class="cursor-pointer"><h1 class="text-primary">Notification <b id="notificationcount" class="cursor-pointer">12</b></h1> </a>
+<a class="cursor-pointer"><h1 class="text-primary">Profile</h1></a>
+<a class="cursor-pointer"><h1 class="text-primary">Log Out</h1></a>
+</div>
+</div>
+</div>
+</div>
   <nav class="navbar navbar-inverse bg-primary">
-    <div class="container-fluid">
+    <div class="container-fluid mt10">
 
       <div class="navbar-header d-none d-lg-inline-flex d-xl-inline-flex  col-lg-4">
       <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" /></a>
       </div>
-      <div class="col-lg-4 "  align="center">
+      <!-- Mobile Menu -->
+      <nav class="navbar navbar-dark bg-primary float-left d-md-block d-sm-block d-xs-block d-lg-none d-xl-none" id="menutoggle">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      </nav>
+      <!-- <div class="navbar-header ">
+      <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" /></a>
+      </div> -->
+      <!-- Mobile menu  -->
+      <div class="col-lg-4 themainmenu"  align="center">
         <ul class="nav main-menu2" style="display:inline-flex; display:-webkit-inline-flex; display:-mozkit-inline-flex;">
           <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
           <li><a href="#"><i class="far fa-dot-circle"></i> Trackers</a></li>
           <li><a href="#"><i class="far fa-heart"></i> Favorites</a></li>
         </ul>
       </div>
-      <!-- <div class="col-md-4">
-      <ul class="main-menu ">
-        <li><a href="#"><i class="icon-user-plus"></i>Home</a></li>
-        <li><a href="#"><i class="icon-cog5"></i> Trackers</a></li>
-        <li><a href="#"><i class="icon-help"></i> Favorites</a></li>
 
-      </ul>
-    </div> -->
-    <!-- <div class="col-sm-2 d-md-block d-sm-block d-xs-block d-lg-none d-xl-none">
-  <nav class="navbar navbar-dark bg-primary float-left ">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
-  </nav>
-</div> -->
-  <div class="col-lg-4 ">
+  <div class="col-lg-4">
   <ul class="nav navbar-nav" style="display:block;">
   <li class="dropdown dropdown-user cursor-pointer float-right">
   <a class="dropdown-toggle" data-toggle="dropdown">
+    <i class="fas fa-circle" id="notificationcolor"></i>
   <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="" />
   <span>Hayder</span>
   <ul class="profilemenu dropdown-menu dropdown-menu-left">
@@ -74,7 +91,9 @@
    </li>
         </ul>
       </div>
-      <!-- <div class="col-md-12 bg-dark d-md-block d-sm-block d-xs-block d-lg-none d-xl-none p0 mt20">
+
+      </div>
+      <div class="col-md-12 bg-dark d-md-block d-sm-block d-xs-block d-lg-none d-xl-none p0 mt20">
       <div class="collapse" id="navbarToggleExternalContent">
         <ul class="navbar-nav mr-auto mobile-menu">
               <li class="nav-item active">
@@ -87,7 +106,7 @@
                 <a class="nav-link" href="#">Favorites</a>
               </li>
             </ul>
-    </div>-->
+    </div>
       </div>
 
       <div class="col-md-12 mt0">
