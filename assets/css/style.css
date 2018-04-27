@@ -284,8 +284,12 @@ background: black;
   right:30px;
   color:#ffffff;
   padding:12px 12px;
-  font-size: 22px;
+  font-size: 16px;
 
+}
+.profilemenulink h1:hover
+{
+opacity: 0.53!important;
 }
 #closeicon
 {
@@ -319,6 +323,8 @@ height:100%;
 position:fixed;
 z-index:999;
 background: rgba(226,231, 233,0.87);
+transform: translate(8500px,0px);
+transition:  1.35s ease-in-out;
 }
 .notificationpanel
 {

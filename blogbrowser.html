@@ -41,9 +41,9 @@
 
 </div>
 <div id="othersection" class="col-md-12 mt100" style="clear:both">
-<a class="cursor-pointer"><h1 class="text-primary">Notification <b id="notificationcount" class="cursor-pointer">12</b></h1> </a>
-<a class="cursor-pointer"><h1 class="text-primary">Profile</h1></a>
-<a class="cursor-pointer"><h1 class="text-primary">Log Out</h1></a>
+<a class="cursor-pointer profilemenulink" href="notifications.html"><h1 class="text-primary">Notifications <b id="notificationcount" class="cursor-pointer">12</b></h1> </a>
+<a class="cursor-pointer profilemenulink" href="profile.html"><h1 class="text-primary">Profile</h1></a>
+<a class="cursor-pointer profilemenulink" href="#"><h1 class="text-primary">Log Out</h1></a>
 </div>
 </div>
 </div>
@@ -76,16 +76,16 @@
   <div class="col-lg-4">
   <ul class="nav navbar-nav" style="display:block;">
   <li class="dropdown dropdown-user cursor-pointer float-right">
-  <a class="dropdown-toggle" data-toggle="dropdown">
+  <a class="dropdown-toggle " id="profiletoggle" data-toggle="dropdown">
     <i class="fas fa-circle" id="notificationcolor"></i>
   <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="" />
   <span>Hayder</span>
-  <ul class="profilemenu dropdown-menu dropdown-menu-left">
+  <!-- <ul class="profilemenu dropdown-menu dropdown-menu-left">
               <li><a href="#"> My profile</a></li>
               <li><a href="#"> Features</a></li>
               <li><a href="#"> Help</a></li>
               <li><a href="#">Logout</a></li>
-  </ul>
+  </ul> -->
   </a>
 
    </li>
@@ -414,10 +414,15 @@ $(document).ready(function() {
 
 
   //$('#config-demo').daterangepicker(options, function(start, end, label) { console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')'); });
+
+
+
 });
 </script>
 
+<script src="assets/js/generic.js">
 
+</script>
 
 
 <script>
