@@ -63,18 +63,18 @@ display: none;
 }
 .styleheading
 {
-border-bottom:3px solid #17394C;
+border-bottom:3px solid #0080CC;
 }
 .circle
 {
 	border-radius: 50%;
-  border-color: #17394C;
+  border-color: #0080CC;
 	width: 9px;
 	height: 9px;
   position:absolute;
   right:10px;
   bottom:5px;
-  background: #17394C;
+  background: #0080CC;
 	/* width and height can be anything, as long as they're equal */
 }
 .text-small
@@ -284,8 +284,24 @@ background: black;
   right:30px;
   color:#ffffff;
   padding:12px 12px;
-  font-size: 22px;
+  font-size: 16px;
 
+}
+.activebar
+{
+  background:#0080CC;
+}
+.activebar h6, .activebar h2
+{
+color:#ffffff;
+}
+.textblue
+{
+  color:#0080CC;
+}
+.profilemenulink h1:hover
+{
+opacity: 0.53!important;
 }
 #closeicon
 {
@@ -319,6 +335,8 @@ height:100%;
 position:fixed;
 z-index:999;
 background: rgba(226,231, 233,0.87);
+transform: translate(8500px,0px);
+transition:  1.35s ease-in-out;
 }
 .notificationpanel
 {
