@@ -256,18 +256,89 @@ font-size: 20px;
 }
 .navbar-nav > .dropdown-user img
 {
-  max-height: 45px;
+max-height: 45px;
 /* padding:0.1rem; */
-border: 2px solid #fff;
+/* border: 2px solid #fff; */
 border-radius: 50%;
 }
+.profilesection img{
+max-height: 60px;
+border-radius: 50%;
+}
+.top10
+{
+top:250px;
+}
+.bolder{
+font-weight: bolder;
+}
+#profilesection
+{
+background: black;
+}
+#notificationcount
+{
+  background:#FF7E7E ;
+  position:absolute;
+  border-radius: 100px;
+  right:30px;
+  color:#ffffff;
+  padding:12px 12px;
+  font-size: 22px;
+
+}
+#closeicon
+{
+position:absolute;
+background: #ffffff;
+border-radius: 100px;
+right:45px;
+top:25px;
+}
+#closeicon i
+{
+  font-size: 50px;
+  color:#FF7E7E;
+}
+
 .dropdown-menu a.dropdown-toggle
 {
 display: none;
 }
+#notificationcolor
+{
+  color:#FF7E7E;
+  font-size: 12px;
+  position: absolute;
+  left:35px;
+}
+.modal-notifications
+{
+width:100%;
+height:100%;
+position:fixed;
+z-index:999;
+background: rgba(226,231, 233,0.87);
+}
+.notificationpanel
+{
+background: rgba(226,231, 233);
+width:100%;
+height:1000px;
+z-index:1000;
+}
+/* .dropdown-toggle::after
+{
+      content: "\f13a";
+}
+*/
 .navbar-nav > .dropdown-user a span, .navbar-nav > .dropdown-user .dropdown-toggle::after
 {
 color:#ffffff;
+}
+.navbar-nav > .dropdown-user a span
+{
+font-weight: bold;
 }
 .top-border
 {
@@ -1004,8 +1075,13 @@ background-color: #45606f;
   fill: none;
   pointer-events: all;
 }
+#menutoggle
+{
+position: absolute;
+z-index: 1;
+}
 /* Mobile Reponsive Section */
-@media (min-width:300px) and (max-width:860px) {
+@media (min-width:300px) and (max-width:860px){
 .loginformbutton
 {
 padding: 12px 8px !important;
@@ -1014,9 +1090,13 @@ padding: 12px 8px !important;
 {
  width:400px;
 }
-ul.nav.main-menu2
+.themainmenu
 {
 display: none !important;
+}
+.card-columns .card {
+
+    width: 100% !important;
 }
 
 }
