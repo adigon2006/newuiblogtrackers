@@ -27,39 +27,72 @@
   <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
 <script src="assets/js/popper.min.js" ></script>
 </head>
-<body style="background-color:#ffffff;">
-
-  <nav class="navbar navbar-inverse bg-primary">
-    <div class="container-fluid">
-      <ul class="nav d-none d-lg-inline-flex d-xl-inline-flex  main-menu">
-        <li><a href="#"><i class="icon-user-plus"></i>Home</a></li>
-        <li><a href="#"><i class="icon-cog5"></i> Trackers</a></li>
-        <li><a href="#"><i class="icon-help"></i> Favorites</a></li>
-
-      </ul>
-  <nav class="navbar navbar-dark bg-primary float-left d-md-block d-sm-block d-xs-block d-lg-none d-xl-none">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
-  </nav>
-  <div class="navbar-header d-none d-lg-inline-flex d-xl-inline-flex ">
-  <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" /></a>
+<body >
+<div class="modal-notifications">
+<div class="row">
+<div class="offset-6 col-lg-6 col-md-12 notificationpanel">
+  <div id="closeicon" class="cursor-pointer"><i class="fas fa-times-circle"></i></div>
+<div class="profilesection col-md-12 mt40">
+  <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="60" height="60" alt="" class="float-left" />
+  <div class="float-left" style="margin-left:20px;">
+    <h4 class="text-primary m0 bolder">Adigun Adekunle</h4>
+    <p class="text-primary">adigon2006@gmail.com</p>
   </div>
-  <ul class="nav navbar-nav">
-  <li class="dropdown dropdown-user cursor-pointer">
-  <a class="dropdown-toggle" data-toggle="dropdown">
-  <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="border-white" />
+
+</div>
+<div id="othersection" class="col-md-12 mt100" style="clear:both">
+<a class="cursor-pointer profilemenulink" href="notifications.html"><h1 class="text-primary">Notifications <b id="notificationcount" class="cursor-pointer">12</b></h1> </a>
+<a class="cursor-pointer profilemenulink" href="profile.html"><h1 class="text-primary">Profile</h1></a>
+<a class="cursor-pointer profilemenulink" href="#"><h1 class="text-primary">Log Out</h1></a>
+</div>
+</div>
+</div>
+</div>
+  <nav class="navbar navbar-inverse bg-primary">
+    <div class="container-fluid mt10">
+
+      <div class="navbar-header d-none d-lg-inline-flex d-xl-inline-flex  col-lg-4">
+      <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" /></a>
+      </div>
+      <!-- Mobile Menu -->
+      <nav class="navbar navbar-dark bg-primary float-left d-md-block d-sm-block d-xs-block d-lg-none d-xl-none" id="menutoggle">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      </nav>
+      <!-- <div class="navbar-header ">
+      <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" /></a>
+      </div> -->
+      <!-- Mobile menu  -->
+      <div class="col-lg-4 themainmenu"  align="center">
+        <ul class="nav main-menu2" style="display:inline-flex; display:-webkit-inline-flex; display:-mozkit-inline-flex;">
+          <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="far fa-dot-circle"></i> Trackers</a></li>
+          <li><a href="#"><i class="far fa-heart"></i> Favorites</a></li>
+        </ul>
+      </div>
+
+  <div class="col-lg-4">
+  <ul class="nav navbar-nav" style="display:block;">
+  <li class="dropdown dropdown-user cursor-pointer float-right">
+  <a class="dropdown-toggle " id="profiletoggle" data-toggle="dropdown">
+    <i class="fas fa-circle" id="notificationcolor"></i>
+  <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="" />
   <span>Hayder</span>
-  <ul class="profilemenu dropdown-menu dropdown-menu-left">
+  <!-- <ul class="profilemenu dropdown-menu dropdown-menu-left">
               <li><a href="#"> My profile</a></li>
               <li><a href="#"> Features</a></li>
               <li><a href="#"> Help</a></li>
               <li><a href="#">Logout</a></li>
-  </ul>
+  </ul> -->
   </a>
 
    </li>
         </ul>
+      </div>
+
+      </div>
       <div class="col-md-12 bg-dark d-md-block d-sm-block d-xs-block d-lg-none d-xl-none p0 mt20">
       <div class="collapse" id="navbarToggleExternalContent">
         <ul class="navbar-nav mr-auto mobile-menu">
@@ -75,36 +108,53 @@
             </ul>
     </div>
       </div>
+
+      <div class="col-md-12 mt0">
+      <input type="search" class="form-control p30 pt5 pb5 icon-big border-none bottom-border text-center blogbrowsersearch nobackground" placeholder="Search Trackers" />
+      </div>
+
     </nav>
 <div class="container">
-<div class="row mt20 mb0">
-<div class="offset-1 col-md-10 offset-1">
-<input type="search" class="form-control p30 pt10 pb10 icon-big border-none bottom-border text-center" placeholder="Search Posts" />
-</div>
-</div>
 
-<div class="row">
-<div class="col-md-12 top-border">
-<h6 class="float-left text-primary">430,002,402 posts in our knowlede database</h6>
+
+<div class="row mt30">
+<div class="col-md-12 ">
+<h6 class="float-left text-primary">30 Trackers</h6>
 <h6 class="float-right text-primary">Recent <i class="fas fa-chevron-down"></i><h6/>
 </div>
 </div>
 
 
-<div class="card-columns pt10 pb10  mt30 mb50">
-<div class="card mb30" >
-<div class="text-center"><i class="fas text-medium pt40 fa-check light-text icon-big"></i></div>
-<h4 class="text-primary text-center pt40">Crooks and Liars</h4>
-<div class="text-center"><button class="btn btn-primary stylebutton3">TRACKING</button> <button class="btn btn-primary stylebutton2">Tracks | 100,000,315</button></div>
-  <div class="card-body">
-    <a href="blogpostpage"><h3 class="card-title text-primary text-center pb20">Apple Employees forced to phone 911 for workers injured after walking into glass walls</h3></a>
-    <p class="card-text text-center author mb0 light-text">Richard Young</p>
-    <p class="card-text text-center postdate light-text">January 12, 2018 3:11pm</p>
+<div class="card-columns pt0 pb10  mt10 mb50 ">
+<div class="card noborder curved-card mb30" >
+<div class="text-center"><i class="fas text-medium pt40 fa-check light-text icon-big2 cursor-pointer" title="Select to Track Blog"></i></div>
+<h1 class="text-primary text-center pt20">Hacker Tracker</h1>
 
+  <div class="card-body">
+    <p class="card-text text-center postdate text-primary">02-01-2018&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;5:30 PM</p>
+    <!-- <a href="blogpostpage"><h4 class="card-title text-primary text-center pb20">Apple Employees forced to phone 911 for workers injured after walking into glass walls</h4></a> -->
+    <!-- <p class="card-text text-center author mb0 light-text">Richard Young</p> -->
+    <div class="text-center">
+    <button class="btn btn-default stylebutton5 text-primary p30 pt5 pb5" style="width:100%;">Sports&nbsp;&nbsp;.&nbsp;&nbsp;Science&nbsp;&nbsp;.&nbsp;&nbsp;Art</button>
+    </div>
+    <p class="mt20 mb20 text-primary text-center">
+    Sometimes it ends up with injured employees who are too distracted by the products to notice walls.
+    </p>
+    <div class="text-center">
+    <button class="btn btn-default stylebutton5 text-primary p30 pt5 pb5 text-left" style="width:100%;">
+    <h1 class="text-success mb0">235</h1>
+    <h5 class="text-primary">Blogs</h5>
+    </button>
+    </div>
   </div>
-  <img class="card-img-top pt30 pb30" src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" alt="Card image cap">
-  <div class="text-center"><i class="fas fa-heart text-medium pb30  light-text icon-big"></i></div>
+
 </div>
+
+
+
+
+
+
 
 
 
@@ -155,149 +205,13 @@
 
 <script>
 $(document).ready(function() {
-    $('#DataTables_Table_0_wrapper').DataTable( {
-        "scrollY": 430,
-        "scrollX": true,
-         "pagingType": "simple",
-         dom: 'Bfrtip',
-      buttons:{
-        buttons: [
-            { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
-            {extend:'csv',className: 'btn-primary stylebutton1'},
-            {extend:'excel',className: 'btn-primary stylebutton1'},
-            {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy to Clipboard'},
-            {extend:'print',className: 'btn-primary stylebutton1'},
-        ]
-      }
-    } );
+
 } );
 </script>
 <!--end for table  -->
-<script>
-$(document).ready(function() {
-  $(document)
-  						.ready(
-  								function() {
-  	var cb = function(start, end, label) {
-          //console.log(start.toISOString(), end.toISOString(), label);
-          $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-          $('#reportrange input').val(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY')).trigger('change');
-        };
-
-        var optionSet1 =
-      	      {   startDate: moment().subtract(29, 'days'),
-      	          endDate: moment(),
-      	          minDate: '01/01/1947',
-      	          maxDate: moment(),
-      			  showDropdowns: true,
-      	          showWeekNumbers: true,
-      	          timePicker : false,
-  				  timePickerIncrement : 1,
-  				  timePicker12Hour : true,
-  				  dateLimit: { days: 50000 },
-         	          ranges: {
-
-         	        	'This Year' : [
-  						moment()
-  								.startOf('year'),
-  						moment() ],
-  				'Last Year' : [
-  						moment()
-  								.subtract(1,'year').startOf('year'),
-  						moment().subtract(1,'year').endOf('year') ]
-      	          },
-      	          opens: 'left',
-      	          applyClass: 'btn-small bg-slate-600 btn-block',
-      	          cancelClass: 'btn-small btn-default btn-block',
-      	          format: 'MM/DD/YYYY',
-      			  locale: {
-      	          applyLabel: 'Submit',
-      	          //cancelLabel: 'Clear',
-      	          fromLabel: 'From',
-      	          toLabel: 'To',
-      	          customRangeLabel: 'Custom',
-      	          daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-      	          monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-      	          firstDay: 1
-      	        }
-
-      	      };
 
 
-  	// if('${datepicked}' == '')
-  	// {
-    //   $('#reportrange span').html(moment().subtract('days', 500).format('MMMM D') + ' - ' + moment().format('MMMM D'));
-    //   $('#reportrange').daterangepicker(optionSet1, cb);
-  	// }
-    //
-  	// else{
-  		// $('#reportrange span').html('${datepicked}');
-      $('#reportrange span').html(moment().subtract( 500, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'))
-  		$('#reportrange, #custom').daterangepicker(optionSet1, cb);
-  		$('#reportrange')
-  		.on(
-  				'show.daterangepicker',
-  				function() {
-  				/* 	console
-  							.log("show event fired"); */
-  				});
-  $('#reportrange')
-  		.on(
-  				'hide.daterangepicker',
-  				function() {
-  					/* console
-  							.log("hide event fired"); */
-  				});
-  $('#reportrange')
-  		.on(
-  				'apply.daterangepicker',
-  				function(ev, picker) {
-  					/* console
-  							.log("apply event fired, start/end dates are "
-  									+ picker.startDate
-  											.format('MMMM D, YYYY')
-  									+ " to "
-  									+ picker.endDate
-  											.format('MMMM D, YYYY')); */
-  				});
-  $('#reportrange')
-  		.on(
-  				'cancel.daterangepicker',
-  				function(ev, picker) {
-  					/* console
-  							.log("cancel event fired"); */
-  				});
-  $('#options1').click(
-  		function() {
-  			$('#reportrange').data(
-  					'daterangepicker')
-  					.setOptions(
-  							optionSet1,
-  							cb);
-  		});
-  $('#options2').click(
-  		function() {
-  			$('#reportrange').data(
-  					'daterangepicker')
-  					.setOptions(
-  							optionSet2,
-  							cb);
-  		});
-  $('#destroy').click(
-  		function() {
-  			$('#reportrange').data(
-  					'daterangepicker')
-  					.remove();
-  		});
-  		//}
-  								});
-                // set attribute for the form
-      //$('#trackerform').attr("action","ExportJSON");
-      //$('#dateform').attr("action","ExportJSON");
-
-
-  //$('#config-demo').daterangepicker(options, function(start, end, label) { console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')'); });
-});
+<script src="assets/js/generic.js">
 </script>
 
 </body>
