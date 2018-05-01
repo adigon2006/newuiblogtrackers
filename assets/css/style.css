@@ -254,6 +254,10 @@ font-weight: bold;
 {
 font-size: 20px;
 }
+.iconbig3
+{
+font-size: 27px;
+}
 .navbar-nav > .dropdown-user img
 {
 max-height: 45px;
@@ -429,7 +433,7 @@ border-radius:10px;
     line-height: 1;
     min-width: 1em;
     text-align: center;
-    font-size: 16px;
+    /* font-size: 16px; */
     vertical-align: middle;
     position: relative;
     top: 0px;
