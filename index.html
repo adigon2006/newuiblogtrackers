@@ -30,24 +30,58 @@
 <body>
 <div class="container-fluid home-top" style="min-height:500px;">
   <nav class="navbar navbar-inverse">
-  <div class="navbar-header d-none d-lg-inline-flex d-xl-inline-flex  col-lg-4">
+
+
+
+  <div class="navbar-header float-left">
   <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" /></a>
   </div>
 
+  <nav class="navbar navbar-dark bg-primary float-right d-md-block d-sm-block d-xs-block d-lg-none d-xl-none" >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  </nav>
+<div class="themainmenu"  align="center">
   <ul class="nav main-menu2" style="display:inline-flex; display:-webkit-inline-flex; display:-mozkit-inline-flex;">
     <li><a href="#">Features</a></li>
     <li><a href="#">Sponsors</a></li>
     <li><a href="#">Login</a></li>
   </ul>
+</div>
+
+  <div class="col-md-12 bg-dark d-md-block d-sm-block d-xs-block d-lg-none d-xl-none p0 mt20">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <ul class="navbar-nav mr-auto mobile-menu">
+          <li class="nav-item active">
+            <a class="" href="#">Features <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sponsors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+        </ul>
+</div>
+  </div>
+
 </nav>
 
-<div class="text-center mt60 offset-3 col-md-6" style="font-size:20px;">
+<div class="text-center mt60 offset-lg-3 col-lg-6 col-md-12" style="font-size:20px;">
 <h1 class="text-white text-center">Tracker Internet Blogs</h1>
 <p class="text-white text-center">Monitor and suggest valueable insights in a drilled-down fashion using content analysis and social network anaysis</p>
-<button class="btn btn-success homebutton mt30 p40 pt10 pb10"><b>Start Tracking</b></button>
+<button class="btn btn-success homebutton mt30 p40 pt10 pb10 mb50"><b>Start Tracking</b></button>
 </div>
 
 
 </div>
+
+
+
+<script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.js">
+</script>
+
 </body>
 </html>
