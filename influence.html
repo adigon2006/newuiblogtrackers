@@ -31,8 +31,8 @@
   <nav class="navbar navbar-inverse bg-primary">
     <div class="container-fluid">
       <ul class="nav d-none d-lg-inline-flex d-xl-inline-flex  main-menu">
-        <li><a href="#"><i class="icon-user-plus"></i>Home</a></li>
-        <li><a href="#"><i class="icon-cog5"></i> Trackers</a></li>
+        <li><a href="./"><i class="icon-user-plus"></i>Home</a></li>
+        <li><a href="trackerlist.html"><i class="icon-cog5"></i> Trackers</a></li>
         <li><a href="#"><i class="icon-help"></i> Favorites</a></li>
 
       </ul>
@@ -63,10 +63,10 @@
       <div class="collapse" id="navbarToggleExternalContent">
         <ul class="navbar-nav mr-auto mobile-menu">
               <li class="nav-item active">
-                <a class="" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="" href="./">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Trackers</a>
+                <a class="nav-link" href="trackerlist.html">Trackers</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Favorites</a>
@@ -79,7 +79,7 @@
 <div class="row bottom-border pb20">
 <div class="col-md-6 paddi">
 <nav class="breadcrumb">
-  <a class="breadcrumb-item text-primary" href="#">MY TRACKER</a>
+  <a class="breadcrumb-item text-primary" href="trackerlist.html">MY TRACKER</a>
   <a class="breadcrumb-item text-primary" href="#">Second Tracker</a>
   <a class="breadcrumb-item active text-primary" href="#">Influence</a>
   </nav>
@@ -939,7 +939,8 @@ var color = d3.scale.category20();
                  .style("text-anchor", "end")
                  .style("fill", "#999")
                  .style("font-size", 12)
-                 .text("Frequency");
+                 // .text("Frequency")
+                 ;
 
 
 
