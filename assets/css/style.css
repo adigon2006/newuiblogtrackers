@@ -1135,6 +1135,43 @@ background-color: #45606f;
 position: absolute;
 z-index: 1;
 }
+
+.jvectormap-zoomin:hover, .jvectormap-zoomout:hover {
+    background-color: #455A64;
+}
+
+.jvectormap-zoomin {
+    top: 10px;
+}
+.jvectormap-zoomout {
+    top: 40px;
+}
+.jvectormap-zoomin, .jvectormap-zoomout {
+    position: absolute;
+    left: 10px;
+    border-radius: 2px;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 10px;
+    background-color: #37474F;
+    text-align: center;
+}
+.map-container {
+    height: 450px;
+}
+.jvectormap-label {
+    position: absolute;
+    display: none;
+    border-radius: 2px;
+    font-size: 12px;
+    background-color: #333;
+    color: #fff;
+    padding: 8px 16px;
+}
+
 /* Mobile Reponsive Section */
 @media (min-width:300px) and (max-width:860px){
 .loginformbutton
