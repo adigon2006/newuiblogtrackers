@@ -6,6 +6,7 @@ body{
   background-color: #F3F4F5  ;
 
 }
+<<<<<<< HEAD
 .scroll-link {
   position: absolute;
   bottom: 1rem;
@@ -39,6 +40,31 @@ body{
   transform: translateY(36px) scaleY(2);
   opacity: 0.01;
   }
+=======
+.notificationsfont
+{
+font-size: 70px;
+color:#C6CED2;
+}
+.notification h2
+{
+width:90%;
+}
+.closeicon
+{
+position:absolute;
+right:15px;
+top:30px;
+}
+.read{
+background-color: #E6E9EB;
+}
+.deletebtn
+{
+padding:10px 35px;
+border-radius: 100px;
+
+>>>>>>> 9ac50824b4253247e65130d4df133bd4fbdc26f8
 }
 .curved-card
 {
@@ -818,7 +844,7 @@ padding-top: 20px;
 }
 .pt30
 {
-padding-top: 20px;
+padding-top: 30px;
 }
 .pt40
 {
@@ -1207,14 +1233,21 @@ z-index: 1;
 
 /* Mobile Reponsive Section */
 @media (min-width:300px) and (max-width:860px){
+  /* LogIn Section  */
 .loginformbutton
 {
-padding: 12px 8px !important;
+padding: 8px 16px !important;
+/* font-size:12px;  */
 }
-.loginbox
+.loginbox, .registerbox
 {
  width:400px;
 }
+.othersection
+{
+display: none !important;
+}
+/* end of login section */
 .themainmenu
 {
 display: none !important;
@@ -1223,5 +1256,6 @@ display: none !important;
 
     width: 100% !important;
 }
+
 
 }

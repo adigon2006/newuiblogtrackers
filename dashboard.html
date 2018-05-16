@@ -126,8 +126,8 @@
 <div class="row mb0">
   <div class="col-md-6 mt20 ">
     <div class="card mt20">
-      <div class="card-body  p15 p15 pb15">
-        <div style="min-height: 450px;">
+      <div class="card-body  p15 pt15 pb15">
+        <div style="min-height: 350px;">
 <div class="map-container map-choropleth"></div>
         </div>
           </div>
@@ -404,7 +404,7 @@ $(document).ready(function() {
 $(function () {
 
     // Initialize chart
-    barVertical('#d3-bar-vertical', 400);
+    barVertical('#d3-bar-vertical', 420);
 
     // Chart setup
     function barVertical(element, height) {
@@ -697,11 +697,19 @@ $(function () {
             //
 
             // Add a label for the pie chart
+          // var getKey = function( obj, value ) {
+	        //    var inverse = _.invert( obj );
+	        //     return _.get( inverse, value, false );
+          //   };
+              locationvalue = d3.max(data, function(d) { return d.size; });
+             console.log(data[locationvalue]);
             svg.append("text")
                 .attr("dy", ".35em")
                 .style("text-anchor", "middle")
                 .style("font-weight", 500)
-                .text(function() { return d3.max(data, function(d) { return d.size; }); });
+                .text(function() {
+                  d = null;
+                  return d3.max(data, function(d) { return d.size; }); });
 
             // Bind data
             var g = svg.selectAll(".d3-arc")
@@ -1105,7 +1113,7 @@ $(function () {
                 .attr("dy", ".35em")
                 .style("text-anchor", "middle")
                 .style("font-weight", 500)
-                .text(function() { return d3.max(data, function(d) { return d.size; }); });
+                .text(function() { return d3.max(data, function(d) { return d.size ; }); });
 
             // Bind data
             var g = svg.selectAll(".d3-arc")
