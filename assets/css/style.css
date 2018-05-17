@@ -356,11 +356,11 @@ position:absolute;
 background: #ffffff;
 border-radius: 100px;
 right:45px;
-top:25px;
+top:35px;
 }
 #closeicon i
 {
-  font-size: 50px;
+  font-size: 40px;
   color:#FF7E7E;
 }
 
