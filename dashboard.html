@@ -90,35 +90,59 @@
 
 </div>
 
-<div class="row p40 pt10 pb10 border-top-bottom mt20 mb20">
-  <div class="col-md-2">
-<small class="text-primary">Blogs</small>
-<h2 class="text-primary styleheading">200 <br/><small class="text-small text-success">12%</small><div class="circle"></div></h2>
+<div class="row p0 pt10 pb10 border-top-bottom mt20 mb20">
+<div class="col-md-2">
+<div class="card curved-card mt10 mb10">
+<div class="card-body p20 pt5 pb5">
+<h6 class="text-blue mb0"><small>Blogs</small></h6>
+<h3 class="text-blue mb0">200</h3>
+</div>
+</div>
 </div>
 
 <div class="col-md-2">
-<small class="text-primary">Bloggers</small>
-<h2 class="text-primary">58 <br/><small class="text-small text-success">12%</small></h2>
+<div class="card curved-card mt10 mb10">
+<div class="card-body p20 pt5 pb5">
+<h6 class="text-blue mb0"><small>Bloggers</small></h6>
+<h3 class="text-blue mb0">58 </h3>
+</div>
+</div>
 </div>
 
 <div class="col-md-2">
-<small class="text-primary">Subscribers</small>
-<h2 class="text-primary">40,0000 <br/><small class="text-small text-danger">5%</small></h2>
+<div class="card curved-card mt10 mb10">
+<div class="card-body p20 pt5 pb5">
+<h6 class="text-blue mb0"><small>Subscribers</small></h6>
+<h3 class="text-blue mb0">40,0000</h3>
+</div>
+</div>
 </div>
 
 <div class="col-md-2">
-<small class="text-primary">Posts</small>
-<h2 class="text-primary">16,0000 <br/><small class="text-small text-success">5%</small></h2>
+<div class="card curved-card mt10 mb10">
+<div class="card-body p20 pt5 pb5">
+<h6 class="text-blue mb0"><small>Posts</small></h6>
+<h3 class="text-blue mb0">16,0000</h3>
+</div>
+</div>
 </div>
 
 <div class="col-md-2">
-<small class="text-primary">Frequency</small>
-<h2 class="text-primary">1.5 <br/><small class="text-small text-success">5%</small></h2>
+  <div class="card curved-card mt10 mb10">
+  <div class="card-body p20 pt5 pb5">
+<h6 class="text-blue mb0"><small>Frequency</small></h6>
+<h3 class="text-blue mb0">1.5 </h3>
+</div>
+</div>
 </div>
 
 <div class="col-md-2">
-<small class="text-primary">Overall Sentiments</small>
-<h2 class="text-primary">Positive <br/><small class="text-small text-success">5%</small></h2>
+  <div class="card curved-card mt10 mb10">
+  <div class="card-body p20 pt5 pb5">
+<h6 class="text-blue mb0"><small>Overall Sentiments</small></h6>
+<h3 class="text-blue mb0">Positive </h3>
+</div>
+</div>
 </div>
 
 </div>
@@ -127,7 +151,8 @@
   <div class="col-md-6 mt20 ">
     <div class="card mt20">
       <div class="card-body  p15 pt15 pb15">
-        <div style="min-height: 350px;">
+        <div><p class="text-primary mt0 float-right">Active <b class="text-blue">Blogs</b> During Past <b>Week</b></p></div>
+        <div style="min-height: 490px;">
 <div class="map-container map-choropleth"></div>
         </div>
           </div>
@@ -137,7 +162,7 @@
   <div class="col-md-6 mt20">
     <div class="card mt20">
       <div class="card-body  p30 pt5 pb5">
-        <div><p class="text-primary mt10 float-right">Active <b>Blogs</b> During Past <b>Week</b></p></div>
+        <div><p class="text-primary mt10 float-right">Active <b class="text-blue">Blogs</b> During Past <b>Week</b></p></div>
         <div class="chart-container" >
         <div class="chart" id="d3-bar-vertical">
                       </div>
@@ -341,14 +366,6 @@
 </div>
 
 
-<!-- <div class="d-inline-flex p-2">I'm an inline flexbox container!</div> -->
-
-
-<!-- <div class="d-flex align-items-stretch">
-  <div class="col-md-4">Fle hfdsnfjdsfjdskfdnsjfjdskfnjsnd jfjsdfnkjsdnjfnjsdknf dsnfj kdsnf dsnfkjndsjfnjkdsnf jndskfn jdsfnjdsknfn dsnfsdjkfnsdjfsdjfnk jdsnjfn dsjfndsj nfjdsnfjndsjf kjdsnfjdskfndsjfksdfn jdsjfndsfjkdsnfjdsf nkndsjfdksnfjdsfnj dsjfndskjfnjdsfhjdbsfhd sbfhbdsh ffhbdsfh dsjfh sdbjbfdsh fbjhdsbh fbdsjfb hdsbfj dsbfx item 1</div>
-  <div class="col-md-4">Flexddsjbfjds fbdsjbjfk dsfjbdjskf item 2</div>
-  <div class="col-md-4">Flex item 3</div>
-</div> -->
 
 </div>
 
@@ -404,7 +421,7 @@ $(document).ready(function() {
 $(function () {
 
     // Initialize chart
-    barVertical('#d3-bar-vertical', 420);
+    barVertical('#d3-bar-vertical', 456);
 
     // Chart setup
     function barVertical(element, height) {
@@ -619,8 +636,9 @@ $(function () {
 </script>
 
 
-<script>
 
+<script>
+// languagedistribution
 $(function () {
 
     // Initialize chart
@@ -709,7 +727,8 @@ $(function () {
                 .style("font-weight", 500)
                 .text(function() {
                   d = null;
-                  return d3.max(data, function(d) { return d.size; }); });
+                  return d3.max(data, function(d) { return d.size; })
+                  ; });
 
             // Bind data
             var g = svg.selectAll(".d3-arc")

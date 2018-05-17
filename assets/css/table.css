@@ -13,6 +13,7 @@ table.dataTable {
   /*
    * Body styles
    */ }
+    
   table.dataTable thead th,
   table.dataTable tfoot th {
     font-weight: bold; }
