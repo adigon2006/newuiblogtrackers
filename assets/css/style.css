@@ -118,8 +118,9 @@ font-size:16px;
 color:#CCCCCC;
 }
 .tagcloudcontainer svg{
-width:100% !important;  
+width:100% !important;
 }
+
 .noborder
 {
 border:none;
@@ -1229,7 +1230,16 @@ z-index: 1;
     color: #fff;
     padding: 8px 16px;
 }
-
+.profilenavbar
+{
+min-height:100px;
+}
+.profilepageimg
+{
+  position:relative;
+  margin-top:-90px;
+  border-radius:100px !important;
+}
 /* Mobile Reponsive Section */
 @media (min-width:300px) and (max-width:860px){
   /* LogIn Section  */
