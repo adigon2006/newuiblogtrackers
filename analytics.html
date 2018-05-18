@@ -126,7 +126,7 @@
 <li>Number of Bloggers</li>
 </ul>
 </div>
-<div class="pb30"><button class="btn btn-primary stylebutton4">View</button> <a class="cursor-pointer text-primary linktextsize" data-toggle="collapse" data-target="#toggle-2"><i class="fas fa-plus"></i><b>More Details</b></a></div>
+<div class="pb30"><a href="postingfrequency.html"><button class="btn btn-primary stylebutton4">View</button></a> <a class="cursor-pointer text-primary linktextsize" data-toggle="collapse" data-target="#toggle-2"><i class="fas fa-plus"></i><b>More Details</b></a></div>
 
 </div>
 </div>
@@ -325,7 +325,7 @@ The dashboard provides an overview of the selected tracker. It displays the numb
 It can be utilized to identify any unusual patterns in blog postings. This aids in detecting real-time events that interested the blogging community. This feature also displays a list of active bloggers with number of posts. User can click on any data point on the graph to get a detailed list of the named-entities that were mentioned in blogs during that time-period.
 </div>
 
-<div class="pb20"><button class="btn btn-primary stylebutton4">View</button> <a class="cursor-pointer text-primary linktextsize" data-toggle="collapse" data-target="#toggle2"><i class="fas fa-plus"></i><b>More Details</b></a></div>
+<div class="pb20"><a href="postingfrequency.html"><button class="btn btn-primary stylebutton4">View</button></a> <a class="cursor-pointer text-primary linktextsize" data-toggle="collapse" data-target="#toggle2"><i class="fas fa-plus"></i><b>More Details</b></a></div>
   </div>
         </div>
   </div>

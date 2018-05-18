@@ -108,15 +108,46 @@ border-bottom:3px solid #0080CC;
 {
 font-size:20px;
 }
-.text-xsmall
+.text-blog-content
 {
 font-size:16px;
+  line-height: 2.8rem;
+}
+.text-light-color
+{
+color:#CCCCCC;
+}
+.tagcloudcontainer svg{
+width:100% !important;  
 }
 .noborder
 {
 border:none;
 }
-
+.extra-light-text
+{
+font-weight: 100;
+}
+.ultra-light-text
+{
+font-weight: 200;
+}
+.light-text
+{
+font-weight: 300;
+}
+.bold-text
+{
+font-weight: 400;
+}
+.semi-bold-text
+{
+font-weight: 500;
+}
+.super-bold-text
+{
+font-weight: 600;
+}
 /*  */
 
 /* svg {
