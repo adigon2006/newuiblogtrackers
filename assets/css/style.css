@@ -1239,6 +1239,7 @@ min-height:100px;
   position:relative;
   margin-top:-90px;
   border-radius:100px !important;
+  border:3px solid #ffffff;
 }
 /* Mobile Reponsive Section */
 @media (min-width:300px) and (max-width:860px){
