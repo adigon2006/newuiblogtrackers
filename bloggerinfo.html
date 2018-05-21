@@ -1015,50 +1015,49 @@
          // be updated on window resize
          function resize() {
 
-             // Layout variables
-             width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
+           // Layout variables
+           width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
+           //
+           //
+           // // Layout
+           // // -------------------------
+           //
+           // // Main svg width
+           container.attr("width", width + margin.left + margin.right);
+           //
+           // // Width of appended group
+           svg.attr("width", width + margin.left + margin.right);
+           //
+           //
+           // // Axes
+           // // -------------------------
+           //
+           // // Horizontal range
+           x.rangeRoundBands([0, width],.72,.5);
+           //
+           // // Horizontal axis
+           svg.selectAll('.d3-axis-horizontal').call(xAxis);
+           //
+           //
+           // // Chart elements
+           // // -------------------------
+           //
+           // // Line path
+           svg.selectAll('.d3-line').attr("d", line);
 
 
-             // Layout
-             // -------------------------
-
-             // Main svg width
-             container.attr("width", width + margin.left + margin.right);
-
-             // Width of appended group
-             svg.attr("width", width + margin.left + margin.right);
-
-
-             // Axes
-             // -------------------------
-
-             // Horizontal range
-             x.range([0, width]);
-
-             // Horizontal axis
-             svg.selectAll('.d3-axis-horizontal').call(xAxis);
-
-
-             // Chart elements
-             // -------------------------
-
-             // Line path
-             svg.selectAll('.d3-line').attr("d", line);
-
-             // if(data.length == 1)
-             // {
-             //   // add multiple line
-             //
-             //   var path = svg.selectAll('.d3-line')
-             //             .data(data)
-             //             .enter()
-             //             .append("path")
-             //             .attr("class", "d3-line d3-line-medium")
-             //             .attr("d", line)
-             //           }
-
-             // Crosshair
-             svg.selectAll('.d3-crosshair-overlay').attr("width", width);
+           if(data.length == 1)
+           {
+             svg.selectAll(".circle-point").attr("circle",circles)
+             .attr("cx",function(d) { return x(d.date);})
+             .attr("cy", function(d){return y(d.close)});
+           }
+           else if(data.length > 1)
+           {
+             svg.selectAll(".circle-point").attr("circle",circles)
+             .attr("cx",function(d) { return x(d.date);})
+             .attr("cy", function(d){return y(d.close)});
+           }
          }
      }
  });

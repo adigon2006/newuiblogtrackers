@@ -392,15 +392,15 @@
                                 <td>10,000</td>
   <td>200 <sub>of 200</sub></td>
     <td>100 <sub>of 100</sub></td>
-      <td>1.5</td>assets/vendors/DataTables/datatables.min.js
+      <td>1.5</td>
       <td>English</td>
       <td>United States</td>
 
                             </tr>
                             <tr>
-              assets/vendors/DataTables/Buttons-1.5.1/js/buttons.html5.min.js
-              assets/vendors/DataTables/Buttons-1.5.1/js/buttons.print.min.js
-  <td>200 <sub>of 200</sub></td>
+                                <td>Technology</td>
+                                <td>10,000</td>
+    <td>200 <sub>of 200</sub></td>
     <td>100 <sub>of 100</sub></td>
       <td>1.5</td>
       <td>English</td>
@@ -486,14 +486,14 @@
  <script src="assets/vendors/bootstrap-daterangepicker/moment.js"></script>
  <script src="assets/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
  <!-- Start for tables  -->
- <script type="text/javascript" src="assets/vendors/DataTables/dataTables.min.js"></script>
+ <script type="text/javascript" src="assets/vendors/DataTables/datatables.min.js"></script>
  <script type="text/javascript" src="assets/vendors/DataTables/dataTables.bootstrap4.min.js"></script>
  <script src="assets/vendors/DataTables/Buttons-1.5.1/js/buttons.flash.min.js"></script>
  <script src="assets/vendors/DataTables/Buttons-1.5.1/js/dataTables.buttons.min.js"></script>
  <script src="assets/vendors/DataTables/pdfmake-0.1.32/pdfmake.min.js"></script>
  <script src="assets/vendors/DataTables/pdfmake-0.1.32/vfs_fonts.js"></script>
- <script src="assets/vendors/DataTables/buttons-1.5.1/js/buttons.html5.min.js"></script>
- <script src="assets/vendors/DataTables/buttons-1.5.1/js/buttons.print.min.js"></script>
+ <script src="assets/vendors/DataTables/Buttons-1.5.1/js/buttons.html5.min.js"></script>
+ <script src="assets/vendors/DataTables/Buttons-1.5.1/js/buttons.print.min.js"></script>
 
  <script>
  $(document).ready(function() {
@@ -975,7 +975,7 @@
                                 .attr("class", "d3-line d3-line-medium")
                                 .attr("d", line)
                                 // .style("fill", "rgba(0,0,0,0.54)")
-                                .style("stroke-width", 2)
+                                .style("stroke-width",2)
                                 .style("stroke", "17394C")
                                  .attr("transform", "translate("+margin.left/4.7+",0)");
                                 // .datum(data)
@@ -990,7 +990,7 @@
                               // .enter()
                               .append("circle")
                               .attr("class","circle-point")
-                              .attr("r",4.5)
+                              .attr("r",3.4)
                               .style("stroke", "#4CAF50")
                               .style("fill","#4CAF50")
                               .attr("cx",function(d) { return x(d.date); })
@@ -1016,7 +1016,7 @@
                                   .attr("class", "d3-line d3-line-medium")
                                   .attr("d", line)
                                   // .style("fill", "rgba(0,0,0,0.54)")
-                                  .style("stroke-width", 3.2)
+                                  .style("stroke-width", 2)
                                   .style("stroke", function(d,i) { return color(i);})
                                   .attr("transform", "translate("+margin.left/4.7+",0)");
 
@@ -1041,7 +1041,7 @@
                                        // .enter()
                                        .append("circle")
                                        .attr("class","circle-point")
-                                       .attr("r",4.5)
+                                       .attr("r",3.4)
                                        .style("stroke", "#4CAF50")
                                        .style("fill","#4CAF50")
                                        .attr("cx",function(d) { return x(d.date)})
@@ -1113,45 +1113,7 @@
              // Append tooltip
              // -------------------------
 
-             // Group elements
-             // var focus = svg.append("g")
-             //     .attr("class", "d3-crosshair-pointer")
-             //     .style("display", "none");
-             //
-             // // Pointer
-             // focus.append("circle")
-             //     .attr("r", 3.5)
-             //     .style("fill", "#fff")
-             //     .style("stroke", "#4CAF50")
-             //     .style("stroke-width", 2);
-             //
-             // // Text
-             // focus.append("text")
-             //     .attr("dy", ".35em")
-             //     .style("fill", "#333")
-             //     .style("stroke", "none")
-             //
-             // // Overlay
-             // svg.append("rect")
-             //     .attr("class", "d3-crosshair-overlay")
-             //     .attr("width", width)
-             //     .attr("height", height)
-             //
-             //     // .on('mouseover', tip.attr('class', 'tooltip-inner in').show)
-             //     // .on('mouseout', tip.hide)
-             //      .on("mousemove", mousemove)
-             //     ;
-             //
-             // // Display tooltip on mousemove
-             // function mousemove() {
-             //     // var x0 = x.invert(d3.mouse(this)[0]),
-             //     // i = bisectDate(data, x0, 1),
-             //     // d0 = data[i - 1],
-             //     // d1 = data[i],
-             //     d = data
-             //   //  focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
-             //     focus.select("text").text(data.close).attr("dx", -26).attr("dy", 30);
-             // }
+
 
 
 
@@ -1172,38 +1134,53 @@
          // be updated on window resize
          function resize() {
 
-             // Layout variables
-             width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
+           // Layout variables
+           width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
+           //
+           //
+           // // Layout
+           // // -------------------------
+           //
+           // // Main svg width
+           container.attr("width", width + margin.left + margin.right);
+           //
+           // // Width of appended group
+           svg.attr("width", width + margin.left + margin.right);
+           //
+           //
+           // // Axes
+           // // -------------------------
+           //
+           // // Horizontal range
+           x.rangeRoundBands([0, width],.72,.5);
+           //
+           // // Horizontal axis
+           svg.selectAll('.d3-axis-horizontal').call(xAxis);
+           //
+           //
+           // // Chart elements
+           // // -------------------------
+           //
+           // // Line path
+           svg.selectAll('.d3-line').attr("d", line);
 
 
-             // Layout
-             // -------------------------
+           if(data.length == 1)
+           {
+             svg.selectAll(".circle-point").attr("circle",circles)
+             .attr("cx",function(d) { return x(d.date);})
+             .attr("cy", function(d){return y(d.close)});
+           }
+           else if(data.length > 1)
+           {
+             svg.selectAll(".circle-point").attr("circle",circles)
+             .attr("cx",function(d) { return x(d.date);})
+             .attr("cy", function(d){return y(d.close)});
+           }
+           //
+           // // Crosshair
+           // svg.selectAll('.d3-crosshair-overlay').attr("width", width);
 
-             // Main svg width
-             container.attr("width", width + margin.left + margin.right);
-
-             // Width of appended group
-             svg.attr("width", width + margin.left + margin.right);
-
-
-             // Axes
-             // -------------------------
-
-             // Horizontal range
-             x.range([0, width]);
-
-             // Horizontal axis
-             svg.selectAll('.d3-axis-horizontal').call(xAxis);
-
-
-             // Chart elements
-             // -------------------------
-
-             // Line path
-             svg.selectAll('.d3-line').attr("d", line);
-
-             // Crosshair
-             svg.selectAll('.d3-crosshair-overlay').attr("width", width);
          }
      }
  });
