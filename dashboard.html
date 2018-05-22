@@ -617,7 +617,7 @@ $(function () {
             // -------------------------
 
             // Horizontal range
-            x.rangeRoundBands([0, width], .1, .5);
+            x.rangeRoundBands([0, width], .72, .5);
 
             // Horizontal axis
             svg.selectAll('.d3-axis-horizontal').call(xAxis);
@@ -627,7 +627,7 @@ $(function () {
             // -------------------------
 
             // Line path
-            svg.selectAll('.d3-bar').attr("x", function(d) { return x(d.letter); }).attr("width", x.rangeBand());
+            svg.selectAll('.d3-bar').attr("x", function(d) { return x(d.letter); }).attr("width", 16);
         }
     }
 });

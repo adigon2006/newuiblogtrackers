@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blogtrackers</title>
+  <link rel="shortcut icon" href="images/favicons/favicon.ico">
+  <link rel="apple-touch-icon" href="images/favicons/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="96x96" href="images/favicons/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/favicon-144x144.png">
+  <!-- start of bootsrap -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css"/>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
+  <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.css" />
+  <link rel="stylesheet" href="assets/fonts/iconic/css/open-iconic.css" />
+ <link rel="stylesheet" href="assets/vendors/bootstrap-daterangepicker/daterangepicker.css" />
+ <link rel="stylesheet" href="assets/css/table.css" />
+ <link rel="stylesheet" href="assets/vendors/DataTables/dataTables.bootstrap4.min.css" />
+
+<link rel="stylesheet" href="assets/css/daterangepicker.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!--end of bootsrap -->
+  <script src="assets/js/jquery-3.2.1.slim.min.js"  ></script>
+<script src="assets/js/popper.min.js" ></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse bg-primary">
+    <div class="container-fluid">
+      <ul class="nav d-none d-lg-inline-flex d-xl-inline-flex  main-menu">
+        <li><a href="./"><i class="icon-user-plus"></i>Home</a></li>
+        <li><a href="trackerlist.html"><i class="icon-cog5"></i> Trackers</a></li>
+        <li><a href="#"><i class="icon-help"></i> Favorites</a></li>
+
+      </ul>
+  <nav class="navbar navbar-dark bg-primary float-left d-md-block d-sm-block d-xs-block d-lg-none d-xl-none">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  </nav>
+  <div class="navbar-header d-none d-lg-inline-flex d-xl-inline-flex ">
+  <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" /></a>
+  </div>
+  <ul class="nav navbar-nav">
+  <li class="dropdown dropdown-user cursor-pointer">
+  <a class="dropdown-toggle" data-toggle="dropdown">
+  <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="border-white" />
+  <span>Hayder</span>
+  <ul class="profilemenu dropdown-menu dropdown-menu-left">
+              <li><a href="#"> My profile</a></li>
+              <li><a href="#"> Features</a></li>
+              <li><a href="#"> Help</a></li>
+              <li><a href="#">Logout</a></li>
+  </ul>
+  </a>
+
+   </li>
+        </ul>
+      <div class="col-md-12 bg-dark d-md-block d-sm-block d-xs-block d-lg-none d-xl-none p0 mt20">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <ul class="navbar-nav mr-auto mobile-menu">
+              <li class="nav-item active">
+                <a class="" href="./">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="trackerlist.html">Trackers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Favorites</a>
+              </li>
+            </ul>
+    </div>
+      </div>
+    </nav>
+<div class="container">
+<div class="row bottom-border pb20">
+<div class="col-md-6 paddi">
+<nav class="breadcrumb">
+  <a class="breadcrumb-item text-primary" href="trackerlist.html">MY TRACKER</a>
+  <a class="breadcrumb-item text-primary" href="#">Second Tracker</a>
+  <a class="breadcrumb-item active text-primary" href="#">Influence</a>
+  </nav>
+<div>Tracking: <button class="btn btn-primary stylebutton1">All Blogs</button></div>
+</div>
+
+<div class="col-md-6 text-right mt10">
+<div class="text-primary demo"><h6 id="reportrange">Date: <span>02/21/18 - 02/28/18</span></h6></div>
+<div>
+  <div class="btn-group mt5" data-toggle="buttons">
+  <label class="btn btn-primary btn-sm daterangebutton legitRipple"> <input type="radio" name="options" value="day" autocomplete="off" > Day
+  	</label>
+    <label class="btn btn-primary btn-sm "> <input type="radio" name="options" value="week" autocomplete="off" >Week
+  	</label>
+     <label class="btn btn-primary btn-sm "> <input type="radio" name="options" value="month" autocomplete="off" > Month
+  	</label>
+    <label class="btn btn-primary btn-sm text-center">Year <input type="radio" name="options" value="year" autocomplete="off" >
+  	</label>
+    <label class="btn btn-primary btn-sm " id="custom">Custom</label>
+  </div>
+
+  <!-- Day Week Month Year <b id="custom" class="text-primary">Custom</b> -->
+
+</div>
+</div>
+</div>
+
+<!-- <div class="row p40 border-top-bottom mt20 mb20">
+  <div class="col-md-2">
+<small class="text-primary">Selected Blogger</small>
+<h2 class="text-primary styleheading">AdNovum <div class="circle"></div></h2>
+</div>
+  <div class="col-md-10">
+  <small class="text-primary">Find Blogger</small>
+  <input class="form-control inputboxstyle" placeholder="| Search" />
+  </div>
+</div> -->
+
+
+
+<div class="row mb0">
+
+
+  <div class="col-md-12 mt20">
+    <div class="card card-style mt20">
+      <div class="card-body  p30 pt5 pb5">
+        <div><p class="text-primary mt10">Blogger in Tracker Activity Vs Influence</p></div>
+        <div style="min-height: 420px;">
+          <div class="chart-container">
+            <div class="chart" id="scatterplot"></div>
+          </div>
+        </div>
+          </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+<!-- <footer class="footer">
+  <div class="container-fluid bg-primary mt60">
+<p class="text-center text-medium pt10 pb10 mb0">Copyright &copy; Blogtrackers 2017 All Rights Reserved.</p>
+</div>
+  </footer> -->
+
+
+  <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
+ <script src="assets/bootstrap/js/bootstrap.js">
+ </script>
+
+ <script src="assets/vendors/bootstrap-daterangepicker/moment.js"></script>
+ <script src="assets/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+ <!-- Start for tables  -->
+ <script type="text/javascript" src="assets/vendors/DataTables/datatables.min.js"></script>
+ <script type="text/javascript" src="assets/vendors/DataTables/dataTables.bootstrap4.min.js"></script>
+ <script src="assets/vendors/DataTables/Buttons-1.5.1/js/buttons.flash.min.js"></script>
+ <script src="assets/vendors/DataTables/Buttons-1.5.1/js/dataTables.buttons.min.js"></script>
+ <script src="assets/vendors/DataTables/pdfmake-0.1.32/pdfmake.min.js"></script>
+ <script src="assets/vendors/DataTables/pdfmake-0.1.32/vfs_fonts.js"></script>
+ <script src="assets/vendors/DataTables/Buttons-1.5.1/js/buttons.html5.min.js"></script>
+ <script src="assets/vendors/DataTables/Buttons-1.5.1/js/buttons.print.min.js"></script>
+
+ <script>
+ $(document).ready(function() {
+     $('#DataTables_Table_1_wrapper').DataTable( {
+         "scrollY": 430,
+         "scrollX": true,
+          "pagingType": "simple",
+          dom: 'Bfrtip',
+       buttons:{
+         buttons: [
+             { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
+             {extend:'csv',className: 'btn-primary stylebutton1'},
+             {extend:'excel',className: 'btn-primary stylebutton1'},
+            // {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy to Clipboard'},
+             {extend:'print',className: 'btn-primary stylebutton1'},
+         ]
+       }
+     } );
+
+     $('#DataTables_Table_0_wrapper').DataTable( {
+         "scrollY": 430,
+         "scrollX": true,
+          "pagingType": "simple",
+          dom: 'Bfrtip',
+       buttons:{
+         buttons: [
+             { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
+             {extend:'csv',className: 'btn-primary stylebutton1'},
+             {extend:'excel',className: 'btn-primary stylebutton1'},
+            // {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy to Clipboard'},
+             {extend:'print',className: 'btn-primary stylebutton1'},
+         ]
+       }
+     } );
+ } );
+ </script>
+ <!--end for table  -->
+ <script>
+ $(document).ready(function() {
+   $(document)
+   						.ready(
+   								function() {
+   	var cb = function(start, end, label) {
+           //console.log(start.toISOString(), end.toISOString(), label);
+           $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+           $('#reportrange input').val(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY')).trigger('change');
+         };
+
+         var optionSet1 =
+       	      {   startDate: moment().subtract(29, 'days'),
+       	          endDate: moment(),
+       	          minDate: '01/01/1947',
+       	          maxDate: moment(),
+       			  showDropdowns: true,
+       	          showWeekNumbers: true,
+       	          timePicker : false,
+   				  timePickerIncrement : 1,
+   				  timePicker12Hour : true,
+   				  dateLimit: { days: 50000 },
+          	          ranges: {
+
+          	        	'This Year' : [
+   						moment()
+   								.startOf('year'),
+   						moment() ],
+   				'Last Year' : [
+   						moment()
+   								.subtract(1,'year').startOf('year'),
+   						moment().subtract(1,'year').endOf('year') ]
+       	          },
+       	          opens: 'left',
+       	          applyClass: 'btn-small bg-slate-600 btn-block',
+       	          cancelClass: 'btn-small btn-default btn-block',
+       	          format: 'MM/DD/YYYY',
+       			  locale: {
+       	          applyLabel: 'Submit',
+       	          //cancelLabel: 'Clear',
+       	          fromLabel: 'From',
+       	          toLabel: 'To',
+       	          customRangeLabel: 'Custom',
+       	          daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+       	          monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+       	          firstDay: 1
+       	        }
+
+       	      };
+
+
+   	// if('${datepicked}' == '')
+   	// {
+     //   $('#reportrange span').html(moment().subtract('days', 500).format('MMMM D') + ' - ' + moment().format('MMMM D'));
+     //   $('#reportrange').daterangepicker(optionSet1, cb);
+   	// }
+     //
+   	// else{
+   		// $('#reportrange span').html('${datepicked}');
+       $('#reportrange span').html(moment().subtract( 500, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'))
+   		$('#reportrange, #custom').daterangepicker(optionSet1, cb);
+   		$('#reportrange')
+   		.on(
+   				'show.daterangepicker',
+   				function() {
+   				/* 	console
+   							.log("show event fired"); */
+   				});
+   $('#reportrange')
+   		.on(
+   				'hide.daterangepicker',
+   				function() {
+   					/* console
+   							.log("hide event fired"); */
+   				});
+   $('#reportrange')
+   		.on(
+   				'apply.daterangepicker',
+   				function(ev, picker) {
+   					/* console
+   							.log("apply event fired, start/end dates are "
+   									+ picker.startDate
+   											.format('MMMM D, YYYY')
+   									+ " to "
+   									+ picker.endDate
+   											.format('MMMM D, YYYY')); */
+   				});
+   $('#reportrange')
+   		.on(
+   				'cancel.daterangepicker',
+   				function(ev, picker) {
+   					/* console
+   							.log("cancel event fired"); */
+   				});
+   $('#options1').click(
+   		function() {
+   			$('#reportrange').data(
+   					'daterangepicker')
+   					.setOptions(
+   							optionSet1,
+   							cb);
+   		});
+   $('#options2').click(
+   		function() {
+   			$('#reportrange').data(
+   					'daterangepicker')
+   					.setOptions(
+   							optionSet2,
+   							cb);
+   		});
+   $('#destroy').click(
+   		function() {
+   			$('#reportrange').data(
+   					'daterangepicker')
+   					.remove();
+   		});
+   		//}
+   								});
+                 // set attribute for the form
+       //$('#trackerform').attr("action","ExportJSON");
+       //$('#dateform').attr("action","ExportJSON");
+
+
+   //$('#config-demo').daterangepicker(options, function(start, end, label) { console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')'); });
+ });
+ </script>
+ <script type="text/javascript" src="assets/vendors/d3/d3.min.js"></script>
+
+ <script type="text/javascript" src="assets/vendors/d3/d3_tooltip.js"></script>
+ <script>
+ $(function () {
+
+     // Initialize chart
+     lineBasic('#scatterplot', 400);
+
+     // Chart setup
+     function lineBasic(element, height) {
+
+
+         // Basic setup
+         // ------------------------------
+
+         // Define main variables
+         var d3Container = d3.select(element),
+             margin = {top: 5, right: 20, bottom: 20, left: 50},
+             width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
+             height = height - margin.top - margin.bottom;
+
+
+         var formatPercent = d3.format("");
+         // Format data
+         // var parseDate = d3.time.format("%d-%b-%y").parse,
+         //     bisectDate = d3.bisector(function(d) { return d.date; }).left,
+         //     formatValue = d3.format(",.0f"),
+         //     formatCurrency = function(d) { return formatValue(d); }
+
+
+
+         // Construct scales
+         // ------------------------------
+
+         // Horizontal
+         var x = d3.scale.linear()
+             .range([0, width],.72,.5);
+
+         // Vertical
+         var y = d3.scale.linear()
+                .range([height, 0]);
+
+
+
+         // Create axes
+         // ------------------------------
+
+         // Horizontal
+         var xAxis = d3.svg.axis()
+             .scale(x)
+             .orient("bottom")
+            .ticks(6);
+
+           // .tickFormat(formatPercent);
+
+
+         // Vertical
+         var yAxis = d3.svg.axis()
+             .scale(y)
+             .orient("left")
+             .ticks(6);
+
+
+
+         // Create chart
+         // ------------------------------
+
+         // Add SVG element
+         var container = d3Container.append("svg");
+
+         // Add SVG group
+         var svg = container
+             .attr("width", width + margin.left + margin.right)
+             .attr("height", height + margin.top + margin.bottom)
+             .append("g")
+             // .attr("transform", "translate(0," + y(0) + ")");
+                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+
+         // Construct chart layout
+         // ------------------------------
+
+         // Line
+
+
+         // Load data
+         // ------------------------------
+         //
+         data = [
+           [{"x":12,"y":40},{"x":15,"y":30},{"x":18,"y":12.5},{"x":11,"y":22},{"x":5,"y":19}],
+           [{"x":8,"y":35},{"x":14,"y":22},{"x":27,"y":33},{"x":11.5,"y":-16},{"x":-12,"y":-11}],
+            [{"x":17,"y":50},{"x":18,"y":30},{"x":19,"y":17.7},{"x":10,"y":25},{"x":9,"y":15},{"x":23,"y":20},{"x":1,"y":20},{"x":20,"y":23},{"x":11.5,"y":-11},{"x":-11,"y":-15},{"x":7,"y":40},{"x":20,"y":30},{"x":8,"y":-12.5},{"x":6,"y":15},{"x":15,"y":25},{"x":-8,"y":14},{"x":-14,"y":25}]
+         ];
+
+         //console.log(data);
+         // data = [];
+
+
+         // data = [
+         //   [{"x":12,"y":40},{"x":15,"y":30},{"x":18,"y":12.5},{"x":11,"y":22},{"x":5,"y":19},{"x":8,"y":35},{"x":14,"y":22},{"x":27,"y":33},{"x":11.5,"y":-16},{"x":-12,"y":-11},{"x":17,"y":50},{"x":18,"y":30},{"x":19,"y":17.7},{"x":10,"y":25},{"x":9,"y":15},{"x":23,"y":20},{"x":1,"y":20},{"x":20,"y":23},{"x":11.5,"y":-11},{"x":-11,"y":-15},{"x":7,"y":40},{"x":20,"y":30},{"x":8,"y":-12.5},{"x":6,"y":15},{"x":15,"y":25},{"x":-8,"y":14},{"x":-14,"y":25}]
+         // ];
+
+         var line = d3.svg.line()
+                     .interpolate("basis")
+                     .x(function(d, i) { return x(i); })
+                     .y(function(d, i) { return y(d); });
+
+         // Create tooltip
+         var tip = d3.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d) {
+                if(d === null)
+                {
+                  return "No Information Available";
+                }
+                else if(d !== null) {
+                 return "("+d.x+","+d.y+")<br/> Click for more information";
+                  }
+
+                });
+
+
+
+
+
+
+                   // Vertical
+         // extract max value from list of json object
+         // console.log(data.length)
+             var maxYvalue =
+             data.map(function(d){
+               var mvalue = [];
+               if(data.length > 1)
+             {
+               d.forEach(function(f,i){
+               mvalue[i] = f.y;
+
+               })
+             return d3.max(mvalue);
+             }
+
+             //console.log(mvalue);
+             });
+
+
+             var minYvalue =
+             data.map(function(d){
+               var mvalue = [];
+               if(data.length > 1)
+             {
+               d.forEach(function(f,i){
+               mvalue[i] = f.y;
+
+               })
+               if(d3.min(mvalue) < 0 )
+               {
+                 return d3.min(mvalue);
+               }
+               else{
+                 return 0;
+               }
+
+             }
+
+             //console.log(mvalue);
+             });
+
+
+             var maxXvalue =
+             data.map(function(d){
+               var mvalue = [];
+               if(data.length > 1)
+             {
+               d.forEach(function(f,i){
+               mvalue[i] = f.x;
+
+               })
+             return d3.max(mvalue);
+             }
+
+             //console.log(mvalue);
+             });
+
+
+             var minXvalue =
+             data.map(function(d){
+               var mvalue = [];
+               if(data.length > 1)
+             {
+               d.forEach(function(f,i){
+               mvalue[i] = f.x;
+
+               })
+
+             if(d3.min(mvalue) < 0)
+             {
+               return d3.min(mvalue);
+             }
+             else
+             {
+               return 0;
+             }
+
+             }
+
+             //console.log(mvalue);
+             });
+
+
+             // color = d3.scale.linear()
+             //          .domain([0,1,2,3,4,5,6,10,15,20,80])
+             //          .range(["#17394C", "#F5CC0E", "#CE0202", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+                         var color = d3.scale.category20();
+
+
+         ////console.log(data)
+         if(data.length == 1)
+         {
+           // var returnedvalue = data[0].map(function(e){
+           // return e.date
+           // });
+
+           var maxXvalue2 =
+           data.map(function(d){
+           return d3.max(d,function(t){return t.x});
+           });
+
+           var minXvalue2 =
+           data.map(function(d){
+           return d3.min(d,function(t){return t.x});
+           });
+
+         // for single json data
+         x.domain([minXvalue2,maxXvalue2]);
+         // rewrite x domain
+
+         var maxYvalue2 =
+         data.map(function(d){
+         return d3.max(d,function(t){return t.y});
+         });
+
+         var minYvalue2 =
+         data.map(function(d){
+         return d3.min(d,function(t){return t.y});
+         });
+
+         y.domain([minYvalue2,maxYvalue2]);
+         }
+         else if(data.length > 1)
+         {
+
+          x.domain([d3.min(minXvalue), d3.max(maxXvalue)]);
+         y.domain([d3.min(minYvalue), d3.max(maxYvalue)]);
+          }
+
+
+
+
+                     //
+                     // Append chart elements
+                     //
+
+
+
+
+                    // svg.call(tip);
+                      // data.map(function(d){})
+                      if(data.length == 1)
+                      {
+
+                         // add scatter points
+                        var circles = svg.selectAll(".circle-point")
+                                  .data(data[0])
+                                  .enter();
+
+
+                              circles
+                              // .enter()
+                              .append("circle")
+                              .attr("class","circle-point")
+                              .attr("r",3.4)
+                              // .style("stroke", "#4CAF50")
+                              .style("fill",function(e,i){return color(i)})
+                              .attr("cx",function(d) { return x(d.x); })
+                              .attr("cy", function(d){return y(d.y)})
+
+                              .attr("transform", "translate("+margin.left/4.7+",0)");
+
+                              svg.selectAll(".circle-point").data(data[0])
+                              .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                              .on("mouseout",tip.hide)
+                              .on("click",function(d){
+                                // console.log(d.date)
+                              });
+                                                 svg.call(tip)
+                      }
+                      // handles multiple json parameter
+                      else if(data.length > 1)
+                      {
+
+                              var mergedarray = [].concat(...data);
+                               // console.log(mergedarray)
+                                 circles = svg.selectAll(".circle-point")
+                                     .data(mergedarray)
+                                     .enter();
+
+                                       circles
+                                       // .enter()
+                                       .append("circle")
+                                       .attr("class","circle-point")
+                                       .attr("r",3.4)
+                                       // .style("stroke", "#4CAF50")
+                                       .style("fill",function(d,i){return color(i);})
+                                       .attr("cx",function(d) { return x(d.x)})
+                                       .attr("cy", function(d){return y(d.y)})
+
+                                       .attr("transform", "translate("+margin.left/4.7+",0)");
+                                       svg.selectAll(".circle-point").data(mergedarray)
+                                      .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                                      .on("mouseout",tip.hide)
+                                      .on("click",function(d){console.log(d.date)});
+                                 //                         svg.call(tip)
+
+                               //console.log(newi);
+
+
+                                     svg.selectAll(".circle-point").data(mergedarray)
+                                     .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                                     .on("mouseout",tip.hide)
+                                     .on("click",function(d){console.log(d.date)});
+                                                        svg.call(tip)
+
+
+
+
+
+
+
+
+
+
+                      }
+
+
+         // show data tip
+
+
+                     // Append axes
+                     // ------------------------------
+
+                     // Horizontal
+                     svg.append("g")
+                         .attr("class", "d3-axis d3-axis-horizontal d3-axis-strong")
+                         // .attr("transform", "translate(0," + height + ")")
+                         .attr("transform", "translate(0," + y(0) + ")")
+                         .call(xAxis);
+
+                     // Vertical
+                     var verticalAxis = svg.append("g")
+                         .attr("class", "d3-axis d3-axis-vertical d3-axis-strong")
+                          .attr("transform", "translate("+ x(0) + "," + "0)")
+                         .call(yAxis);
+
+
+
+
+
+                     // Add text label
+                     verticalAxis.append("text")
+                         .attr("transform", "rotate(-90)")
+                         .attr("y", 10)
+                         .attr("dy", ".71em")
+                         .style("text-anchor", "end")
+                         .style("fill", "#999")
+                         .style("font-size", 12)
+                         // .text("Frequency")
+                         ;
+
+         // Resize chart
+         // ------------------------------
+
+         // Call function on window resize
+         $(window).on('resize', resize);
+
+         // Call function on sidebar width change
+         $('.sidebar-control').on('click', resize);
+
+         // Resize function
+         //
+         // Since D3 doesn't support SVG resize by default,
+         // we need to manually specify parts of the graph that need to
+         // be updated on window resize
+         function resize() {
+
+           // Layout variables
+           width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
+           //
+           //
+           // // Layout
+           // // -------------------------
+           //
+           // // Main svg width
+           container.attr("width", width + margin.left + margin.right);
+           //
+           // // Width of appended group
+           svg.attr("width", width + margin.left + margin.right);
+           //
+           //
+           // // Axes
+           // // -------------------------
+           //
+           // // Horizontal range
+           x.range([0, width],.72,.5);
+           //
+           // // Horizontal axis
+           svg.selectAll('.d3-axis-horizontal').call(xAxis);
+           //
+           //
+           // // Chart elements
+           // // -------------------------
+           //
+
+
+
+           if(data.length == 1)
+           {
+             svg.selectAll(".circle-point").attr("circle",circles)
+             .attr("cx",function(d) { return x(d.x);})
+             .attr("cy", function(d){return y(d.y)});
+           }
+           else if(data.length > 1)
+           {
+             svg.selectAll(".circle-point").attr("circle",circles)
+             .attr("cx",function(d) { return x(d.x);})
+             .attr("cy", function(d){return y(d.y)});
+           }
+         }
+     }
+ });
+ </script>
+
+<!--word cloud  -->
+ <script>
+
+     var frequency_list = [{"text":"study","size":40},{"text":"motion","size":15},{"text":"forces","size":10},{"text":"electricity","size":15},{"text":"movement","size":10},{"text":"relation","size":5},{"text":"things","size":10},{"text":"force","size":5},{"text":"ad","size":5},{"text":"energy","size":85},{"text":"living","size":5},{"text":"nonliving","size":5},{"text":"laws","size":15},{"text":"speed","size":45},{"text":"velocity","size":30},{"text":"define","size":5},{"text":"constraints","size":5},{"text":"universe","size":10},{"text":"distinguished","size":5},{"text":"chemistry","size":5},{"text":"biology","size":5},{"text":"includes","size":5},{"text":"radiation","size":5},{"text":"sound","size":5},{"text":"structure","size":5},{"text":"atoms","size":5},{"text":"including","size":10},{"text":"atomic","size":10},{"text":"nuclear","size":10},{"text":"cryogenics","size":10},{"text":"solid-state","size":10},{"text":"particle","size":10},{"text":"plasma","size":10},{"text":"deals","size":5},{"text":"merriam-webster","size":5},{"text":"dictionary","size":10},{"text":"analysis","size":5},{"text":"conducted","size":5},{"text":"order","size":5},{"text":"understand","size":5},{"text":"behaves","size":5},{"text":"en","size":5},{"text":"wikipedia","size":5},{"text":"wiki","size":5},{"text":"physics-","size":5},{"text":"physical","size":5},{"text":"behaviour","size":5},{"text":"collinsdictionary","size":5},{"text":"english","size":5},{"text":"time","size":35},{"text":"distance","size":35},{"text":"wheels","size":5},{"text":"revelations","size":5},{"text":"minute","size":5},{"text":"acceleration","size":20},{"text":"torque","size":5},{"text":"wheel","size":5},{"text":"rotations","size":5},{"text":"resistance","size":5},{"text":"momentum","size":5},{"text":"measure","size":10},{"text":"direction","size":10},{"text":"car","size":5},{"text":"add","size":5},{"text":"traveled","size":5},{"text":"weight","size":5},{"text":"electrical","size":5},{"text":"power","size":5}];
+
+
+     var color = d3.scale.linear()
+             .domain([0,1,2,3,4,5,6,10,15,20,80])
+             .range(["#17394C", "#F5CC0E", "#CE0202", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+
+
+ </script>
+
+</body>
+</html>
