@@ -624,7 +624,8 @@
           // Vertical
           var yAxis = d3.svg.axis()
               .scale(y)
-              .orient("left");
+              .orient("left")
+              .ticks(6);
 
 
 
@@ -659,7 +660,8 @@
   data = [
     [{"date":"2014","close":400},{"date":"2015","close":600},{"date":"2016","close":1300},{"date":"2017","close":1700},{"date":"2018","close":2100}],
     [{"date":"2014","close":350},{"date":"2015","close":700},{"date":"2016","close":1500},{"date":"2017","close":1600},{"date":"2018","close":1250}],
-    [{"date":"2014","close":500},{"date":"2015","close":900},{"date":"2016","close":1200},{"date":"2017","close":1200},{"date":"2018","close":2600}]
+    [{"date":"2014","close":500},{"date":"2015","close":900},{"date":"2016","close":1200},{"date":"2017","close":1200},{"date":"2018","close":2600}],
+    [{"date":"2014","close":250},{"date":"2015","close":1840},{"date":"2016","close":1400},{"date":"2017","close":1300},{"date":"2018","close":1800}]
   ];
 
   //console.log(data);
@@ -898,7 +900,7 @@
                else if(data.length > 1)
                {
                  // add multiple line
-
+                 // var color = d3.scale.category20();
                  var path = svg.selectAll('.d3-line')
                            .data(data)
                            .enter()
