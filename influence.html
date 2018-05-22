@@ -925,6 +925,7 @@
                      svg.append("g")
                          .attr("class", "d3-axis d3-axis-horizontal d3-axis-strong")
                          .attr("transform", "translate(0," + height + ")")
+                         .attr("transform", "translate(0," + y(0) + ")")
                          .call(xAxis);
 
                      // Vertical
@@ -1087,6 +1088,7 @@
              .attr("width", width + margin.left + margin.right)
              .attr("height", height + margin.top + margin.bottom)
              .append("g")
+             // .attr("transform", "translate(0," + y(0) + ")");
                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
@@ -1102,7 +1104,8 @@
          //
          data = [
            [{"x":12,"y":40},{"x":15,"y":30},{"x":18,"y":12.5},{"x":11,"y":22},{"x":5,"y":19}],
-           [{"x":8,"y":35},{"x":14,"y":22},{"x":27,"y":33},{"x":11.5,"y":-16},{"x":-12,"y":-11}]
+           [{"x":8,"y":35},{"x":14,"y":22},{"x":27,"y":33},{"x":11.5,"y":-16},{"x":-12,"y":-11}],
+            [{"x":17,"y":50},{"x":18,"y":30},{"x":19,"y":17.7},{"x":10,"y":25},{"x":9,"y":15},{"x":23,"y":20},{"x":1,"y":20},{"x":20,"y":23},{"x":11.5,"y":-11},{"x":-11,"y":-15},{"x":7,"y":40},{"x":20,"y":30},{"x":8,"y":-12.5},{"x":6,"y":15},{"x":15,"y":25},{"x":-8,"y":14},{"x":-14,"y":25}]
          ];
 
          //console.log(data);
@@ -1110,10 +1113,13 @@
 
 
          // data = [
-         //   [{"x":12,"y":40},{"x":15,"y":30},{"x":18,"y":12.5},{"x":11,"y":22},{"x":5,"y":19},{"x":8,"y":35},{"x":14,"y":22},{"x":27,"y":33},{"x":11.5,"y":-16},{"x":-12,"y":-11}]
+         //   [{"x":12,"y":40},{"x":15,"y":30},{"x":18,"y":12.5},{"x":11,"y":22},{"x":5,"y":19},{"x":8,"y":35},{"x":14,"y":22},{"x":27,"y":33},{"x":11.5,"y":-16},{"x":-12,"y":-11},{"x":17,"y":50},{"x":18,"y":30},{"x":19,"y":17.7},{"x":10,"y":25},{"x":9,"y":15},{"x":23,"y":20},{"x":1,"y":20},{"x":20,"y":23},{"x":11.5,"y":-11},{"x":-11,"y":-15},{"x":7,"y":40},{"x":20,"y":30},{"x":8,"y":-12.5},{"x":6,"y":15},{"x":15,"y":25},{"x":-8,"y":14},{"x":-14,"y":25}]
          // ];
 
-
+         var line = d3.svg.line()
+                     .interpolate("basis")
+                     .x(function(d, i) { return x(i); })
+                     .y(function(d, i) { return y(d); });
 
          // Create tooltip
          var tip = d3.tip()
@@ -1362,12 +1368,14 @@
                      // Horizontal
                      svg.append("g")
                          .attr("class", "d3-axis d3-axis-horizontal d3-axis-strong")
-                         .attr("transform", "translate(0," + height + ")")
+                         // .attr("transform", "translate(0," + height + ")")
+                         .attr("transform", "translate(0," + y(0) + ")")
                          .call(xAxis);
 
                      // Vertical
                      var verticalAxis = svg.append("g")
                          .attr("class", "d3-axis d3-axis-vertical d3-axis-strong")
+                          .attr("transform", "translate("+ x(0) + "," + "0)")
                          .call(yAxis);
 
 
@@ -1384,7 +1392,6 @@
                          .style("font-size", 12)
                          // .text("Frequency")
                          ;
-
 
          // Resize chart
          // ------------------------------
@@ -1447,7 +1454,6 @@
          }
      }
  });
-
  </script>
 
 <!--word cloud  -->
