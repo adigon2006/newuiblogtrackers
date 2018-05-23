@@ -1432,7 +1432,8 @@
            x.range([0, width],.72,.5);
            //
            // // Horizontal axis
-           svg.selectAll('.d3-axis-horizontal').call(xAxis);
+           svg.select('.d3-axis-horizontal').attr("transform", "translate(0," + y(0) + ")").call(xAxis);
+           svg.select('.d3-axis-vertical').attr("transform", "translate("+ x(0) + "," + "0)").call(yAxis);
            //
            //
            // // Chart elements
