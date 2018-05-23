@@ -386,7 +386,7 @@
          var xAxis = d3.svg.axis()
              .scale(x)
              .orient("bottom")
-            .ticks(6);
+            .ticks(7);
 
            // .tickFormat(formatPercent);
 
@@ -701,7 +701,12 @@
                          .call(yAxis);
 
 
-
+                         svg.selectAll(".tick text")
+                    .each(function (d) {
+                      if ( d === 0 ) {
+                          this.remove();
+                      }
+                    });
 
 
                      // Add text label
@@ -750,6 +755,13 @@
            //
            // // Horizontal range
            x.range([0, width],.72,.5);
+
+           svg.selectAll(".tick text")
+           .each(function (d) {
+             if ( d === 0 ) {
+            this.remove();
+            }
+            });
            //
            // // Horizontal axis
            svg.select('.d3-axis-horizontal').attr("transform", "translate(0," + y(0) + ")").call(xAxis);

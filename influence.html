@@ -1064,7 +1064,7 @@
          var xAxis = d3.svg.axis()
              .scale(x)
              .orient("bottom")
-            .ticks(6);
+            .ticks(7);
 
            // .tickFormat(formatPercent);
 
@@ -1381,7 +1381,12 @@
                          .call(yAxis);
 
 
-
+                         svg.selectAll(".tick text")
+                      .each(function (d) {
+                      if ( d === 0 ) {
+                          this.remove();
+                      }
+                      });
 
 
                      // Add text label
@@ -1440,7 +1445,12 @@
            // // -------------------------
            //
 
-
+           svg.selectAll(".tick text")
+        .each(function (d) {
+        if ( d === 0 ) {
+            this.remove();
+        }
+        });
 
            if(data.length == 1)
            {
