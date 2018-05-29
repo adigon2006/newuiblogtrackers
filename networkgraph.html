@@ -127,7 +127,7 @@
     <div class="card card-style mt20">
       <div class="card-body  p30 pt5 pb5">
         <div><p class="text-primary mt10">Network Graph</p></div>
-        <div style="min-height: 420px;">
+        <div style="min-height: 1200px;">
           <div class="chart-container">
             <div class="chart" id="networkgraph"></div>
           </div>
@@ -406,7 +406,7 @@
          //   [{"x":12,"y":40},{"x":15,"y":30},{"x":18,"y":12.5},{"x":11,"y":22},{"x":5,"y":19},{"x":8,"y":35},{"x":14,"y":22},{"x":27,"y":33},{"x":11.5,"y":-16},{"x":-12,"y":-11},{"x":17,"y":50},{"x":18,"y":30},{"x":19,"y":17.7},{"x":10,"y":25},{"x":9,"y":15},{"x":23,"y":20},{"x":1,"y":20},{"x":20,"y":23},{"x":11.5,"y":-11},{"x":-11,"y":-15},{"x":7,"y":40},{"x":20,"y":30},{"x":8,"y":-12.5},{"x":6,"y":15},{"x":15,"y":25},{"x":-8,"y":14},{"x":-14,"y":25}]
          // ];
 
-         {
+        data = {
            "nodes": [
              {"id": "Myriel", "group": 1},
              {"id": "Napoleon", "group": 1},
@@ -1033,22 +1033,23 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("miserables.json", function(error, graph) {
-  if (error) throw error;
+// d3.json("miserables.json", function(error, graph) {
+//   if (error) throw error;
 
   var link = svg.append("g")
       .attr("class", "links")
     .selectAll("line")
-    .data(graph.links)
+    .data(data.links)
     .enter().append("line")
       .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
 
   var node = svg.append("g")
       .attr("class", "nodes")
-    .selectAll("circle")
-    .data(graph.nodes)
+
+      .selectAll("circle")
+  .data(data.nodes)
     .enter().append("circle")
-      .attr("r", 10)
+      .attr("r", 11)
       .attr("stroke","#cccccc")
       .attr("fill", function(d) { return color(d.group); })
       .call(d3.drag()
@@ -1056,15 +1057,25 @@ d3.json("miserables.json", function(error, graph) {
           .on("drag", dragged)
           .on("end", dragended));
 
+          node.append("text")
+          // .attr("transform", "rotate(-90)")
+          .attr("dx",15)
+          .attr("dy", ".35em")
+          // .style("text-anchor", "end")
+          .text("ade")
+          .style("fill","black")
+          .style("font-size", 12);
+
+
   node.append("title")
       .text(function(d) { return d.id; });
 
   simulation
-      .nodes(graph.nodes)
+      .nodes(data.nodes)
       .on("tick", ticked);
 
   simulation.force("link")
-      .links(graph.links);
+      .links(data.links);
 
   function ticked() {
     link
@@ -1077,7 +1088,7 @@ d3.json("miserables.json", function(error, graph) {
         .attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
   }
-});
+// });
 
 function dragstarted(d) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
@@ -1162,6 +1173,44 @@ function dragended(d) {
 
 <!--word cloud  -->
 
+<!--word cloud  -->
+ <script>
+
+     var frequency_list = [{"text":"study","size":40},{"text":"motion","size":15},{"text":"forces","size":10},{"text":"electricity","size":15},{"text":"movement","size":10},{"text":"relation","size":5},{"text":"things","size":10},{"text":"force","size":5},{"text":"ad","size":5},{"text":"energy","size":85},{"text":"living","size":5},{"text":"nonliving","size":5},{"text":"laws","size":15},{"text":"speed","size":45},{"text":"velocity","size":30},{"text":"define","size":5},{"text":"constraints","size":5},{"text":"universe","size":10},{"text":"distinguished","size":5},{"text":"chemistry","size":5},{"text":"biology","size":5},{"text":"includes","size":5},{"text":"radiation","size":5},{"text":"sound","size":5},{"text":"structure","size":5},{"text":"atoms","size":5},{"text":"including","size":10},{"text":"atomic","size":10},{"text":"nuclear","size":10},{"text":"cryogenics","size":10},{"text":"solid-state","size":10},{"text":"particle","size":10},{"text":"plasma","size":10},{"text":"deals","size":5},{"text":"merriam-webster","size":5},{"text":"dictionary","size":10},{"text":"analysis","size":5},{"text":"conducted","size":5},{"text":"order","size":5},{"text":"understand","size":5},{"text":"behaves","size":5},{"text":"en","size":5},{"text":"wikipedia","size":5},{"text":"wiki","size":5},{"text":"physics-","size":5},{"text":"physical","size":5},{"text":"behaviour","size":5},{"text":"collinsdictionary","size":5},{"text":"english","size":5},{"text":"time","size":35},{"text":"distance","size":35},{"text":"wheels","size":5},{"text":"revelations","size":5},{"text":"minute","size":5},{"text":"acceleration","size":20},{"text":"torque","size":5},{"text":"wheel","size":5},{"text":"rotations","size":5},{"text":"resistance","size":5},{"text":"momentum","size":5},{"text":"measure","size":10},{"text":"direction","size":10},{"text":"car","size":5},{"text":"add","size":5},{"text":"traveled","size":5},{"text":"weight","size":5},{"text":"electrical","size":5},{"text":"power","size":5}];
+
+
+     var color = d3.scale.linear()
+             .domain([0,1,2,3,4,5,6,10,15,20,80])
+             .range(["#17394C", "#F5CC0E", "#CE0202", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+
+     d3.layout.cloud().size([450, 300])
+             .words(frequency_list)
+             .rotate(0)
+             .fontSize(function(d) { return d.size; })
+             .on("end", draw)
+             .start();
+
+     function draw(words) {
+         d3.select(".tagcloudcontainer").append("svg")
+                 .attr("width", 450)
+                 .attr("height", 300)
+                 .attr("class", "wordcloud")
+                 .append("g")
+                 // without the transform, words words would get cutoff to the left and top, they would
+                 // appear outside of the SVG area
+                 .attr("transform", "translate(155,180)")
+                 .selectAll("text")
+                 .data(words)
+                 .enter().append("text")
+                 .style("font-size", function(d) { return d.size + "px"; })
+                 .style("fill", function(d, i) { return color(i); })
+                 .attr("transform", function(d) {
+                     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                 })
+
+                 .text(function(d) { return d.text; });
+     }
+ </script>
 
 </body>
 </html>

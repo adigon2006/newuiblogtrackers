@@ -6,6 +6,48 @@ body{
   background-color: #F3F4F5  ;
 
 }
+/* .carousel-control-prev, .carousel-control-next
+{
+color:blue;
+} */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 40px;
+  width: 40px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 2px solid #17394C;
+  background-image: none;
+}
+.carousel-indicators .active
+{
+background-color: blue;
+}
+.carousel-indicators li::before
+{
+content:"\f111";
+}
+.carousel-indicators li::after
+{
+content:"\f111";
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 22px;
+  font-weight: bolder;
+  color: red;
+}
+
+.carousel-control-prev-icon:before {
+  content: '<';
+  font-size: 22px;
+  font-weight: bolder;
+  color: red;
+}
+
 .links line {
   stroke: #999;
   stroke-opacity: 0.6;
