@@ -23,9 +23,17 @@ color:blue;
 }
 .carousel-indicators .active
 {
-background-color: blue;
+background-color: #17394C;
 }
-
+.carousel-indicators li
+{
+background-color: rgba(0,0,0,0.5);
+}
+circle text{
+  fill:black;   /* <== Set the fill */
+text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+cursor: move;
+}
 .carousel-control-next-icon:after
 {
   content: '>';
