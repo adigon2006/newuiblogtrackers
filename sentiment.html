@@ -295,7 +295,6 @@
 
 
 
-
 </div>
 
 
@@ -487,6 +486,233 @@
  <script type="text/javascript" src="assets/vendors/d3/d3.min.js"></script>
  <script src="assets/vendors/wordcloud/d3.layout.cloud.js"></script>
  <script type="text/javascript" src="assets/vendors/d3/d3_tooltip.js"></script>
+ <script src="assets/vendors/radarchart/radarChart.js"></script>
+ <script>
+$(function () {
+    /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
+
+    //////////////////////////////////////////////////////////////
+    //////////////////////// Set-Up //////////////////////////////
+    //////////////////////////////////////////////////////////////
+
+    var margin = {top: 100, right: 100, bottom: 100, left: 100},
+      width = Math.min(450, window.innerWidth - 10) - margin.left - margin.right,
+      height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+
+
+
+    //////////////////////////////////////////////////////////////
+    ////////////////////////// Data //////////////////////////////
+    //////////////////////////////////////////////////////////////
+
+    var personalcontent = [
+          [//iPhone
+          {axis:"Death",value:0.22},
+          {axis:"Work",value:0.28},
+          {axis:"Leisure",value:0.29},
+          {axis:"Religion",value:0.17},
+          {axis:"Home",value:0.22},
+          {axis:"Money",value:0.02}
+          ],[//Samsung
+          {axis:"Death",value:0.27},
+          {axis:"Work",value:0.16},
+          {axis:"Leisure",value:0.35},
+          {axis:"Religion",value:0.13},
+          {axis:"Home",value:0.20},
+          {axis:"Money",value:0.13}
+          ],[//Nokia Smartphone
+          {axis:"Death",value:0.26},
+          {axis:"Work",value:0.10},
+          {axis:"Leisure",value:0.30},
+          {axis:"Religion",value:0.14},
+          {axis:"Home",value:0.22},
+          {axis:"Money",value:0.04}
+          ]
+        ];
+
+        var timeorientation = [
+              [//iPhone
+              {axis:"Past Focus",value:0.02},
+              {axis:"Present Focus",value:0.21},
+              {axis:"Future Focus",value:0.50}
+              ],[//Samsung
+
+              {axis:"Past Focus",value:0.13},
+              {axis:"Present Focus",value:0.35},
+              {axis:"Future Focus",value:0.38}
+              ],[//Nokia Smartphone
+
+              {axis:"Past Focus",value:0.04},
+              {axis:"Present Focus",value:0.41},
+              {axis:"Future Focus",value:0.30}
+              ]
+            ];
+
+            var coredriveandneed = [
+                  [//iPhone
+                  {axis:"Affiliation",value:0.22},
+                  {axis:"Achievement",value:0.28},
+                  {axis:"Risk/Prevention Focus",value:0.29},
+                  {axis:"Reward Focus",value:0.22},
+                  {axis:"Power",value:0.02},
+                  ]
+                  ,[//Samsung
+                  {axis:"Affiliation",value:0.27},
+                  {axis:"Achievement",value:0.16},
+                  {axis:"Risk/Prevention Focus",value:0.35},
+
+                  {axis:"Reward Focus",value:0.35},
+                  {axis:"Power",value:0.38}
+                  ],
+                  [//Nokia Smartphone
+                  {axis:"Affiliation",value:0.26},
+                  {axis:"Achievement",value:0.10},
+                  {axis:"Risk/Prevention Focus",value:0.30},
+                  {axis:"Reward Focus",value:0.14},
+                  {axis:"Power",value:0.22}
+                  ]
+                ];
+
+                var cognitiveprocess = [
+                      [//iPhone
+                      {axis:"Insight",value:0.22},
+                      {axis:"Differentiation",value:0.28},
+                      {axis:"Cause",value:0.29},
+                      {axis:"Discrepancies",value:0.17},
+                      {axis:"Certainty",value:0.22},
+                      {axis:"Tentativeness",value:0.02}
+                      ],[//Samsung
+                      {axis:"Insight",value:0.16},
+                      {axis:"Differentiation",value:0.35},
+                      {axis:"Cause",value:0.13},
+                      {axis:"Discrepancies",value:0.20},
+                      {axis:"Certainty",value:0.13},
+                      {axis:"Tentativeness",value:0.35}
+                      ],[//Nokia Smartphone
+                      {axis:"Battery Life",value:0.26},
+                      {axis:"Brand",value:0.10},
+                      {axis:"Contract Cost",value:0.30},
+                      {axis:"Design And Quality",value:0.14},
+                      {axis:"Have Internet Connectivity",value:0.22},
+                      {axis:"Large Screen",value:0.04},
+                      {axis:"Price Of Device",value:0.41},
+                      {axis:"To Be A Smartphone",value:0.30}
+                      ]
+                    ];
+
+                    var summaryvariable = [
+                          [//iPhone
+                          {axis:"Analytical Thinking",value:0.29},
+                          {axis:"Emotional Tone",value:0.17},
+                          {axis:"Clout",value:0.22},
+                          {axis:"Authentic",value:0.02}
+                          ],[//Samsung
+                          {axis:"Analytical Thinking",value:0.27},
+                          {axis:"Emotional Tone",value:0.16},
+                          {axis:"Clout",value:0.35},
+                          {axis:"Authentic",value:0.13}
+                          ],[//Nokia Smartphone
+                          {axis:"Analytical Thinking",value:0.22},
+                          {axis:"Emotional Tone",value:0.04},
+                          {axis:"Clout",value:0.41},
+                          {axis:"Authentic",value:0.30}
+                          ]
+                        ];
+
+                        var sentimentemotion = [
+                              [//iPhone
+                              {axis:"Positive Emotion",value:0.22},
+                              {axis:"Sadness",value:0.28},
+                              {axis:"Negative Emotion",value:0.29},
+                              {axis:"Anger",value:0.21},
+                              {axis:"Anxiety",value:0.50}
+                              ],[//Samsung
+                              {axis:"Positive Emotion",value:0.27},
+                              {axis:"Sadness",value:0.35},
+                              {axis:"Negative Emotion",value:0.20},
+                              {axis:"Anger",value:0.13},
+                              {axis:"Anxiety",value:0.35}
+                              ],[//Nokia Smartphone
+                              {axis:"Battery Life",value:0.26},
+                              {axis:"Positive Emotion",value:0.30},
+                              {axis:"Sadness",value:0.14},
+                              {axis:"Negative Emotion",value:0.22},
+                              {axis:"Anger",value:0.04},
+                              {axis:"Anxiety",value:0.41}
+                              ]
+                            ];
+    //////////////////////////////////////////////////////////////
+    //////////////////// Draw the Chart //////////////////////////
+    //////////////////////////////////////////////////////////////
+
+    var color = d3.scale.ordinal()
+      .range(["#EDC951","#CC333F","#00A0B0"]);
+
+    var radarChartOptions1 = {
+      w: width,
+      h: height,
+      margin: margin,
+      maxValue: 0.5,
+      levels: 5,
+      roundStrokes: true,
+      color: color
+    };
+    var radarChartOptions2 = {
+      w: width,
+      h: height,
+      margin: margin,
+      maxValue: 0.5,
+      levels: 5,
+      roundStrokes: true,
+      color: color
+    };
+    var radarChartOptions3 = {
+      w: width,
+      h: height,
+      margin: margin,
+      maxValue: 0.5,
+      levels: 5,
+      roundStrokes: true,
+      color: color
+    };
+    var radarChartOptions4 = {
+      w: width,
+      h: height,
+      margin: margin,
+      maxValue: 0.5,
+      levels: 5,
+      roundStrokes: true,
+      color: color
+    };
+    var radarChartOptions5 = {
+      w: width,
+      h: height,
+      margin: margin,
+      maxValue: 0.5,
+      levels: 5,
+      roundStrokes: true,
+      color: color
+    };
+    var radarChartOptions6 = {
+      w: width,
+      h: height,
+      margin: margin,
+      maxValue: 0.5,
+      levels: 5,
+      roundStrokes: true,
+      color: color
+    };
+    //Call function to draw the Radar chart
+
+      RadarChart(".personalcontent", personalcontent, radarChartOptions1);
+      RadarChart(".timeorientation", timeorientation, radarChartOptions2);
+      RadarChart(".coredriveandneed", coredriveandneed, radarChartOptions3);
+      RadarChart(".cognitiveprocess", cognitiveprocess, radarChartOptions4);
+      RadarChart(".summaryvariable", summaryvariable, radarChartOptions5);
+      RadarChart(".sentimentemotion", sentimentemotion, radarChartOptions6);
+
+});
+  </script>
  <script>
  $(function () {
 
@@ -578,7 +804,6 @@
          // ];
 
          data = [
-           [{"date":"2014","close":400},{"date":"2015","close":600},{"date":"2016","close":1300},{"date":"2017","close":1700},{"date":"2018","close":2100}],
            [{"date":"2014","close":350},{"date":"2015","close":700},{"date":"2016","close":1500},{"date":"2017","close":1600},{"date":"2018","close":1250}],
            [{"date":"2014","close":500},{"date":"2015","close":900},{"date":"2016","close":1200},{"date":"2017","close":1200},{"date":"2018","close":2600}]
          ];
@@ -667,7 +892,7 @@
 
                 var color = d3.scale.linear()
                         .domain([0,1,2,3,4,5,6,10,15,20,80])
-                        .range(["#17394C", "#F5CC0E", "#CE0202", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+                        .range(["#CE0202", "#28A745", "#CE0202", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
             // Initialize tooltip
             //svg.call(tip);
 
@@ -986,259 +1211,14 @@
      }
  });
  </script>
- <script src="radarChart.js"></script>
- <script>
 
-    /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
-
-    //////////////////////////////////////////////////////////////
-    //////////////////////// Set-Up //////////////////////////////
-    //////////////////////////////////////////////////////////////
-
-    var margin = {top: 100, right: 100, bottom: 100, left: 100},
-      width = Math.min(450, window.innerWidth - 10) - margin.left - margin.right,
-      height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
-
-
-
-    //////////////////////////////////////////////////////////////
-    ////////////////////////// Data //////////////////////////////
-    //////////////////////////////////////////////////////////////
-
-    var personalcontent = [
-          [//iPhone
-          {axis:"Death",value:0.22},
-          {axis:"Work",value:0.28},
-          {axis:"Leisure",value:0.29},
-          {axis:"Religion",value:0.17},
-          {axis:"Home",value:0.22},
-          {axis:"Money",value:0.02}
-          ],[//Samsung
-          {axis:"Death",value:0.27},
-          {axis:"Work",value:0.16},
-          {axis:"Leisure",value:0.35},
-          {axis:"Religion",value:0.13},
-          {axis:"Home",value:0.20},
-          {axis:"Money",value:0.13}
-          ],[//Nokia Smartphone
-          {axis:"Death",value:0.26},
-          {axis:"Work",value:0.10},
-          {axis:"Leisure",value:0.30},
-          {axis:"Religion",value:0.14},
-          {axis:"Home",value:0.22},
-          {axis:"Money",value:0.04}
-          ]
-        ];
-
-        var timeorientation = [
-              [//iPhone
-              {axis:"Past Focus",value:0.02},
-              {axis:"Present Focus",value:0.21},
-              {axis:"Future Focus",value:0.50}
-              ],[//Samsung
-
-              {axis:"Past Focus",value:0.13},
-              {axis:"Present Focus",value:0.35},
-              {axis:"Future Focus",value:0.38}
-              ],[//Nokia Smartphone
-
-              {axis:"Past Focus",value:0.04},
-              {axis:"Present Focus",value:0.41},
-              {axis:"Future Focus",value:0.30}
-              ]
-            ];
-
-            var coredriveandneed = [
-                  [//iPhone
-                  {axis:"Affiliation",value:0.22},
-                  {axis:"Achievement",value:0.28},
-                  {axis:"Risk/Prevention Focus",value:0.29},
-                  {axis:"Reward Focus",value:0.22},
-                  {axis:"Power",value:0.02},
-                  ]
-                  ,[//Samsung
-                  {axis:"Affiliation",value:0.27},
-                  {axis:"Achievement",value:0.16},
-                  {axis:"Risk/Prevention Focus",value:0.35},
-
-                  {axis:"Reward Focus",value:0.35},
-                  {axis:"Power",value:0.38}
-                  ],
-                  [//Nokia Smartphone
-                  {axis:"Affiliation",value:0.26},
-                  {axis:"Achievement",value:0.10},
-                  {axis:"Risk/Prevention Focus",value:0.30},
-                  {axis:"Reward Focus",value:0.14},
-                  {axis:"Power",value:0.22}
-                  ]
-                ];
-
-                var cognitiveprocess = [
-                      [//iPhone
-                      {axis:"Battery Life",value:0.22},
-                      {axis:"Brand",value:0.28},
-                      {axis:"Contract Cost",value:0.29},
-                      {axis:"Design And Quality",value:0.17},
-                      {axis:"Have Internet Connectivity",value:0.22},
-                      {axis:"Large Screen",value:0.02},
-                      {axis:"Price Of Device",value:0.21},
-                      {axis:"To Be A Smartphone",value:0.50}
-                      ],[//Samsung
-                      {axis:"Battery Life",value:0.27},
-                      {axis:"Brand",value:0.16},
-                      {axis:"Contract Cost",value:0.35},
-                      {axis:"Design And Quality",value:0.13},
-                      {axis:"Have Internet Connectivity",value:0.20},
-                      {axis:"Large Screen",value:0.13},
-                      {axis:"Price Of Device",value:0.35},
-                      {axis:"To Be A Smartphone",value:0.38}
-                      ],[//Nokia Smartphone
-                      {axis:"Battery Life",value:0.26},
-                      {axis:"Brand",value:0.10},
-                      {axis:"Contract Cost",value:0.30},
-                      {axis:"Design And Quality",value:0.14},
-                      {axis:"Have Internet Connectivity",value:0.22},
-                      {axis:"Large Screen",value:0.04},
-                      {axis:"Price Of Device",value:0.41},
-                      {axis:"To Be A Smartphone",value:0.30}
-                      ]
-                    ];
-
-                    var summaryvariable = [
-                          [//iPhone
-                          {axis:"Battery Life",value:0.22},
-                          {axis:"Brand",value:0.28},
-                          {axis:"Contract Cost",value:0.29},
-                          {axis:"Design And Quality",value:0.17},
-                          {axis:"Have Internet Connectivity",value:0.22},
-                          {axis:"Large Screen",value:0.02},
-                          {axis:"Price Of Device",value:0.21},
-                          {axis:"To Be A Smartphone",value:0.50}
-                          ],[//Samsung
-                          {axis:"Battery Life",value:0.27},
-                          {axis:"Brand",value:0.16},
-                          {axis:"Contract Cost",value:0.35},
-                          {axis:"Design And Quality",value:0.13},
-                          {axis:"Have Internet Connectivity",value:0.20},
-                          {axis:"Large Screen",value:0.13},
-                          {axis:"Price Of Device",value:0.35},
-                          {axis:"To Be A Smartphone",value:0.38}
-                          ],[//Nokia Smartphone
-                          {axis:"Battery Life",value:0.26},
-                          {axis:"Brand",value:0.10},
-                          {axis:"Contract Cost",value:0.30},
-                          {axis:"Design And Quality",value:0.14},
-                          {axis:"Have Internet Connectivity",value:0.22},
-                          {axis:"Large Screen",value:0.04},
-                          {axis:"Price Of Device",value:0.41},
-                          {axis:"To Be A Smartphone",value:0.30}
-                          ]
-                        ];
-
-                        var sentimentemotion = [
-                              [//iPhone
-                              {axis:"Battery Life",value:0.22},
-                              {axis:"Brand",value:0.28},
-                              {axis:"Contract Cost",value:0.29},
-                              {axis:"Design And Quality",value:0.17},
-                              {axis:"Have Internet Connectivity",value:0.22},
-                              {axis:"Large Screen",value:0.02},
-                              {axis:"Price Of Device",value:0.21},
-                              {axis:"To Be A Smartphone",value:0.50}
-                              ],[//Samsung
-                              {axis:"Battery Life",value:0.27},
-                              {axis:"Brand",value:0.16},
-                              {axis:"Contract Cost",value:0.35},
-                              {axis:"Design And Quality",value:0.13},
-                              {axis:"Have Internet Connectivity",value:0.20},
-                              {axis:"Large Screen",value:0.13},
-                              {axis:"Price Of Device",value:0.35},
-                              {axis:"To Be A Smartphone",value:0.38}
-                              ],[//Nokia Smartphone
-                              {axis:"Battery Life",value:0.26},
-                              {axis:"Brand",value:0.10},
-                              {axis:"Contract Cost",value:0.30},
-                              {axis:"Design And Quality",value:0.14},
-                              {axis:"Have Internet Connectivity",value:0.22},
-                              {axis:"Large Screen",value:0.04},
-                              {axis:"Price Of Device",value:0.41},
-                              {axis:"To Be A Smartphone",value:0.30}
-                              ]
-                            ];
-    //////////////////////////////////////////////////////////////
-    //////////////////// Draw the Chart //////////////////////////
-    //////////////////////////////////////////////////////////////
-
-    var color = d3.scale.ordinal()
-      .range(["#EDC951","#CC333F","#00A0B0"]);
-
-    var radarChartOptions = {
-      w: width,
-      h: height,
-      margin: margin,
-      maxValue: 0.5,
-      levels: 5,
-      roundStrokes: true,
-      color: color
-    };
-    var radarChartOptions2 = {
-      w: width,
-      h: height,
-      margin: margin,
-      maxValue: 0.5,
-      levels: 5,
-      roundStrokes: true,
-      color: color
-    };
-    var radarChartOptions3 = {
-      w: width,
-      h: height,
-      margin: margin,
-      maxValue: 0.5,
-      levels: 5,
-      roundStrokes: true,
-      color: color
-    };
-    var radarChartOptions4 = {
-      w: width,
-      h: height,
-      margin: margin,
-      maxValue: 0.5,
-      levels: 5,
-      roundStrokes: true,
-      color: color
-    };
-    var radarChartOptions5 = {
-      w: width,
-      h: height,
-      margin: margin,
-      maxValue: 0.5,
-      levels: 5,
-      roundStrokes: true,
-      color: color
-    };
-    var radarChartOptions6 = {
-      w: width,
-      h: height,
-      margin: margin,
-      maxValue: 0.5,
-      levels: 5,
-      roundStrokes: true,
-      color: color
-    };
-    //Call function to draw the Radar chart
-    RadarChart(".personalcontent", personalcontent, radarChartOptions);
-    RadarChart(".timeorientation", timeorientation, radarChartOptions2);
-    RadarChart(".coredriveandneed", coredriveandneed, radarChartOptions3);
-    RadarChart(".cognitiveprocess", cognitiveprocess, radarChartOptions4);
-    RadarChart(".summaryvariable", summaryvariable, radarChartOptions5);
-    RadarChart(".sentimentemotion", sentimentemotion, radarChartOptions6);
-  </script>
   <script>
   $('.carousel').carousel({
       interval: false
   });
   </script>
+
+
 
 </body>
 </html>

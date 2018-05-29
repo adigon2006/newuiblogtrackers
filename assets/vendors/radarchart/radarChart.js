@@ -19,7 +19,7 @@ function RadarChart(id, data, options) {
 	 dotRadius: 4, 			//The size of the colored circles of each blog
 	 opacityCircles: 0.1, 	//The opacity of the circles of each blob
 	 strokeWidth: 2, 		//The width of the stroke around each blob
-	 roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
+	 roundStrokes: true,	//If true the area and stroke will follow a round path (cardinal-closed)
 	 color: d3.scale.category10()	//Color function
 	};
 
@@ -87,8 +87,8 @@ function RadarChart(id, data, options) {
 		.attr("r", function(d, i){return radius/cfg.levels*d;})
 		.style("fill", "#CDCDCD")
 		.style("stroke", "#CDCDCD")
-		.style("fill-opacity", cfg.opacityCircles)
-		.style("filter" , "url(#glow)");
+		.style("fill-opacity", cfg.opacityCircles);
+		// .style("filter" , "url(#glow)");
 
 	//Text indicating at what % each level is
 	axisGrid.selectAll(".axisLabel")
