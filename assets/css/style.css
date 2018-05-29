@@ -25,14 +25,7 @@ color:blue;
 {
 background-color: blue;
 }
-.carousel-indicators li::before
-{
-content:"\f111";
-}
-.carousel-indicators li::after
-{
-content:"\f111";
-}
+
 .carousel-control-next-icon:after
 {
   content: '>';
