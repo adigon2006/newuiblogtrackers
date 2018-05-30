@@ -337,8 +337,8 @@
  <!-- <script type="text/javascript" src="assets/vendors/d3/d3.min.js"></script> -->
  <script src="https://d3js.org/d3.v4.min.js"></script>
 
- <script type="text/javascript" src="d3.js"></script>
- <!-- <script type="text/javascript" src="assets/vendors/d3/d3_tooltip.js"></script> -->
+
+ <script type="text/javascript" src="assets/vendors/d3/d3_tooltip.js"></script>
  <script>
  $(function () {
 
@@ -758,7 +758,7 @@
                   return "No Information Available";
                 }
                 else if(d !== null) {
-                 return "()<br/> Click for more information";
+                 return "("+d.id+")<br/> Click for more information";
                   }
 
                 });
@@ -822,13 +822,13 @@ var simulation = d3.forceSimulation()
   node.append("title")
       .text(function(d) { return d.id; });
 
-      var label = svg.append("g")
-      .attr("class", "labels")
-      .selectAll("text")
-      .data(data.nodes)
-      .enter().append("text")
-        .attr("class", "label")
-        .text(function(d) { return d.group; });
+      // var label = svg.append("g")
+      // .attr("class", "labels")
+      // .selectAll("text")
+      // .data(data.nodes)
+      // .enter().append("text")
+      //   .attr("class", "label")
+      //   .text(function(d) { return d.group; });
 
   simulation
       .nodes(data.nodes)
@@ -848,11 +848,11 @@ var simulation = d3.forceSimulation()
         .attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
 
-        label
-      .attr("x", function(d) { return d.x; })
-      .attr("y", function (d) { return d.y; })
-      .style("font-size", "10px").style("fill", "#333")
-      .style("text-anchor", "end");
+      //   label
+      // .attr("x", function(d) { return d.x; })
+      // .attr("y", function (d) { return d.y; })
+      // .style("font-size", "10px").style("fill", "#333")
+      // .style("text-anchor", "end");
 
       // node.append("g")
       // // .attr("transform", "rotate(-90)")
