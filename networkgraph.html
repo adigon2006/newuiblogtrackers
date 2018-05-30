@@ -337,7 +337,8 @@
  <!-- <script type="text/javascript" src="assets/vendors/d3/d3.min.js"></script> -->
  <script src="https://d3js.org/d3.v4.min.js"></script>
 
- <script type="text/javascript" src="assets/vendors/d3/d3_tooltip.js"></script>
+ <script type="text/javascript" src="d3.js"></script>
+ <!-- <script type="text/javascript" src="assets/vendors/d3/d3_tooltip.js"></script> -->
  <script>
  $(function () {
 
@@ -748,276 +749,22 @@
 
 
          // Create tooltip
-         // var tip = d3.tip()
-         //        .attr('class', 'd3-tip')
-         //        .offset([-10, 0])
-         //        .html(function(d) {
-         //        if(d === null)
-         //        {
-         //          return "No Information Available";
-         //        }
-         //        else if(d !== null) {
-         //         return "("+d.x+","+d.y+")<br/> Click for more information";
-         //          }
-         //
-         //        });
+         var tip = d3.tip()
+                .attr("class", "d3-tip")
+                .offset([-10, 0])
+                .html(function(d) {
+                if(d === null)
+                {
+                  return "No Information Available";
+                }
+                else if(d !== null) {
+                 return "()<br/> Click for more information";
+                  }
 
+                });
 
+                svg.call(tip);
 
-
-
-
-        // Vertical
-         // extract max value from list of json object
-         // console.log(data.length)
-         //     var maxYvalue =
-         //     data.map(function(d){
-         //       var mvalue = [];
-         //       if(data.length > 1)
-         //     {
-         //       d.forEach(function(f,i){
-         //       mvalue[i] = f.y;
-         //
-         //       })
-         //     return d3.max(mvalue);
-         //     }
-         //
-         //     //console.log(mvalue);
-         //     });
-         //
-         //
-         //     var minYvalue =
-         //     data.map(function(d){
-         //       var mvalue = [];
-         //       if(data.length > 1)
-         //     {
-         //       d.forEach(function(f,i){
-         //       mvalue[i] = f.y;
-         //
-         //       })
-         //       if(d3.min(mvalue) < 0 )
-         //       {
-         //         return d3.min(mvalue);
-         //       }
-         //       else{
-         //         return 0;
-         //       }
-         //
-         //     }
-         //
-         //     //console.log(mvalue);
-         //     });
-         //
-         //
-         //     var maxXvalue =
-         //     data.map(function(d){
-         //       var mvalue = [];
-         //       if(data.length > 1)
-         //     {
-         //       d.forEach(function(f,i){
-         //       mvalue[i] = f.x;
-         //
-         //       })
-         //     return d3.max(mvalue);
-         //     }
-         //
-         //     //console.log(mvalue);
-         //     });
-         //
-         //
-         //     var minXvalue =
-         //     data.map(function(d){
-         //       var mvalue = [];
-         //       if(data.length > 1)
-         //     {
-         //       d.forEach(function(f,i){
-         //       mvalue[i] = f.x;
-         //
-         //       })
-         //
-         //     if(d3.min(mvalue) < 0)
-         //     {
-         //       return d3.min(mvalue);
-         //     }
-         //     else
-         //     {
-         //       return 0;
-         //     }
-         //
-         //     }
-         //
-         //     //console.log(mvalue);
-         //     });
-         //
-         //
-         //     // color = d3.scale.linear()
-         //     //          .domain([0,1,2,3,4,5,6,10,15,20,80])
-         //     //          .range(["#17394C", "#F5CC0E", "#CE0202", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
-         //                 var color = d3.scale.category20();
-         //
-         //
-         // ////console.log(data)
-         // if(data.length == 1)
-         // {
-         //   // var returnedvalue = data[0].map(function(e){
-         //   // return e.date
-         //   // });
-         //
-         //   var maxXvalue2 =
-         //   data.map(function(d){
-         //   return d3.max(d,function(t){return t.x});
-         //   });
-         //
-         //   var minXvalue2 =
-         //   data.map(function(d){
-         //   return d3.min(d,function(t){return t.x});
-         //   });
-         //
-         // // for single json data
-         // x.domain([minXvalue2,maxXvalue2]);
-         // // rewrite x domain
-         //
-         // var maxYvalue2 =
-         // data.map(function(d){
-         // return d3.max(d,function(t){return t.y});
-         // });
-         //
-         // var minYvalue2 =
-         // data.map(function(d){
-         // return d3.min(d,function(t){return t.y});
-         // });
-         //
-         // y.domain([minYvalue2,maxYvalue2]);
-         // }
-         // else if(data.length > 1)
-         // {
-         //
-         //  x.domain([d3.min(minXvalue), d3.max(maxXvalue)]);
-         // y.domain([d3.min(minYvalue), d3.max(maxYvalue)]);
-         //  }
-         //
-         //
-         //
-         //
-         //             //
-         //             // Append chart elements
-         //             //
-         //
-         //
-         //
-         //
-         //            // svg.call(tip);
-         //              // data.map(function(d){})
-         //              if(data.length == 1)
-         //              {
-         //
-         //                 // add scatter points
-         //                var circles = svg.selectAll(".circle-point")
-         //                          .data(data[0])
-         //                          .enter();
-         //
-         //
-         //                      circles
-         //                      // .enter()
-         //                      .append("circle")
-         //                      .attr("class","circle-point")
-         //                      .attr("r",3.4)
-         //                      // .style("stroke", "#4CAF50")
-         //                      .style("fill",function(e,i){return color(i)})
-         //                      .attr("cx",function(d) { return x(d.x); })
-         //                      .attr("cy", function(d){return y(d.y)})
-         //
-         //                      .attr("transform", "translate("+margin.left/4.7+",0)");
-         //
-         //                      svg.selectAll(".circle-point").data(data[0])
-         //                      .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
-         //                      .on("mouseout",tip.hide)
-         //                      .on("click",function(d){
-         //                        // console.log(d.date)
-         //                      });
-         //                                         svg.call(tip)
-         //              }
-         //              // handles multiple json parameter
-         //              else if(data.length > 1)
-         //              {
-         //
-         //                      var mergedarray = [].concat(...data);
-         //                       // console.log(mergedarray)
-         //                         circles = svg.selectAll(".circle-point")
-         //                             .data(mergedarray)
-         //                             .enter();
-         //
-         //                               circles
-         //                               // .enter()
-         //                               .append("circle")
-         //                               .attr("class","circle-point")
-         //                               .attr("r",3.4)
-         //                               // .style("stroke", "#4CAF50")
-         //                               .style("fill",function(d,i){return color(i);})
-         //                               .attr("cx",function(d) { return x(d.x)})
-         //                               .attr("cy", function(d){return y(d.y)})
-         //
-         //                               .attr("transform", "translate("+margin.left/4.7+",0)");
-         //                               svg.selectAll(".circle-point").data(mergedarray)
-         //                              .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
-         //                              .on("mouseout",tip.hide)
-         //                              .on("click",function(d){console.log(d.date)});
-         //                         //                         svg.call(tip)
-         //
-         //                       //console.log(newi);
-         //
-         //
-         //                             svg.selectAll(".circle-point").data(mergedarray)
-         //                             .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
-         //                             .on("mouseout",tip.hide)
-         //                             .on("click",function(d){console.log(d.date)});
-         //                                                svg.call(tip)
-         //
-         //
-         //
-         //
-         //
-         //
-         //
-         //
-         //
-         //
-         //              }
-         //
-         //
-         // // show data tip
-         //
-         //
-         //             // Append axes
-         //             // ------------------------------
-         //
-         //             // Horizontal
-         //             svg.append("g")
-         //                 .attr("class", "d3-axis d3-axis-horizontal d3-axis-strong")
-         //                 // .attr("transform", "translate(0," + height + ")")
-         //                 .attr("transform", "translate(0," + y(0) + ")")
-         //                 .call(xAxis);
-         //
-         //             // Vertical
-         //             var verticalAxis = svg.append("g")
-         //                 .attr("class", "d3-axis d3-axis-vertical d3-axis-strong")
-         //                  .attr("transform", "translate("+ x(0) + "," + "0)")
-         //                 .call(yAxis);
-         //
-         //
-         //
-         //
-         //
-         //             // Add text label
-         //             verticalAxis.append("text")
-         //                 .attr("transform", "rotate(-90)")
-         //                 .attr("y", 10)
-         //                 .attr("dy", ".71em")
-         //                 .style("text-anchor", "end")
-         //                 .style("fill", "#999")
-         //                 .style("font-size", 12)
-         //                 // .text("Frequency")
-         //                 ;
 
 
 
@@ -1041,17 +788,19 @@ var simulation = d3.forceSimulation()
     .selectAll("line")
     .data(data.links)
     .enter().append("line")
-      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+    .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
 
   var node = svg.append("g")
-      .attr("class", "nodes")
-
-      .selectAll("circle")
-  .data(data.nodes)
-    .enter().append("circle")
+    .attr("class", "nodes")
+    .selectAll("circle")
+    .data(data.nodes)
+    .enter()
+    .append("circle")
       .attr("r", 11)
       .attr("stroke","#cccccc")
       .attr("fill", function(d) { return color(d.group); })
+      .on("mouseover",tip.show)
+      .on("mouseout",tip.hide)
       // .attr("fill","none")
       .call(d3.drag()
           .on("start", dragstarted)
@@ -1139,7 +888,7 @@ function dragended(d) {
          // ------------------------------
 
          // Call function on window resize
-         // $(window).on('resize', resize);
+          $(window).on('resize', resize);
 
          // Call function on sidebar width change
          $('.sidebar-control').on('click', resize);
@@ -1183,13 +932,13 @@ function dragended(d) {
 
            if(data.length == 1)
            {
-             svg.selectAll(".circle-point").attr("circle",circles)
+             svg.selectAll("circle").attr("circle",circles)
              .attr("cx",function(d) { return x(d.x);})
              .attr("cy", function(d){return y(d.y)});
            }
            else if(data.length > 1)
            {
-             svg.selectAll(".circle-point").attr("circle",circles)
+             svg.selectAll("circle").attr("circle",circles)
              .attr("cx",function(d) { return x(d.x);})
              .attr("cy", function(d){return y(d.y)});
            }

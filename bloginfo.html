@@ -890,7 +890,7 @@
 
 
                       svg.selectAll(".circle-point").data(data[0])
-                      .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                      .on("mouseover",tip.show)
                       .on("mouseout",tip.hide)
                       .on("click",function(d){console.log(d.date)});
                                          svg.call(tip)
@@ -940,7 +940,7 @@
 
                                .attr("transform", "translate("+margin.left/4.7+",0)");
                                svg.selectAll(".circle-point").data(mergedarray)
-                              .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                              .on("mouseover",tip.show)
                               .on("mouseout",tip.hide)
                               .on("click",function(d){console.log(d.date)});
                          //                         svg.call(tip)
@@ -949,7 +949,7 @@
 
 
                              svg.selectAll(".circle-point").data(mergedarray)
-                             .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                             .on("mouseover",tip.show)
                              .on("mouseout",tip.hide)
                              .on("click",function(d){console.log(d.date)});
                                                 svg.call(tip)
@@ -1182,7 +1182,7 @@
                  //.text(function(d) { return d.data.language; });
 
                  svg.selectAll(".d3-arc").data(data)
-                 .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                 .on("mouseover",tip.show)
                  .on("mouseout",tip.hide)
                  .on("click",function(){console.log("you clicked here")});
                  //.on("click",function(d){console.log(d.date)});
@@ -1315,7 +1315,7 @@
                  //.text(function(d) { return d.data.language; });
 
                  svg.selectAll(".d3-arc").data(data)
-                 .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                 .on("mouseover",tip.show)
                  .on("mouseout",tip.hide)
                  //.on("click",function(d){console.log(d.date)});
 
@@ -1447,7 +1447,7 @@
                  //.text(function(d) { return d.data.language; });
 
                  svg.selectAll(".d3-arc").data(data)
-                 .on("mouseover",tip.attr('class', 'tooltip-inner in').show)
+                 .on("mouseover",tip.show)
                  .on("mouseout",tip.hide)
                  //.on("click",function(d){console.log(d.date)});
 
