@@ -161,12 +161,14 @@ $(document).ready(function() {
   // editing the account handler
 $('#editaccount').click(function(e){
 e.preventDefault();
-$('#editaccount').removeAttr("id").attr("id","updateaccount").html("Update Account").call(updateaccount());
+valueintext = $('#editaccount').html
+// $('#editaccount').removeAttr("id").attr("id","updateaccount").html("Update Account").call(updateaccount());
 
 })
 
 function updateaccount()
-{ $('#updateaccount').click(function(e){
+{
+$('#updateaccount').click(function(e){
 e.preventDefault();
 $('#updateaccount').removeAttr("id").attr("id","editaccount").html("Edit Account");
 
