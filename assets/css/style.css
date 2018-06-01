@@ -101,6 +101,10 @@ margin-left: 10px;
   width:0;
   height:0
 }
+.displayinline
+{
+display:inline !important;
+}
 .passwordsection
 {
 display: none;
