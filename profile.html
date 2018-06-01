@@ -119,7 +119,7 @@
 <div class="row mt10">
 <div class="col-md-12">
 <img class="rounded mx-auto d-block profilepageimg" src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="150" height="150" alt="" />
-<h1 class="text-center pt20 pb0 text-primary super-bold-text">Adekunle Adigun</h1>
+<h1 class="text-center pt20 pb0 text-primary super-bold-text fullname">Adekunle Adigun</h1>
 <h6 class="text-center text-primary mb0 pb10">Email: adekunleadigun@yahoo.com</h6>
 <h6 class="text-center text-primary mb0 pb10">Phone: +1-512-567-2783</h6>
 <p class="text-center "><button class="btn btn-primary stylebutton2">02-01-2018&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;5:30pm</button></p>
@@ -128,7 +128,7 @@
 </div>
 </div>
 
-<div class="text-center mt90 mb50"><button class="btn btn-primary deletebtn"><b>Edit Account</b></button>&nbsp;&nbsp; <button class="btn btn-danger deletebtn"><b>Close Account</b></button></div>
+<div class="text-center mt90 mb50"><button class="btn btn-primary profilebtn" id="editaccount">Edit Account</button>&nbsp;&nbsp; <button class="btn btn-danger profilebtn">Delete Account</button></div>
 
 
 
@@ -158,7 +158,22 @@
 <script>
 $(document).ready(function() {
 
-} );
+  // editing the account handler
+$('#editaccount').click(function(e){
+e.preventDefault();
+$('#editaccount').removeAttr("id").attr("id","updateaccount").html("Update Account").call(updateaccount());
+
+})
+
+function updateaccount()
+{ $('#updateaccount').click(function(e){
+e.preventDefault();
+$('#updateaccount').removeAttr("id").attr("id","editaccount").html("Edit Account");
+
+});
+}
+
+});
 </script>
 <!--end for table  -->
 

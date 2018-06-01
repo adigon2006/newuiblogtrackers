@@ -147,7 +147,7 @@
   <div class="card card-style mt20">
     <div class="card-body  p30 pt5 pb5">
       <div style="min-height: 250px;">
-<div><p class="text-primary mt10">Influence Score of Bloggers</p></div>
+<div><p class="text-primary mt10"><b class="text-primary">Individual</b> Influence Score of Bloggers of Past <b>Week</b></p></div>
 <div class="chart-container">
   <div class="chart" id="d3-line-basic"></div>
 </div>
@@ -300,7 +300,7 @@
   <div class="col-md-6 mt20 card card-style nobordertopleft noborderbottomleft">
         <div style="" class="pt20">
           <h5 class="text-primary p20 pt0 pb0">#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</h5>
-          <div class="text-center mb20 mt20"><button class="btn btn-primary stylebutton2">Michael J Fox</button> <button class="btn btn-primary stylebutton2">02-01-2018, 5:30pm</button> <button class="btn btn-primary stylebutton2">32 comments</button></div>
+          <div class="text-center mb20 mt20"><button class="btn stylebuttonblue">Michael J Fox</button> <button class="btn stylebuttonnocolor">02-01-2018, 5:30pm</button> <button class="btn stylebuttonorange">32 comments</button></div>
           <div class="p20 pt0 pb20 text-blog-content text-primary" style="height:600px; overflow-y:scroll; ">
           You can create Slideshows and Stacked galleries with Post Format: Gallery. Also you can manage - add/edit/delete
           images any time you want. Hyper-X comes with huge amount of gallery options, which could be previewed from Theme Customizer.
@@ -570,6 +570,9 @@
          var yAxis = d3.svg.axis()
              .scale(y)
              .orient("left")
+            //  .tickPadding(10)
+            // .tickSize(-width)
+            // .tickSubdivide(true)
              .ticks(6);
 
 
@@ -937,11 +940,11 @@
                      verticalAxis.append("text")
                          .attr("transform", "rotate(-90)")
                          .attr("y", 10)
-                         .attr("dy", ".71em")
+                         .attr("dy", ".31em")
                          .style("text-anchor", "end")
                          .style("fill", "#999")
                          .style("font-size", 12)
-                         // .text("Frequency")
+                         // .text("Influence")
                          ;
 
 
@@ -1364,7 +1367,7 @@
                      // ------------------------------
 
                      // Horizontal
-                     svg.append("g")
+                    var horizontalAxis =   svg.append("g")
                          .attr("class", "d3-axis d3-axis-horizontal d3-axis-strong")
                          // .attr("transform", "translate(0," + height + ")")
                          .attr("transform", "translate(0," + y(0) + ")")
@@ -1387,14 +1390,24 @@
 
                      // Add text label
                      verticalAxis.append("text")
-                         .attr("transform", "rotate(-90)")
+                         // .attr("transform", "rotate(-90)")
                          .attr("y", 10)
                          .attr("dy", ".71em")
                          .style("text-anchor", "end")
                          .style("fill", "#999")
                          .style("font-size", 12)
-                         // .text("Frequency")
+                         .text("Influence")
                          ;
+
+                         horizontalAxis.append("text")
+                             // .attr("transform", "rotate(-90)")
+                             .attr("y", 10)
+                             .attr("dy", ".71em")
+                             .style("text-anchor", "end")
+                             .style("fill", "#999")
+                             .style("font-size", 12)
+                             .text("Activity")
+                             ;
 
          // Resize chart
          // ------------------------------

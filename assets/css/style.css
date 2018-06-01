@@ -75,11 +75,11 @@ top:30px;
 .read{
 background-color: #E6E9EB;
 }
-.deletebtn
+.profilebtn
 {
 padding:10px 35px;
 border-radius: 100px;
-
+font-weight:bolder;
 }
 .curved-card
 {
@@ -425,6 +425,10 @@ color:#ffffff;
 {
   color:#0080CC;
 }
+.bg-blue
+{
+background: #1F90D0;
+}
 .profilemenulink h3:hover
 {
 opacity: 0.53!important;
@@ -591,6 +595,33 @@ border-radius: 10px;
 padding: 0.19rem 0.75rem;
 font-weight: 700;
 }
+.stylebuttonblue
+{
+font-size: 0.7rem;
+border-radius: 10px;
+padding: 0.19rem 0.75rem;
+font-weight: 700;
+background: #1F90D0;
+color:#ffffff;
+}
+.stylebuttonnocolor
+{
+font-size: 0.7rem;
+border-radius: 10px;
+padding: 0.19rem 0.75rem;
+font-weight: 700;
+background: none;
+color:#17384B;
+}
+.stylebuttonorange
+{
+font-size: 0.7rem;
+border-radius: 10px;
+padding: 0.19rem 0.75rem;
+font-weight: 700;
+background: #FBAB0F;
+color:#17384B;
+}
 .stylebutton5
 {
 font-size: 0.9rem;
@@ -636,6 +667,10 @@ font-size: 20px;
 .light-text
 {
 color:#c1c1c1;
+}
+.favorites-text
+{
+color:#ff7D7D;
 }
 ul.profilemenu
 {

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blogtrackers</title>
+  <link rel="shortcut icon" href="images/favicons/favicon.ico">
+  <link rel="apple-touch-icon" href="images/favicons/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="96x96" href="images/favicons/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/favicon-144x144.png">
+  <!-- start of bootsrap -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css"/>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
+  <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.css" />
+  <link rel="stylesheet" href="assets/fonts/iconic/css/open-iconic.css" />
+ <link rel="stylesheet" href="assets/vendors/bootstrap-daterangepicker/daterangepicker.css" />
+ <link rel="stylesheet" href="assets/css/table.css" />
+ <link rel="stylesheet" href="assets/vendors/DataTables/dataTables.bootstrap4.min.css" />
+
+<link rel="stylesheet" href="assets/css/daterangepicker.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!--end of bootsrap -->
+  <script src="assets/js/jquery-3.2.1.slim.min.js"  ></script>
+<script src="assets/js/popper.min.js" ></script>
+</head>
+<body>
+<!--
+  <nav class="navbar navbar-inverse bg-primary">
+    <div class="container-fluid">
+      <ul class="nav d-none d-lg-inline-flex d-xl-inline-flex  main-menu">
+        <li><a href="./"><i class="icon-user-plus"></i>Home</a></li>
+        <li><a href="trackerlist.html"><i class="icon-cog5"></i> Trackers</a></li>
+        <li><a href="#"><i class="icon-help"></i> Favorites</a></li>
+
+      </ul>
+  <nav class="navbar navbar-dark bg-primary float-left d-md-block d-sm-block d-xs-block d-lg-none d-xl-none">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  </nav>
+  <div class="navbar-header d-none d-lg-inline-flex d-xl-inline-flex ">
+  <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" /></a>
+  </div>
+  <ul class="nav navbar-nav">
+  <li class="dropdown dropdown-user cursor-pointer">
+  <a class="dropdown-toggle" data-toggle="dropdown">
+  <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="border-white" />
+  <span>Hayder</span>
+  <ul class="profilemenu dropdown-menu dropdown-menu-left">
+              <li><a href="#"> My profile</a></li>
+              <li><a href="#"> Features</a></li>
+              <li><a href="#"> Help</a></li>
+              <li><a href="#">Logout</a></li>
+  </ul>
+  </a>
+
+   </li>
+        </ul>
+      <div class="col-md-12 bg-dark d-md-block d-sm-block d-xs-block d-lg-none d-xl-none p0 mt20">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <ul class="navbar-nav mr-auto mobile-menu">
+              <li class="nav-item active">
+                <a class="" href="./">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="trackerlist.html">Trackers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Favorites</a>
+              </li>
+            </ul>
+    </div>
+      </div>
+    </nav> -->
+<div class="container">
+<!-- <div class="row bottom-border pb20">
+<div class="col-md-6 paddi">
+<nav class="breadcrumb">
+  <a class="breadcrumb-item text-primary" href="trackerlist.html">MY TRACKER</a>
+  <a class="breadcrumb-item text-primary" href="#">Second Tracker</a>
+  <a class="breadcrumb-item active text-primary" href="#">Influence</a>
+  </nav>
+<div>Tracking: <button class="btn btn-primary stylebutton1">All Blogs</button></div>
+</div>
+
+<div class="col-md-6 text-right mt10">
+<div class="text-primary demo"><h6 id="reportrange">Date: <span>02/21/18 - 02/28/18</span></h6></div>
+<div>
+  <div class="btn-group mt5" data-toggle="buttons">
+  <label class="btn btn-primary btn-sm daterangebutton legitRipple"> <input type="radio" name="options" value="day" autocomplete="off" > Day
+  	</label>
+    <label class="btn btn-primary btn-sm "> <input type="radio" name="options" value="week" autocomplete="off" >Week
+  	</label>
+     <label class="btn btn-primary btn-sm "> <input type="radio" name="options" value="month" autocomplete="off" > Month
+  	</label>
+    <label class="btn btn-primary btn-sm text-center">Year <input type="radio" name="options" value="year" autocomplete="off" >
+  	</label>
+    <label class="btn btn-primary btn-sm " id="custom">Custom</label>
+  </div>
+
+  <!-- Day Week Month Year <b id="custom" class="text-primary">Custom</b> -->
+
+<!-- </div>
+</div>
+</div> -->
+
+<!-- <div class="row p40 border-top-bottom mt20 mb20">
+  <div class="col-md-2">
+<small class="text-primary">Selected Blogger</small>
+<h2 class="text-primary styleheading">AdNovum <div class="circle"></div></h2>
+</div>
+  <div class="col-md-10">
+  <small class="text-primary">Find Blogger</small>
+  <input class="form-control inputboxstyle" placeholder="| Search" />
+  </div>
+</div> -->
+
+
+
+<div class="row mb0">
+
+
+  <div class="col-md-12 mt20">
+    <div class="card card-style mt20">
+      <div class="card-body  p30 pt5 pb5">
+        <div><p class="text-primary mt10">Horizontal Bar Chart</p></div>
+        <div style="min-height: 420px;">
+          <div class="chart-container">
+            <div class="chart" id="d3-bar-horizontal"></div>
+          </div>
+        </div>
+          </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+<!-- <footer class="footer">
+  <div class="container-fluid bg-primary mt60">
+<p class="text-center text-medium pt10 pb10 mb0">Copyright &copy; Blogtrackers 2017 All Rights Reserved.</p>
+</div>
+  </footer> -->
+
+
+  <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
+ <script src="assets/bootstrap/js/bootstrap.js">
+ </script>
+
+ <script type="text/javascript" src="assets/vendors/d3/d3.min.js"></script>
+
+ <script type="text/javascript" src="assets/vendors/d3/d3_tooltip.js"></script>
+ <script>
+ $(function () {
+
+     // Initialize chart
+     barHorizontal('#d3-bar-horizontal', 456);
+
+     // Chart setup
+     function barHorizontal(element, height) {
+
+       // Basic setup
+       // ------------------------------
+
+       // Define main variables
+       var d3Container = d3.select(element),
+           margin = {top: 5, right: 50, bottom: 20, left: 70},
+           width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
+           height = height - margin.top - margin.bottom - 5;
+
+          var formatPercent = d3.format("");
+
+       // Construct scales
+       // ------------------------------
+
+       // Horizontal
+       var y = d3.scale.ordinal()
+           .rangeRoundBands([height,0], .72, .5);
+
+       // Vertical
+       var x = d3.scale.linear()
+           .range([0,width]);
+
+       // Color
+       var color = d3.scale.category20c();
+
+
+
+       // Create axes
+       // ------------------------------
+
+       // Horizontal
+       var xAxis = d3.svg.axis()
+           .scale(x)
+           .orient("bottom");
+
+       // Vertical
+       var yAxis = d3.svg.axis()
+           .scale(y)
+           .orient("left")
+           //.tickFormat(formatPercent);
+
+
+
+       // Create chart
+       // ------------------------------
+
+       // Add SVG element
+       var container = d3Container.append("svg");
+
+       // Add SVG group
+       var svg = container
+           .attr("width", width + margin.left + margin.right)
+           .attr("height", height + margin.top + margin.bottom)
+           .append("g")
+               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+       //         // Create tooltip
+       //             // ------------------------------
+       //
+       //
+       //
+       // // Load data
+       // // ------------------------------
+       //
+       //
+       //
+       data = [
+             {letter:"Monday", frequency:2550},
+             {letter:"Tuesday", frequency:800},
+             {letter:"Wednesday", frequency:500},
+             {letter:"Thursday", frequency:1700},
+             {letter:"Friday", frequency:1900},
+             {letter:"Saturday", frequency:1500},
+             {letter:"Sunday", frequency:3000},
+         ];
+       //
+       //
+       //   // Create tooltip
+       //   var tip = d3.tip()
+       //          .attr('class', 'd3-tip')
+       //          .offset([-10, 0])
+       //          .html(function(d) {
+       //              return d.letter+" ("+d.frequency+")";
+       //          });
+       //
+       //      // Initialize tooltip
+       //      svg.call(tip);
+       //
+       //
+       //     // Pull out values
+       //     data.forEach(function(d) {
+       //         d.frequency = +d.frequency;
+       //     });
+       //
+       //
+       //
+       //     // Set input domains
+       //     // ------------------------------
+       //
+       //     // Horizontal
+           y.domain(data.map(function(d) { return d.letter; }));
+
+           // Vertical
+           x.domain([0,d3.max(data, function(d) { return d.frequency; })]);
+       //
+       //
+       //     //
+       //     // Append chart elements
+       //     //
+       //
+       //     // Append axes
+       //     // ------------------------------
+       //
+           // Horizontal
+           svg.append("g")
+               .attr("class", "d3-axis d3-axis-horizontal d3-axis-strong")
+               .attr("transform", "translate(0," + height + ")")
+               .call(xAxis);
+
+           // Vertical
+           var verticalAxis = svg.append("g")
+               .attr("class", "d3-axis d3-axis-vertical d3-axis-strong")
+               .call(yAxis)
+       //
+       //
+       //     // Add text label
+       //     verticalAxis.append("text")
+       //         .attr("transform", "rotate(-90)")
+       //         .attr("y", 10)
+       //         .attr("dy", ".71em")
+       //         .style("text-anchor", "end")
+       //         .style("fill", "#999")
+       //         .style("font-size", 12)
+       //         // .text("Frequency")
+       //         ;
+       //
+       //
+       //     // Add bars
+           // svg.selectAll(".d3-bar")
+           //     .data(data)
+           //     .enter()
+           //     .append("rect")
+           //         .attr("class", "d3-bar")
+           //         .attr("y", function(d) { return y(d.letter); })
+           //         .attr("height", y.rangeBand())
+           //         .attr("x", function(d) { return x(d.frequency); })
+           //         .attr("width", function(d) { return width - x(d.frequency); })
+           //         .style("fill", function(d) { return "#58707E"; })
+           //         .on('mouseover', tip.show)
+           //         .on('mouseout', tip.hide);
+
+
+                   svg.selectAll(".d3-bar")
+                       .data(data)
+                       .enter()
+                       .append("rect")
+                           .attr("class", "d3-bar")
+                           .attr("y", function(d) { return y(d.letter); })
+                           .attr("height", x.rangeBand())
+                           .attr("y", function(d) { return y(d.frequency); })
+                           .attr("height", function(d) { return height - y(d.frequency); })
+                           // .attr("x", function(d) { return x(d.letter); })
+                           // .attr("width", x.rangeBand())
+                           // .attr("y", function(d) { return y(d.frequency); })
+                           // .attr("height", function(d) { return height - y(d.frequency); })
+                           .style("fill", function(d) { return "#58707E"; })
+                           .on('mouseover', tip.show)
+                           .on('mouseout', tip.hide);
+
+
+
+
+
+         // Resize chart
+         // ------------------------------
+
+         // Call function on window resize
+         $(window).on('resize', resize);
+
+         // Call function on sidebar width change
+         $('.sidebar-control').on('click', resize);
+
+         // Resize function
+         //
+         // Since D3 doesn't support SVG resize by default,
+         // we need to manually specify parts of the graph that need to
+         // be updated on window resize
+         function resize() {
+
+             // Layout variables
+             // width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
+             //
+             //
+             // // Layout
+             // // -------------------------
+             //
+             // // Main svg width
+             // container.attr("width", width + margin.left + margin.right);
+             //
+             // // Width of appended group
+             // svg.attr("width", width + margin.left + margin.right);
+             //
+             //
+             // // Axes
+             // // -------------------------
+             //
+             // // Horizontal range
+             // x.rangeRoundBands([0, width], .72, .5);
+             //
+             // // Horizontal axis
+             // svg.selectAll('.d3-axis-horizontal').call(xAxis);
+             //
+             //
+             // // Chart elements
+             // // -------------------------
+             //
+             // // Line path
+             // svg.selectAll('.d3-bar-horizontal').attr("x", function(d) { return x(d.letter); }).attr("width", 16);
+         }
+     }
+ });
+
+
+ </script>
+
+</body>
+</html>
