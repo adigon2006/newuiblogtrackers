@@ -81,6 +81,40 @@ padding:10px 35px;
 border-radius: 100px;
 font-weight:bolder;
 }
+.fullname
+{
+font-size: 2.5rem;
+}
+.inputnobg
+{
+background: none;
+border:none;
+}
+.labelprofile
+{
+margin-left: 10px;
+}
+.profileimgupload .custom-file-input, .custom-file-label::after
+{
+  visibility:hidden;
+  display:none;
+  width:0;
+  height:0
+}
+.passwordsection
+{
+display: none;
+}
+.custom-file-label
+{
+background-color: transparent;
+border:none;
+}
+.inputprofile, .labelprofile
+{
+font-size: 1rem;
+font-weight: 500
+}
 .curved-card
 {
 border-radius: 15px;
