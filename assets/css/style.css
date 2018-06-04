@@ -57,7 +57,7 @@ box-shadow: 0px 7px 0px -2px rgba(233,233,233,1);
 }
 .iconportfolio
 {
-padding-top: 5px; 
+padding-top: 5px;
 }
 .buttonportfolio:hover{
 background: none;
@@ -78,6 +78,10 @@ color:#17384B;
 .text-blue
 {
 color:#0080CC;
+}
+.text-green
+{
+color:#44AF69;
 }
 .notificationsfont
 {
@@ -313,7 +317,18 @@ border-radius: 50%;
 {
 cursor: pointer;
 }
-
+.searchiconinput
+{
+color:#E0E2E4;
+position:absolute !important;
+font-size: 18px;
+top:35px !important;
+left:25px;
+}
+.inputportfolio
+{
+padding-left: 30px;
+}
 .dropdown-menu
 {
 position: absolute !important;
@@ -475,7 +490,7 @@ background: black;
 }
 .activebar
 {
-  background:#0080CC;
+  background:#44AF69;
 }
 .activebar h6, .activebar h2
 {
@@ -1241,8 +1256,8 @@ background-color: #45606f;
 .d3-axis-solid .tick text {
   fill: #999999;
 }
-.d3-axis-strong path,
-.d3-axis-strong line {
+.d3-axis-strong path
+,.d3-axis-strong line {
   stroke: #ccc;
 }
 .d3-axis-strong .tick {
