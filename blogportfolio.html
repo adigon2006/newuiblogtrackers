@@ -222,7 +222,7 @@
           <div class="p15 pb5 pt0" role="group">
           Export Options
           </div>
-                <table id="DataTables_Table_0_wrapper" class="display nowrap" style="width:100%">
+                <table id="DataTables_Table_0_wrapper" class="display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>URL</th>
@@ -232,66 +232,66 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          <tr>
+                              <td>URL</td>
+                              <td>1</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>3</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>6</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>5</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>3</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>1</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>2</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>4</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>1</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>2</td>
 
 
-                            </tr>
+                          </tr>
 
                         </tbody>
                     </table>
@@ -308,7 +308,7 @@
           <div class="p15 pb5 pt0" role="group">
           Export Options
           </div>
-                <table id="DataTables_Table_1_wrapper" class="display nowrap" style="width:100%">
+                <table id="DataTables_Table_1_wrapper" class="display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>URL</th>
@@ -320,61 +320,61 @@
                         <tbody>
                             <tr>
                                 <td>URL</td>
-                                <td>Frequency</td>
+                                <td>1</td>
 
 
                             </tr>
                             <tr>
                                 <td>URL</td>
-                                <td>Frequency</td>
+                                <td>3</td>
 
 
                             </tr>
                             <tr>
                                 <td>URL</td>
-                                <td>Frequency</td>
+                                <td>6</td>
 
 
                             </tr>
                             <tr>
                                 <td>URL</td>
-                                <td>Frequency</td>
+                                <td>5</td>
 
 
                             </tr>
                             <tr>
                                 <td>URL</td>
-                                <td>Frequency</td>
+                                <td>3</td>
 
 
                             </tr>
                             <tr>
                                 <td>URL</td>
-                                <td>Frequency</td>
+                                <td>1</td>
 
 
                             </tr>
                             <tr>
                                 <td>URL</td>
-                                <td>Frequency</td>
+                                <td>2</td>
 
 
                             </tr>
                             <tr>
                                 <td>URL</td>
-                                <td>Frequency walter</td>
+                                <td>4</td>
 
 
                             </tr>
                             <tr>
                                 <td>URL</td>
-                                <td>Frequency</td>
+                                <td>1</td>
 
 
                             </tr>
                             <tr>
                                 <td>URL</td>
-                                <td>Frequency</td>
+                                <td>2</td>
 
 
                             </tr>
@@ -419,11 +419,15 @@
 
  <script>
  $(document).ready(function() {
+   // datatable setup
      $('#DataTables_Table_1_wrapper').DataTable( {
          "scrollY": 430,
-         "scrollX": true,
+         "scrollX": false,
           "pagingType": "simple",
           dom: 'Bfrtip',
+          "columnDefs": [
+       { "width": "80%", "targets": 0 }
+     ],
        buttons:{
          buttons: [
              { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
@@ -435,11 +439,16 @@
        }
      } );
 
+// table set up 2
      $('#DataTables_Table_0_wrapper').DataTable( {
          "scrollY": 430,
-         "scrollX": true,
+         "scrollX": false,
           "pagingType": "simple",
           dom: 'Bfrtip',
+
+          "columnDefs": [
+       { "width": "80%", "targets": 0 }
+     ],
        buttons:{
          buttons: [
              { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
@@ -458,6 +467,7 @@
    $(document)
    						.ready(
    								function() {
+                    // date range configuration
    	var cb = function(start, end, label) {
            //console.log(start.toISOString(), end.toISOString(), label);
            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));

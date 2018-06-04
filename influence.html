@@ -220,73 +220,69 @@
           <div class="p15 pb5 pt0" role="group">
           Export Options
           </div>
-                <table id="DataTables_Table_0_wrapper" class="display nowrap" style="width:100%">
+                <table id="DataTables_Table_0_wrapper" class="display" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Post title</th>
-                                <th>Influence Score</th>
+                                <th class="bold-text text-primary">Post title</th>
+                                <th class="bold-text text-primary">Influence Score</th>
 
 
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                                <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                                <td align="center">649</td>
+                            </tr>
+                            <tr>
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="center">49</td>
 
 
                             </tr>
                             <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="center">9</td>
+
+                            </tr>
+                            <tr>
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="center">79</td>
 
 
                             </tr>
                             <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="center">79</td>
 
 
                             </tr>
                             <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="center">79</td>
 
 
                             </tr>
                             <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="center">79</td>
 
 
                             </tr>
                             <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="center">79</td>
 
 
                             </tr>
                             <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="center">79</td>
 
                             </tr>
                             <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="center">79</td>
 
 
                             </tr>
@@ -300,7 +296,7 @@
   <div class="col-md-6 mt20 card card-style nobordertopleft noborderbottomleft">
         <div style="" class="pt20">
           <h5 class="text-primary p20 pt0 pb0">#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</h5>
-          <div class="text-center mb20 mt20"><button class="btn stylebuttonblue">Michael J Fox</button> <button class="btn stylebuttonnocolor">02-01-2018, 5:30pm</button> <button class="btn stylebuttonorange">32 comments</button></div>
+          <div class="text-center mb20 mt20"><button class="btn stylebuttonblue"><b class="float-left ultra-bold-text">Michael J Fox</b> <i class="far fa-user float-right blogcontenticon"></i></button> <button class="btn stylebuttonnocolor">02-01-2018, 5:30pm</button> <button class="btn stylebuttonorange"><b class="float-left ultra-bold-text">32 comments</b><i class="far fa-comments float-right blogcontenticon"></i></button></div>
           <div class="p20 pt0 pb20 text-blog-content text-primary" style="height:600px; overflow-y:scroll; ">
           You can create Slideshows and Stacked galleries with Post Format: Gallery. Also you can manage - add/edit/delete
           images any time you want. Hyper-X comes with huge amount of gallery options, which could be previewed from Theme Customizer.
@@ -351,7 +347,6 @@
  $(document).ready(function() {
      $('#DataTables_Table_1_wrapper').DataTable( {
          "scrollY": 430,
-         "scrollX": true,
           "pagingType": "simple",
           dom: 'Bfrtip',
        buttons:{
@@ -362,13 +357,19 @@
             // {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy to Clipboard'},
              {extend:'print',className: 'btn-primary stylebutton1'},
          ]
-       }
+       },
+       "columnDefs": [
+    { "width": "80%", "targets": 0 }
+  ]
      } );
 
      $('#DataTables_Table_0_wrapper').DataTable( {
          "scrollY": 430,
-         "scrollX": true,
+         // "scrollX": false,
           "pagingType": "simple",
+          "columnDefs": [
+       { "width": "80%", "targets": 0 }
+     ],
           dom: 'Bfrtip',
        buttons:{
          buttons: [
@@ -379,6 +380,8 @@
              {extend:'print',className: 'btn-primary stylebutton1'},
          ]
        }
+
+
      } );
  } );
  </script>
@@ -1486,7 +1489,7 @@
 
      var color = d3.scale.linear()
              .domain([0,1,2,3,4,5,6,10,15,20,80])
-             .range(["#17394C", "#F5CC0E", "#CE0202", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+             .range(["#17394C", "#F5CC0E", "#CE0202", "#1F90D0", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
 
      d3.layout.cloud().size([450, 300])
              .words(frequency_list)
@@ -1510,7 +1513,7 @@
                  .style("font-size", function(d) { return d.size + "px"; })
                  .style("fill", function(d, i) { return color(i); })
                  .attr("transform", function(d) {
-                     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                     return "translate(" + [d.x + 2, d.y + 3] + ")rotate(" + d.rotate + ")";
                  })
 
                  .text(function(d) { return d.text; });

@@ -144,77 +144,48 @@
           <div class="p15 pb5 pt0" role="group">
           Export Options
           </div>
-                <table id="DataTables_Table_0_wrapper" class="display nowrap" style="width:100%">
+                <table id="DataTables_Table_0_wrapper" class="display" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Post title</th>
-                                <th>Influence Score</th>
+                                <th class="bold-text">Post title</th>
+                                <th class="bold-text">Blogger</th>
 
 
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
-
-
-                            </tr>
-
+                          <tr>
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="right">Matt Finucane</td>
+                          </tr>
+                          <tr>
+                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                              <td align="right">Matt Finucane</td>
+                          </tr>  <tr>
+                                <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                                <td align="right">Matt Finucane</td>
+                            </tr>  <tr>
+                                  <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                                  <td align="right">Matt Finucane</td>
+                              </tr>  <tr>
+                                    <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                                    <td align="right">Matt Finucane</td>
+                                </tr>  <tr>
+                                      <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                                      <td align="right">Matt Finucane</td>
+                                  </tr>  <tr>
+                                        <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                                        <td align="right">Matt Finucane</td>
+                                    </tr>  <tr>
+                                          <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                                          <td align="right">Matt Finucane</td>
+                                      </tr>  <tr>
+                                            <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                                            <td align="right">Matt Finucane</td>
+                                        </tr>  <tr>
+                                              <td>#1809: Marine Links Clinton Yellen SBA women to MI-3 War Rooms, Serco Base One Pentagon bomb</td>
+                                              <td align="right">Matt Finucane</td>
+                                          </tr>
                         </tbody>
                     </table>
         </div>
@@ -325,9 +296,11 @@
  $(document).ready(function() {
      $('#DataTables_Table_1_wrapper').DataTable( {
          "scrollY": 430,
-         "scrollX": true,
           "pagingType": "simple",
           dom: 'Bfrtip',
+                    "columnDefs": [
+                 { "width": "80%", "targets": 0 }
+               ],
        buttons:{
          buttons: [
              { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
@@ -341,9 +314,12 @@
 
      $('#DataTables_Table_0_wrapper').DataTable( {
          "scrollY": 320,
-         "scrollX": true,
           "pagingType": "simple",
           dom: 'Bfrtip',
+
+                    "columnDefs": [
+                 { "width": "80%", "targets": 0 }
+               ],
        buttons:{
          buttons: [
              { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},

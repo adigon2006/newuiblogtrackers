@@ -238,27 +238,35 @@ border:none;
 }
 .extra-light-text
 {
-font-weight: 100;
+font-weight: 100 !important;
 }
 .ultra-light-text
 {
-font-weight: 200;
+font-weight: 200 !important;
 }
 .light-text
 {
-font-weight: 300;
+font-weight: 300 !important;
 }
 .bold-text
 {
-font-weight: 400;
+font-weight: 400 !important;
 }
 .semi-bold-text
 {
-font-weight: 500;
+font-weight: 500 !important;
 }
 .super-bold-text
 {
-font-weight: 600;
+font-weight: 600 !important;
+}
+.ultra-bold-text
+{
+font-weight: 700 !important;
+}
+.blogcontenticon
+{
+  font-size: 14px;
 }
 /*  */
 
@@ -491,6 +499,7 @@ background: black;
 .activebar
 {
   background:#44AF69;
+  border:1px solid #44AF69;
 }
 .activebar h6, .activebar h2
 {
@@ -678,6 +687,7 @@ padding: 0.19rem 0.75rem;
 font-weight: 700;
 background: #1F90D0;
 color:#ffffff;
+min-width: 130px;
 }
 .stylebuttonnocolor
 {
@@ -696,6 +706,7 @@ padding: 0.19rem 0.75rem;
 font-weight: 700;
 background: #FBAB0F;
 color:#17384B;
+min-width: 130px;
 }
 .stylebutton5
 {

@@ -215,7 +215,7 @@
           <div class="p15 pb5 pt0" role="group">
           Export
           </div>
-                <table id="DataTables_Table_0_wrapper" class="display nowrap" style="width:100%">
+                <table id="DataTables_Table_0_wrapper" class="display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>URL</th>
@@ -225,67 +225,66 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          <tr>
+                              <td>URL</td>
+                              <td>1</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>3</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>6</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>5</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>3</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>1</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>2</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>4</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>1</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>2</td>
 
 
-                            </tr>
-
+                          </tr>
                         </tbody>
                     </table>
         </div>
@@ -301,7 +300,7 @@
           <div class="p15 pb5 pt0" role="group">
           Export
           </div>
-                <table id="DataTables_Table_1_wrapper" class="display nowrap" style="width:100%">
+                <table id="DataTables_Table_1_wrapper" class="display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>URL</th>
@@ -311,66 +310,66 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          <tr>
+                              <td>URL</td>
+                              <td>1</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>3</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>6</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>5</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>3</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>1</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>2</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency walter</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>4</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>1</td>
 
 
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>Frequency</td>
+                          </tr>
+                          <tr>
+                              <td>URL</td>
+                              <td>2</td>
 
 
-                            </tr>
+                          </tr>
 
                         </tbody>
                     </table>
@@ -409,9 +408,13 @@
  $(document).ready(function() {
      $('#DataTables_Table_1_wrapper').DataTable( {
          "scrollY": 430,
-         "scrollX": true,
+         "scrollX": false,
           "pagingType": "simple",
           dom: 'Bfrtip',
+
+                    "columnDefs": [
+                 { "width": "80%", "targets": 0 }
+               ],
        buttons:{
          buttons: [
              { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
@@ -425,9 +428,13 @@
 
      $('#DataTables_Table_0_wrapper').DataTable( {
          "scrollY": 430,
-         "scrollX": true,
+         "scrollX": false,
           "pagingType": "simple",
           dom: 'Bfrtip',
+
+                    "columnDefs": [
+                 { "width": "80%", "targets": 0 }
+               ],
        buttons:{
          buttons: [
              { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
