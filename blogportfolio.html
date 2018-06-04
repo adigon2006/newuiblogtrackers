@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Blogtrackers</title>
+	<title>Blogtrackers - Blog Portfolio</title>
   <link rel="shortcut icon" href="images/favicons/favicon.ico">
   <link rel="apple-touch-icon" href="images/favicons/favicon-48x48.png">
   <link rel="apple-touch-icon" sizes="96x96" href="images/favicons/favicon-96x96.png">
@@ -81,7 +81,7 @@
 <nav class="breadcrumb">
   <a class="breadcrumb-item text-primary" href="#">MY TRACKER</a>
   <a class="breadcrumb-item text-primary" href="#">Second Tracker</a>
-  <a class="breadcrumb-item active text-primary" href="#">Blog Info</a>
+  <a class="breadcrumb-item active text-primary" href="#">Blog Portfolio</a>
   </nav>
 <div>Tracking: <button class="btn btn-primary stylebutton1">All Blogs</button></div>
 </div>
@@ -107,12 +107,16 @@
 </div>
 </div>
 
-<div class="row p40 border-top-bottom mt20 mb20">
+<div class="row p0 pt40 pb40 border-top-bottom mt20 mb20">
   <div class="col-md-2">
 <small class="text-primary">Selected Blog</small>
 <h2 class="styleheading text-blue">AdNovum <div class="circle"></div></h2>
 </div>
-  <div class="col-md-10">
+<div class="offset-md-4 col-md-3 text-right">
+<small class="text-primary">Blogsite of <b class="text-blue"><u>Advonum</u></b></small><br/>
+<button class="btn buttonportfolio"><b class="float-left">AdNovum</b> <b class="far fa-file-alt float-right iconportfolio"></b></button>
+</div>
+  <div class="col-md-3">
   <small class="text-primary">Find Blogger</small>
   <input class="form-control inputboxstyle opacity53" placeholder="| Search" />
   </div>
@@ -161,7 +165,7 @@
     <div class="card-body  p30 pt10 pb10">
       <h6 class="card-title mb0">Top Blogger</h6>
       <h2 class="mb0">Advonum</h2>
-      <a href="http://google.com" class="link"><small class="link">Blogger Info</small></a>
+      <a href="bloggerportfolio" class="link"><small class="link">Blogger Info</small></a>
         </div>
   </div>
 </div>
@@ -169,7 +173,7 @@
   <div class="card card-style mt20">
     <div class="card-body  p30 pt5 pb5">
       <div style="min-height: 350px;">
-<div><p class="text-primary mt10 float-left"><b class="text-blue">Post</b> Published by <b class="text-blue">Advonum</b></p></div>
+<div><p class="text-primary mt10 float-left"><b class="text-blue">Post</b> Published by <b class="text-blue">Advonum</b> of Past <b class="text-primary">Week</b></p></div>
 <!-- <svg class="linesvg" width="960" height="400"></svg> -->
 <!-- <div id="lineplot" style="min-height: 380px;"></div> -->
 
@@ -205,6 +209,35 @@
 
 
 </div>
+
+<div class="row mb0">
+  <div class="col-md-6 mt20 ">
+    <div class="card card-style mt20">
+      <div class="card-body  p5 pt10 pb10">
+
+        <div style="min-height: 420px;">
+          <div><p class="text-primary p15 pb5 pt0"><b class="text-blue">Advonum</b> Day of the Week Posting Pattern of Past <b class="text-primary">Week</b></p></div>
+          <div class="chart" id="d3-bar-horizontal">
+
+          </div>
+        </div>
+          </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mt20">
+    <div class="card card-style mt20">
+      <div class="card-body  p5 pt10 pb10">
+        <div class="min-height-table"style="min-height: 420px;">
+          <div><p class="text-primary p15 pb5 pt0">List of URLs of <b class="text-blue">Advonum</b></p></div>
+
+
+        </div>
+          </div>
+    </div>
+  </div>
+</div>
+
 <div class="row mb50">
   <div class="col-md-6 mt20 ">
     <div class="card card-style mt20">
@@ -379,6 +412,11 @@
     </div>
   </div>
 </div>
+
+
+
+
+
 </div>
 
 
@@ -1463,6 +1501,251 @@
          // });
      }
  });
+
+ </script>
+
+ <script>
+ $(function () {
+
+     // Initialize chart
+     barHorizontal('#d3-bar-horizontal', 400);
+
+     // Chart setup
+     function barHorizontal(element, height) {
+
+       // Basic setup
+       // ------------------------------
+
+       // Define main variables
+       var d3Container = d3.select(element),
+           margin = {top: 5, right: 50, bottom: 20, left: 70},
+           width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
+           height = height - margin.top - margin.bottom - 5;
+
+          var formatPercent = d3.format("");
+
+       // Construct scales
+       // ------------------------------
+
+       // Horizontal
+       var y = d3.scale.ordinal()
+           .rangeRoundBands([height,0], .02, .7);
+
+       // Vertical
+       var x = d3.scale.linear()
+           .range([0,width]);
+
+       // Color
+       var color = d3.scale.category20c();
+
+
+
+       // Create axes
+       // ------------------------------
+
+       // Horizontal
+       var xAxis = d3.svg.axis()
+           .scale(x)
+           .orient("bottom")
+           .ticks(6);
+
+       // Vertical
+       var yAxis = d3.svg.axis()
+           .scale(y)
+           .orient("left")
+           //.tickFormat(formatPercent);
+
+
+
+       // Create chart
+       // ------------------------------
+
+       // Add SVG element
+       var container = d3Container.append("svg");
+
+       // Add SVG group
+       var svg = container
+           .attr("width", width + margin.left + margin.right)
+           .attr("height", height + margin.top + margin.bottom)
+           .append("g")
+               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+       //         // Create tooltip
+       //             // ------------------------------
+       //
+       //
+       //
+       // // Load data
+       // // ------------------------------
+       //
+       //
+       //
+       data = [
+             {letter:"Mon", frequency:2550},
+             {letter:"Tue", frequency:800},
+             {letter:"Wed", frequency:500},
+             {letter:"Thu", frequency:1700},
+             {letter:"Fri", frequency:1900},
+             {letter:"Sat", frequency:1500},
+             {letter:"Sun", frequency:1450}
+         ];
+       //
+       //
+       //   // Create tooltip
+         var tip = d3.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d) {
+                    return d.letter+" ("+d.frequency+")";
+                });
+
+            // Initialize tooltip
+            svg.call(tip);
+
+       //
+       //     // Pull out values
+       //     data.forEach(function(d) {
+       //         d.frequency = +d.frequency;
+       //     });
+       //
+       //
+       //
+       //     // Set input domains
+       //     // ------------------------------
+       //
+       //     // Horizontal
+           y.domain(data.map(function(d) { return d.letter; }));
+
+           // Vertical
+           x.domain([0,d3.max(data, function(d) { return d.frequency; })]);
+       //
+       //
+       //     //
+       //     // Append chart elements
+       //     //
+       //
+       //     // Append axes
+       //     // ------------------------------
+       //
+           // Horizontal
+           svg.append("g")
+               .attr("class", "d3-axis d3-axis-horizontal d3-axis-strong")
+               .attr("transform", "translate(0," + height + ")")
+               .call(xAxis);
+
+           // Vertical
+           var verticalAxis = svg.append("g")
+               .attr("class", "d3-axis d3-axis-vertical d3-axis-strong")
+               .style("color","yellow")
+               .call(yAxis);
+       //
+       //
+       //     // Add text label
+       //     verticalAxis.append("text")
+       //         .attr("transform", "rotate(-90)")
+       //         .attr("y", 10)
+       //         .attr("dy", ".71em")
+       //         .style("text-anchor", "end")
+       //         .style("fill", "#999")
+       //         .style("font-size", 12)
+       //         // .text("Frequency")
+       //         ;
+       //
+       //
+       //     // Add bars
+           svg.selectAll(".d3-bar")
+               .data(data)
+               .enter()
+               .append("rect")
+                   .attr("class", "d3-bar")
+                   .attr("y", function(d) { return y(d.letter); })
+                   .attr("height", y.rangeBand())
+                   .attr("x", function(d) { return 0; })
+                   .attr("width", function(d) { return x(d.frequency); })
+                   .style("fill", function(d) {
+                   maxvalue = d3.max(data, function(d) { return d.frequency; });
+                   if(d.frequency == maxvalue)
+                   {
+                     return "0080CC";
+                   }
+                   else
+                   {
+                     return "#78BCE4";
+                   }
+
+                 })
+                   .on('mouseover', tip.show)
+                   .on('mouseout', tip.hide);
+
+
+                   // svg.selectAll(".d3-bar")
+                   //     .data(data)
+                   //     .enter()
+                   //     .append("rect")
+                   //         .attr("class", "d3-bar")
+                   //         .attr("x", function(d) { return x(d.letter); })
+                   //         .attr("width", x.rangeBand())
+                   //         .attr("y", function(d) { return y(d.frequency); })
+                   //         .attr("height", function(d) { return height - y(d.frequency); })
+                   //         .style("fill", function(d) { return "#58707E"; })
+                   //         .on('mouseover', tip.show)
+                   //         .on('mouseout', tip.hide);
+
+
+
+
+
+         // Resize chart
+         // ------------------------------
+
+         // Call function on window resize
+         $(window).on('resize', resize);
+
+         // Call function on sidebar width change
+         $('.sidebar-control').on('click', resize);
+
+         // Resize function
+         //
+         // Since D3 doesn't support SVG resize by default,
+         // we need to manually specify parts of the graph that need to
+         // be updated on window resize
+         function resize() {
+
+             // Layout variables
+             width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
+
+
+             // // Layout
+             // // -------------------------
+             //
+             // // Main svg width
+             container.attr("width", width + margin.left + margin.right);
+
+             // Width of appended group
+             svg.attr("width", width + margin.left + margin.right);
+             //
+             //
+             // // Axes
+             // // -------------------------
+             //
+             // // Horizontal range
+            x.range([0,width]);
+             //
+             // // Horizontal axis
+             svg.selectAll('.d3-axis-horizontal').call(xAxis);
+              // svg.selectAll('.d3-bar-vertical').call(yAxis);
+
+             //
+             // // Chart elements
+             // // -------------------------
+             //
+             // // Line path
+            svg.selectAll('.d3-bar').attr("width", function(d) { return x(d.frequency); });
+         }
+     }
+ });
+
 
  </script>
 

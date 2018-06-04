@@ -188,7 +188,7 @@
 
        // Horizontal
        var y = d3.scale.ordinal()
-           .rangeRoundBands([height,0], .72, .5);
+           .rangeRoundBands([height,0], .03, .1);
 
        // Vertical
        var x = d3.scale.linear()
@@ -251,16 +251,16 @@
        //
        //
        //   // Create tooltip
-       //   var tip = d3.tip()
-       //          .attr('class', 'd3-tip')
-       //          .offset([-10, 0])
-       //          .html(function(d) {
-       //              return d.letter+" ("+d.frequency+")";
-       //          });
-       //
-       //      // Initialize tooltip
-       //      svg.call(tip);
-       //
+         var tip = d3.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d) {
+                    return d.letter+" ("+d.frequency+")";
+                });
+
+            // Initialize tooltip
+            svg.call(tip);
+
        //
        //     // Pull out values
        //     data.forEach(function(d) {
@@ -311,36 +311,42 @@
        //
        //
        //     // Add bars
-           // svg.selectAll(".d3-bar")
-           //     .data(data)
-           //     .enter()
-           //     .append("rect")
-           //         .attr("class", "d3-bar")
-           //         .attr("y", function(d) { return y(d.letter); })
-           //         .attr("height", y.rangeBand())
-           //         .attr("x", function(d) { return x(d.frequency); })
-           //         .attr("width", function(d) { return width - x(d.frequency); })
-           //         .style("fill", function(d) { return "#58707E"; })
-           //         .on('mouseover', tip.show)
-           //         .on('mouseout', tip.hide);
+           svg.selectAll(".d3-bar")
+               .data(data)
+               .enter()
+               .append("rect")
+                   .attr("class", "d3-bar")
+                   .attr("y", function(d) { return y(d.letter); })
+                   .attr("height", y.rangeBand())
+                   .attr("x", function(d) { return 0; })
+                   .attr("width", function(d) { return x(d.frequency); })
+                   .style("fill", function(d) {
+                   maxvalue = d3.max(data, function(d) { return d.frequency; });
+                   if(d.frequency == maxvalue)
+                   {
+                     return "0080CC";
+                   }
+                   else {
+                     return "#78BCE4";
+                   }
+
+                 })
+                   .on('mouseover', tip.show)
+                   .on('mouseout', tip.hide);
 
 
-                   svg.selectAll(".d3-bar")
-                       .data(data)
-                       .enter()
-                       .append("rect")
-                           .attr("class", "d3-bar")
-                           .attr("y", function(d) { return y(d.letter); })
-                           .attr("height", x.rangeBand())
-                           .attr("y", function(d) { return y(d.frequency); })
-                           .attr("height", function(d) { return height - y(d.frequency); })
-                           // .attr("x", function(d) { return x(d.letter); })
-                           // .attr("width", x.rangeBand())
-                           // .attr("y", function(d) { return y(d.frequency); })
-                           // .attr("height", function(d) { return height - y(d.frequency); })
-                           .style("fill", function(d) { return "#58707E"; })
-                           .on('mouseover', tip.show)
-                           .on('mouseout', tip.hide);
+                   // svg.selectAll(".d3-bar")
+                   //     .data(data)
+                   //     .enter()
+                   //     .append("rect")
+                   //         .attr("class", "d3-bar")
+                   //         .attr("x", function(d) { return x(d.letter); })
+                   //         .attr("width", x.rangeBand())
+                   //         .attr("y", function(d) { return y(d.frequency); })
+                   //         .attr("height", function(d) { return height - y(d.frequency); })
+                   //         .style("fill", function(d) { return "#58707E"; })
+                   //         .on('mouseover', tip.show)
+                   //         .on('mouseout', tip.hide);
 
 
 
@@ -363,34 +369,35 @@
          function resize() {
 
              // Layout variables
-             // width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
-             //
-             //
+             width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
+
+
              // // Layout
              // // -------------------------
              //
              // // Main svg width
-             // container.attr("width", width + margin.left + margin.right);
-             //
-             // // Width of appended group
-             // svg.attr("width", width + margin.left + margin.right);
+             container.attr("width", width + margin.left + margin.right);
+
+             // Width of appended group
+             svg.attr("width", width + margin.left + margin.right);
              //
              //
              // // Axes
              // // -------------------------
              //
              // // Horizontal range
-             // x.rangeRoundBands([0, width], .72, .5);
+            x.range([0,width]);
              //
              // // Horizontal axis
-             // svg.selectAll('.d3-axis-horizontal').call(xAxis);
-             //
+             svg.selectAll('.d3-axis-horizontal').call(xAxis);
+              // svg.selectAll('.d3-bar-vertical').call(yAxis);
+
              //
              // // Chart elements
              // // -------------------------
              //
              // // Line path
-             // svg.selectAll('.d3-bar-horizontal').attr("x", function(d) { return x(d.letter); }).attr("width", 16);
+            svg.selectAll('.d3-bar').attr("width", function(d) { return x(d.frequency); });
          }
      }
  });
