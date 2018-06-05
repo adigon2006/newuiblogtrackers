@@ -333,10 +333,23 @@ font-size: 18px;
 top:35px !important;
 left:25px;
 }
-.inputportfolio
+.searchiconinputothers
 {
-padding-left: 30px;
+color:#6C757D;
+position:absolute !important;
+font-size: 12px;
+top:78px !important;
+left:27px;
 }
+.searchiconinputclose
+{
+color:#6C757D;
+position:absolute !important;
+font-size: 12px;
+top:78px !important;
+right:40px;
+}
+
 .dropdown-menu
 {
 position: absolute !important;
@@ -487,14 +500,14 @@ background: black;
 }
 #notificationcount
 {
-  background:#FF7E7E ;
+  background:#FF7E7E;
   position:absolute;
   border-radius: 100px;
   right:30px;
   color:#ffffff;
-  padding:12px 12px;
-  font-size: 16px;
-
+top:-5px;
+  padding:8px 8px;
+  font-size: 12px;
 }
 .activebar
 {
@@ -513,21 +526,21 @@ color:#ffffff;
 {
 background: #1F90D0;
 }
-.profilemenulink h3:hover
+.profilemenulink h6:hover
 {
 opacity: 0.53!important;
 }
 #closeicon
 {
 position:absolute;
-background: #ffffff;
+/* background: #ffffff; */
 border-radius: 100px;
 right:45px;
 top:10px;
 }
 #closeicon i
 {
-  font-size: 40px;
+  font-size: 28px;
   color:#FF7E7E;
 }
 
@@ -697,6 +710,12 @@ padding: 0.19rem 0.75rem;
 font-weight: 700;
 background: none;
 color:#17384B;
+}
+.nobgnoborder
+{
+border:none;
+background-color: transparent;
+color:#17394c;
 }
 .stylebuttonorange
 {
@@ -1408,6 +1427,14 @@ min-height:100px;
   margin-top:-90px;
   border-radius:100px !important;
   border:3px solid #ffffff;
+}
+.inputportfolio
+{
+padding-left: 30px !important;
+}
+.inputportfolio2
+{
+padding-left:25px !important;
 }
 /* Mobile Reponsive Section */
 @media (min-width:300px) and (max-width:860px){
