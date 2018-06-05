@@ -445,9 +445,29 @@ $(document).ready(function() {
   // add new tracker code snippets
   $('.addnewtracker').on("click",function(e){
     e.preventDefault();
-    trackersetupform = '<div class="card noborder curved-card mb30 pt50 pb50"><div class="card-body"><div class="cursor-pointer"><input type="text" class="form-control"</div></div></div>';
+    trackersetupform = '<div class="card noborder curved-card mb30 pt50 pb50"><div class="card-body"><div class="cursor-pointer"><textarea class="form-control trackername text-primary" placeholder="Tracker Name"></textarea></div></div></div>';
   $('.card-columns').prepend(trackersetupform);
   });
+//   var span = $('<span>').css('display','inline-block')
+// .css('word-break','break-all').appendTo('body').css('visibility','hidden');
+// function initSpan(textarea){
+//   span.text(textarea.text())
+//       .width(textarea.width())
+//       .css('font',textarea.css('font'));
+// }
+// $('textarea').on({
+//     input: function(){
+//       var text = $(this).val();
+//       span.text(text);
+//       $(this).height(text ? span.height() : '1.1em');
+//     },
+//     focus: function(){
+//      initSpan($(this));
+//     },
+//     keypress: function(e){
+//         if(e.which == 13) e.preventDefault();
+//     }
+// });
 } );
 </script>
 <!--end for table  -->

@@ -66,6 +66,22 @@ min-width:190px;
 -moz-box-shadow: 0px 7px 0px -2px rgba(233,233,233,1);
 box-shadow: 0px 7px 0px -2px rgba(233,233,233,1);
 }
+.trackername
+{
+border:none;
+border-bottom:2px solid #E7EbEC;
+font-size: 2.5rem !important;
+font-family: inherit;
+font-weight: 500 !important;
+line-height: 1.2 !important;
+ height:4.0rem;
+resize:none;
+}
+.trackername[placeholder]
+{
+font-size: 20px;
+font-weight:600;
+}
 .iconportfolio
 {
 padding-top: 5px;
