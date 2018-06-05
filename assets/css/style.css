@@ -42,6 +42,17 @@ cursor: move;
   font-weight: bolder;
   color: red;
 }
+.icontrackersize
+{
+font-size: 1.5rem;
+margin-left: 25px;
+font-weight: 600;
+}
+.icontrackersize:first-child
+{
+font-size: 1.5rem;
+margin-left: 0px;
+}
 .buttonportfolio
 {
 background: #fafafa;
@@ -91,6 +102,10 @@ color:#C6CED2;
 .notification h2
 {
 width:90%;
+}
+.addnewtracker
+{
+font-size: 5.0rem;
 }
 .closeicon
 {
