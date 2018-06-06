@@ -66,6 +66,19 @@ min-width:190px;
 -moz-box-shadow: 0px 7px 0px -2px rgba(233,233,233,1);
 box-shadow: 0px 7px 0px -2px rgba(233,233,233,1);
 }
+.buttonportfolio2
+{
+background: #fafafa;
+color:#17384B;
+border: 1px solid #EFEFEF;
+border-radius: 30px;
+padding:4px 15px;
+font-size: 1.15rem;
+min-width:190px;
+-webkit-box-shadow: 0px 7px 0px -2px rgba(233,233,233,1);
+-moz-box-shadow: 0px 7px 0px -2px rgba(233,233,233,1);
+box-shadow: 0px 7px 0px -2px rgba(233,233,233,1);
+}
 .trackername
 {
 border:none;
@@ -85,6 +98,12 @@ font-weight:600;
 .iconportfolio
 {
 padding-top: 5px;
+}
+.icondash2
+{
+padding-top: 5px;
+/* font-size: 12px; */
+padding-left: 10px;
 }
 .buttonportfolio:hover{
 background: none;
@@ -179,6 +198,20 @@ font-weight: 500
 .curved-card
 {
 border-radius: 15px;
+}
+.nocoloredcard
+{
+background-color:transparent;
+border-radius: none;
+border: none;
+}
+.icondash
+{
+margin-right:10px;
+}
+.countdash
+{
+margin-left:30px;
 }
 .hidden
 {
