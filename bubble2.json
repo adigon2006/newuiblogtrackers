@@ -1,0 +1,10 @@
+{
+  "name":"flare",
+  "bloggers":[
+  {"label":"Blog 1","name":"Adigun Adekunle", "size":3245},
+  {"label":"Blog 2","name":"Obadimu Adewale", "size":2500},
+  {"label":"Blog 3","name":"Oluwaseun Walter", "size":2800},
+  {"label":"Blog 4","name":"Adekunle Mayowa", "size":1400},
+  {"label":"Blog 5","name":"Adekunle Mayowa", "size":1400}
+  ]
+}

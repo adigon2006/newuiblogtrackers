@@ -215,6 +215,41 @@
   <div class="col-md-6 mt20">
     <div class="card card-style mt20">
       <div class="card-body   p30 pt5 pb5">
+        <div><p class="text-primary mt10 float-left">Blog Distribution of Past <b>Week</b></p></div>
+        <div class="min-height-table" style="min-height: 500px;">
+        <div class="chart-container">
+        <div class="chart" id="bubblesblog">
+                      </div>
+        </div>
+      </div>
+          </div>
+    </div>
+    <div class="float-right"><a href=""><button class="btn buttonportfolio2 mt10"><b class="float-left semi-bold-text">Blog Portfolio Analysis</b> <b class="fas fa-file-alt float-right icondash2"></b></button></a></div>
+
+  </div>
+
+  <div class="col-md-6 mt20">
+    <div class="card card-style mt20">
+      <div class="card-body p30 pt5 pb5">
+          <div><p class="text-primary mt10 float-left">Blogger Distribution of Past <b>Week</b></p></div>
+        <div class="min-height-table" style="min-height: 450px;">
+        <div class="chart-container">
+        <div class="chart" id="bubblesblogger">
+                      </div>
+        </div>
+      </div>
+          </div>
+    </div>
+    <div class="float-right"><a href=""><button class="btn buttonportfolio2 mt10"><b class="float-left semi-bold-text">Blogger Portfolio Analysis </b> <b class="fas fa-user float-right icondash2"></b></button></a></div>
+
+  </div>
+
+</div>
+
+<div class="row mb0">
+  <div class="col-md-6 mt20">
+    <div class="card card-style mt20">
+      <div class="card-body   p30 pt5 pb5">
         <div><p class="text-primary mt10 float-left">Most Active <b>Blogs</b> of Past <b>Week</b></p></div>
         <div class="min-height-table" style="min-height: 500px;">
         <div class="chart-container">
@@ -337,7 +372,32 @@
     <div class="card card-style mt20">
       <div class="card-body  p5 pt10 pb10">
         <div class="min-height-table"style="min-height: 420px;">
-          <div><p class="text-primary p15 pb5 pt0">List of Top URLs of <b >Blogs</b> of Past <b>Week</b></p></div>
+          <!-- <div class="dropdown show"><p class="text-primary p15 pb5 pt0">List of Top URLs of <a class=" dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" id="blogbloggermenu1" role="button">Blogs</a> of Past <b>Week</b></p>
+            <div class="dropdown-menu" aria-labelledby="blogbloggermenu1">
+               <a class="dropdown-item" href="#">Action</a>
+               <a class="dropdown-item" href="#">Another action</a>
+               <a class="dropdown-item" href="#">Something else here</a>
+             </div>
+          </div> -->
+
+<div class="dropdown show text-primary p15 pb20 pt0">List of Top URLs of
+  <b class="dropdown-toggle cursor-pointer" href="#" role="button" id="blogbloggermenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Blogs</b> of Past <b class="dropdown-toggle cursor-pointer" href="#" role="button" id="timerange1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Week</b>
+
+  <div class="dropdown-menu submenudashwidth" aria-labelledby="blogbloggermenu1">
+    <a class="dropdown-item" href="#">Blog</a>
+    <a class="dropdown-item" href="#">Bloggers</a>
+  </div>
+
+  <div class="dropdown-menu submenudashwidth" aria-labelledby="timerange1">
+    <a class="dropdown-item" href="#">Week</a>
+    <a class="dropdown-item" href="#">Month</a>
+  </div>
+
+</div>
+
+          <!-- Example split danger button -->
+
           <div class="p15 pb5 pt0" role="group">
           Export Options
           </div>
@@ -951,11 +1011,11 @@ $(function () {
       //
       //
       data = [
-            {letter:"Blog 5", frequency:2550},
-            {letter:"Blog 4", frequency:800},
-            {letter:"Blog 3", frequency:500},
-            {letter:"Blog 2", frequency:1700},
-            {letter:"Blog 1", frequency:1900}
+            {letter:"Blog 5", frequency:2550, name:"Obadimu Adewale", type:"blogger"},
+            {letter:"Blog 4", frequency:800, name:"Matt Finnace", type:"blogger"},
+            {letter:"Blog 3", frequency:500, name:"notonato", type:"blogger"},
+            {letter:"Blog 2", frequency:1700, name:"Nihal Hussain", type:"blogger"},
+            {letter:"Blog 1", frequency:1900, name:"Test Test", type:"blogger"}
         ];
       //
       //
@@ -964,7 +1024,16 @@ $(function () {
                .attr('class', 'd3-tip')
                .offset([-10, 0])
                .html(function(d) {
-                   return d.letter+" ("+d.frequency+")";
+                 if(d.type === "blogger")
+                 {
+                   return d.letter+" ("+d.frequency+")<br/> Blogger: "+d.name;
+                 }
+
+                 if(d.type === "blog")
+                 {
+                   return d.letter+" ("+d.frequency+")<br/> Blog: "+d.name;
+                 }
+
                });
 
            // Initialize tooltip
@@ -1195,11 +1264,11 @@ $(function () {
       //
       //
       data = [
-            {letter:"Blog 5", frequency:2550},
-            {letter:"Blog 4", frequency:800},
-            {letter:"Blog 3", frequency:500},
-            {letter:"Blog 2", frequency:1700},
-            {letter:"Blog 1", frequency:1900}
+            {letter:"Blog 5", frequency:2550, name:"Obadimu Adewale", type:"blogger"},
+            {letter:"Blog 4", frequency:800, name:"Matt Finnace", type:"blogger"},
+            {letter:"Blog 3", frequency:500, name:"notonato", type:"blogger"},
+            {letter:"Blog 2", frequency:1700, name:"Nihal Hussain", type:"blogger"},
+            {letter:"Blog 1", frequency:1900, name:"Test Test", type:"blogger"}
         ];
       //
       //
@@ -1208,7 +1277,16 @@ $(function () {
                .attr('class', 'd3-tip')
                .offset([-10, 0])
                .html(function(d) {
-                   return d.letter+" ("+d.frequency+")";
+                 if(d.type === "blogger")
+                 {
+                   return d.letter+" ("+d.frequency+")<br/> Blogger: "+d.name;
+                 }
+
+                 if(d.type === "blog")
+                 {
+                   return d.letter+" ("+d.frequency+")<br/> Blog: "+d.name;
+                 }
+
                });
 
            // Initialize tooltip
@@ -1886,5 +1964,316 @@ var mymarker = [
      }
  </script>
 
+<!-- Blogger Bubble Chart -->
+<script>
+
+
+$(function () {
+
+    // Initialize chart
+    bubblesblogger('#bubblesblogger', 470);
+
+    // Chart setup
+    function bubblesblogger(element, diameter) {
+
+
+        // Basic setup
+        // ------------------------------
+
+        // Format data
+        var format = d3.format(",d");
+
+        // Color scale
+        color = d3.scale.category10();
+
+        // Define main variables
+        var d3Container = d3.select(element),
+            margin = {top: 5, right: 20, bottom: 20, left: 50},
+            width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
+            height = height - margin.top - margin.bottom;
+            diamter = height;
+
+
+
+
+            // Add SVG element
+            var container = d3Container.append("svg");
+
+            // Add SVG group
+            var svg = container
+                .attr("width", diameter + margin.left + margin.right)
+                .attr("height",diameter + margin.top + margin.bottom)
+                .attr("class", "bubble");
+
+        // Create chart
+        // ------------------------------
+
+        // var svg = d3.select(element).append("svg")
+        //     .attr("width", diameter)
+        //     .attr("height", diameter)
+        //     .attr("class", "bubble");
+
+
+
+        // Create chart
+        // ------------------------------
+
+        // Add tooltip
+        var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-5, 0])
+            .html(function(d) {
+                return d.label+"<br/>"+d.className + ": " + format(d.value);;
+            });
+
+        // Initialize tooltip
+        svg.call(tip);
+
+
+
+        // Construct chart layout
+        // ------------------------------
+
+        // Pack
+        var bubble = d3.layout.pack()
+            .sort(null)
+            .size([diameter, diameter])
+            .padding(15);
+
+
+
+        // Load data
+        // ------------------------------
+
+
+
+data = {
+ "name":"flare",
+ "bloggers":[
+ {"label":"Blogger 1","name":"Adigun Adekunle", "size":3245},
+ {"label":"Blogger 2","name":"Obadimu Adewale", "size":2500},
+ {"label":"Blogger 3","name":"Oluwaseun Walter", "size":2800},
+ {"label":"Blogger 4","name":"Kiran Bandeli", "size":900},
+ {"label":"Blogger 5","name":"Adekunle Mayowa", "size":1400},
+ {"label":"Blogger 6","name":"Nihal Hussain", "size":200},
+ {"label":"Blogger 7","name":"Adekunle Mayowa", "size":500},
+ {"label":"Blogger 8","name":"Adekunle Mayowa", "size":300},
+ {"label":"Blogger 9","name":"Adekunle Mayowa", "size":350},
+ {"label":"Blogger 10","name":"Adekunle Mayowa", "size":1400}
+ ]
+}
+
+
+            //
+            // Append chart elements
+            //
+
+            // Bind data
+            var node = svg.selectAll(".d3-bubbles-node")
+                .data(bubble.nodes(classes(data))
+                .filter(function(d) { return !d.children; }))
+                .enter()
+                .append("g")
+                    .attr("class", "d3-bubbles-node")
+                    .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+            // Append circles
+            node.append("circle")
+                .attr("r", function(d) { return d.r; })
+                .style("fill", function(d,i) { return color(i); })
+                .on('mouseover', tip.show)
+                .on('mouseout', tip.hide);
+
+            // Append text
+            node.append("text")
+                .attr("dy", ".3em")
+                .style("fill", "#fff")
+                .style("font-size", 12)
+                .style("text-anchor", "middle")
+                .text(function(d) { return d.label.substring(0, d.r / 3); });
+
+
+
+        // Returns a flattened hierarchy containing all leaf nodes under the root.
+        function classes(root) {
+            var classes = [];
+
+            function recurse(name, node) {
+                if (node.bloggers) node.bloggers.forEach(function(child) { recurse(node.name, child); });
+                else classes.push({packageName: name, className: node.name, value: node.size,label:node.label});
+            }
+
+            recurse(null, root);
+            return {children: classes};
+        }
+    }
+});
+</script>
+<script>
+
+
+    var color = d3.scale.linear()
+            .domain([0,1,2,3,4,5,6,10,15,20,80])
+            .range(["#17394C", "#F5CC0E", "#CE0202", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+
+</script>
+<!-- end of blogger bubble chart -->
+
+
+<!-- Blog Bubble Chart -->
+<script>
+
+
+$(function () {
+
+    // Initialize chart
+    bubblesblog('#bubblesblog', 470);
+
+    // Chart setup
+    function bubblesblog(element, diameter) {
+
+
+        // Basic setup
+        // ------------------------------
+
+        // Format data
+        var format = d3.format(",d");
+
+        // Color scale
+        color = d3.scale.category10();
+
+        // Define main variables
+        var d3Container = d3.select(element),
+            margin = {top: 5, right: 20, bottom: 20, left: 50},
+            width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
+            height = height - margin.top - margin.bottom;
+            diamter = height;
+
+
+
+
+            // Add SVG element
+            var container = d3Container.append("svg");
+
+            // Add SVG group
+            var svg = container
+                .attr("width", diameter + margin.left + margin.right)
+                .attr("height",diameter + margin.top + margin.bottom)
+                .attr("class", "bubble");
+
+        // Create chart
+        // ------------------------------
+
+        // var svg = d3.select(element).append("svg")
+        //     .attr("width", diameter)
+        //     .attr("height", diameter)
+        //     .attr("class", "bubble");
+
+
+
+        // Create chart
+        // ------------------------------
+
+        // Add tooltip
+        var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-5, 0])
+            .html(function(d) {
+                return d.label+"<br/>"+d.className + ": " + format(d.value);;
+            });
+
+        // Initialize tooltip
+        svg.call(tip);
+
+
+
+        // Construct chart layout
+        // ------------------------------
+
+        // Pack
+        var bubble = d3.layout.pack()
+            .sort(null)
+            .size([diameter, diameter])
+            .padding(15);
+
+
+
+        // Load data
+        // ------------------------------
+
+
+
+data = {
+ "name":"flare",
+ "bloggers":[
+ {"label":"Blog 1","name":"Adigun Adekunle", "size":3245},
+ {"label":"Blog 2","name":"Obadimu Adewale", "size":2500},
+ {"label":"Blog 3","name":"Oluwaseun Walter", "size":2800},
+ {"label":"Blog 4","name":"Kiran Bandeli", "size":900},
+ {"label":"Blog 5","name":"Adekunle Mayowa", "size":1400},
+ {"label":"Blog 6","name":"Nihal Hussain", "size":200},
+ {"label":"Blog 7","name":"Adekunle Mayowa", "size":500},
+ {"label":"Blog 8","name":"Adekunle Mayowa", "size":300},
+ {"label":"Blog 9","name":"Adekunle Mayowa", "size":350},
+ {"label":"Blog 10","name":"Adekunle Mayowa", "size":1400}
+ ]
+}
+
+
+            //
+            // Append chart elements
+            //
+
+            // Bind data
+            var node = svg.selectAll(".d3-bubbles-node")
+                .data(bubble.nodes(classes(data))
+                .filter(function(d) { return !d.children; }))
+                .enter()
+                .append("g")
+                    .attr("class", "d3-bubbles-node")
+                    .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+            // Append circles
+            node.append("circle")
+                .attr("r", function(d) { return d.r; })
+                .style("fill", function(d,i) { return color(i); })
+                .on('mouseover', tip.show)
+                .on('mouseout', tip.hide);
+
+            // Append text
+            node.append("text")
+                .attr("dy", ".3em")
+                .style("fill", "#fff")
+                .style("font-size", 12)
+                .style("text-anchor", "middle")
+                .text(function(d) { return d.label.substring(0, d.r / 3); });
+
+
+
+        // Returns a flattened hierarchy containing all leaf nodes under the root.
+        function classes(root) {
+            var classes = [];
+
+            function recurse(name, node) {
+                if (node.bloggers) node.bloggers.forEach(function(child) { recurse(node.name, child); });
+                else classes.push({packageName: name, className: node.name, value: node.size,label:node.label});
+            }
+
+            recurse(null, root);
+            return {children: classes};
+        }
+    }
+});
+</script>
+<script>
+
+
+    var color = d3.scale.linear()
+            .domain([0,1,2,3,4,5,6,10,15,20,80])
+            .range(["#17394C", "#F5CC0E", "#CE0202", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+
+</script>
+
+<!-- End of blog bubble chart -->
 </body>
 </html>

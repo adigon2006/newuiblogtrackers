@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blogtrackers</title>
+  <link rel="shortcut icon" href="images/favicons/favicon.ico">
+  <link rel="apple-touch-icon" href="images/favicons/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="96x96" href="images/favicons/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/favicon-144x144.png">
+  <!-- start of bootsrap -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css"/>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
+  <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.css" />
+  <link rel="stylesheet" href="assets/fonts/iconic/css/open-iconic.css" />
+ <link rel="stylesheet" href="assets/vendors/bootstrap-daterangepicker/daterangepicker.css" />
+ <link rel="stylesheet" href="assets/css/table.css" />
+ <link rel="stylesheet" href="assets/vendors/DataTables/dataTables.bootstrap4.min.css" />
+
+<link rel="stylesheet" href="assets/css/daterangepicker.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!--end of bootsrap -->
+  <script src="assets/js/jquery-3.2.1.slim.min.js"  ></script>
+<script src="assets/js/popper.min.js" ></script>
+</head>
+<body>
+
+
+<div class="container">
+
+
+<!-- <div class="row p40 border-top-bottom mt20 mb20">
+  <div class="col-md-2">
+<small class="text-primary">Selected Blogger</small>
+<h2 class="text-primary styleheading">AdNovum <div class="circle"></div></h2>
+</div>
+  <div class="col-md-10">
+  <small class="text-primary">Find Blogger</small>
+  <input class="form-control inputboxstyle" placeholder="| Search" />
+  </div>
+</div> -->
+
+
+
+<div class="row mb0">
+
+
+  <div class="col-md-12 mt20">
+    <div class="card card-style mt20">
+      <div class="card-body  p30 pt5 pb5">
+        <div><p class="text-primary mt10">Bubble Chart</p></div>
+        <div style="min-height: 500px;">
+          <div class="chart-container has-scroll">
+            <div class="chart svg-center" id="d3-bubbles"></div>
+          </div>
+        </div>
+          </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+<!-- <footer class="footer">
+  <div class="container-fluid bg-primary mt60">
+<p class="text-center text-medium pt10 pb10 mb0">Copyright &copy; Blogtrackers 2017 All Rights Reserved.</p>
+</div>
+  </footer> -->
+
+
+  <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
+ <script src="assets/bootstrap/js/bootstrap.js">
+ </script>
+
+ <script src="assets/vendors/bootstrap-daterangepicker/moment.js"></script>
+ <script src="assets/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+ <!-- Start for tables  -->
+
+ <script type="text/javascript" src="assets/vendors/d3/d3.min.js"></script>
+ <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+
+
+ <script type="text/javascript" src="assets/vendors/d3/d3_tooltip3.js"></script>
+ <script>
+
+
+
+ $(function () {
+
+     // Initialize chart
+     bubbles('#d3-bubbles', 700);
+
+     // Chart setup
+     function bubbles(element, diameter) {
+
+
+         // Basic setup
+         // ------------------------------
+
+         // Format data
+         var format = d3.format(",d");
+
+         // Color scale
+         color = d3.scale.category10();
+
+
+
+         // Create chart
+         // ------------------------------
+
+         var svg = d3.select(element).append("svg")
+             .attr("width", diameter)
+             .attr("height", diameter)
+             .attr("class", "bubble");
+
+
+
+         // Create chart
+         // ------------------------------
+
+         // Add tooltip
+         var tip = d3.tip()
+             .attr('class', 'd3-tip')
+             .offset([-5, 0])
+             .html(function(d) {
+                 return d.className + ": " + format(d.value);;
+             });
+
+         // Initialize tooltip
+         svg.call(tip);
+
+
+
+         // Construct chart layout
+         // ------------------------------
+
+         // Pack
+         var bubble = d3.layout.pack()
+             .sort(null)
+             .size([diameter, diameter])
+             .padding(1.5);
+
+
+
+         // Load data
+         // ------------------------------
+
+         d3.json("bubble.json", function(error, root) {
+
+
+             //
+             // Append chart elements
+             //
+
+             // Bind data
+             var node = svg.selectAll(".d3-bubbles-node")
+                 .data(bubble.nodes(classes(root))
+                 .filter(function(d) { return !d.children; }))
+                 .enter()
+                 .append("g")
+                     .attr("class", "d3-bubbles-node")
+                     .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+             // Append circles
+             node.append("circle")
+                 .attr("r", function(d) { return d.r; })
+                 .style("fill", function(d) { return color(d.packageName); })
+                 .on('mouseover', tip.show)
+                 .on('mouseout', tip.hide);
+
+             // Append text
+             node.append("text")
+                 .attr("dy", ".3em")
+                 .style("fill", "#fff")
+                 .style("font-size", 12)
+                 .style("text-anchor", "middle")
+                 .text(function(d) { return d.className.substring(0, d.r / 3); });
+         });
+
+
+         // Returns a flattened hierarchy containing all leaf nodes under the root.
+         function classes(root) {
+             var classes = [];
+
+             function recurse(name, node) {
+                 if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
+                 else classes.push({packageName: name, className: node.name, value: node.size});
+             }
+
+             recurse(null, root);
+             return {children: classes};
+         }
+     }
+ });
+ </script>
+ <script>
+
+
+     var color = d3.scale.linear()
+             .domain([0,1,2,3,4,5,6,10,15,20,80])
+             .range(["#17394C", "#F5CC0E", "#CE0202", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+
+ </script>
+
+</body>
+</html>
