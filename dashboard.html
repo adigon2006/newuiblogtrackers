@@ -2080,7 +2080,18 @@ data = {
             // Append circles
             node.append("circle")
                 .attr("r", function(d) { return d.r; })
-                .style("fill", function(d,i) { return color(i); })
+                .style("fill", function(d,i) {
+                  // return color(i);
+                  // customize Color
+                  if(i<5)
+                  {
+                    return "#0080cc";
+                  }
+                  else if(i>=5)
+                  {
+                    return "#78bce4";
+                  }
+                })
                 .on('mouseover', tip.show)
                 .on('mouseout', tip.hide);
 
@@ -2236,8 +2247,18 @@ data = {
             // Append circles
             node.append("circle")
                 .attr("r", function(d) { return d.r; })
-                .style("fill", function(d,i) { return color(i); })
-                .on('mouseover', tip.show)
+                .style("fill", function(d,i) {
+                  //return color(i);
+                  if(i<5)
+                  {
+                    return "#0080cc";
+                  }
+                  else if(i>=5)
+                  {
+                    return "#78bce4";
+                  }
+                })
+                .on('mouseover',tip.show)
                 .on('mouseout', tip.hide);
 
             // Append text
