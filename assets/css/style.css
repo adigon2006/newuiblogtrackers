@@ -812,6 +812,28 @@ border-radius: 10px;
 padding: 0.19rem 0.75rem;
 font-weight: 700;
 }
+.stylebutton7
+{
+font-size: 0.7rem;
+border-radius: 10px;
+padding: 0.19rem 0.75rem;
+font-weight: 700;
+background-color: #a8dfff;
+border: 2px solid #a8dfff;
+border-color: #a8dfff;
+color: #16394B;
+}
+.stylebutton8
+{
+font-size: 0.7rem;
+border-radius: 10px;
+padding: 0.19rem 0.75rem;
+font-weight: 700;
+background-color: #FFD27D;
+border: 2px solid #FFD27D;
+border-color: #FFD27D;
+color: #16394B;
+}
 .stylebuttonblue
 {
 font-size: 0.7rem;
