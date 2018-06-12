@@ -1637,3 +1637,11 @@ display: none !important;
 
 
 }
+@media (min-width:1378px) and (max-width:4000px){
+
+.robotcontainer
+{
+min-height: 530px; 
+}
+
+}
