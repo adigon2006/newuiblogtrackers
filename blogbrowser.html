@@ -303,7 +303,22 @@ $(this).attr("data-original-title","Remove from Favorite");
 
 //select a blog to track
 $('.trackblog').on("click",function(e){
-
+// check the status if the blog is tracked
+trackingblog = $(this).hasClass("text-success");
+if(trackingblog)
+{
+// if the blog is being tracked
+$(this).removeClass("text-success");
+$(this).attr("data-original-title","Add Blog from Tracker");
+// add an ajax to removed blog from tracker
+}
+else if(!trackingblog)
+{
+// if the blog is being tracked
+$(this).addClass("text-success");
+$(this).attr("data-original-title","Remove Blog from Tracker");
+// add an ajax to add blog from tracker
+}
 });
 
 

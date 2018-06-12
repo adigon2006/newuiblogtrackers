@@ -537,7 +537,7 @@ margin-left: 0px !important;
 font-size: 20px;
 line-height: 20px;
 color: #ffffff;
-font-weight: bold;
+font-weight: 600;
 }
 a:hover
 {
@@ -586,11 +586,38 @@ background-color: transparent;
 color:#45606F !important;
 font-size: 60px !important;
 line-height: 60px;
-font-weight: bold;
+font-weight: 600;
 }
 .iconbig2
 {
 font-size: 20px;
+}
+.text-white
+{
+color:#ffffff;
+}
+.trackertitlesize
+{
+font-size: 4.0rem;
+font-weight: bold;
+}
+.greentext
+{
+color:#5faa78 ;
+}
+
+.bg-white
+{
+background-color: #ffffff;
+}
+.trackerbutton
+{
+background-color: transparent;
+}
+.trackerbutton:hover
+{
+background-color: #2e4e5e;
+color:
 }
 .iconbig3
 {
