@@ -11,6 +11,8 @@ body{
 color:blue;
 } */
 
+
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   height: 40px;
@@ -518,6 +520,22 @@ border-radius: 100px;
 box-shadow: 0px 5px 0px -2px rgb(0,212,115);
 font-size: 20px;
 }
+.trackercreatebutton
+{
+border-radius: 100px;
+-webkit-box-shadow: 0px 4px 0px -2px rgb(0,212,115);
+-moz-box-shadow: 0px 4px 0px -2px rgb(0,212,115);
+box-shadow: 0px 4px 0px -2px rgb(0,212,115);
+font-size: 20px;
+}
+.canceltracker
+{
+font-size: 20px;
+border-radius: 100px;
+-webkit-box-shadow: 0px 4px 0px -2px rgb(234,234,234);
+-moz-box-shadow: 0px 4px 0px -2px rgb(234,234,234);
+box-shadow: 0px 4px 0px -2px rgb(234,234,234);
+}
 .home-top
 {
   background: #0a394e; /* Old browsers */
@@ -598,8 +616,21 @@ color:#ffffff;
 }
 .trackertitlesize
 {
-font-size: 4.0rem;
+font-size: 5.6rem;
 font-weight: bold;
+}
+.blogselection
+{
+font-size: 1.4rem;
+}
+.createtrackerbtn
+{
+background-color: #f9f9f9;
+font-size: 2.8rem;
+border-radius: 100px;
+-webkit-box-shadow: 0px 5px 0px -2px rgb(243,243,243);
+-moz-box-shadow: 0px 5px 0px -2px rgb(243,243,243);
+box-shadow: 0px 5px 0px -2px rgb(243,243,243);
 }
 .greentext
 {
@@ -610,15 +641,16 @@ color:#5faa78 ;
 {
 background-color: #ffffff;
 }
-.trackerbutton
+.blogselection
 {
 background-color: transparent;
+border-radius: 8px;
 }
-.trackerbutton:hover
+.blogselection:hover, .blogselectionactive
 {
 background-color: #2e4e5e;
-color:
 }
+
 .iconbig3
 {
 font-size: 27px;
@@ -1230,8 +1262,104 @@ padding-top:90px;
 {
 padding-top:100px;
 }
-/*  margin top*/
-/*  margin bottom*/
+/*  padding left*/
+{
+padding-left:5px;
+}
+.pl10
+{
+padding-left:10px;
+}
+.pl20
+{
+padding-left: 20px;
+}
+.pl30
+{
+padding-left: 30px;
+}
+.pl40
+{
+padding-left:40px;
+}
+.pl50
+{
+padding-left:50px;
+}
+.pl60
+{
+padding-left:60px;
+}
+.pl70
+{
+padding-left:70px;
+}
+.pl80
+{
+padding-left:80px;
+}
+.pl90
+{
+padding-left:90px;
+}
+.pl100
+{
+padding-left:100px;
+}
+/* end of padding left */
+
+/* Start of padding right */
+.pr0
+{
+padding-right:0px;
+}
+.pr5
+{
+padding-right:5px;
+}
+.pr10
+{
+padding-right:10px;
+}
+.pr20
+{
+padding-right: 20px;
+}
+.pr30
+{
+padding-right: 30px;
+}
+.pr40
+{
+padding-right:40px;
+}
+.pr50
+{
+padding-right:50px;
+}
+.pr60
+{
+padding-right:60px;
+}
+.pr70
+{
+padding-right:70px;
+}
+.pr80
+{
+padding-right:80px;
+}
+.pr90
+{
+padding-right:90px;
+}
+.pr100
+{
+padding-right:100px;
+}
+/* End of padding right */
+
+/*  padding  bottom*/
 .pb0
 {
 padding-bottom:0px;
@@ -1281,7 +1409,7 @@ padding-bottom:90px;
 {
 padding-bottom:100px;
 }
-/*  end of margin bottom*/
+/*  end of padding bottom*/
 
 .border-top-bottom
 {
@@ -1605,6 +1733,101 @@ padding-left: 30px !important;
 {
 padding-left:25px !important;
 }
+.deleteblog
+{
+top:3px;
+}
+.trackerinput
+{
+border-radius:8px;
+}
+.trackerdescription
+{
+resize:none;
+border-radius:8px;
+}
+.deletebtn
+{
+border-radius: 20px;
+}
+.tokenfield:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.tokenfield .token .token-label {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8px 16px;
+    padding-right: 35px;
+}
+.tokenfield .token > .close {
+    font-size: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    color: inherit;
+    right: 16px;
+    line-height: 1;
+    margin-top: -5.5px;
+}
+.tokenfield .token > .close:after {
+    content: 'X';
+    font-family: 'inherit';
+    display: block;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.close {
+    text-shadow: none;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+.close, .tag [data-role="remove"], .select2-selection__choice__remove {
+    -webkit-transition: opacity ease-in-out 0.15s;
+    -o-transition: opacity ease-in-out 0.15s;
+    transition: opacity ease-in-out 0.15s;
+}
+.bg-default
+{
+background-color: #DDDDDD;
+}
+.tokenfield .token {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 6px;
+    cursor: default;
+    float: left;
+    position: relative;
+    border-radius: 100px;
+}
+.tokenfield .token:not([class*=bg-]) {
+    background-color: #eee;
+    color: #333333;
+}
+.tokenfield.form-control {
+    height: auto;
+    padding: 0;
+border-color: transparent;
+}
+.tokenfield .token-input {
+    direction: ltr;
+    background: none;
+    width: 80px!important;
+    max-width: 50%;
+    min-width: 60px;
+    padding: 8px 0;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border: 0;
+    outline: 0;
+}
+.tokenfield {
+    border-width: 0;
+}
+
 /* Mobile Reponsive Section */
 @media (min-width:300px) and (max-width:860px){
   /* LogIn Section  */
@@ -1637,11 +1860,12 @@ display: none !important;
 
 
 }
+/* Large Desktop */
 @media (min-width:1378px) and (max-width:4000px){
 
 .robotcontainer
 {
-min-height: 530px; 
+min-height: 530px;
 }
 
 }

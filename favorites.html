@@ -254,23 +254,64 @@
 
 <div class="container-fluid ">
 
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-8 pt100 pb100 bg-primary">
+<!-- <div class="container-fluid"> -->
+<div class="row bg-primary">
+<div class="offset-md-1 col-md-7 pl100 pt100 pb100">
 <h1 class="text-white trackertitlesize"><b class="greentext">4</b> Blogs</h1>
 <div class="mt30">
-<button class="col-md-6 btn text-left text-white trackerbutton bold-text"><b>Engadget</b> <i class="fas fa-trash float-right hidden"></i></button>
+<button class="col-md-6 btn text-left text-white bold-text blogselection mt10 pt10 pb10"><b>Engadget</b> <i class="fas fa-trash float-right hidden deleteblog"></i></button>
+<button class="col-md-6 btn text-left text-white bold-text blogselection mt10 pt10 pb10"><b>National Public Radio</b> <i class="fas fa-trash float-right hidden deleteblog"></i></button>
+<button class="col-md-6 btn text-left text-white bold-text blogselection mt10 pt10 pb10"><b>Crooks and Liars</b> <i class="fas fa-trash float-right hidden deleteblog"></i></button>
+<button class="col-md-6 btn text-left text-white bold-text blogselection mt10 pt10 pb10"><b>Tech Crunch</b> <i class="fas fa-trash float-right hidden deleteblog"></i></button>
 </div>
 </div>
-<div class="col-md-4 pt100 pb100 bg-white">
-<h2 class="text-primary">Create a Tracker</h2>
-<input type="text" class="form-control" placeholder="Title"/>
-<textarea placeholder="Description" class="form-control mt20">
-
+<div class="col-md-4 pt100 pb100 pl50 pr50 bg-white">
+<h1 class="text-primary">Create a Tracker</h1>
+<input type="text" class="form-control trackerinput" placeholder="Title"/>
+<textarea placeholder="Description" class="form-control mt20 trackerdescription" rows="8">
 </textarea>
+<div class="form-group mt20">
+<input type="text" class="form-control tokenfield-primary" value="Engadget,National Public Radio,Crooks and Liars,Tech Crunch" />
+</div>
+<div class="mt30">
+<button class="btn btn-default cancelbtn canceltracker text-primary">Cancel</button> <button class=" btn btn-success trackercreatebutton">Create</button>
 </div>
 </div>
 </div>
+<!-- </div> -->
+
+
+</div>
+
+<div>Next design</div>
+<div class="container-fluid ">
+
+<!-- <div class="container-fluid"> -->
+<div class="row bg-primary">
+<div class="offset-md-1 col-md-7 pl100 pt100 pb100">
+<h1 class="text-white trackertitlesize"><b class="greentext">4</b> Blogs</h1>
+<div class="mt30">
+<button class="col-md-6 btn text-left text-white bold-text blogselection mt10 pt10 pb10"><b>Engadget</b> <i class="fas fa-trash float-right hidden deleteblog"></i></button>
+<button class="col-md-6 btn text-left text-white bold-text blogselection mt10 pt10 pb10"><b>National Public Radio</b> <i class="fas fa-trash float-right hidden deleteblog"></i></button>
+<button class="col-md-6 btn text-left text-white bold-text blogselection mt10 pt10 pb10"><b>Crooks and Liars</b> <i class="fas fa-trash float-right hidden deleteblog"></i></button>
+<button class="col-md-6 btn text-left text-white bold-text blogselection mt10 pt10 pb10"><b>Tech Crunch</b> <i class="fas fa-trash float-right hidden deleteblog"></i></button>
+</div>
+</div>
+<div class="col-md-4 pt100 pb100 pl50 pr50 bg-white">
+<h3 class="text-primary">Track the selected blogs using the following list of trackers: </h3>
+<button class="col-md-10 mt30 form-control text-primary bold-text cursor-pointer btn createtrackerbtn">+</button>
+<!-- <input type="text" class="form-control trackerinput" placeholder="Title"/>
+<textarea placeholder="Description" class="form-control mt20 trackerdescription" rows="8">
+</textarea>
+<div class="form-group mt20">
+<input type="text" class="form-control tokenfield-primary" value="Engadget,National Public Radio,Crooks and Liars,Tech Crunch" />
+</div>
+<div class="mt30">
+<button class="btn btn-default cancelbtn canceltracker text-primary">Cancel</button> <button class=" btn btn-success trackercreatebutton">Create</button>
+</div> -->
+</div>
+</div>
+<!-- </div> -->
 
 
 </div>
@@ -287,7 +328,13 @@
 
  <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.js">
+
 </script>
+<script type="text/javascript" src="assets/vendors/tags/tagsinput.min.js"></script>
+<script type="text/javascript" src="assets/vendors/tags/tokenfield.min.js"></script>
+<script type="text/javascript" src="assets/vendors/ui/prism.min.js"></script>
+<script type="text/javascript" src="assets/vendors/typeahead/typeahead.bundle.min.js"></script>
+<script type="text/javascript" src="assets/js/form_tags_input.js"></script>
 
 <script>
 $(document).ready(function() {
@@ -295,6 +342,53 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip()
   })
 
+
+// for the delete on hover for buttons
+$('.blogselection').on("mouseenter",function(e){
+$(this).find(".deleteblog").removeClass("hidden");
+});
+
+$('.blogselection').on("mouseleave",function(e){
+// check the status of the button whether selecte or //
+selected = $(this).hasClass("blogselectionactive");
+if(selected)
+{
+// do not hide delete icon
+}
+else if(!selected)
+{
+  // hide delete icon
+$(this).find(".deleteblog").addClass("hidden");
+}
+
+
+});
+
+$('.blogselection').on("click",function(e){
+  selected = $(this).hasClass("blogselectionactive");
+  // check selected blog
+  if(!selected)
+  {
+    $(this).find(".deleteblog").removeClass("hidden");
+    $(this).addClass("blogselectionactive");
+    // remember to pass session id of blog
+  }
+  // check if a blog is not selected
+  else if(selected)
+  {
+    $(this).find(".deleteblog").addClass("hidden");
+    $(this).removeClass("blogselectionactive");
+    // remember to pass session id of blog
+  }
+
+});
+
+$('.deleteblog').on("click",function()
+{
+$(this).parent().remove();
+// perform an action that remove the blog from the list
+})
+// end
 
   // handler for each favorites
   $('.favoritestoggle').on("click",function(e){
