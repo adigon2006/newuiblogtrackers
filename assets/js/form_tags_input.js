@@ -362,128 +362,128 @@ $(function() {
     //
 
     // Use Bloodhound engine
-    var countries = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        limit: 10,
-        prefetch: {
-            url: 'assets/demo_data/tags_input/cities.json'
-        }
-    });
-
-    // Kicks off the loading/processing of `local` and `prefetch`
-    countries.initialize();
-
-    // Define element
-    var elt = $('.tagsinput-tag-objects');
-
-    // Initialize
-    elt.tagsinput({
-        itemValue: 'value',
-        itemText: 'text',
-        typeaheadjs: {
-            name: 'countries',
-            displayKey: 'text',
-            source: countries.ttAdapter()
-        }
-    });
-
-    // Add data
-    elt.tagsinput('add', { "value": 1 , "text": "Amsterdam"   , "continent": "Europe"    });
-    elt.tagsinput('add', { "value": 4 , "text": "Washington"  , "continent": "America"   });
-    elt.tagsinput('add', { "value": 7 , "text": "Sydney"      , "continent": "Australia" });
-    elt.tagsinput('add', { "value": 10, "text": "Beijing"     , "continent": "Asia"      });
-    elt.tagsinput('add', { "value": 13, "text": "Cairo"       , "continent": "Africa"    });
-
-
+    // var countries = new Bloodhound({
+    //     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
+    //     queryTokenizer: Bloodhound.tokenizers.whitespace,
+    //     limit: 10,
+    //     prefetch: {
+    //         url: 'assets/demo_data/tags_input/cities.json'
+    //     }
+    // });
     //
-    // Categorize tags
+    // // Kicks off the loading/processing of `local` and `prefetch`
+    // countries.initialize();
     //
-
-    // Use Bloodhound engine
-    var continents = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('continent'),
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        limit: 10,
-        prefetch: {
-            url: 'assets/demo_data/tags_input/cities.json'
-        }
-    });
-
-    // Kicks off the loading/processing of `local` and `prefetch`
-    continents.initialize();
-
-    // Define element
-    var elt2 = $('.tagsinput-tag-categorizing');
-
-    // Initialize
-    elt2.tagsinput({
-        tagClass: function(item) {
-            switch (item.continent) {
-                case 'Europe'   : return 'label bg-indigo-400';
-                case 'America'  : return 'label bg-danger';
-                case 'Australia': return 'label bg-success';
-                case 'Africa'   : return 'label bg-primary';
-                case 'Asia'     : return 'label bg-pink-400';
-            }
-        },
-        itemValue: 'value',
-        itemText: 'text',
-        typeaheadjs: {
-            name: 'continents',
-            displayKey: 'text',
-            source: continents.ttAdapter()
-        }
-    });
-
-    // Add data
-    elt2.tagsinput('add', { "value": 1 , "text": "Amsterdam"   , "continent": "Europe"    });
-    elt2.tagsinput('add', { "value": 4 , "text": "Washington"  , "continent": "America"   });
-    elt2.tagsinput('add', { "value": 7 , "text": "Sydney"      , "continent": "Australia" });
-    elt2.tagsinput('add', { "value": 10, "text": "Beijing"     , "continent": "Asia"      });
-    elt2.tagsinput('add', { "value": 13, "text": "Cairo"       , "continent": "Africa"    });
-
-
+    // // Define element
+    // var elt = $('.tagsinput-tag-objects');
     //
-    // Methods
+    // // Initialize
+    // elt.tagsinput({
+    //     itemValue: 'value',
+    //     itemText: 'text',
+    //     typeaheadjs: {
+    //         name: 'countries',
+    //         displayKey: 'text',
+    //         source: countries.ttAdapter()
+    //     }
+    // });
     //
-
-    // Define elements
-    var tagsMethods = $('.tagsinput-add-tag, .tagsinput-remove-tag, .tagsinput-remove-tags, .tagsinput-destroy, .tagsinput-refresh');
-
-    // Initialize
-    tagsMethods.tagsinput({
-        itemValue: 'id',
-        itemText: 'text'
-    });
-
-    // Add values
-    tagsMethods.tagsinput('add', {id: 1, text: 'Amsterdam'});
-    tagsMethods.tagsinput('add', {id: 2, text: 'Washington'});
-    tagsMethods.tagsinput('add', {id: 3, text: 'Sydney'});
-
-    // "Add" methos
-    $('.add-tag-button').on('click', function() {
-        $('.tagsinput-add-tag').tagsinput('add', {id: 4, text: 'Beijing'});
-        $(this).addClass('disabled');
-    });
-
-    // "Remove" method
-    $('.remove-tag-button').on('click', function() {
-        $('.tagsinput-remove-tag').tagsinput('remove', {id: 3, text: 'Sydney'});
-        $(this).addClass('disabled');
-    });
-
-    // "Remove all" method
-    $('.remove-all-tags-button').on('click', function() {
-        $('.tagsinput-remove-tags').tagsinput('removeAll');
-        $(this).addClass('disabled');
-    });
-
-    // "Destroy" method
-    $('.destroy-tagsinput-button').on('click', function() {
-        $('.tagsinput-destroy').tagsinput('destroy');
-        $(this).addClass('disabled');
-    });
+    // // Add data
+    // elt.tagsinput('add', { "value": 1 , "text": "Amsterdam"   , "continent": "Europe"    });
+    // elt.tagsinput('add', { "value": 4 , "text": "Washington"  , "continent": "America"   });
+    // elt.tagsinput('add', { "value": 7 , "text": "Sydney"      , "continent": "Australia" });
+    // elt.tagsinput('add', { "value": 10, "text": "Beijing"     , "continent": "Asia"      });
+    // elt.tagsinput('add', { "value": 13, "text": "Cairo"       , "continent": "Africa"    });
+    //
+    //
+    // //
+    // // Categorize tags
+    // //
+    //
+    // // Use Bloodhound engine
+    // var continents = new Bloodhound({
+    //     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('continent'),
+    //     queryTokenizer: Bloodhound.tokenizers.whitespace,
+    //     limit: 10,
+    //     prefetch: {
+    //         url: 'assets/demo_data/tags_input/cities.json'
+    //     }
+    // });
+    //
+    // // Kicks off the loading/processing of `local` and `prefetch`
+    // continents.initialize();
+    //
+    // // Define element
+    // var elt2 = $('.tagsinput-tag-categorizing');
+    //
+    // // Initialize
+    // elt2.tagsinput({
+    //     tagClass: function(item) {
+    //         switch (item.continent) {
+    //             case 'Europe'   : return 'label bg-indigo-400';
+    //             case 'America'  : return 'label bg-danger';
+    //             case 'Australia': return 'label bg-success';
+    //             case 'Africa'   : return 'label bg-primary';
+    //             case 'Asia'     : return 'label bg-pink-400';
+    //         }
+    //     },
+    //     itemValue: 'value',
+    //     itemText: 'text',
+    //     typeaheadjs: {
+    //         name: 'continents',
+    //         displayKey: 'text',
+    //         source: continents.ttAdapter()
+    //     }
+    // });
+    //
+    // // Add data
+    // elt2.tagsinput('add', { "value": 1 , "text": "Amsterdam"   , "continent": "Europe"    });
+    // elt2.tagsinput('add', { "value": 4 , "text": "Washington"  , "continent": "America"   });
+    // elt2.tagsinput('add', { "value": 7 , "text": "Sydney"      , "continent": "Australia" });
+    // elt2.tagsinput('add', { "value": 10, "text": "Beijing"     , "continent": "Asia"      });
+    // elt2.tagsinput('add', { "value": 13, "text": "Cairo"       , "continent": "Africa"    });
+    //
+    //
+    // //
+    // // Methods
+    // //
+    //
+    // // Define elements
+    // var tagsMethods = $('.tagsinput-add-tag, .tagsinput-remove-tag, .tagsinput-remove-tags, .tagsinput-destroy, .tagsinput-refresh');
+    //
+    // // Initialize
+    // tagsMethods.tagsinput({
+    //     itemValue: 'id',
+    //     itemText: 'text'
+    // });
+    //
+    // // Add values
+    // tagsMethods.tagsinput('add', {id: 1, text: 'Amsterdam'});
+    // tagsMethods.tagsinput('add', {id: 2, text: 'Washington'});
+    // tagsMethods.tagsinput('add', {id: 3, text: 'Sydney'});
+    //
+    // // "Add" methos
+    // $('.add-tag-button').on('click', function() {
+    //     $('.tagsinput-add-tag').tagsinput('add', {id: 4, text: 'Beijing'});
+    //     $(this).addClass('disabled');
+    // });
+    //
+    // // "Remove" method
+    // $('.remove-tag-button').on('click', function() {
+    //     $('.tagsinput-remove-tag').tagsinput('remove', {id: 3, text: 'Sydney'});
+    //     $(this).addClass('disabled');
+    // });
+    //
+    // // "Remove all" method
+    // $('.remove-all-tags-button').on('click', function() {
+    //     $('.tagsinput-remove-tags').tagsinput('removeAll');
+    //     $(this).addClass('disabled');
+    // });
+    //
+    // // "Destroy" method
+    // $('.destroy-tagsinput-button').on('click', function() {
+    //     $('.tagsinput-destroy').tagsinput('destroy');
+    //     $(this).addClass('disabled');
+    // });
 
 });
