@@ -609,12 +609,25 @@ box-shadow: none;
 background:none;
 background-color: transparent;
 }
-.blogbrowsersearch::placeholder, .blogbrowsersearch
+.blogbrowsersearch
 {
 color:#45606F !important;
 font-size: 60px !important;
 line-height: 60px;
 font-weight: 600;
+}
+.blogbrowsersearch::placeholder
+{
+font-size: 60px !important;
+line-height: 70px;
+color:#45606F !important;
+font-weight: 600;
+
+}
+.post-content
+{
+font-size: 24px;
+font-weight: 400;
 }
 .iconbig2
 {
@@ -2160,7 +2173,13 @@ display: none !important;
 
     width: 100% !important;
 }
-
+.postimgfull
+{
+min-height: 250px;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+}
 
 }
 /* Large Desktop */
