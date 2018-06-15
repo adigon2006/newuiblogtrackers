@@ -789,14 +789,13 @@ background: black;
 }
 #notificationcount
 {
-  background:#FF7E7E;
-  position:absolute;
-  border-radius: 100px;
-  right:30px;
-  color:#ffffff;
-top:-5px;
-  padding:8px 8px;
-  font-size: 12px;
+  background: #FF7E7E;
+      position: absolute;
+      border-radius: 100px;
+      right: 30px;
+      color: #ffffff;
+      padding: 5px 5px;
+      font-size: 11px;
 }
 .activebar
 {
@@ -824,12 +823,12 @@ opacity: 0.53!important;
 position:absolute;
 /* background: #ffffff; */
 border-radius: 100px;
-right:45px;
+right:25px;
 top:10px;
 }
 #closeicon i
 {
-  font-size: 28px;
+  font-size: 24px;
   color:#FF7E7E;
 }
 
