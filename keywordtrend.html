@@ -28,7 +28,7 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-inverse bg-primary">
+  <!-- <nav class="navbar navbar-inverse bg-primary">
     <div class="container-fluid">
       <ul class="nav d-none d-lg-inline-flex d-xl-inline-flex  main-menu">
         <li><a href="#"><i class="icon-user-plus"></i>Home</a></li>
@@ -74,7 +74,93 @@
             </ul>
     </div>
       </div>
-    </nav>
+    </nav> -->
+
+    <div class="modal-notifications">
+    <div class="row">
+    <div class="offset-lg-10 col-lg-2 col-md-12 notificationpanel">
+      <div id="closeicon" class="cursor-pointer"><i class="fas fa-times-circle"></i></div>
+    <div class="profilesection col-md-12 mt50">
+      <div class="text-center mb10"><img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="60" height="60" alt="" class="" /></div>
+      <div class="text-center" style="margin-left:0px;">
+        <h6 class="text-primary m0 bolder profiletext">Adigun Adekunle</h6>
+        <p class="text-primary profiletext">adigon2006@gmail.com</p>
+      </div>
+
+    </div>
+    <div id="othersection" class="col-md-12 mt10" style="clear:both">
+    <a class="cursor-pointer profilemenulink" href="notifications.html"><h6 class="text-primary">Notifications <b id="notificationcount" class="cursor-pointer">12</b></h6> </a>
+    <a class="cursor-pointer profilemenulink" href="profile.html"><h6  class="text-primary">Profile</h3></a>
+    <a class="cursor-pointer profilemenulink" href="#"><h6 class="text-primary">Log Out</h3></a>
+    </div>
+    </div>
+    </div>
+    </div>
+      <nav class="navbar navbar-inverse bg-primary">
+        <div class="container-fluid mt10">
+
+          <div class="navbar-header d-none d-lg-inline-flex d-xl-inline-flex  col-lg-4">
+          <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" /></a>
+          </div>
+          <!-- Mobile Menu -->
+          <nav class="navbar navbar-dark bg-primary float-left d-md-block d-sm-block d-xs-block d-lg-none d-xl-none" id="menutoggle">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          </nav>
+          <!-- <div class="navbar-header ">
+          <a class="navbar-brand text-center" href="#"><img src="images/blogtrackers.png" /></a>
+          </div> -->
+          <!-- Mobile menu  -->
+          <div class="col-lg-4 themainmenu"  align="center">
+            <ul class="nav main-menu2" style="display:inline-flex; display:-webkit-inline-flex; display:-mozkit-inline-flex;">
+              <li><a href="./"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="trackerlist.html"><i class="far fa-dot-circle"></i> Trackers</a></li>
+              <li><a href="#"><i class="far fa-heart"></i> Favorites</a></li>
+            </ul>
+          </div>
+
+      <div class="col-lg-4">
+      <ul class="nav navbar-nav" style="display:block;">
+      <li class="dropdown dropdown-user cursor-pointer float-right">
+      <a class="dropdown-toggle " id="profiletoggle" data-toggle="dropdown">
+        <i class="fas fa-circle" id="notificationcolor"></i>
+      <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="50" height="50" alt="" class="" />
+      <span>Hayder</span>
+      <!-- <ul class="profilemenu dropdown-menu dropdown-menu-left">
+                  <li><a href="#"> My profile</a></li>
+                  <li><a href="#"> Features</a></li>
+                  <li><a href="#"> Help</a></li>
+                  <li><a href="#">Logout</a></li>
+      </ul> -->
+      </a>
+
+       </li>
+            </ul>
+          </div>
+
+          </div>
+          <div class="col-md-12 bg-dark d-md-block d-sm-block d-xs-block d-lg-none d-xl-none p0 mt20">
+          <div class="collapse" id="navbarToggleExternalContent">
+            <ul class="navbar-nav mr-auto mobile-menu">
+                  <li class="nav-item active">
+                    <a class="" href="./">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="trackerlist.html">Trackers</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Favorites</a>
+                  </li>
+                </ul>
+        </div>
+          </div>
+
+          <!-- <div class="col-md-12 mt0">
+          <input type="search" class="form-control p30 pt5 pb5 icon-big border-none bottom-border text-center blogbrowsersearch nobackground" placeholder="Search Trackers" />
+          </div> -->
+
+        </nav>
 <div class="container">
 <div class="row bottom-border pb20">
 <div class="col-md-6 paddi">
@@ -470,7 +556,8 @@
   <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
  <script src="assets/bootstrap/js/bootstrap.js">
  </script>
-
+ <script src="assets/js/generic.js">
+ </script>
  <script src="assets/vendors/bootstrap-daterangepicker/moment.js"></script>
  <script src="assets/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
  <!-- Start for tables  -->

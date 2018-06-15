@@ -11,8 +11,10 @@ body{
 color:blue;
 } */
 
-
-
+.profiletext
+{
+font-size: 14px;
+}
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   height: 40px;
