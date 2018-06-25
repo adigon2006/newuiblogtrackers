@@ -20,12 +20,15 @@
  <link rel="stylesheet" href="assets/vendors/DataTables/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet" href="assets/vendors/DataTables/Buttons-1.5.1/css/buttons.dataTables.min.css" />
 <link rel="stylesheet" href="assets/css/daterangepicker.css" />
-
+<link href="assets/font/icomoon/styles.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="assets/css/style.css" />
-
+<link rel="stylesheet" href="assets/css/toastr.css" />
   <!--end of bootsrap -->
   <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
 <script src="assets/js/popper.min.js" ></script>
+
+<script type="text/javascript" src="assets/js/uniform.min.js"></script>
+<script type="text/javascript" src="assets/js/toastr.js"></script>
 </head>
 <body >
 <div class="modal-notifications">
@@ -620,12 +623,14 @@ $(this).parent().remove();
   {
   $(this).removeClass("fas fa-heart").addClass("far fa-heart");
   $(this).attr("data-original-title","Add to Favorite");
+  console.log("added to favorites");
   // add an jax to favorites the post
   }
   if(!isFavorites) // if it does not have favorites
   {
   $(this).removeClass("far fa-heart").addClass("fas fa-heart");
   $(this).attr("data-original-title","Remove from Favorite");
+
   // add an jax to unfavorite the post
   }
 
@@ -650,6 +655,7 @@ $(this).parent().remove();
   $(this).addClass("text-success");
   $(this).attr("data-original-title","Remove Blog from Tracker");
   // add an ajax to add blog from tracker
+
   }
   });
 

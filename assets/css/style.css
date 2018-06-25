@@ -4,7 +4,6 @@ html{
 body{
 
   background-color: #F3F4F5  ;
-
 }
 /* .carousel-control-prev, .carousel-control-next
 {
@@ -130,7 +129,7 @@ box-shadow: 0px 7px 0px -2px rgba(233,233,233,1);
 {
 width:100px;
 }
-.trackername
+.newtrackername
 {
 border:none;
 border-bottom:2px solid #E7EbEC;
@@ -138,13 +137,82 @@ font-size: 2.5rem !important;
 font-family: inherit;
 font-weight: 500 !important;
 line-height: 1.2 !important;
- height:4.0rem;
+ /* height:4.0rem; */
 resize:none;
 }
-.trackername[placeholder]
+.newtrackername:focus
+{
+box-shadow:none;
+color:#17394C;
+}
+.createtracker, .canceltracker
+{
+font-size: 18px;
+}
+.createtrackerbtn
+{
+
+}
+.newtrackername[placeholder]
 {
 font-size: 20px;
 font-weight:600;
+}
+.newtrackerdescription
+{
+border:none;
+border-bottom:2px solid #E7EbEC;
+font-size: 1.0rem !important;
+font-family: inherit;
+font-weight: 500 !important;
+line-height: 1.2 !important;
+ /* height:4.0rem; */
+resize:none;
+}
+.newtrackerdescription:focus
+{
+box-shadow:none;
+color:#17394C;
+}
+.filtersort
+{
+font-weight: 700;
+border:none;
+}
+.filtersort:focus
+{
+box-shadow:none;
+}
+.newtrackerdescription[placeholder]
+{
+font-size: 20px;
+font-weight:600;
+}
+.trackerclose
+{
+position: absolute;
+top:15px;
+right:15px;
+z-index:9999;
+}
+.trackerpage .bg-default
+{
+background-color: transparent;
+}
+.trackerpage .tokenfield .token
+{
+border:2px solid #17394C;
+border-radius:5px;
+}
+.trackerpage .tokenfield .token .token-label
+{
+  padding: 4px 8px;
+  padding-right: 28px;
+  font-size: 14px;
+}
+.closetracker
+{
+font-size:35px;
 }
 .iconportfolio
 {
@@ -570,7 +638,8 @@ font-weight: 600;
 a:hover
 {
 text-decoration: none;
-color:blue;
+color:inherit;
+opacity: 0.80;
 }
 .link{
 color:darkblue;
@@ -615,6 +684,7 @@ color:#45606F !important;
 font-size: 60px !important;
 line-height: 60px;
 font-weight: 600;
+font-family: inherit !important;
 }
 .blogbrowsersearch::placeholder
 {
@@ -1185,7 +1255,7 @@ color:#17394C;
 .postimgfull
 {
 min-height: 450px;
-background-position: center center;
+background-position: top center;
 background-repeat: no-repeat;
 background-size: cover;
 }
@@ -2085,12 +2155,12 @@ border-radius: 20px;
     margin-top: -5.5px;
 }
 .tokenfield .token > .close:after {
-    content: 'X';
-    font-family: 'inherit';
-    display: block;
-    font-size: 11px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  content: '\ed6a';
+  font-family: 'icomoon';
+  display: block;
+  font-size: 11px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .close {
     text-shadow: none;
@@ -2188,6 +2258,13 @@ background-size: cover;
 .robotcontainer
 {
 min-height: 544px;
+}
+.postimgfull
+{
+min-height: 700px;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
 }
 
 }
