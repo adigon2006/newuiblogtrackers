@@ -116,7 +116,7 @@
             <ul class="nav main-menu2" style="display:inline-flex; display:-webkit-inline-flex; display:-mozkit-inline-flex;">
               <li><a href="./"><i class="fas fa-home"></i> Home</a></li>
               <li><a href="trackerlist.html"><i class="far fa-dot-circle"></i> Trackers</a></li>
-              <li><a href="#"><i class="far fa-heart"></i> Favorites</a></li>
+              <li><a href="favorites.html"><i class="far fa-heart"></i> Favorites</a></li>
             </ul>
           </div>
 
@@ -150,7 +150,7 @@
                     <a class="nav-link" href="trackerlist.html">Trackers</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Favorites</a>
+                    <a class="nav-link" href="favorites.html">Favorites</a>
                   </li>
                 </ul>
         </div>
@@ -167,7 +167,7 @@
 <nav class="breadcrumb">
   <a class="breadcrumb-item text-primary" href="trackerlist.html">MY TRACKER</a>
   <a class="breadcrumb-item text-primary" href="#">Second Tracker</a>
-  <a class="breadcrumb-item active text-primary" href="#">Sentiment Analysis</a>
+  <a class="breadcrumb-item active text-primary" href="sentiment.html">Sentiment Analysis</a>
   </nav>
 <div>Tracking: <button class="btn btn-primary stylebutton1">All Blogs</button></div>
 </div>
@@ -210,7 +210,7 @@
   <div class="card card-style mt20">
     <div class="card-body  p30 pt5 pb5">
       <div style="min-height: 250px;">
-<div><p class="text-primary mt10"><b>Aggregate</b> of <b class="text-success">Positive</b> and <b class="text-danger">Negative</b> Sentiment of post Past <b>Week</b></p> </div>
+<div><p class="text-primary mt10"><b>Aggregate</b> of <b class="text-success">Positive</b> and <b class="text-danger">Negative</b> Sentiment of post Past <select class="text-primary filtersort sortbytimerange"><option value="week">Week</option><option value="month">Month</option><option value="year">Year</option></select></p> </div>
 <div class="chart-container">
   <div class="chart" id="d3-line-basic"></div>
 </div>

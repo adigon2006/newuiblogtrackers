@@ -14,6 +14,13 @@ color:blue;
 {
 font-size: 14px;
 }
+.tracksection
+{
+position: fixed;
+bottom:0;
+width:100%;
+z-index:9999;
+}
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   height: 40px;
@@ -912,6 +919,24 @@ display: none;
   font-size: 12px;
   position: absolute;
   left:35px;
+}
+.trackscount
+{
+  font-size: 14px;
+  position: absolute !important;
+  width:28px;
+  height:28px;
+  padding-top:3px;
+  border-radius: 100px;
+  background-color:#FF7E7E;
+  top:5px;
+}
+.exactcounttrack
+{
+  color:#FFffff;
+  font-size: 15px;
+  position: absolute !important;
+  top:8px !important;
 }
 .modal-notifications
 {
