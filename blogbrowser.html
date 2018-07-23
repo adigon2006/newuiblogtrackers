@@ -115,7 +115,7 @@
 
     </nav>
 
-    <div class="text-center pt20 pb20 tracksection" style="background:#ffffff;"><button type="submit" class="btn btn-success homebutton p50 pt10 pb10"><b>Tracks</b> <b class="trackscount">20</b> </button></div>
+    <div class="text-center pt20 pb20 tracksection" style="background:#ffffff;"><button type="submit" class="btn btn-success homebutton p50 pt10 pb10"><b>Tracks</b> <b class="trackscount" id="trackscount">0</b> </button></div>
 
 
 <div class="container">
@@ -317,6 +317,7 @@ if(trackingblog)
 // if the blog is being tracked
 $(this).removeClass("text-success");
 $(this).attr("data-original-title","Add Blog from Tracker");
+console.log("Removed from trackers")
 // add an ajax to removed blog from tracker
 }
 else if(!trackingblog)
@@ -324,6 +325,7 @@ else if(!trackingblog)
 // if the blog is being tracked
 $(this).addClass("text-success");
 $(this).attr("data-original-title","Remove Blog from Tracker");
+console.log("Added to tracker")
 // add an ajax to add blog from tracker
 }
 });
