@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181.554 38">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-size: 29px;
+        font-family: SegoeUIBlack, Segoe UI;
+      }
+    </style>
+  </defs>
+  <g id="Group_520" data-name="Group 520" transform="translate(-29.613 -19.862)">
+    <g id="Group_473" data-name="Group 473" transform="translate(29.613 30.129)">
+      <path id="Path_446" data-name="Path 446" class="cls-1" d="M16.146,7.334a7.977,7.977,0,0,0,0-1.195A6.862,6.862,0,0,0,9.275,0H6.751A6.771,6.771,0,0,0,0,6.647H0V26.5a.634.634,0,0,0,1.075.448l3.854-3.854a4.153,4.153,0,0,1,2.987-1.225c1.822.015,4.406.015,4.406.015A6.745,6.745,0,0,0,17.311,10.59,4.225,4.225,0,0,1,16.146,7.334ZM6.826,5.108H9.335a1.641,1.641,0,0,1,.194,3.271H6.662a1.64,1.64,0,0,1,.164-3.271Zm5.392,11.65H6.826a1.64,1.64,0,0,1-.179-3.271H9.41a3,3,0,0,0,.373-.015H12.2a1.648,1.648,0,0,1,1.643,1.643A1.616,1.616,0,0,1,12.218,16.759Z" transform="translate(0 0)"/>
+    </g>
+    <text id="logtrackers" class="cls-2" transform="translate(49.167 50.862)"><tspan x="0" y="0">logtrackers</tspan></text>
+  </g>
+</svg>

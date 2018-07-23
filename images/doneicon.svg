@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 18.3">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #44af69;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <path id="Path_469" data-name="Path 469" class="cls-1" d="M1,7.7l8.3,8.6L24,1" transform="translate(0.5 0.5)"/>
+</svg>

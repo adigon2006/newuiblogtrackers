@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.507 19.076">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #17394c;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_648" data-name="Group 648" transform="translate(-616 -1193.924)">
+    <g id="Rectangle_2399" data-name="Rectangle 2399" class="cls-1" transform="translate(628.042 1193.924)">
+      <rect class="cls-2" width="9.465" height="19.076" rx="3"/>
+      <rect class="cls-3" x="1" y="1" width="7.465" height="17.076" rx="2"/>
+    </g>
+    <g id="Rectangle_2400" data-name="Rectangle 2400" class="cls-1" transform="translate(616 1201.077)">
+      <rect class="cls-2" width="9.465" height="11.923" rx="3"/>
+      <rect class="cls-3" x="1" y="1" width="7.465" height="9.923" rx="2"/>
+    </g>
+  </g>
+</svg>
