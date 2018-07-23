@@ -41,6 +41,13 @@ background-position: left center;
 {
 color:#003F62 !important;	
 }
+.tracksection
+{
+position: fixed;
+bottom:0;
+width:100%;
+z-index:9999;
+}
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   height: 40px;
@@ -281,7 +288,10 @@ color:#17394C;
 .createtracker, .canceltracker
 {
 font-size: 18px;
+<<<<<<< HEAD
 -webkit-appearance:none;
+=======
+>>>>>>> fa4f52b097edb81af22dc23655a8babb961ec54c
 }
 .createtrackerbtn
 {
@@ -346,7 +356,11 @@ border-radius:5px;
 }
 .closetracker
 {
+<<<<<<< HEAD
 font-size:30px;
+=======
+font-size:35px;
+>>>>>>> fa4f52b097edb81af22dc23655a8babb961ec54c
 }
 .iconportfolio
 {
@@ -900,6 +914,10 @@ a:hover
 {
 text-decoration: none;
 color:inherit;
+<<<<<<< HEAD
+=======
+opacity: 0.80;
+>>>>>>> fa4f52b097edb81af22dc23655a8babb961ec54c
 }
 .link{
 color:darkblue;
@@ -1172,6 +1190,24 @@ display: none;
   font-size: 12px;
   position: absolute;
   left:35px;
+}
+.trackscount
+{
+  font-size: 14px;
+  position: absolute !important;
+  width:28px;
+  height:28px;
+  padding-top:3px;
+  border-radius: 100px;
+  background-color:#FF7E7E;
+  top:5px;
+}
+.exactcounttrack
+{
+  color:#FFffff;
+  font-size: 15px;
+  position: absolute !important;
+  top:8px !important;
 }
 .modal-notifications
 {

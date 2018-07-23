@@ -18,7 +18,7 @@
  <link rel="stylesheet" href="assets/vendors/bootstrap-daterangepicker/daterangepicker.css" />
  <link rel="stylesheet" href="assets/css/table.css" />
  <link rel="stylesheet" href="assets/vendors/DataTables/dataTables.bootstrap4.min.css" />
- <link href="assets/vendors/animations/animate.min.css" rel="stylesheet" type="text/css">
+ <link href="assets/vendors/animations/animate.min.css" rel="stylesheet" type="text/css" />
 
 <link rel="stylesheet" href="assets/css/daterangepicker.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -93,7 +93,7 @@
     <div id="othersection" class="col-md-12 mt10" style="clear:both">
     <a class="cursor-pointer profilemenulink" href="notifications.html"><h6 class="text-primary">Notifications <b id="notificationcount" class="cursor-pointer">12</b></h6> </a>
     <a class="cursor-pointer profilemenulink" href="profile.html"><h6  class="text-primary">Profile</h3></a>
-    <a class="cursor-pointer profilemenulink" href="#"><h6 class="text-primary">Log Out</h3></a>
+    <a class="cursor-pointer profilemenulink" href="favorites.html"><h6 class="text-primary">Log Out</h3></a>
     </div>
     </div>
     </div>
@@ -118,7 +118,7 @@
             <ul class="nav main-menu2" style="display:inline-flex; display:-webkit-inline-flex; display:-mozkit-inline-flex;">
               <li><a href="./"><i class="fas fa-home"></i> Home</a></li>
               <li><a href="trackerlist.html"><i class="far fa-dot-circle"></i> Trackers</a></li>
-              <li><a href="#"><i class="far fa-heart"></i> Favorites</a></li>
+              <li><a href="favorites.html"><i class="far fa-heart"></i> Favorites</a></li>
             </ul>
           </div>
 
@@ -152,7 +152,7 @@
                     <a class="nav-link" href="trackerlist.html">Trackers</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Favorites</a>
+                    <a class="nav-link" href="favorites.html">Favorites</a>
                   </li>
                 </ul>
         </div>
@@ -167,9 +167,9 @@
 <div class="row">
 <div class="col-md-6 paddi">
 <nav class="breadcrumb">
-  <a class="breadcrumb-item text-primary" href="#">MY TRACKER</a>
+  <a class="breadcrumb-item text-primary" href="trackerlist.html">MY TRACKER</a>
   <a class="breadcrumb-item text-primary" href="#">Second Tracker</a>
-  <a class="breadcrumb-item active text-primary" href="#">Blog Portfolio</a>
+  <a class="breadcrumb-item active text-primary" href="blogportfolio.html">Blog Portfolio</a>
   </nav>
 <div>Tracking: <button class="btn btn-primary stylebutton1">All Blogs</button></div>
 </div>
@@ -210,37 +210,37 @@
 
 <div class="row mt40">
 <div class="col-md-3">
-  <div class="card card-style mt20 opacity53 ">
+  <div class="card card-style mt20 opacity53 cursor-pointer">
     <div class="card-body  p30 p30 pt10 pb10">
       <h6 class="card-title mb0">Maximum Influence</h6>
       <h2 class="mb0">649</h2>
 
         </div>
   </div>
-  <a href="">
-  <div class="card card-style mt20 opacity53">
+ 
+  <div class="card card-style mt20 opacity53 cursor-pointer">
     <div class="card-body  p30 pt10 pb10">
       <h6 class="card-title mb0">Top Keyword</h6>
       <h2 class="mb0">Krymu</h2>
 
         </div>
   </div>
-</a>
-  <div class="card card-style mt20 activebar " >
+  
+  <div class="card card-style mt20 activebar cursor-pointer" >
     <div class="card-body  p30 pt5 pb5">
       <h6 class="card-title mb0">Posts</h6>
       <h2 class="mb0">70</h2>
 
         </div>
   </div>
-  <div class="card card-style mt20 opacity53">
+  <div class="card card-style mt20 opacity53 cursor-pointer">
     <div class="card-body  p30 pt10 pb10">
       <h6 class="card-title mb0">Overall Sentiment</h6>
       <h2 class="mb0">Positive</h2>
 
         </div>
   </div>
-  <div class="card card-style mt20 opacity53">
+  <div class="card card-style mt20 opacity53 cursor-pointer">
     <div class="card-body  p30 pt10 pb10">
       <h6 class="card-title mb0">Top Blogger</h6>
       <h2 class="mb0">Advonum</h2>
@@ -252,7 +252,7 @@
   <div class="card card-style mt20 ">
     <div class="card-body  p30 pt5 pb5">
       <div style="min-height: 475px;">
-<div><p class="text-primary mt10 float-left"><b class="text-blue">Posts</b> Published by <b class="text-blue">Advonum</b> of Past <b class="text-primary">Week</b></p></div>
+<div><p class="text-primary mt10 float-left"><b class="text-blue">Posts</b> Published by <b class="text-blue">Advonum</b> of Past <select class="text-primary filtersort sortbytimerange"><option value="week">Week</option><option value="month">Month</option><option value="year">Year</option></select></p></div>
 <!-- <svg class="linesvg" width="960" height="400"></svg> -->
 <!-- <div id="lineplot" style="min-height: 380px;"></div> -->
 
@@ -275,7 +275,7 @@
       <div class="card-body  p5 pt10 pb10">
 
         <div style="min-height: 420px;">
-          <div><p class="text-primary p15 pb5 pt0"><b class="text-blue"><u>Advonum</u></b> Day of the Week Posting Pattern of Past <b class="text-primary">Week</b></p></div>
+          <div><p class="text-primary p15 pb5 pt0"><b class="text-blue"><u>Advonum</u></b> Day of the Week Posting Pattern of Past <select class="text-primary filtersort sortbytimerange"><option value="week">Week</option><option value="month">Month</option><option value="year">Year</option></select></p></div>
           <div class="chart" id="d3-bar-horizontal">
 
           </div>
@@ -288,7 +288,7 @@
     <div class="card card-style mt20">
       <div class="card-body  p5 pt10 pb10">
         <div class="min-height-table" style="min-height: 420px;">
-          <div><p class="text-primary p15 pb5 pt0"><b class="text-blue"><u>Advonum</u></b> Yearly Posting Pattern of Past <b class="text-primary">Month</b></p></div>
+          <div><p class="text-primary p15 pb5 pt0"><b class="text-blue"><u>Advonum</u></b> Yearly Posting Pattern of Past <select class="text-primary filtersort sortbytimerange"><option value="week">Week</option><option value="month">Month</option><option value="year">Year</option></select></p></div>
           <div class="chart" id="yearlypattern">
 
           </div>

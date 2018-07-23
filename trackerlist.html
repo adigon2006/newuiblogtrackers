@@ -20,7 +20,7 @@
  <link rel="stylesheet" href="assets/vendors/DataTables/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet" href="assets/vendors/DataTables/Buttons-1.5.1/css/buttons.dataTables.min.css" />
 <link rel="stylesheet" href="assets/css/daterangepicker.css" />
-
+<link href="assets/font/icomoon/styles.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <!--end of bootsrap -->
@@ -30,17 +30,17 @@
 <body>
 <div class="modal-notifications">
 <div class="row">
-<div class="offset-lg-10 col-lg-2 col-md-12 notificationpanel">
+<div class="offset-lg-9 col-lg-3 col-md-12 notificationpanel">
   <div id="closeicon" class="cursor-pointer"><i class="fas fa-times-circle"></i></div>
 <div class="profilesection col-md-12 mt50">
-  <div class="text-center"><img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="60" height="60" alt="" class="" /></div>
-  <div class="text-center" style="margin-left:0px;">
-    <h6 class="text-primary m0 bolder profiletext">Adigun Adekunle</h6>
-    <p class="text-primary profiletext">adigon2006@gmail.com</p>
+  <img src="https://i.pinimg.com/736x/31/74/48/3174480c49cee70bd03627255f136b83--fat-girls-girls-hbo.jpg" width="60" height="60" alt="" class="float-left" />
+  <div class="float-left" style="margin-left:20px;">
+    <h6 class="text-primary m0 bolder">Adigun Adekunle</h6>
+    <p class="text-primary">adigon2006@gmail.com</p>
   </div>
 
 </div>
-<div id="othersection" class="col-md-12 mt10" style="clear:both">
+<div id="othersection" class="col-md-12 mt100" style="clear:both">
 <a class="cursor-pointer profilemenulink" href="notifications.html"><h6 class="text-primary">Notifications <b id="notificationcount" class="cursor-pointer">12</b></h6> </a>
 <a class="cursor-pointer profilemenulink" href="profile.html"><h6  class="text-primary">Profile</h3></a>
 <a class="cursor-pointer profilemenulink" href="#"><h6 class="text-primary">Log Out</h3></a>
@@ -115,16 +115,32 @@
     </nav>
 <div class="container">
 
-
 <div class="row mt30">
 <div class="col-md-12 ">
 <h6 class="float-left text-primary">30 Trackers</h6>
-<h6 class="float-right text-primary">Recent <i class="fas fa-chevron-down"></i><h6/>
+<h6 class="float-right text-primary">Recent <i class="fas fa-chevron-down"></i>
+
+  <h6/>
 </div>
 </div>
 
 
 <div class="card-columns pt0 pb10  mt10 mb40 ">
+
+  <!-- <div class="card noborder curved-card mb30 pt50 pb50" >
+  <div class="card-body">
+
+    </div>
+
+  </div> -->
+
+  <div class="card noborder curved-card mb30 pt20 pb20"><div class="card-body"><div class="trackerclose"><i class="fas fa-times-circle closetracker cursor-pointer" data-toggle="tooltip" data-placement="top" title="Cancel New Tracker"></i></div><div class="cursor-pointer mt20">
+    <textarea class="form-control newtrackername text-primary text-center" placeholder="Tracker Name" rows="2"></textarea></div><div class="cursor-pointer mt20"><textarea class="form-control newtrackerdescription text-primary text-center" placeholder="Description" rows="1"></textarea></div>
+    <div class="form-group mt20 trackerpage"><input type="text" class="form-control tokenfield-primary" value="Engadget,Tech Crunch" placeholder="Add Blog"/></div>
+    <div class="text-center"><i class="fas fa-check text-success createtracker mr20 cursor-pointer" data-toggle="tooltip" data-placement="top" title="Create Tracker"></i> <i class="fas fa-trash-alt text-primary canceltracker cursor-pointer" data-toggle="tooltip" data-placement="top" title="Delete Tracker"></i></div>
+  </div>
+</div>
+
 
   <div class="card noborder curved-card mb30 pt50 pb50" >
   <div class="card-body">
@@ -143,7 +159,7 @@
     <p class="card-text text-center postdate text-primary">02-01-2018&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;5:30 PM</p>
 
     <div class="text-center">
-    <button class="btn btn-default stylebutton5 text-primary p30 pt5 pb5" style="width:100%;">Sports&nbsp;&nbsp;.&nbsp;&nbsp;Science&nbsp;&nbsp;.&nbsp;&nbsp;Art</button>
+    <button class="btn btn-default stylebutton5 text-primary p30 pt5 pb5" style="width:100%;">Sports, Science, Art</button>
     </div>
     <p class="mt20 text-primary text-center">
     Sometimes it ends up with injured employees who are too distracted by the products to notice walls.
@@ -189,17 +205,16 @@
     <p class="card-text text-center postdate text-primary">02-01-2018&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;5:30 PM</p>
 
     <div class="text-center">
-    <button class="btn btn-default stylebutton5 text-primary p30 pt5 pb5" style="width:100%;">Sports&nbsp;&nbsp;.&nbsp;&nbsp;Science&nbsp;&nbsp;.&nbsp;&nbsp;Art</button>
+    <button class="btn btn-default stylebutton5 text-primary p30 pt5 pb5" style="width:100%;">Sports, Science, Art</button>
     </div>
     <p class="mt20 text-primary text-center">
-    <!-- Sometimes it ends up with injured employees who are too distracted by the products to notice walls. -->
+
     </p>
     <div class="text-center mt20">
     <button class="btn btn-default stylebutton6 text-primary p30 pt5 pb5 text-left" style="width:100%;">
     <h1 class="text-success mb0">235</h1>
     <h5 class="text-primary">Blogs</h5>
     </button>
-
     </div>
 
     <div class="text-center mt10">
@@ -214,13 +229,13 @@
     <h1 class="text-success mb0">120</h1>
     <h5 class="text-primary">Comments</h5>
     </button>
-
     </div>
     <div class="pt30 pb20 text-center">
       <i class=" text-primary icontrackersize cursor-pointer proceedtoanalytics" data-toggle="tooltip" data-placement="top" title="Proceed to Analytics"></i>
       <i class=" text-primary icontrackersize cursor-pointer refreshtracker" data-toggle="tooltip" data-placement="top" title="Refresh Tracker"></i>
       <i class=" text-primary icontrackersize cursor-pointer deletetracker" data-toggle="tooltip" data-placement="top" title="Edit Tracker"></i>
     </div>
+
   </div>
 
 </div>
@@ -233,7 +248,7 @@
   <div class="card-body">
     <p class="card-text text-center postdate text-primary">02-01-2018&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;5:30 PM</p>
     <div class="text-center">
-    <button class="btn btn-default stylebutton5 text-primary p30 pt5 pb5" style="width:100%;">Sports&nbsp;&nbsp;.&nbsp;&nbsp;Science&nbsp;&nbsp;.&nbsp;&nbsp;Art</button>
+    <button class="btn btn-default stylebutton5 text-primary p30 pt5 pb5" style="width:100%;">Sports, Science, Art</button>
     </div>
     <p class="mt20 text-primary text-center">
 
@@ -433,7 +448,11 @@
  <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.js">
 </script>
-
+<script type="text/javascript" src="assets/vendors/tags/tagsinput.min.js"></script>
+<script type="text/javascript" src="assets/vendors/tags/tokenfield.min.js"></script>
+<script type="text/javascript" src="assets/vendors/ui/prism.min.js"></script>
+<script type="text/javascript" src="assets/vendors/typeahead/typeahead.bundle.min.js"></script>
+<script type="text/javascript" src="assets/js/form_tags_input.js"></script>
 
 <script>
 $(document).ready(function() {
@@ -445,7 +464,9 @@ $(document).ready(function() {
   // add new tracker code snippets
   $('.addnewtracker').on("click",function(e){
     e.preventDefault();
-    trackersetupform = '<div class="card noborder curved-card mb30 pt50 pb50"><div class="card-body"><div class="cursor-pointer"><textarea class="form-control trackername text-primary" placeholder="Tracker Name"></textarea></div></div></div>';
+    var  trackersetupform = "";
+    trackersetupform += '<div class="card noborder curved-card mb30 pt20 pb20"><div class="card-body"><div class="trackerclose"><i class="fas fa-times-circle closetracker cursor-pointer" data-toggle="tooltip" data-placement="top" title="Cancel New Tracker"></i></div><div class="cursor-pointer mt20"><textarea class="form-control newtrackername text-primary text-center" placeholder="Tracker Name" rows="2"></textarea></div><div class="cursor-pointer mt20"><textarea class="form-control newtrackerdescription text-primary text-center" placeholder="Description" rows="1"></textarea></div>';
+    trackersetupform += '<div class="form-group mt20 trackerpage"><input type="text" class="form-control tokenfield-primary" value="Engadget,Tech Crunch" placeholder="Add Blog"/></div><div class="text-center"><i class="fas fa-check text-success createtracker mr20 cursor-pointer" data-toggle="tooltip" data-placement="top" title="Create Tracker"></i> <i class="fas fa-trash-alt text-primary canceltracker cursor-pointer" data-toggle="tooltip" data-placement="top" title="Delete Tracker"></i></div></div></div>';
   $('.card-columns').prepend(trackersetupform);
   });
 //   var span = $('<span>').css('display','inline-block')
