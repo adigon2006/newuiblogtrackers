@@ -27,7 +27,7 @@
   <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
 <script src="assets/js/popper.min.js" ></script>
 </head>
-<body>
+<body style="background-color:#ffffff;">
 <div class="modal-notifications">
 <div class="row">
 <div class="offset-lg-10 col-lg-2 col-md-12 notificationpanel">
@@ -114,14 +114,45 @@
 <div class="container">
 
 
-<div class="row m50 mt20">
-<div><h1 class="text-primary float-left" style="font-weight:bolder; font-size:53px;">Middle East Tracker</h1>
-  <button class="btn btn-rounded"><i title="Track Blogsite" class="proceedtoanalytics icon-small text-primary"></i></button>
-  <button class="btn btn-rounded"><i title="Track Blogsite" class="edittracker icon-small text-primary"></i></button>
-<button class="btn btn-rounded"><i title="Track Blogsite" class="refreshtracker icon-small text-primary"></i></button>
+<div class="row m50 mt40">
+<div class="col-md-9">
+<h1 class="text-primary edittrackertitle mb0" style="">Middle East Tracker</h1>
+<p><button class="btn metadata text-primary mt10">Created  |  22-07-2018 . 05:30pm</button> <button class="btn metadata text-primary mt10">Modified |  22-07-2018 . 05:30pm</button> <button class="btn metadata text-primary mt10">Crawled |  22-07-2018 . 05:30pm</button></p>
+</div>
+<div class="col-md-3 text-right pt10">
+<button class="btn btn-rounded iconedittrackerpage"><i title="Proceed to Analytics" class="proceedtoanalytics icon-small text-primary"></i></button>
+<button class="btn btn-rounded iconedittrackerpage"><i title="Edit Tracker" class="edittracker icon-small text-primary"></i></button>
+<button class="btn btn-rounded iconedittrackerpage"><i title="Refersh Tracker" class="refreshtracker icon-small text-primary"></i></button>
+<button class="btn btn-rounded iconedittrackerpage"><i title="Delete Tracker" class="deletetracker icon-small text-primary"></i></button>
+</div>
+
+<div class="col-md-12 trackerdescription">
+<p>National Public Radio is an American privately and publicly funded non-profit membership media organization based in Washington DC. It serves as a national syndicator to a network of over 1,000 public radio stations in the United States.</p>
+</div>
+
+<div class="col-md-12">
+<div class="float-left statcontainer">
+<b class="stattext">334K</b>
+<h6 class="text-primary labeltext">Blogs</h6>
+</div>
+<div class="float-left statcontainer">
+<b class="stattext">43M</b>
+<h6 class="text-primary labeltext">Posts</h6>
+</div>
+
+<div class="float-left statcontainer">
+<b class="stattext">11B</b>
+<h6 class="text-primary labeltext">Comments</h6>
 </div>
 </div>
 
+<div class="col-md-12 mt30">
+  <input class="form-control searchblogsites text-primary col-md-10" placeholder="Search Blogs" type="text" />
+
+</div>
+
+</div>
+
 
 
 
@@ -133,7 +164,20 @@
 </div>
 
 
+<div class="text-center pt10 pb10 trackingfixededittracker" style="background:#00B361;">
+  <div class="container">
+<div class="row" style="margin-left: 50px; margin-right:50px;">  <p  class="mb0 text-white fixedbottomedittrackerlefttext float-left">22 item(s) selected</p>
+  <p class="mb0 float-right fixedbottomedittrackerrighttext text-right" >
+    <i title="Track Blog Selected" class="trackblogiconedittrackerwhite icon-small text-primary cursor-pointer"></i>
+    <i title="Disable Tracking" class="disabletrackwhite icon-small text-primary cursor-pointer"></i>
+    <i title="Refresh Selected Blog" class="refreshtrackerwhite icon-small text-primary cursor-pointer"></i>
+    <i title="Delete Selected Blog" class="deleteblogwhite icon-small text-primary cursor-pointer"></i>
+  </p>
+</div>
 
+  </div>
+
+</div>
 
 
 <!-- <footer class="footer">
@@ -155,33 +199,8 @@ $(document).ready(function() {
   })
 
 
-  // add new tracker code snippets
-  $('.addnewtracker').on("click",function(e){
-    e.preventDefault();
-    trackersetupform = '<div class="card noborder curved-card mb30 pt50 pb50"><div class="card-body"><div class="cursor-pointer"><textarea class="form-control trackername text-primary" placeholder="Tracker Name"></textarea></div></div></div>';
-  $('.card-columns').prepend(trackersetupform);
-  });
-//   var span = $('<span>').css('display','inline-block')
-// .css('word-break','break-all').appendTo('body').css('visibility','hidden');
-// function initSpan(textarea){
-//   span.text(textarea.text())
-//       .width(textarea.width())
-//       .css('font',textarea.css('font'));
-// }
-// $('textarea').on({
-//     input: function(){
-//       var text = $(this).val();
-//       span.text(text);
-//       $(this).height(text ? span.height() : '1.1em');
-//     },
-//     focus: function(){
-//      initSpan($(this));
-//     },
-//     keypress: function(e){
-//         if(e.which == 13) e.preventDefault();
-//     }
-// });
-} );
+
+});
 </script>
 <!--end for table  -->
 
