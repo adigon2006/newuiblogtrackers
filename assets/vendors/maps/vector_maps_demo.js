@@ -20,14 +20,14 @@ $(function() {
         series: {
             regions: [{
                 values: gdpData,
-                scale: ['#C8EEFF', '#0071A4'],
+                scale: ['#E5DBD2', '#E6CEC3'],
                 normalizeFunction: 'polynomial'
             }]
         },
         markerStyle: {
                 initial: {
                     r: 4,
-                    'fill': '#e77644',
+                    'fill': '#F26247',
                     'fill-opacity': 0.8,
                     'stroke': '#fff',
                     'stroke-width' : 1.5,

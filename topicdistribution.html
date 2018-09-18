@@ -190,26 +190,26 @@
     <div class="card-body  p30 pt20 pb20">
       <div class="row">
      <div class="col-md-3 mt5 mb5">
-       <h6 class="card-title mb0">Total Posts</h6>
-       <h3 class="mb0 bold-text">2331</h3>
+       <h6 class="card-title mb0">Blog Distribution</h6>
+       <h3 class="mb0 text-primary text-statistics">95%</h3>
        <!-- <small class="text-success">+5% from <b>Last Week</b></small> -->
      </div>
 
      <div class="col-md-3 mt5 mb5">
-      <h6 class="card-title mb0">Overall Sentiment</h6>
-       <h3 class="mb0 bold-text">Positive</h3>
+      <h6 class="card-title mb0">Bloggers Mentioned</h6>
+       <h3 class="mb0 text-primary text-statistics">20</h3>
        <!-- <small class="text-success">+5% from <b>Last Week</b></small> -->
      </div>
 
      <div class="col-md-3 mt5 mb5">
-       <h6 class="card-title mb0">Top Post Location</h6>
-       <h3 class="mb0 bold-text">United States</h3>
+       <h6 class="card-title mb0">Post Mentioned</h6>
+       <h3 class="mb0 text-primary text-statistics">400</h3>
        <!-- <small class="text-success">+5% from <b>Last Week</b></small> -->
      </div>
 
      <div class="col-md-3  mt5 mb5">
-       <h6 class="card-title mb0">Most Used Keyword</h6>
-       <h3 class="mb0 bold-text">AdNovum</h3>
+       <h6 class="card-title mb0">Top Posting Location</h6>
+       <h3 class="mb0 text-primary text-statistics">United States</h3>
      </div>
 
       </div>
@@ -234,10 +234,13 @@
     <div class="card card-style mt20">
 
 
-          <div class="card-body p0 pt0 pb20" style="min-height: 300px;">
-              <!-- <div><p class="text-primary p15 pt0 pb0 mt10">Top 5 Entities</p></div> -->
+          <div class="card-body p20 pt0 pb20" style="min-height: 300px;">
+            <div><p class="text-primary mt10"><b class="text-blue">Topic 1</b> of Past <b class="text-success">Week</b></p></div>
+            <div class="chart-container">
+            <div class="chart svg-center" id="d3-chord-tweens"></div>
 
 
+          </div>
                 </div>
 
     </div>
@@ -264,15 +267,15 @@
 <div class="row m0 mt20 mb50 d-flex align-items-stretch" >
   <div class="col-md-6 mt20 card card-style nobordertopright noborderbottomright">
   <div class="card-body p0 pt20 pb20" style="min-height: 420px;">
-      <p>Influential Blog Posts of <b class="text-blue">AdNovum</b> and <b class="text-success">Abel Danger</b></p>
-          <div class="p15 pb5 pt0" role="group">
+      <p> Posts from <b class="text-success">Topic 1</b></p>
+          <!-- <div class="p15 pb5 pt0" role="group">
           Export Options
-          </div>
+          </div> -->
                 <table id="DataTables_Table_0_wrapper" class="display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Post title</th>
-                                <th>Influence Score</th>
+                                <th>Topic weight</th>
 
 
                             </tr>
@@ -403,32 +406,34 @@
          "scrollY": 250,
          "scrollX": true,
           "pagingType": "simple",
-          dom: 'Bfrtip',
-       buttons:{
-         buttons: [
-             { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
-             {extend:'csv',className: 'btn-primary stylebutton1'},
-             {extend:'excel',className: 'btn-primary stylebutton1'},
-            // {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy to Clipboard'},
-             {extend:'print',className: 'btn-primary stylebutton1'},
-         ]
-       }
+          dom: 'Bfrtip'
+       //    ,
+       // buttons:{
+       //   buttons: [
+       //       { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
+       //       {extend:'csv',className: 'btn-primary stylebutton1'},
+       //       {extend:'excel',className: 'btn-primary stylebutton1'},
+       //      // {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy to Clipboard'},
+       //       {extend:'print',className: 'btn-primary stylebutton1'},
+       //   ]
+       // }
      } );
 
      $('#DataTables_Table_0_wrapper').DataTable( {
-         "scrollY": 430,
+         "scrollY": 460,
          "scrollX": true,
           "pagingType": "simple",
-          dom: 'Bfrtip',
-       buttons:{
-         buttons: [
-             { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
-             {extend:'csv',className: 'btn-primary stylebutton1'},
-             {extend:'excel',className: 'btn-primary stylebutton1'},
-            // {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy to Clipboard'},
-             {extend:'print',className: 'btn-primary stylebutton1'},
-         ]
-       }
+          // dom: 'Bfrtip'
+       //    ,
+       // buttons:{
+       //   buttons: [
+       //       { extend: 'pdfHtml5',orientation: 'potrait', pageSize: 'LEGAL', className: 'btn-primary stylebutton1'},
+       //       {extend:'csv',className: 'btn-primary stylebutton1'},
+       //       {extend:'excel',className: 'btn-primary stylebutton1'},
+       //      // {extend:'copy',className: 'btn-primary stylebutton1', text: 'Copy to Clipboard'},
+       //       {extend:'print',className: 'btn-primary stylebutton1'},
+       //   ]
+       // }
      } );
  } );
  </script>
@@ -1103,6 +1108,6 @@
                  .text(function(d) { return d.text; });
      }
  </script>
-
+<script src="chord_tween2.js"></script>
 </body>
 </html>

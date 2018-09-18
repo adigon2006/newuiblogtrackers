@@ -9,6 +9,11 @@ body{
 {
 color:blue;
 } */
+
+.dash-label
+{
+    font-size: 1.70rem;
+}
 .border-white
 {
 border: 4px solid #ffffff;
@@ -188,6 +193,8 @@ top:0;
 position:absolute;
 z-index:999;
 top:10%;
+width:80%;
+left:10%;
 }
 .closedialog
 {
@@ -468,7 +475,29 @@ margin-left:30px;
 }
 .hidden
 {
-display: none;
+display: none !important;
+}
+.breadcrumb-item + .breadcrumb-item::before
+{
+content:">";
+}
+
+/* tables border for all */
+table.dataTable thead th, table.dataTable thead td
+{
+border-bottom: 2px solid #B8C2C8;
+}
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td
+{
+border-top: 2px solid #B8C2C8;
+}
+.dataTables_wrapper.no-footer .dataTables_scrollBody
+{
+border-bottom: 2px solid #B8C2C8;
+}
+table.dataTable tbody tr
+{
+background-color:#F9F9F9;
 }
 .makeinvisible
 {
@@ -702,6 +731,16 @@ height:63px;
     display:inline-block;
     background-position: center center;
 }
+
+.refreshblog
+{
+   background-image: url(../../images/refreshicon.svg);
+    background-repeat: no-repeat;
+    min-height: 20px;
+    width: 20px;
+    display:inline-block;
+    background-position: center center;
+}
 .edittracker
 {
  background-image: url(../../images/editicon.svg);
@@ -717,6 +756,43 @@ height:63px;
     background-repeat: no-repeat;
     min-height: 20px;
     width: 20px;
+    display:inline-block;
+    background-position: center center;
+}
+.deleteblog
+{
+ background-image: url(../../images/deleteicontracker.svg);
+    background-repeat: no-repeat;
+    min-height: 20px;
+    width: 20px;
+    display:inline-block;
+    background-position: center center;
+}
+.trackbloggrey
+{
+ background-image: url(../../images/trackbloggrey.svg);
+    background-repeat: no-repeat;
+    min-height: 20px;
+    width: 20px;
+    display:inline-block;
+    background-position: center center;
+}
+.trackblogblue
+{
+ background-image: url(../../images/trackblogblue.svg);
+    background-repeat: no-repeat;
+    min-height: 20px;
+    width: 20px;
+    display:inline-block;
+    background-position: center center;
+}
+
+.trackblogfromblogpage
+{
+ background-image: url(../../images/trackblogblue.svg);
+    background-repeat: no-repeat;
+    min-height: 22px;
+    width: 24px;
     display:inline-block;
     background-position: center center;
 }
@@ -738,6 +814,60 @@ height:63px;
     display:inline-block;
     background-position: center center;
 }
+
+.uncheckblog
+{
+ background-image: url(../../images/uncheck.svg);
+    background-repeat: no-repeat;
+    min-height: 22px;
+    width: 22px;
+    display:inline-block;
+    background-position: center center;
+}
+.uncheckallblog
+{
+ background-image: url(../../images/uncheck.svg);
+    background-repeat: no-repeat;
+    min-height: 22px;
+    width: 22px;
+    display:inline-block;
+    background-position: center center;
+}
+.checkallblog
+{
+ background-image: url(../../images/checkblue.svg);
+    background-repeat: no-repeat;
+    min-height: 22px;
+    width: 22px;
+    display:inline-block;
+    background-position: center center;
+}
+
+.editdone
+{
+ background-image: url(../../images/checkblue.svg);
+    background-repeat: no-repeat;
+    min-height: 22px;
+    width: 22px;
+    display:inline-block;
+    background-position: center center;
+}
+
+.checkblogleft
+{
+position:absolute;
+left:35px;
+}
+.checkblog
+{
+ background-image: url(../../images/doneicon.svg);
+    background-repeat: no-repeat;
+    min-height: 22px;
+    width: 22px;
+    display:inline-block;
+    background-position: center center;
+}
+
 .canceltracker
 {
  background-image: url(../../images/deleteicon.svg);
@@ -746,6 +876,32 @@ height:63px;
     width: 25px;
     display:inline-block;
     background-position: center center;
+}
+.iconsetblogs
+{
+position:absolute;
+right:35px;
+display: inherit;
+}
+.selectsets
+{
+position:absolute;
+right:20px;
+display: inherit;
+}
+.sortby
+{
+padding:0;
+border:none;
+width:140px;
+background-color:transparent;
+}
+.sortby:focus
+{
+    background-color:transparent;
+    border-color: none;
+    outline: 0;
+    box-shadow: none;
 }
 .edittrackerpop
 {
@@ -949,7 +1105,7 @@ font-family: inherit !important;
 .blogbrowsersearch::placeholder
 {
 font-size: 60px !important;
-line-height: 70px;
+line-height: 79px;
 color:#45606F !important;
 font-weight: 600;
 
@@ -2600,11 +2756,11 @@ z-index: 995;
 .fixedbottomedittrackerlefttext
 {
 font-size: 20px;
-width:20%;
+width:65%;
 }
 .fixedbottomedittrackerrighttext
 {
-  width:80%;
+  width:35%;
 }
 .trackblogiconedittrackerwhite
 {
@@ -2645,6 +2801,71 @@ width:20%;
     display:inline-block;
     background-position: center center;
 }
+.searchiconinputblog
+{
+ background-image: url(../../images/searchiconedittracker.svg);
+    background-repeat: no-repeat;
+    min-height: 40px;
+    width: 40px;
+    display:inline-block;
+    background-position: center center;
+    position:absolute;
+    top:20px;
+    display: flex;
+  align-items: center;
+  right:20px;
+    z-index:888;
+}
+.allthistracker
+{
+font-size:46px;
+padding:0;
+font-weight:300;
+border:none;
+padding-left:20px;
+}
+.allthistracker:focus,.generalstyle:focus
+{
+box-shadow:none;
+}
+.generalstyle
+{
+
+font-size:18px;
+padding-top:18px;
+padding-bottom:18px;
+border-radius:15px;
+padding-left:50px;
+margin-top:5px;
+}
+.styleallblog
+{
+font-size:15px;
+padding-top:2px;
+padding-bottom:2px;
+padding-left:50px;
+margin-top:5px;
+}
+.generalstyle:focus
+{
+background-color:inherit;
+}
+.btndefaultlook
+{
+background-color:#F5F6F7;
+}
+.btnselected
+{
+background-color:#E2F2E8;
+}
+#selectedblogcount
+{
+font-weight:normal;
+}
+.text-statistics
+{
+font-size: 1.73rem;
+}
 /* .statcontainer:after {
     content: ""; /* This is necessary for the pseudo element to work. */
     /* display: block; /* This will put the pseudo element on its own line. */
@@ -2659,6 +2880,11 @@ width:20%;
   #closeicon
   {
   display:inline;
+  }
+  .trackinitiated
+  {
+  width:100%;
+  left:0;
   }
 .loginformbutton
 {
@@ -2710,4 +2936,19 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 
+}
+
+@media print {
+    .myDivToPrint {
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top:0;
+        left: 0;
+        margin: 0;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 18px;
+    }
 }

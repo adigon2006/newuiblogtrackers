@@ -116,7 +116,7 @@ $(function () {
             .style("display", "none")
 
         // Format date
-        var format = d3.time.format("%m/%d/%Y %H:%M");
+        var format = d3.time.format("%m/%d/%y %H:%M");
         var formatDate = d3.time.format("%H:%M");
 
         // Colors
@@ -148,7 +148,7 @@ $(function () {
             .ticks(d3.time.hours, 2)
             .innerTickSize(4)
             .tickPadding(8)
-            .tickFormat(d3.time.format("%m/%d/%Y")); // Display date in month day and year
+            .tickFormat(d3.time.format("%m/%d/%y")); // Display date in month day and year
 
         // Left vertical
         var yAxis = d3.svg.axis()
@@ -215,7 +215,7 @@ $(function () {
         // Load data
         // ------------------------------
 
-        d3.csv("topictrendsall2.csv", function (error, data) {
+        d3.csv("traffic_sources.csv", function (error, data) {
 
             // Pull out values
             data.forEach(function (d) {
@@ -483,7 +483,7 @@ $(function () {
         // ------------------------------
 
         // Call function on window resize
-        // $(window).on('resize', resizeStream);
+        $(window).on('resize', resizeStream);
 
         // Call function on sidebar width change
         // $('.sidebar-control').on('click', resizeStream);
@@ -493,42 +493,42 @@ $(function () {
         // Since D3 doesn't support SVG resize by default,
         // we need to manually specify parts of the graph that need to
         // be updated on window resize
-        // function resizeStream() {
-        //
-        //     // Layout
-        //     // -------------------------
-        //
-        //     // Define width
-        //     width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
-        //
-        //     // Main svg width
-        //     container.attr("width", width + margin.left + margin.right);
-        //
-        //     // Width of appended group
-        //     svg.attr("width", width + margin.left + margin.right);
-        //
-        //     // Horizontal range
-        //     x.range([0, width]);
-        //
-        //
-        //     // Chart elements
-        //     // -------------------------
-        //
-        //     // Horizontal axis
-        //     svg.selectAll('.d3-axis-horizontal').call(xAxis);
-        //
-        //     // Horizontal axis subticks
-        //     svg.selectAll('.d3-axis-subticks').attr("x1", x).attr("x2", x);
-        //
-        //     // Grid lines width
-        //     svg.selectAll(".d3-grid-dashed").call(gridAxis.tickSize(-width, 0, 0))
-        //
-        //     // Right vertical axis
-        //     svg.selectAll(".d3-axis-right").attr("transform", "translate(" + width + ", 0)");
-        //
-        //     // Area paths
-        //     svg.selectAll('.streamgraph-layer').attr("d", function(d) { return area(d.values); });
-        // }
+        function resizeStream() {
+
+            // Layout
+            // -------------------------
+
+            // Define width
+            width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
+
+            // Main svg width
+            container.attr("width", width + margin.left + margin.right);
+
+            // Width of appended group
+            svg.attr("width", width + margin.left + margin.right);
+
+            // Horizontal range
+            x.range([0, width]);
+
+
+            // Chart elements
+            // -------------------------
+
+            // Horizontal axis
+            svg.selectAll('.d3-axis-horizontal').call(xAxis);
+
+            // Horizontal axis subticks
+            svg.selectAll('.d3-axis-subticks').attr("x1", x).attr("x2", x);
+
+            // Grid lines width
+            svg.selectAll(".d3-grid-dashed").call(gridAxis.tickSize(-width, 0, 0))
+
+            // Right vertical axis
+            svg.selectAll(".d3-axis-right").attr("transform", "translate(" + width + ", 0)");
+
+            // Area paths
+            svg.selectAll('.streamgraph-layer').attr("d", function(d) { return area(d.values); });
+        }
     }
 
 });
