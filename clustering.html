@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Blogtrackers-Posting Frequecy</title>
+	<title>Blogtrackers-Clustering</title>
   <link rel="shortcut icon" href="images/favicons/favicon.ico">
   <link rel="apple-touch-icon" href="images/favicons/favicon-48x48.png">
   <link rel="apple-touch-icon" sizes="96x96" href="images/favicons/favicon-96x96.png">
@@ -159,14 +159,14 @@
     <div style="padding-right:10px !important;">
       <input type="search" class="form-control stylesearch mb20" placeholder="Search " /></div>
     <div class="scrolly" style="height:270px; padding-right:10px !important;">
-    <a class="btn btn-primary form-control stylebuttonactive mb20 activebar"> <b>Topic 1</b></a>
-    <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Topic 2</b></a>
-     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Topic 3</b></a>
-     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Topic 4</b></a>
-     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Topic 5</b></a>
-     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Topic 6</b></a>
-     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Topic 7</b></a>
-     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Topic 8</b></a>
+    <a class="btn btn-primary form-control stylebuttonactive mb20 activebar"> <b>Cluster 1</b></a>
+    <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Cluster 2</b></a>
+     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Cluster 3</b></a>
+     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Cluster 4</b></a>
+     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Cluster 5</b></a>
+     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Cluster 6</b></a>
+     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Cluster 7</b></a>
+     <a class="btn form-control stylebuttoninactive opacity53 text-primary mb20"><b>Cluster 8</b></a>
 
    </div>
 
@@ -219,10 +219,10 @@
 </div>
 
 <div class="row mb0">
-  <div class="col-md-4 mt20 ">
+  <div class="col-md-6 mt20 ">
     <div class="card card-style mt20">
       <div class="card-body  p20 pt5 pb5">
-        <div><p class="text-primary mt10">Keywords of <b class="text-blue">Topic 1</b> of Past <b class="text-success">Abel Danger</b></p></div>
+        <div><p class="text-primary mt10">Keywords of <b class="text-blue">Cluster 1</b> of Past <b class="text-success">Week</b></p></div>
         <div class="tagcloudcontainer" style="min-height: 300px;">
 
         </div>
@@ -230,7 +230,7 @@
     </div>
   </div>
 
-  <div class="col-md-4 mt20">
+  <div class="col-md-6 mt20">
     <div class="card card-style mt20">
 
 
@@ -248,34 +248,12 @@
     </div>
   </div>
 
-  <div class="col-md-4 mt20">
-    <div class="card card-style mt20">
-
-
-          <div class="card-body p0 pt0 pb20" style="min-height: 300px;">
-              <!-- <div><p class="text-primary p15 pt0 pb0 mt10">Top 5 Entities</p></div> -->
-              <div class="chart-container">
-              <div class="chart svg-center" id="clusterdiagram">
-
-              </div>
-
-
-            </div>
-
-                </div>
-
-    </div>
-  </div>
-
-
-
-
 </div>
 
 <div class="row m0 mt20 mb20 d-flex align-items-stretch" >
   <div class="col-md-6 mt20 card card-style nobordertopright noborderbottomright">
   <div class="card-body p0 pt20 pb20" style="min-height: 420px;">
-      <p> Posts from <b class="text-success">Topic 1</b></p>
+      <p> Posts from <b class="text-success">Cluster 1</b></p>
           <!-- <div class="p15 pb5 pt0" role="group">
           Export Options
           </div> -->
@@ -390,14 +368,14 @@
                 <table id="DataTables_Table_1_wrapper" class="display" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Topic 1</th>
-                                <th>Topic 2</th>
-                                <th>Topic 3</th>
-<th>Topic 4</th>
-<th>Topic 5</th>
-<th>Topic 6</th>
-<th>Topic 7 </th>
-<th>Topic 8</th>
+                                <th>Cluster 1</th>
+                                <th>Cluster 2</th>
+                                <th>Cluster 3</th>
+<th>Cluster 4</th>
+<th>Cluster 5</th>
+<th>Cluster 6</th>
+<th>Cluster 7 </th>
+<th>Cluster 8</th>
 
                             </tr>
                         </thead>
@@ -1195,291 +1173,50 @@
  });
  </script>
 
- <script>
- $(function () {
-
-clusterdiagram('#clusterdiagram', 330);
-
-// Chart setup
-function clusterdiagram(element, height) {
-
- // var width = 300,
- //     height = 300,
-
-     // Define main variables
-     var d3Container = d3.select(element),
-         margin = {top: 10, right: 10, bottom: 20, left: 20},
-         width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
-         height = height - margin.top - margin.bottom;
-
-var  padding = 1.5, // separation between same-color nodes
-     clusterPadding = 6, // separation between different-color nodes
-     maxRadius = 6;
-
-     // Add SVG element
-     var container = d3Container.append("svg");
-
-     // Add SVG group
-     var svg = container
-         .attr("width", width + margin.left + margin.right)
-         .attr("height", height + margin.top + margin.bottom)
-         .append("g")
-             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
- var data =
- [{"clusteri":0.20,"r":0.08},
- {"clusteri":0.12,"r":0.12},
- {"clusteri":0.25,"r":0.3},
- {"clusteri":0.18,"r":0.26},
- {"clusteri":0.15,"r":0.15},
- {"clusteri":0.85,"r":0.54},
- {"clusteri":0.18,"r":0.26},
- {"clusteri":0.15,"r":0.15},
- {"clusteri":0.85,"r":0.54},
- {"clusteri":0.95,"r":0.35},
- {"clusteri":0.75,"r":0.59},
- {"clusteri":0.28,"r":0.26},
- {"clusteri":0.99,"r":0.25},
- {"clusteri":0.98,"r":0.27},
- {"clusteri":0.20,"r":0.08},
- {"clusteri":0.12,"r":0.12},
- {"clusteri":0.25,"r":0.35},
- {"clusteri":0.70,"r":0.54},
- {"clusteri":0.87,"r":0.98},
- {"clusteri":0.85,"r":0.5755},
- {"clusteri":0.747,"r":0.92},
- {"clusteri":0.47,"r":0.35},
- {"clusteri":0.824,"r":0.554},
- {"clusteri":0.724,"r":0.254},
- {"clusteri":0.7524,"r":0.754},
- {"clusteri":0.952,"r":0.534},
- {"clusteri":0.784,"r":0.354},
- {"clusteri":0.245,"r":0.654},
- ]
-
-
- var myclustermapi = [];
- var myclustermapr = [];
-
- data.map(function(d,i){
-   myclustermapi[i] = d.clusteri
- });
-
- data.map(function(d,i){
-   myclustermapr[i] = d.r
- });
- //console.log(myclustermapr);
- //console.log(myclustermapi);
- //console.log(data.length);
- // var n = 25, // total number of nodes
- var n = data.length;
-     m = 3; // number of distinct clusters
-
- var color = d3.scale.category10()
-     .domain(d3.range(m));
-
- // The largest node for each cluster.
- var clusters = new Array(m);
-
- var nodes = d3.range(n).map(function(u,i) {
- // map the data here
- //console.log(myclustermap[i][0]);
- // console.log(Math.log(Math.random()));
- //console.log("My Own"+ Math.log(myclustermapr[i]));
- var i = Math.floor(myclustermapi[i] * m),
-     r = Math.sqrt((i + 1) / m * - Math.log(myclustermapr[i])) * maxRadius,
-     d = {cluster: i, radius: r};
- //    console.log(r)
- if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
- return d;
-
-   // var i = Math.floor(Math.random() * m),
-   //     r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
-   //     d = {cluster: i, radius: r};
-   // if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
-   // return d;
- });
-
- // Use the pack layout to initialize node positions.
- d3.layout.pack()
-     .sort(null)
-     .size([width, height])
-     .children(function(d) { return d.values; })
-     .value(function(d) { return d.radius * d.radius; })
-     .nodes({values: d3.nest()
-       .key(function(d) { return d.cluster; })
-       .entries(nodes)});
-
- var force = d3.layout.force()
-     .nodes(nodes)
-     .size([width, height])
-     .gravity(.02)
-     .charge(0)
-     .on("tick", tick)
-     .start();
-
-     // var svg = d3.select("body").append("svg")
-     //     .attr("width", width)
-     //     .attr("height", height);
-
- var node = svg.selectAll("circle")
-     .data(nodes)
-   .enter().append("circle")
-     .style("fill", function(d) { return color(d.cluster); })
-     .call(force.drag);
-
- node.transition()
-     .duration(750)
-     .delay(function(d, i) { return i * 5; })
-     .attrTween("r", function(d) {
-       var i = d3.interpolate(0, d.radius);
-       return function(t) { return d.radius = i(t); };
-     });
-
- function tick(e) {
-   node
-       .each(cluster(10 * e.alpha * e.alpha))
-       .each(collide(.5))
-       .attr("cx", function(d) { return d.x; })
-       .attr("cy", function(d) { return d.y; });
- }
-
- // Move d to be adjacent to the cluster node.
- function cluster(alpha) {
-   return function(d) {
-     var cluster = clusters[d.cluster];
-     if (cluster === d) return;
-     var x = d.x - cluster.x,
-         y = d.y - cluster.y,
-         l = Math.sqrt(x * x + y * y),
-         r = d.radius + cluster.radius;
-     if (l != r) {
-       l = (l - r) / l * alpha;
-       d.x -= x *= l;
-       d.y -= y *= l;
-       cluster.x += x;
-       cluster.y += y;
-     }
-   };
- }
-
- // Resolves collisions between d and all other circles.
- function collide(alpha) {
-   var quadtree = d3.geom.quadtree(nodes);
-   return function(d) {
-     var r = d.radius + maxRadius + Math.max(padding, clusterPadding),
-         nx1 = d.x - r,
-         nx2 = d.x + r,
-         ny1 = d.y - r,
-         ny2 = d.y + r;
-     quadtree.visit(function(quad, x1, y1, x2, y2) {
-       if (quad.point && (quad.point !== d)) {
-         var x = d.x - quad.point.x,
-             y = d.y - quad.point.y,
-             l = Math.sqrt(x * x + y * y),
-             r = d.radius + quad.point.radius + (d.cluster === quad.point.cluster ? padding : clusterPadding);
-         if (l < r) {
-           l = (l - r) / l * alpha;
-           d.x -= x *= l;
-           d.y -= y *= l;
-           quad.point.x += x;
-           quad.point.y += y;
-         }
-       }
-       return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
-     });
-   };
- }
-
-
- $(window).on('resize', resize);
-
- // Call function on sidebar width change
- $('.sidebar-control').on('click', resize);
-
- // Resize function
- //
- // Since D3 doesn't support SVG resize by default,
- // we need to manually specify parts of the graph that need to
- // be updated on window resize
- function resize() {
-
-   // Layout variables
-   width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right;
-   //
-   //
-   // // Layout
-   // // -------------------------
-   //
-   // // Main svg width
-   container.attr("width", width + margin.left + margin.right);
-   //
-   // // Width of appended group
-   svg.attr("width", width + margin.left + margin.right);
-   //
-   //
-   // // Axes
-   // // -------------------------
-   //
-   // // Horizontal range
-   // x.rangeRoundBands([0, width],.72,.5);
-   //
-   // // Horizontal axis
-   // svg.selectAll('.d3-axis-horizontal').call(xAxis);
-   // svg.selectAll("circle")
-   //
-   //
-   // // Chart elements
-   // // -------------------------
-   //
-   // // Line path
-   // svg.selectAll('.d3-line').attr("d", line);
-
-
-
-     svg.selectAll(".circle-point")
-     .attr("cx",function(d) { return x(d.date);})
-     .attr("cy", function(d){return y(d.close)});
-
-
-   //
-   // // Crosshair
-   // svg.selectAll('.d3-crosshair-overlay').attr("width", width);
-
- }
-
-
-}
-
-});
- </script>
 
 <!--word cloud  -->
  <script>
+ var color = d3.scale.linear()
+         .domain([0,3,5,7,8,9,6,10,15,20,50])
+         .range(["#17394C", "#F5CC0E", "#CE0202", "#1F90D0", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+
+ $(function () {
+
+   wordcloud(".tagcloudcontainer",410);
+    function wordcloud(element, height) {
+
+      // Define main variables of the container
+      var d3Container = d3.select(element),
+          margin = {top: 30, right: 10, bottom: 20, left: 25},
+          width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
+          height = height;
+
 
      var frequency_list = [{"text":"study","size":40},{"text":"motion","size":15},{"text":"forces","size":10},{"text":"electricity","size":15},{"text":"movement","size":10},{"text":"relation","size":5},{"text":"things","size":10},{"text":"force","size":5},{"text":"ad","size":5},{"text":"energy","size":85},{"text":"living","size":5},{"text":"nonliving","size":5},{"text":"laws","size":15},{"text":"speed","size":45},{"text":"velocity","size":30},{"text":"define","size":5},{"text":"constraints","size":5},{"text":"universe","size":10},{"text":"distinguished","size":5},{"text":"chemistry","size":5},{"text":"biology","size":5},{"text":"includes","size":5},{"text":"radiation","size":5},{"text":"sound","size":5},{"text":"structure","size":5},{"text":"atoms","size":5},{"text":"including","size":10},{"text":"atomic","size":10},{"text":"nuclear","size":10},{"text":"cryogenics","size":10},{"text":"solid-state","size":10},{"text":"particle","size":10},{"text":"plasma","size":10},{"text":"deals","size":5},{"text":"merriam-webster","size":5},{"text":"dictionary","size":10},{"text":"analysis","size":5},{"text":"conducted","size":5},{"text":"order","size":5},{"text":"understand","size":5},{"text":"behaves","size":5},{"text":"en","size":5},{"text":"wikipedia","size":5},{"text":"wiki","size":5},{"text":"physics-","size":5},{"text":"physical","size":5},{"text":"behaviour","size":5},{"text":"collinsdictionary","size":5},{"text":"english","size":5},{"text":"time","size":35},{"text":"distance","size":35},{"text":"wheels","size":5},{"text":"revelations","size":5},{"text":"minute","size":5},{"text":"acceleration","size":20},{"text":"torque","size":5},{"text":"wheel","size":5},{"text":"rotations","size":5},{"text":"resistance","size":5},{"text":"momentum","size":5},{"text":"measure","size":10},{"text":"direction","size":10},{"text":"car","size":5},{"text":"add","size":5},{"text":"traveled","size":5},{"text":"weight","size":5},{"text":"electrical","size":5},{"text":"power","size":5}];
 
-
-     var color = d3.scale.linear()
-             .domain([0,1,2,3,4,5,6,10,15,20,50])
-             .range(["#17394C", "#F5CC0E", "#CE0202", "#1F90D0", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
-
-     d3.layout.cloud().size([300, 300])
+     d3.layout.cloud().size([width, height])
              .words(frequency_list)
              .rotate(0)
              .fontSize(function(d) { return d.size; })
              .on("end", draw)
              .start();
 
+
+
      function draw(words) {
-         d3.select(".tagcloudcontainer").append("svg")
-                 .attr("width", 300)
-                 .attr("height", 300)
+
+       var container = d3Container.append("svg");
+       //console.log(height)
+
+         // d3.select(".tagcloudcontainer").append("svg")
+         container
+                 .attr("width", width)
+                 .attr("height", height)
                  .attr("class", "wordcloud")
                  .append("g")
                  // without the transform, words words would get cutoff to the left and top, they would
                  // appear outside of the SVG area
-                 .attr("transform", "translate(80,150)")
+                 .attr("transform", "translate(120,150)")
                  .selectAll("text")
                  .data(words)
                  .enter().append("text")
@@ -1491,6 +1228,11 @@ var  padding = 1.5, // separation between same-color nodes
 
                  .text(function(d) { return d.text; });
      }
+
+}
+
+});
+
  </script>
  <script>
  /*//////////////////////////////////////////////////////////
@@ -1499,7 +1241,7 @@ var  padding = 1.5, // separation between same-color nodes
 
  $(function () {
 
- chordDiagram("#chorddiagram", 300)
+ chordDiagram("#chorddiagram", 400)
 
  function chordDiagram(element, height) {
 

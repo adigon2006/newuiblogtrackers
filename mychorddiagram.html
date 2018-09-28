@@ -149,6 +149,11 @@
 ////////////////// Set up the Data /////////////////////////
 //////////////////////////////////////////////////////////*/
 
+
+chordDiagram("#chorddiagram", 300)
+
+function chordDiagram(element, height) {
+
 var NameProvider = ["Apple","HTC","Huawei","LG","Nokia","Samsung","Sony","Other"];
 
 var matrix = [
@@ -165,6 +170,12 @@ var matrix = [
 
 var colors = ["#C4C4C4","#69B40F","#EC1D25","#C8125C","#008FC8","#10218B","#134B24","#737373"];
 
+// Define main variables of the container
+var d3Container = d3.select(element),
+    margin = {top: 30, right: 10, bottom: 20, left: 25},
+    width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
+    height = height - margin.top - margin.bottom;
+
 /*Initiate the color scale*/
 var fill = d3.scale.ordinal()
     .domain(d3.range(NameProvider.length))
@@ -173,14 +184,17 @@ var fill = d3.scale.ordinal()
 /*//////////////////////////////////////////////////////////
 /////////////// Initiate Chord Diagram /////////////////////
 //////////////////////////////////////////////////////////*/
-var margin = {top: 30, right: 25, bottom: 20, left: 25},
-    width = 650 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom,
-    innerRadius = Math.min(width, height) * .39,
-    outerRadius = innerRadius * 1.04;
+// var margin = {top: 30, right: 25, bottom: 20, left: 25},
+//     width = 650 - margin.left - margin.right,
+//     height = 600 - margin.top - margin.bottom,
+  var innerRadius = Math.min(width, height) * .38,
+    outerRadius = innerRadius * 1.03;
+
+     var container = d3Container.append("svg:svg");
 
 /*Initiate the SVG*/
-var svg = d3.select("#chart").append("svg:svg")
+// var svg = d3.select("#chart").append("svg:svg")
+var svg = container
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
 	.append("svg:g")
@@ -584,6 +598,8 @@ d3.select("#clicker")
   };/*runProgressBar*/
 
 $(window).on("load",finalChord);
+}
+
 
 </script>
 </body>
